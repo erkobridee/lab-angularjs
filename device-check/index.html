@@ -2,15 +2,20 @@
 <html ng-app="App">
 <head>
   <meta charset="utf-8">
-  <title>AngularJS - URL Route</title>
+  <title>AngularJS - Device Check</title>
 </head>
 <body>
   <div ng-view></div>
 
+  <!-- 
+    https://developers.google.com/speed/libraries/devguide
+  -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
   <!-- <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script> -->
 
-  <script src="js/App.js"></script>
+  <script src="js/util/jquery.devicecheck.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
