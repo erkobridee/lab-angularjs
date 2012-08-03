@@ -1,0 +1,17 @@
+<div class="row">
+  <form class="form-horizontal" ng-submit="doSearch()">
+    <input type="text" class="input-medium search-query" placeholder="ex.: soudev" ng-model="searchField">
+    <button type="submit" class="btn"><i class="icon-search"></i> Procurar</button>
+  </form>
+
+  <table class="table table-striped">
+    <tr ng-repeat="tweet in twitterResult.results">
+      <td width="60">
+        <img 
+        ng-src="{{tweet.profile_image_url_https}}"
+        title="{{tweet.from_user}}" alt="{{tweet.from_user}}"/>
+      </td>
+      <td>{{tweet.text}}</td>
+    </tr>
+  </table>
+</div> 

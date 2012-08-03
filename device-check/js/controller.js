@@ -2,7 +2,7 @@ var Ctrl = (function() {
 
   function Ctrl() {}
 
-  Ctrl.prototype.CheckDeviceCtrl = function($scope, $location) {
+  Ctrl.prototype.CheckDevice = function($scope, $location) {
 
     console.log(navigator);
 
@@ -12,15 +12,15 @@ var Ctrl = (function() {
 
   }
 
-  Ctrl.prototype.MobileCtrl = function($scope) {
+  Ctrl.prototype.Mobile = function($scope) {
     $scope.pageName = 'Mobile Page';
   }
 
-  Ctrl.prototype.TabletCtrl = function($scope) {
+  Ctrl.prototype.Tablet = function($scope) {
     $scope.pageName = 'Tablet Page';
   }
 
-  Ctrl.prototype.DesktopCtrl = function($scope) {
+  Ctrl.prototype.Desktop = function($scope) {
     $scope.pageName = 'Desktop Page';
   }
 
