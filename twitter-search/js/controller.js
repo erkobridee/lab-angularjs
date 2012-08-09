@@ -16,7 +16,7 @@ var Ctrl = (function() {
         );
       }
 
-      // criar funcionalidade para realizar o processamento do textoa
+      // criar funcionalidade para realizar o processamento do texto
 
   }
 
