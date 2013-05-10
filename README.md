@@ -6,3 +6,9 @@ Laboratório de testes do Angular.js
 **Obs.:** utilizando atualmente o [Angular.js] 1.0.1
 
 [Angular.js]: http://angularjs.org/
+
+---
+
+* [Página do projeto](http://erkobridee.github.io/lab-angularjs/)
+
+* Material de apoio adicionado na [Wiki](https://github.com/erkobridee/lab-angularjs/wiki) do projeto
