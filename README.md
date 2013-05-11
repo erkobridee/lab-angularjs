@@ -25,7 +25,7 @@ Laboratório de testes do Angular.js
 
 ## Comandos do Grunt.js
 
-> O Grunt.js executa sobre o [Node.js](http://nodejs.org/), com isso é necessário ter disponível no seu computador
+> O [Grunt.js](http://gruntjs.com/) executa sobre o [Node.js](http://nodejs.org/), com isso é necessário ter disponível no seu computador
 
 * `grunt` - executa jshint (por enquanto apenas no Gruntfile.js, falta ajustar os demais .js)
 
