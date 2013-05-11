@@ -1,0 +1,16 @@
+{
+  "name": "lab-angularjs",
+  "version": "0.1.0",
+  "description": "Laboratório de testes do Angular.js",  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erkobridee/lab-angularjs.git"
+  },
+  "keywords": [
+    "angularjs",
+    "test"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
