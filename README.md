@@ -9,6 +9,10 @@ Laboratório de testes do Angular.js
 
 ---
 
+**Atenção:** os códigos dos testes realizados estão dentro de `lab`
+
+---
+
 * [Página do projeto](http://erkobridee.github.io/lab-angularjs/)
 
 * Material de apoio adicionado na [Wiki](https://github.com/erkobridee/lab-angularjs/wiki) do projeto
