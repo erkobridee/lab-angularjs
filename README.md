@@ -29,6 +29,6 @@ Laboratório de testes do Angular.js
 
 * `grunt dev` - levanta o servidor na porta 1337 disponibilizando o diretório `lab`
 
-* `grunt test` - gera a versão que será publicada no `gh-pages no diretório `dist` e levanta o servidor na porta 1337 apontando para este diretório
+* `grunt test` - gera a versão que será publicada no `gh-pages` no diretório `dist` e levanta o servidor na porta 1337 apontando para este diretório
 
 * `grunt publish` - realiza a atualização do `gh-pages`
