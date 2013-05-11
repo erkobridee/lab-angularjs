@@ -2,18 +2,28 @@
 <head>
   <title>AngularJS - Twitter Search</title>
 
-  <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    .userImg {
+      max-width: 50px;
+      max-height: 50px;
+    }
+  </style>  
 </head>
 <body>
+  <br>
   <div class="container" ng-view></div>
 
   <!-- 
     https://developers.google.com/speed/libraries/devguide
   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-  <!-- <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script> -->  
-  <script src="http://code.angularjs.org/angular-resource-1.0.1.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+  
+  <!-- AngularJS resources -->
+  <script src="http://code.angularjs.org/1.1.4/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.4/angular-resource.min.js"></script>
 
   <script src="js/service.js"></script>
   <script src="js/controller.js"></script>

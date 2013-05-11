@@ -7,7 +7,7 @@
   <table class="table table-striped">
     <tr ng-repeat="tweet in twitterResult.results">
       <td width="60">
-        <img 
+        <img class="userImg"
         ng-src="{{tweet.profile_image_url_https}}"
         title="{{tweet.from_user}}" alt="{{tweet.from_user}}"/>
       </td>
