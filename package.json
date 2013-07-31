@@ -1,7 +1,7 @@
 {
   "name": "lab-angularjs",
   "version": "0.1.0",
-  "description": "Laboratório de testes do Angular.js",  
+  "description": "Laboratório de testes do Angular.js",
   "author": "Erko Bridee",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -22,8 +22,9 @@
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.4.3",
     "grunt-shell": "~0.2.2",
-    "grunt-build-gh-pages": "0.0.1",
     "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-clean": "~0.4.1"
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-github-pages": "0.0.3",
+    "grunt-open": "~0.2.1"
   }
 }
