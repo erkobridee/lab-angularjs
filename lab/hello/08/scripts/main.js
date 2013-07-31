@@ -1,7 +1,7 @@
 require({
 
-	// libraries dependencies with fallback
-	paths: {
+  // libraries dependencies with fallback
+  paths: {
 
     angular: [ 
       'http://code.angularjs.org/1.1.5/angular.min',
@@ -9,16 +9,16 @@ require({
       '/scripts/libs/angular.min'
     ]
 
-	},
+  },
 
-	// define js scripts dependencies
-	shim: {
+  // define js scripts dependencies
+  shim: {
 
-		'app': { 
+    'app': { 
       deps: ['angular'] 
     },
 
-		'controllers': { 
+    'controllers': { 
       deps: ['app'] 
     },
 
@@ -29,15 +29,15 @@ require({
       ] 
     }
 
-	}
+  }
 
 },
 
-	['require'],
+  ['require'],
 
 function(require) {
 
-	console.log('calling start_app.js');
+  console.log('calling start_app.js');
 
   require(['start_app']);
 
