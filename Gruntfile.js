@@ -6,8 +6,19 @@ module.exports = function(grunt) {
 
   //---
 
+  var serverPort = 1337;
+
+  //---
+
   var gruntConfig = {
     pkg: grunt.file.readJSON('package.json'),
+
+    paths: {
+      build: 'dist',
+      gh_pages: 'cache/gh_pages'
+    },
+
+    //----------
 
     jshint: {
       all: [
@@ -16,42 +27,83 @@ module.exports = function(grunt) {
       ]
     },
 
+    //----------
+
     connect: {
+
       dev: {
         options: {
-          port: 1337,
+          port: serverPort,
           base: 'lab',
           keepalive: true
         }
       },
+
       test: {
         options: {
-          port: 1337,
+          port: serverPort,
           base: 'dist',
           keepalive: true
         }
       }
+
     },
+
+    //----------
+
+    open: {
+      webapp: {
+        path: 'http://localhost:' + serverPort
+      }
+    },
+
+    //----------
 
     clean: {
-      build: ['dist/']
+      
+      build: ['<%= paths.build %>/'],
+
+      gh_pages: ['<%= paths.gh_pages %>/']
+
     },
 
+    //----------
+
     copy: {
+      
       build: {
         files: [
-          {src: ['.gitignore'], dest: 'dist/', filter: 'isFile'},
-          {expand: true, cwd: 'lab/', src: ['**'], dest: 'dist/lab/'},
-          {expand: true, cwd: 'site/', src: ['**'], dest: 'dist/'}
+          {expand: true, cwd: 'lab/', src: ['**', '!**/*.md'], dest: '<%= paths.build %>/lab/'},
+          {expand: true, cwd: 'site/', src: ['**'], dest: '<%= paths.build %>/'}
+        ]
+      },
+
+      gh_pages: {
+        files: [
+          {expand: true, cwd: 'lab/', src: ['**', '!**/*.md'], dest: '<%= paths.gh_pages %>/lab/'},
+          {expand: true, cwd: 'site/', src: ['**'], dest: '<%= paths.gh_pages %>/'}
         ]
       }
     },
 
-    build_gh_pages: {
+    //----------
+
+    /*
+      Grunt Github Pages
+      https://github.com/thanpolas/grunt-github-pages
+    */
+    githubPages: {
       gh_pages: {
-        
+        options: {
+          // The default commit message for the gh-pages branch
+          commitMessage: 'gh-pages auto commit <%= grunt.template.today("isoUtcDateTime") %>'
+        },
+        // The folder where your gh-pages repo is
+        src: '<%= paths.gh_pages %>'
       }
-    }    
+    }
+
+    //----------
 
   };
 
@@ -59,11 +111,26 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint']);
 
-  grunt.registerTask('dev', ['jshint', 'connect:dev']);
+  grunt.registerTask('dev', [
+    'jshint', 
+    'open',
+    'connect:dev'
+  ]);
 
-  grunt.registerTask('test', ['jshint', 'clean', 'copy', 'connect:test']);
+  grunt.registerTask('test', [
+    'jshint', 
+    'clean:build', 
+    'copy:build', 
+    'open',
+    'connect:test'    
+  ]);
 
-  grunt.registerTask('publish', ['jshint', 'clean', 'copy', 'build_gh_pages:gh_pages']);
+  grunt.registerTask('publish', [
+    'jshint', 
+    'clean:gh_pages', 
+    'copy:gh_pages', 
+    'githubPages:gh_pages'
+  ]);
 
 
 };
