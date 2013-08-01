@@ -22,8 +22,9 @@ module.exports = function(grunt) {
 
     jshint: {
       all: [
-        'Gruntfile.js'
-        //'lab/**/*.js'
+        'Gruntfile.js',        
+        'lab/**/*.js',
+        '!lab/**/scripts/libs/**/*.min.js'
       ]
     },
 
