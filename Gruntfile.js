@@ -63,7 +63,10 @@ module.exports = function(grunt) {
       
       build: ['<%= paths.build %>/'],
 
-      gh_pages: ['<%= paths.gh_pages %>/']
+      gh_pages: [
+        '!<%= paths.gh_pages %>/.git',
+        '<%= paths.gh_pages %>/**/*'
+      ]
 
     },
 
