@@ -1,6 +1,10 @@
 angular.module('app').config(
 
-  function($routeProvider) {
+  // dependencies injection
+  ['$routeProvider',
+
+function($routeProvider) {
+
     $routeProvider
       .when(
         '/', 
@@ -15,6 +19,5 @@ angular.module('app').config(
           templateUrl:'views/about.html'
         }
       );
-  }
 
-);
+}]);
