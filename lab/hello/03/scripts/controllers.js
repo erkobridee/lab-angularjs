@@ -6,6 +6,6 @@ var ctrl = (function() {
       $scope.hello = 'Angular JS - Hello World 03';
     }
     
-  }
+  };
 
 })();

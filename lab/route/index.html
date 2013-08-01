@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="App">
+<html>
 <head>
   <meta charset="utf-8">
   <title>AngularJS - URL Route</title>
@@ -7,12 +7,19 @@
 <body>
   <div ng-view></div>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
   
   <!-- AngularJS resources -->
-  <script src="http://code.angularjs.org/1.1.4/angular.min.js"></script>
-  <script src="http://code.angularjs.org/1.1.4/angular-resource.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.5/angular-resource.min.js"></script>
 
-  <script src="js/App.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/home.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/routes.js"></script>
+  <script src="scripts/start_app.js"></script>
+
+  <!-- based on /lab/hello/07/ with you want use angular.js with require.js check /lab/hello/08/ -->
+
 </body>
 </html>

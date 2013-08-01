@@ -14,11 +14,11 @@ var Ctrl = (function() {
             console.log(res);
           }
         );
-      }
+      };
 
       // criar funcionalidade para realizar o processamento do texto
 
-  }
+  };
 
   return Ctrl;
 

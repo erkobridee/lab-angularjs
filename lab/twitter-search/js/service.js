@@ -3,9 +3,9 @@ angular.module('AppService', ['ngResource'])
       var twitter = $resource(
         'https://search.twitter.com/:action',
         {
-          action:'search.json'
-        , q:'soudev'        
-        , 'callback': 'JSON_CALLBACK'
+          action:'search.json',
+          q:'soudev',
+          'callback': 'JSON_CALLBACK'
         }, {
           'get': {
               'method': 'JSONP'
