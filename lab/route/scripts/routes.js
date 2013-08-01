@@ -1,17 +1,17 @@
-angular.module('App').config(
+angular.module('app').config(
 
   function($routeProvider) {
     $routeProvider
       .when(
         '/', 
         {
-          controller: HomeCtrl, 
+          controller: 'HomeCtrl',
           templateUrl:'views/home.html'}
       )
       .when(
         '/about', 
         {
-          controller: AboutCtrl, 
+          controller: 'AboutCtrl',
           templateUrl:'views/about.html'
         }
       );
