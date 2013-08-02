@@ -7,6 +7,7 @@ https://github.com/codefuze/js-mobile-tablet-redirect/blob/master/mobile-redirec
 */
 
 (function() {
+  
   var DeviceCheck = {
 
     init : function() {
@@ -35,7 +36,8 @@ https://github.com/codefuze/js-mobile-tablet-redirect/blob/master/mobile-redirec
   DeviceCheck.init();
 
   window.$.device = {
-    type : DeviceCheck.type
+    type : DeviceCheck.type,
+    userAgent : DeviceCheck.userAgent
   };
 
 })();
