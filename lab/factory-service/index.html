@@ -1,0 +1,71 @@
+<html ng-app="app">
+<head>
+  <meta chartset="UTF-8">
+  <title>AngularJS : Factory and Service</title>
+</head>
+<body>
+  <div ng-controller="theController">
+    {{providerValue}} 
+    <br /><br />
+    {{factoryValue}} 
+    <br /><br />
+    {{serviceValue}}
+  </div>
+
+  <script type="text/javascript" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      "use strict";
+
+      //---
+
+      var Service = (function() {
+        var ClassDef = function() {};
+
+        ClassDef.prototype.log = function() {
+          return 'Service';
+        };
+
+        return ClassDef;
+      })();
+
+      var s = new Service();
+
+      console.log(s.log());
+
+      //---
+
+      var app = angular.module('app', []);
+
+      app.provider('theProvider', { $get: function() {
+        return 'Provider';
+      } });
+
+      app.factory('theFactory', function() {
+        return 'Factory';
+      });
+
+      app.service('theService', Service); // instantiate new object when inject
+
+      app.controller(
+        // controller name
+        'theController', 
+
+        // inject dependencies
+        ['$scope', 'theProvider', 'theFactory', 'theService',
+
+      // controller code  
+      function($scope, theProvider, theFactory, theService) {
+
+        $scope.providerValue = theProvider;
+        
+        $scope.factoryValue = theFactory;
+
+        $scope.serviceValue = theService.log();
+
+      }]);
+
+    })();
+  </script>
+</body>
+</html>
