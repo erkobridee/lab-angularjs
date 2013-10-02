@@ -14,17 +14,17 @@ require({
   // define js scripts dependencies
   shim: {
 
-    'app': { 
+    'app-main': { 
       deps: ['angular'] 
     },
 
     'controllers': { 
-      deps: ['app'] 
+      deps: ['app-main'] 
     },
 
-    'start_app': { 
+    'app-start': { 
       deps: [ 
-        'app', 
+        'app-main', 
         'controllers'
       ] 
     }
@@ -37,8 +37,8 @@ require({
 
 function(require) {
 
-  console.log('calling start_app.js');
+  console.log('calling app-start.js');
 
-  require(['start_app']);
+  require(['app-start']);
 
 });
