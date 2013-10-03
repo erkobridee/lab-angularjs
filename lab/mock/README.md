@@ -18,4 +18,7 @@ A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js
 
 * 03 - Separando o código javascript do Mock em outro diretório. Evolução do 02.
 
-* 04 - Definindo um novo módulo, onde estará a definição do Mock, sendo esse associado como dependência do módulo da aplicação, quando este for utilizado. Evolução do 03.
+* 04 - Definido um novo módulo, onde estará a definição do Mock, sendo esse associado como dependência do módulo da aplicação, quando este for utilizado. Evolução do 03.
+
+* 05 - Definido uma classe de serviço para gerenciar os mocks, onde nesta classe são adicionado os "recursos" e posteriormente estes são configurados para responder as requisições http que serão interceptadas. Evolução do 04.
+
