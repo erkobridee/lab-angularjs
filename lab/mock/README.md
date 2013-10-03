@@ -22,3 +22,6 @@ A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js
 
 * 05 - Definido uma classe de serviço para gerenciar os mocks, onde nesta classe são adicionado os "recursos" e posteriormente estes são configurados para responder as requisições http que serão interceptadas. Evolução do 04.
 
+* 06 - Associando a classe de serviço de suporte ao mock utilizando o httpBackend, ao namespace angular.mock do angular-mocks.js. Evolução do 05.
+
+
