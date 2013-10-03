@@ -10,6 +10,8 @@
     {{factoryValue}} 
     <br /><br />
     {{serviceValue}}
+    <br /><br />
+    {{singletonValue}}
   </div>
 
   <script type="text/javascript" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
@@ -33,7 +35,37 @@
 
       console.log(s.log());
 
-      //---
+      //--- === ---
+
+      var Singleton = (function() {
+
+        var instance;
+
+        var ClassDef = function() {
+          if ( instance )
+            return instance;
+          instance = this;
+        };
+
+        ClassDef.prototype.value = 'Singleton Value';
+
+        ClassDef.prototype.log = function() {
+          return 'Singleton';
+        };
+
+        return ClassDef;
+      })();
+
+      var s1 = new Singleton(),
+          s2 = new Singleton();
+
+      console.log( s1 === s2 );
+      console.log( 's1.value: ' + s1.value + ' | s2.value: ' + s2.value );
+      console.log( 'set s1.value = new Singleton Value ' );
+      s1.value = 'new Singleton Value';
+      console.log( 's1.value: ' + s1.value + ' | s2.value: ' + s2.value );
+
+      //--- === ---
 
       var app = angular.module('app', []);
 
@@ -47,21 +79,26 @@
 
       app.service('theService', Service); // instantiate new object when inject
 
+      app.service('theSingletonService', Singleton);
+
       app.controller(
         // controller name
         'theController', 
 
         // inject dependencies
-        ['$scope', 'theProvider', 'theFactory', 'theService',
+        ['$scope', 'theProvider', 'theFactory', 
+         'theService', 'theSingletonService',
 
       // controller code  
-      function($scope, theProvider, theFactory, theService) {
+      function($scope, theProvider, theFactory, theService, theSingletonService) {
 
         $scope.providerValue = theProvider;
         
         $scope.factoryValue = theFactory;
 
         $scope.serviceValue = theService.log();
+
+        $scope.singletonValue = theSingletonService.value;
 
       }]);
 
