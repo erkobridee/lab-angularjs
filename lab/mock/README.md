@@ -1,5 +1,7 @@
 # Angular.js - MOCKS
 
+A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js para criar o suporte do mock, onde seja possível realizar as requisições HTTP, através do $http ou $resource, sendo essas capturadas e processadas pelo $httpBackend
+
 ## Links de referência
 
 * [$httpBackend | Angular.js Docs](http://docs.angularjs.org/api/ngMock.$httpBackend)
