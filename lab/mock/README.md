@@ -24,4 +24,5 @@ A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js
 
 * 06 - Associando a classe de serviço de suporte ao mock utilizando o httpBackend, ao namespace angular.mock do angular-mocks.js. Evolução do 05.
 
+* 07 - O suporte para mock do Backend utilizando o httpBackend foi reestruturado em um módulo do angular, nomeado como "ngMockBackend". Testes de compabilidade executados com as versões do angular: 1.0.7 | 1.0.8 | 1.1.5 | 1.2.0-rc.2. Evolução do 06.
 
