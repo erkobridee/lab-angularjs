@@ -1,8 +1,31 @@
 (function(angular) {
   "use strict";
 
-  // service support 
-  angular.mock.service = (function() {
+
+  //--- Custom Error
+
+  var LibError = (function() {
+    var ClassDef = function(message) {
+      this.name = 'Library Unavailable Error';
+      this.message = message;
+    };
+
+    ClassDef.prototype = new Error();
+
+    return ClassDef;
+  })();
+
+
+  //--- Check Libs
+
+  if(!angular) throw new LibError('AngularJS');
+  if(!angular.mock) throw new LibError('AngularJS Mocks (angular-mocks.js)');
+
+
+  //--- Backend mock support 
+
+    // add to angular-mocks namespace
+  angular.mock.backend = (function() {
     
     var regexpUrl = function(regexp) {
       return {
@@ -24,7 +47,7 @@
     };
 
     ClassDef.prototype.config = function(angular, httpBackend) {
-      configJSONP(httpBackend);
+      //configJSONP(httpBackend);
       configResources(angular, httpBackend);
     };
 
@@ -58,13 +81,20 @@
 
   })();
 
+
+  //--- Global Configs
+
+  var MODULE_NAME = 'ngMockBackend';
+
+  var RUN_LOOP_TIMEOUT = 500;
+
+  //--- Module Definition
+
+  var ngMockBackend = angular.module( MODULE_NAME, [] );
+
   //---
 
-  angular.module('app.mock', []);
-
-  //---
-
-  angular.module('app.mock').service('MockService', angular.mock.service);
+  ngMockBackend.service('ngMockBackendService', angular.mock.backend);
 
   //---
 
@@ -72,7 +102,7 @@
 
     // You can also just use provide to blanket replace $httpBackend 
     // with the mock
-  angular.module('app.mock').config(
+  ngMockBackend.config(
 
     ['$provide', 
 
@@ -89,13 +119,13 @@
 
     // Mark urls that match regexp as a match,
     // you can pass this as the url argument to $httpBackend.[when|expect]
-  angular.module('app.mock').run(
+  ngMockBackend.run(
 
-    ['$httpBackend', '$timeout', 'MockService',
+    ['$httpBackend', '$timeout', 'ngMockBackendService',
 
-  function($httpBackend, $timeout, MockService) {
+  function($httpBackend, $timeout, service) {
 
-    MockService.config(angular, $httpBackend);
+    service.config(angular, $httpBackend);
 
     //---
 
@@ -107,9 +137,9 @@
       } catch (err) {
         // ignore that there's nothing to flush
       }
-      $timeout(flushBackend, 500);
+      $timeout(flushBackend, RUN_LOOP_TIMEOUT);
     };
-    $timeout(flushBackend, 500);
+    $timeout(flushBackend, RUN_LOOP_TIMEOUT);
 
   }]);
 
