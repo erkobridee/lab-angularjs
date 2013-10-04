@@ -16,9 +16,12 @@
   })();
 
 
-  //--- Check Libs
+  //--- Check
 
+    // angular
   if(!angular) throw new LibError('AngularJS');
+
+    // angular mocks namespace
   if(!angular.mock) throw new LibError('AngularJS Mocks (angular-mocks.js)');
 
 
@@ -36,7 +39,8 @@
       };
     };
 
-    //---
+
+    //--- Singleton class definition : used to angular service
 
     var instance;
 
@@ -47,18 +51,11 @@
     };
 
     ClassDef.prototype.config = function(angular, httpBackend) {
-      //configJSONP(httpBackend);
       configResources(angular, httpBackend);
     };
 
-    //---
 
-    var configJSONP = function(httpBackend) {
-      // Allow JSONP to pass to external services (ie Solr) 
-      httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
-    };
-
-    //---
+    //--- mocked resources
 
     var resources = [];
 
