@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS : mock with httpBackend</title>
+</head>
+<body>
+  
+  <div ng-controller="UserCtrl" class="no-cloak">
+    <ul>
+        <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
+        
+        <button ng-click="addUser()">Add user (HTTP POST)</button>
+    </ul>
+  </div>
+
+  <!-- test: ok - running
+  <script src="http://code.angularjs.org/1.0.7/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.0.7/angular-mocks.js"></script>
+  -->
+
+  <!-- test: ok - running -->
+  <script src="http://code.angularjs.org/1.0.8/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.0.8/angular-mocks.js"></script>
+
+  <!-- test: ok - running
+  <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.5/angular-mocks.js"></script>
+  -->
+
+  <!-- test: ok - running
+  <script src="http://code.angularjs.org/1.2.0-rc.2/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.2.0-rc.2/angular-mocks.js"></script>
+  -->
+
+  <script src="scripts/mock/angular-mocks-backend.js"></script>
+  <script src="scripts/mock/resources/allow-jsonp-pass-external.js"></script>
+  <script src="scripts/mock/resources/UserMock.js"></script>
+
+  
+  <script src="scripts/app-main.js"></script>
+  <script src="scripts/controllers/UserCtrl.js"></script>
+  
+  <script src="scripts/app-start.js"></script>
+
+</body>
+</html>
