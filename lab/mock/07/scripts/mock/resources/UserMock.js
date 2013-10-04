@@ -1,4 +1,5 @@
 angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
+  'use strict';
 
   // Some statefullness
   var users = {
