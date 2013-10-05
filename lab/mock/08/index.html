@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS : mock with httpBackend</title>
+</head>
+<body>
+  
+  <div ng-controller="UserCtrl" class="no-cloak">
+    <ul>
+        <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
+        
+        <button ng-click="addUser()">Add user (HTTP POST)</button>
+    </ul>
+  </div>
+
+  <!-- 
+  about google chrome console error 
+  https://github.com/jrburke/requirejs/issues/876
+
+  caused by Evernote extension on Chrome
+  -->
+
+  <script 
+    data-main="scripts/app-config" 
+    src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
+
+
+  <script type="text/javascript">
+  (function() {
+    'use strict';
+
+    var obj = {
+      'att1': 'value 1',
+      'att-2': 'value 2'
+
+    };
+
+    console.log(obj)
+
+    console.log(obj['att-2'])
+
+  })();
+  </script>
+
+</body>
+</html>
