@@ -26,3 +26,5 @@ A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js
 
 * 07 - O suporte para mock do Backend utilizando o httpBackend foi reestruturado em um módulo do angular, nomeado como "ngMockBackend". Testes de compabilidade executados com as versões do angular: 1.0.7 | 1.0.8 | 1.1.5 | 1.2.0-rc.2. Evolução do 06.
 
+* 08 - Incluído o require.js para gerenciar as dependências de bibliotecas da aplicação e dependências entre os arquivos JavaScript, onde no arquivo de configuração para o require.js através de um flag, a aplicação é configurada ou não para utilizar o mock. Evolução do 07.
+
