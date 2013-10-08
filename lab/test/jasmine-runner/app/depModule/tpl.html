@@ -6,5 +6,5 @@
 <br>
 <p>
   <input type="text" name="messageField" ng-model="message">
-  : {{toExciteMsg(message)}} | {{toQuestionMsg(message)}}
+  : {{toExciteMsg(message)}} | {{toQuestionMsg(message)}} | {{message | reverse}} | {{message | reverse:true}}
 </p>
