@@ -1,17 +1,23 @@
 describe('Unit: Testing Dependency Controller', function() {
 
-  beforeEach(module('app.dep'));
-
   var ctrl, scope;
 
-  beforeEach(inject(function($controller, $rootScope) {
-    scope = $rootScope.$new();
+  // excuted before each "it" is run
+  beforeEach(function() {
 
-    ctrl = $controller('DependencyCtrl', {
-      $scope: scope
-    });
-  }));
+     // load the module
+    module('app.dep');
 
+    // inject dependencies
+    inject(function($controller, $rootScope) {
+      scope = $rootScope.$new();
+
+      ctrl = $controller('DependencyCtrl', {
+        $scope: scope
+      });
+    });    
+
+  });
 
   it('should have a value to equal \'Application Dependency Module Value\'', function() {
     expect(scope.value).toEqual('Application Dependency Module Value');

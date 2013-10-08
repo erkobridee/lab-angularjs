@@ -4,14 +4,27 @@ angular.module('app.dep').controller(
   'DependencyCtrl', 
 
   // dependencies injection
-  ['$scope', 
+  ['$scope', 'DependencyFactory', 'DependencyService',
 
-function($scope) {
+function($scope, depFactory, depService) {
 
   $scope.value = 'Application Dependency Module Value';
 
+  $scope.message = 'This is a message';
+
+
   $scope.sum = function(a, b) {
     return a+b;
+  };
+
+  $scope.toExciteMsg = function(msg) {
+    return depFactory.exciteText(msg);
+  };
+
+  console.log(depService);
+
+  $scope.toQuestionMsg = function(msg) {
+    return depService.questionText(msg);
   };
 
 }]);
