@@ -10,7 +10,7 @@ function($scope, depFactory, depService) {
 
   $scope.value = 'Application Dependency Module Value';
 
-  $scope.message = 'This is a message';
+  $scope.message = 'This is Sparta';
 
 
   $scope.sum = function(a, b) {
