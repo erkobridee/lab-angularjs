@@ -1,5 +1,10 @@
+<p><a href="#/">Got back to Home</a></p>
+<br>
 <p>{{value}}</p>
 <br>
 <p> 123 + 321 = {{sum(123,321)}}</p>
 <br>
-<p><a href="#/">Home</a></p>
+<p>
+  <input type="text" name="messageField" ng-model="message">
+  : {{toExciteMsg(message)}} | {{toQuestionMsg(message)}}
+</p>
