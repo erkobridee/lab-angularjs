@@ -18,6 +18,7 @@ function() {
     template: '<div class="widget"><div class="content" ng-transclude></div></div>',
 
     link: function(scope, element, attrs) {
+      //console.log('depWidgetInline directive');
       element.prepend("<div class='title'>" + attrs.title + "</div>");
     }
 

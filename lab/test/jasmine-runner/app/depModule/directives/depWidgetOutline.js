@@ -19,8 +19,15 @@ function() {
       title: '@'
     },
 
-    //template: '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>'
-    templateUrl: 'depModule/directives/depWidget.tpl.html'
+    //template: '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>',
+    templateUrl: 'depModule/directives/depWidget.tpl.html',
+
+    link: function(scope, element, attrs) {
+      //console.log('depWidgetOutLine directive link');
+      // fallback
+      if(!scope.title) scope.title = attrs.title || '';
+    }
+    
 
   };
 
