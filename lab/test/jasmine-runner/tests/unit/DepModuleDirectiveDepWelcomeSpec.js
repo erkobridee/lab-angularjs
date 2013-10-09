@@ -23,7 +23,7 @@ describe('Unit: Testing Dependency depWelcome Directive', function() {
       scope.$digest();
 
       var html = element.html();
-      console.log(html);
+      //console.log(html);
 
       expect(html).toMatch(/Welcome/i);
     });
