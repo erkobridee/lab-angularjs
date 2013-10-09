@@ -5,8 +5,6 @@ Angular.js App following bdd (modularity) architecture style
 
 ## TODO
 
-* create and test angular.js directive
-
 * create some URL request to some backend, and test this operation using $httpBackend to mock response
 
 
