@@ -21,8 +21,6 @@ function($scope, depFactory, depService) {
     return depFactory.exciteText(msg);
   };
 
-  console.log(depService);
-
   $scope.toQuestionMsg = function(msg) {
     return depService.questionText(msg);
   };
