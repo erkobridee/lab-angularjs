@@ -56,7 +56,7 @@
     ];
 
     config.paths['angular-mocks-backend'] = [
-      '../libs/angular-mocks-backend'
+      'libs/angular-mocks-backend'
     ];
 
     config.paths['main/module'] = [
