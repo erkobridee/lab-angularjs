@@ -1,4 +1,4 @@
-describe('Unit: Testing Dependency Factory', function() {
+describe('Unit: Testing modules.dep1 Factory', function() {
 
   var factory;
 
@@ -6,11 +6,11 @@ describe('Unit: Testing Dependency Factory', function() {
   beforeEach(function() {
 
      // load the module
-    module('app.dep');
+    module('modules.dep1');
 
     // inject dependencies
-    inject(function(DependencyFactory) {
-      factory = DependencyFactory;
+    inject(function(Dep1Factory) {
+      factory = Dep1Factory;
     });    
 
   });

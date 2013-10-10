@@ -1,7 +1,7 @@
 angular.module('modules.dep1').filter(
 
   // filter name
-  'dep1reverse', 
+  'reverse', 
 
 function() {
   

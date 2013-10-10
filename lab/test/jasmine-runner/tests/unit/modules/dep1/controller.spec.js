@@ -1,4 +1,4 @@
-describe('Unit: Testing Dependency Controller', function() {
+describe('Unit: Testing modules.dep1 Controller', function() {
 
   var ctrl, scope;
 
@@ -6,13 +6,13 @@ describe('Unit: Testing Dependency Controller', function() {
   beforeEach(function() {
 
      // load the module
-    module('app.dep');
+    module('modules.dep1');
 
     // inject dependencies
     inject(function($controller, $rootScope) {
       scope = $rootScope.$new();
 
-      ctrl = $controller('DependencyCtrl', {
+      ctrl = $controller('Dep1Ctrl', {
         $scope: scope
       });
     });    

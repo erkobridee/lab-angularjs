@@ -1,4 +1,4 @@
-describe('Unit: Testing Dependency Filter', function() {
+describe('Unit: Testing modules.dep1 Filter', function() {
 
   var filter;
 
@@ -6,7 +6,7 @@ describe('Unit: Testing Dependency Filter', function() {
   beforeEach(function() {
 
      // load the module
-    module('app.dep');
+    module('modules.dep1');
 
     // inject dependencies
     inject(function($filter) {

@@ -1,7 +1,7 @@
 angular.module('modules.dep1').directive(
 
   // directive name
-  'dep1WidgetOutline', 
+  'depWidgetOutline', 
 
 // directive definition
 function() {

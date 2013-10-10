@@ -1,4 +1,4 @@
-describe('Unit: Testing Dependency depWidgetOutline Directive', function() {
+describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
 
   var scope, compile;
 
@@ -6,9 +6,8 @@ describe('Unit: Testing Dependency depWidgetOutline Directive', function() {
   beforeEach(function() {
 
     //load the module
-    //module('app.dep');
-
-    module('app.dep', function($provide) {
+    //module('modules.dep1');
+    module('modules.dep1', function($provide) {
 
       // decorate directive
       // http://angular-tips.com/blog/2013/09/experiment-decorating-directives/

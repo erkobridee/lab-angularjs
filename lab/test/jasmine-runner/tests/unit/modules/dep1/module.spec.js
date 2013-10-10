@@ -1,9 +1,9 @@
-describe('Angular.js \'app.dep\' Module', function() {
+describe('Angular.js \'modules.dep1\' Module', function() {
 
   var module;
 
   beforeEach(function() {
-    module = angular.module('app.dep');
+    module = angular.module('modules.dep1');
   });
 
   it("should be registered", function() {

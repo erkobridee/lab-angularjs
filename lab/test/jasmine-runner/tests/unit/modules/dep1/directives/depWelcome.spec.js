@@ -1,4 +1,4 @@
-describe('Unit: Testing Dependency depWelcome Directive', function() {
+describe('Unit: Testing modules.dep1 depWelcome Directive', function() {
 
   var scope, compile;
 
@@ -6,7 +6,7 @@ describe('Unit: Testing Dependency depWelcome Directive', function() {
   beforeEach(function() {
 
     //load the module
-    module('app.dep');
+    module('modules.dep1');
     
     // inject dependencies
     inject(function($rootScope, $compile) {
