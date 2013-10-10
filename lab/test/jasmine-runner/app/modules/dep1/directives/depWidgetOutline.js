@@ -1,4 +1,4 @@
-angular.module('app.dep').directive(
+angular.module('modules.dep1').directive(
 
   // directive name
   'depWidgetOutline', 
@@ -20,7 +20,7 @@ function() {
     },
 
     //template: '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>',
-    templateUrl: 'depModule/directives/depWidget.tpl.html',
+    templateUrl: 'modules/dep1/directives/depWidget.tpl.html',
 
     link: function(scope, element, attrs) {
       //console.log('depWidgetOutLine directive link');

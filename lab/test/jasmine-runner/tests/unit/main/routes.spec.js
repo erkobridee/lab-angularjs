@@ -58,18 +58,18 @@ describe('Angular.js \'app\' Routes', function() {
     });
 
     
-    describe('location \'/dep\'', function() {
+    describe('location \'/dep1\'', function() {
 
       it('should be defined', function() {
-        expect(route.routes['/dep']).toBeDefined();
+        expect(route.routes['/dep1']).toBeDefined();
       });
 
       it('should map to controller DependencyCtrl', function() {
-        expect(route.routes['/dep'].controller).toBe('DependencyCtrl');
+        expect(route.routes['/dep1'].controller).toBe('Dep1Ctrl');
       });
 
       it('should map to templateUrl depModule/tpl.html', function() {
-        expect(route.routes['/dep'].templateUrl).toEqual('depModule/tpl.html');
+        expect(route.routes['/dep1'].templateUrl).toEqual('modules/dep1/tpl.html');
       });
 
     });    

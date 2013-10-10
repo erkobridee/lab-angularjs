@@ -1,4 +1,4 @@
-describe('Unit: Testing Dependency Service', function() {
+describe('Unit: Testing modules.dep1 Service', function() {
 
   var service;
 
@@ -6,11 +6,11 @@ describe('Unit: Testing Dependency Service', function() {
   beforeEach(function() {
 
      // load the module
-    module('app.dep');
+    module('modules.dep1');
 
     // inject dependencies
-    inject(function(DependencyService) {
-      service = DependencyService;
+    inject(function(Dep1Service) {
+      service = Dep1Service;
     });    
 
   });

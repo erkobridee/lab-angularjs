@@ -22,8 +22,8 @@ describe('Angular.js \'app\' Module', function() {
       deps = module.value('appName').requires;
     });
 
-    it('should have app.dep as a dependency', function() {
-      expect(hasModule('app.dep')).toEqual(true);
+    it('should have modules.dep1 as a dependency', function() {
+      expect(hasModule('modules.dep1')).toEqual(true);
     });
 
   });

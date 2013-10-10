@@ -20,10 +20,10 @@ function($routeProvider) {
         }
       )
       .when(
-        '/dep', 
+        '/dep1', 
         {
-          controller: 'DependencyCtrl',
-          templateUrl: 'depModule/tpl.html'
+          controller: 'Dep1Ctrl',
+          templateUrl: 'modules/dep1/tpl.html'
         }
       )
       .otherwise({

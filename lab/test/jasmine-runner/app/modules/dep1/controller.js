@@ -1,10 +1,10 @@
-angular.module('app.dep').controller(
+angular.module('modules.dep1').controller(
   
   // controller name
-  'DependencyCtrl', 
+  'Dep1Ctrl', 
 
   // dependencies injection
-  ['$scope', 'DependencyFactory', 'DependencyService',
+  ['$scope', 'Dep1Factory', 'Dep1Service',
 
 function($scope, depFactory, depService) {
 

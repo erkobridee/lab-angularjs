@@ -1,4 +1,4 @@
-angular.module('app.dep').filter(
+angular.module('modules.dep1').filter(
 
   // filter name
   'reverse', 
