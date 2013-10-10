@@ -26,15 +26,15 @@
     // define js scripts dependencies 
     shim: {
 
-      'app-main': { 
+      'main/module': { 
         deps: ['angular'] 
       },
 
       'controllers/UserCtrl': { 
-        deps: ['app-main'] 
+        deps: ['main/module'] 
       },
 
-      'app-start': { 
+      'main/start': { 
         deps: [
           'controllers/UserCtrl'
         ] 
@@ -56,11 +56,11 @@
     ];
 
     config.paths['angular-mocks-backend'] = [
-      'mock/angular-mocks-backend'
+      '../libs/angular-mocks-backend'
     ];
 
-    config.paths['app-main'] = [
-      'app-mock'
+    config.paths['main/module'] = [
+      'main/module.mock'
     ];
 
     //------------------
@@ -74,18 +74,18 @@
       deps: ['angular', 'angular-mocks']
     };
 
-    config.shim['mock/resources/allow-jsonp-pass-external'] = {
+    config.shim['resources/mock/allow-jsonp-pass-external'] = {
       deps: ['angular-mocks-backend']
     };
 
-    config.shim['mock/resources/UserMock'] = {
+    config.shim['resources/mock/UserMock'] = {
       deps: ['angular-mocks-backend']
     };
 
-    config.shim['app-main'].deps.push('angular-mocks-backend');
+    config.shim['main/module'].deps.push('angular-mocks-backend');
 
-    config.shim['app-start'].deps.push('mock/resources/allow-jsonp-pass-external');
-    config.shim['app-start'].deps.push('mock/resources/UserMock');
+    config.shim['main/start'].deps.push('resources/mock/allow-jsonp-pass-external');
+    config.shim['main/start'].deps.push('resources/mock/UserMock');
 
   }
 
@@ -99,9 +99,9 @@
 
   function(require) {
 
-    console.log('calling app-start.js');
+    console.log('calling main/start.js');
 
-    require(['app-start']);
+    require(['main/start']);
 
   });
 
