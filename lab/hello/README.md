@@ -19,3 +19,5 @@
 
 * 08 - última etapa de otimização, onde toda a configuração da aplicação Angular.js é definida através de uma configuração para o require.js
 
+* 09 - definido um diretório /main para centralizar as configurações principais da aplicação, como definição do módulo e inicialização da aplicação, onde a aplicação é configurada usando o require.js
+
