@@ -26,15 +26,15 @@
     // define js scripts dependencies 
     shim: {
 
-      'app-main': { 
+      'main/module': { 
         deps: ['angular'] 
       },
 
       'controllers/UserCtrl': { 
-        deps: ['app-main'] 
+        deps: ['main/module'] 
       },
 
-      'app-start': { 
+      'main/start': { 
         deps: [
           'controllers/UserCtrl'
         ] 
@@ -59,8 +59,8 @@
       'mock/angular-mocks-backend'
     ];
 
-    config.paths['app-main'] = [
-      'app-mock'
+    config.paths['main/module'] = [
+      'main/module.mock'
     ];
 
     //------------------
@@ -82,10 +82,10 @@
       deps: ['angular-mocks-backend']
     };
 
-    config.shim['app-main'].deps.push('angular-mocks-backend');
+    config.shim['main/module'].deps.push('angular-mocks-backend');
 
-    config.shim['app-start'].deps.push('mock/resources/allow-jsonp-pass-external');
-    config.shim['app-start'].deps.push('mock/resources/UserMock');
+    config.shim['main/start'].deps.push('mock/resources/allow-jsonp-pass-external');
+    config.shim['main/start'].deps.push('mock/resources/UserMock');
 
   }
 
@@ -99,9 +99,9 @@
 
   function(require) {
 
-    console.log('calling app-start.js');
+    console.log('calling main/start.js');
 
-    require(['app-start']);
+    require(['main/start']);
 
   });
 
