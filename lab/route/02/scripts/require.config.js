@@ -31,28 +31,28 @@ require({
       deps: ['angular']
     },
 
-    'app-main': { 
+    'main/module': { 
       deps: ['angular', 'angular_resource'] 
     },
 
     'controllers/home': { 
-      deps: ['app-main'] 
+      deps: ['main/module'] 
     },
 
     'controllers/about': { 
-      deps: ['app-main'] 
+      deps: ['main/module'] 
     },
 
-    'app-routes': {
+    'main/routes': {
       deps: [
         'controllers/home',
         'controllers/about'
       ]
     },
 
-    'app-start': { 
+    'main/start': { 
       deps: [ 
-        'app-routes'
+        'main/routes'
       ] 
     }
 
@@ -62,8 +62,8 @@ require({
 
 ['require'], function(require) {
 
-  console.log('calling app-start.js');
+  console.log('calling main/start.js');
 
-  require(['app-start']);
+  require(['main/start']);
 
 });
