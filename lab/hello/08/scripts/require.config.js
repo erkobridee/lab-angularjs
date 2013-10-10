@@ -5,8 +5,7 @@ require({
 
     angular: [ 
       'http://code.angularjs.org/1.1.5/angular.min',
-      '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min',
-      '//scripts/libs/angular.min'
+      '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min'
     ]
 
   },
@@ -14,12 +13,12 @@ require({
   // define js scripts dependencies
   shim: {
 
-    'app-main': { 
+    'app-module': { 
       deps: ['angular'] 
     },
 
     'controllers': { 
-      deps: ['app-main'] 
+      deps: ['app-module'] 
     },
 
     'app-start': { 
