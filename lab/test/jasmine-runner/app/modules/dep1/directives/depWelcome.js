@@ -1,7 +1,7 @@
-angular.module('app.dep').directive(
+angular.module('modules.dep1').directive(
 
   // directive name
-  'depWelcome', 
+  'dep1Welcome', 
 
 // directive definition
 function() {
@@ -9,9 +9,9 @@ function() {
   return {
 
     restrict: 'EA', 
-      // E - Element <dep-welcome>User</dep-welcome> 
-      // A - Attribute <div data-dep-welcome>User</div>
-      // C - Class <div class="dep-welcome">User</div>
+      // E - Element <dep1-welcome>User</dep-welcome> 
+      // A - Attribute <div data-dep1-welcome>User</div>
+      // C - Class <div class="dep1-welcome">User</div>
     //transclude: false,
     
     link: function(scope, element, attrs) {

@@ -1,7 +1,7 @@
-angular.module('app.dep').directive(
+angular.module('modules.dep1').directive(
 
   // directive name
-  'depWidgetInline', 
+  'dep1WidgetInline', 
 
 // directive definition
 function() {

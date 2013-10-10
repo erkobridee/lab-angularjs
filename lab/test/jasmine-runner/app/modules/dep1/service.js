@@ -4,6 +4,7 @@
   var service = (function () {
 
     // class definition
+    //function ClassDef($http) {}
     function ClassDef() {}
 
     // private
@@ -20,13 +21,13 @@
 
   })();
 
-  angular.module('app.dep').service(
+  angular.module('modules.dep1').service(
 
     // service name
-    'DependencyService', 
+    'Dep1Service', 
 
     // dependencies injection
-    [ '$http', //,
+    [ //'$http', //,
 
     service // when service called will return new instance
 
