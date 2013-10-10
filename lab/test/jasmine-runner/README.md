@@ -12,9 +12,17 @@ Angular.js App following bdd (modularity) architecture style
 
 * [Code Organization in Large AngularJS and JavaScript Applications | Cliff Meyers](http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript)
 
+--
+
+* [Experiment: decorating directives | Angular Tips](http://angular-tips.com/blog/2013/09/experiment-decorating-directives/)
+
+--
+
 * [Jasmine](http://pivotal.github.io/jasmine/)
 
 * [How do I Jasmine: a tutorial | Evan Hahn](http://evanhahn.com/how-do-i-jasmine/)
+
+--
 
 * Try, Catch, Fail : AngularJS - Unit Testing
 
