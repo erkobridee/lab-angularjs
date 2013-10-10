@@ -43,7 +43,7 @@ require({
       deps: ['app-main'] 
     },
 
-    'routes': {
+    'app-routes': {
       deps: [
         'controllers/home',
         'controllers/about'
@@ -52,7 +52,7 @@ require({
 
     'app-start': { 
       deps: [ 
-        'routes'
+        'app-routes'
       ] 
     }
 
