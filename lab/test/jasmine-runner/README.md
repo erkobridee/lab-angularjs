@@ -2,10 +2,23 @@
 
 Angular.js App following bdd (modularity) architecture style
 
+## Unit Test
 
-## TODO
+### Done
+  
+* Module
+* Routes
+* Controller
+* Directive
+* Filter
+* Factory
+* Service
 
-* create some URL request to some backend, and test this operation using $httpBackend to mock response
+### TODO
+
+* Async Service
+* Resource
+* Backend Request
 
 
 ## Links
