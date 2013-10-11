@@ -8,7 +8,9 @@
 <script type="text/javascript">
 var customTags = ['ng-include', 'ng-pluralize', 'ng-view']
 .concat(["ng:include", "ng:pluralize", "ng:view"]);// Optionally these for CSS
-for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);</script>
+for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);
+if(!window.console) window.console = {}; window.console.log = function(msg) {}; 
+</script>
 <![endif]-->
 
 </head>
