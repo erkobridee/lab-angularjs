@@ -1,6 +1,6 @@
 <p><a href="#/">Back to Home</a></p>
 <ul>
-  <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
+  <li data-ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
   
   <button ng-click="addUser()">Add user (HTTP POST)</button>
 </ul>
