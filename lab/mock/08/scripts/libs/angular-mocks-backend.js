@@ -1,5 +1,10 @@
+/*
+  AngularJS Mocks Backend v0.1.2
+  (c) 2013 Erko Bridee - https://github.com/erkobridee/angular-mocks-backend/releases/tag/v0.1.2
+  License: MIT
+*/
 (function(angular) {
-  "use strict";
+  'use strict';
 
 
   //--- Custom Error
@@ -25,12 +30,46 @@
   if(!angular.mock) throw new LibError('AngularJS Mocks (angular-mocks.js)');
 
 
-  //--- Backend mock support 
+  //--- regexpUrl
 
-    // add to angular-mocks namespace
-  angular.mock.backend = (function() {
-    
-    var regexpUrl = function(regexp) {
+  var regexpUrl = (function() {
+
+   var checkType = function(obj){
+      return Object.prototype.toString.call(obj).slice(8, -1);
+    };
+
+    var buildRegexp = function(sRegexp) {
+      var outRegexp = /\/example$/;
+
+      // replace '/' to '\/' for regexp
+      sRegexp = sRegexp.replace(/\//g, '\\/');
+
+      // check if regexp config with $ at end
+      if(!sRegexp.match(/\$$/)) {
+        sRegexp += '$';
+      }
+
+      outRegexp = new RegExp(sRegexp);
+
+      return outRegexp;
+    };
+
+    var checkRegexp = function(regexp) {
+      var outRegexp, objType = checkType(regexp);
+
+      if('RegExp' === objType) { 
+        outRegexp = regexp;
+      } else if('String' === objType) {
+        outRegexp = buildRegexp(regexp);
+      } else {
+        outRegexp = /_undefined_$/;
+        throw 'wrong regexp definition : ' + regexp;
+      }
+      return outRegexp;
+    };
+
+    return function(regexp) {
+      regexp = checkRegexp(regexp);
       return {
         test: function(url) {
           this.matches = url.match(regexp);
@@ -39,6 +78,13 @@
       };
     };
 
+  })();
+
+
+  //--- Backend mock support 
+
+    // add to angular-mocks namespace
+  angular.mock.backend = (function() {
 
     //--- Singleton class definition : used to angular service
 
@@ -50,10 +96,16 @@
       instance = this;
     };
 
-    ClassDef.prototype.config = function(angular, httpBackend) {
-      configResources(angular, httpBackend);
+    ClassDef.prototype.config = function(injector) {
+      injector.invoke(['$httpBackend', configAllow]);
+      configResources(injector);
     };
 
+
+    var configAllow = function(httpBackend) {      
+      // Allow get html to load templates
+      httpBackend.when('GET', regexpUrl(/.html$/)).passThrough();
+    };
 
     //--- mocked resources
 
@@ -63,11 +115,11 @@
       if(resource) resources.push(resource);
     };
 
-    var configResources = function(angular, httpBackend) {
+    var configResources = function(injector) {  
       var i = (resources.length - 1);
       
       while(i > -1) {
-        resources[i--](angular, httpBackend, regexpUrl);
+        injector.invoke(resources[i--]);
       }
 
     };
@@ -92,6 +144,12 @@
   //---
 
   ngMockBackend.service('ngMockBackendService', angular.mock.backend);
+
+  ngMockBackend.factory('regexpUrl', function() { return regexpUrl; });
+
+  // TODO: deprecated in futures versions
+  ngMockBackend.factory('angular', function() { return angular; });
+  ngMockBackend.factory('httpBackend', ['$httpBackend', function($httpBackend) { return $httpBackend; }]);
 
   //---
 
@@ -118,11 +176,11 @@
     // you can pass this as the url argument to $httpBackend.[when|expect]
   ngMockBackend.run(
 
-    ['$httpBackend', '$timeout', 'ngMockBackendService',
+    ['$timeout', 'ngMockBackendService', '$injector',
 
-  function($httpBackend, $timeout, service) {
+  function($timeout, service, $injector) {
 
-    service.config(angular, $httpBackend);
+    service.config($injector);
 
     //---
 

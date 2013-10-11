@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>AngularJS : mock with httpBackend</title>
+
+<!--[if lte IE 8]>
+<script type="text/javascript">
+var customTags = ['ng-include', 'ng-pluralize', 'ng-view']
+.concat(["ng:include", "ng:pluralize", "ng:view"]);// Optionally these for CSS
+for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);</script>
+<![endif]-->
+
 </head>
 <body>
-  
-  <div ng-controller="UserCtrl" class="no-cloak">
-    <ul>
-        <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
-        
-        <button ng-click="addUser()">Add user (HTTP POST)</button>
-    </ul>
-  </div>
+
+  <div ng-view></div>
 
   <!-- 
   about google chrome console error 

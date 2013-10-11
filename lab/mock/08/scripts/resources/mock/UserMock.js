@@ -1,4 +1,4 @@
-angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
+angular.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl) {
   'use strict';
 
   // Some statefullness
@@ -7,16 +7,26 @@ angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
   };
   var userId = 1;
 
+  //---
+
+  console.log($rootScope);
+
   //--- routes ---
 
-  httpBackend.when('GET', '/users')
+  var baseURL = '/users';
+
+  // regexpUrl(?) >> accept RegExp object or String
+
+  //httpBackend.when('GET', regexpUrl(/\/users$/))
+  httpBackend.when('GET', regexpUrl(baseURL))
     .respond(function(method, url, data) {
       return [200, angular.copy(users)];
     });
 
   //--
 
-  httpBackend.when('GET', regexpUrl(/users\/(\d+)/))
+  //httpBackend.when('GET', regexpUrl(/\/users\/(\d+)$/))
+  httpBackend.when('GET', regexpUrl(baseURL + '/(\\d+)'))
     .respond(function(method, url, data) {
       data = angular.fromJson(data);
       return [200, angular.copy(users[data.userId])];
@@ -24,7 +34,8 @@ angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
 
   //---
 
-  httpBackend.when('POST', '/users')
+  //httpBackend.when('POST', regexpUrl(/\/users$/))
+  httpBackend.when('POST', regexpUrl(baseURL))
     .respond(function(method, url, data) {
       data = angular.fromJson(data);
 
@@ -37,4 +48,3 @@ angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
     });
 
 });
-

@@ -30,13 +30,29 @@
         deps: ['angular'] 
       },
 
+      'controllers/AboutCtrl': { 
+        deps: ['main/module'] 
+      },
+
+      'controllers/HomeCtrl': { 
+        deps: ['main/module'] 
+      },
+
       'controllers/UserCtrl': { 
         deps: ['main/module'] 
       },
 
+      'main/routes': {
+        deps: [
+          'controllers/AboutCtrl',
+          'controllers/HomeCtrl',
+          'controllers/UserCtrl'
+        ]
+      },
+
       'main/start': { 
         deps: [
-          'controllers/UserCtrl'
+          'main/routes'
         ] 
       }
 
