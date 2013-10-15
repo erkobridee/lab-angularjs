@@ -1,26 +1,45 @@
-angular.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl) {
+angular.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl, getParams) {
   'use strict';
 
   // Some statefullness
+  /*
   var users = {
-    0: {userName: 'mock backend user', userId: 0}
+    0: {userName: 'mock backend user', userId: 0},
+    1: {userName: 'aloha', userId: 1}
   };
-  var userId = 1;
+  */
+  var users = [
+    {userName: 'mock backend user', userId: 0},
+    {userName: 'aloha', userId: 1}
+  ];
+  var userId = 2;
 
   //---
 
+  console.log('$rootScope');
   console.log($rootScope);
 
   //--- routes ---
 
   var baseURL = '/users';
 
+  console.log(getParams(baseURL + '?param1=abc&param2=def'));
+
   // regexpUrl(?) >> accept RegExp object or String
 
   //httpBackend.when('GET', regexpUrl(/\/users$/))
-  httpBackend.when('GET', regexpUrl(baseURL))
+  httpBackend.when('GET', regexpUrl(/users(\?|$)/))
     .respond(function(method, url, data) {
-      return [200, angular.copy(users)];
+      var params = getParams(url);
+      if(params) {
+        var result = [];
+        for(var i = 0, len = users.length; i < len; i++) {
+          if(users[i].userName === params.userName) result.push(users[i]);
+        }
+        return [200, angular.copy(result)];
+      } else {
+        return [200, angular.copy(users)];
+      }
     });
 
   //--
