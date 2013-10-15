@@ -1,6 +1,6 @@
 /*
-  AngularJS Mocks Backend v0.1.2
-  (c) 2013 Erko Bridee - https://github.com/erkobridee/angular-mocks-backend/releases/tag/v0.1.2
+  AngularJS Mocks Backend v0.1.3
+  (c) 2013 Erko Bridee - https://github.com/erkobridee/angular-mocks-backend/releases/tag/v0.1.3
   License: MIT
 */
 (function(angular) {
@@ -80,6 +80,32 @@
 
   })();
 
+  //--- getParams
+
+  var getParams = (function() {
+
+    return function(url) {
+      if(!url.match(/\?/)) return null;
+      var ret = {};
+      var parts = (url.split('?')[1]).split('&');
+      for (var i = 0, len = parts.length; i < len; i++) {
+        var p = parts[i].split('=');
+        // so strings will be correctly parsed:
+        p[1] = decodeURIComponent(p[1].replace(/\+/g, " "));
+
+        if (p[0].search(/\[\]/) >= 0) { // then it's an array
+          p[0] = p[0].replace('[]','');
+          if (typeof ret[p[0]] != 'object') ret[p[0]] = [];
+          ret[p[0]].push(p[1]);
+        } else {
+          ret[p[0]] = p[1];
+        }
+      }
+      return ret;
+    };
+    
+  })();
+
 
   //--- Backend mock support 
 
@@ -146,6 +172,8 @@
   ngMockBackend.service('ngMockBackendService', angular.mock.backend);
 
   ngMockBackend.factory('regexpUrl', function() { return regexpUrl; });
+
+  ngMockBackend.factory('getParams', function() { return getParams; });
 
   // TODO: deprecated in futures versions
   ngMockBackend.factory('angular', function() { return angular; });

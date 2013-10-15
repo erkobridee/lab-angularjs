@@ -29,6 +29,11 @@ angular.module('app').controller(
       });
     };
 
+    $http.get('/users?userName=aloha').success(function(data) {
+      console.log('got userName aloha');
+      console.log(data);
+    });
+
     // Get a list of all the users
     $http.get('/users').success(function(data) {
       console.log("GOT all available users");
