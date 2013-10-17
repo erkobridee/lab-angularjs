@@ -19,6 +19,11 @@
         '//ajax.googleapis.com/ajax/libs/angularjs/'+ANGULAR_VERSION+'/angular.min',
         '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min',
         'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular.min'      
+      ],
+
+      'angular_resource': [
+        '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular-resource.min',
+        'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular-resource.min'
       ]
 
     },
@@ -26,9 +31,21 @@
     // define js scripts dependencies 
     shim: {
 
-      'main/module': { 
+      'angular_resource': {
         deps: ['angular'] 
       },
+
+      'main/module': { 
+        deps: ['angular', 'angular_resource'] 
+      },
+
+      'resources/GitHubUserResource': {
+        deps: ['main/module'] 
+      },
+
+      'controllers/GitHubUserCtrl': { 
+        deps: ['main/module', 'resources/GitHubUserResource'] 
+      },      
 
       'controllers/AboutCtrl': { 
         deps: ['main/module'] 
@@ -44,6 +61,7 @@
 
       'main/routes': {
         deps: [
+          'controllers/GitHubUserCtrl',
           'controllers/AboutCtrl',
           'controllers/HomeCtrl',
           'controllers/UserCtrl'
@@ -72,7 +90,7 @@
     ];
 
     config.paths['angular-mocks-backend'] = [
-      'libs/angular-mocks-backend'
+      '../vendor/angular-mocks-backend'
     ];
 
     config.paths['main/module'] = [
@@ -90,7 +108,7 @@
       deps: ['angular', 'angular-mocks']
     };
 
-    config.shim['resources/mock/allow-jsonp-pass-external'] = {
+    config.shim['resources/mock/allow-pass-external'] = {
       deps: ['angular-mocks-backend']
     };
 
@@ -98,12 +116,17 @@
       deps: ['angular-mocks-backend']
     };
 
+    config.shim['resources/mock/GitHubUserResourceMock'] = {
+      deps: ['angular-mocks-backend']
+    };
+
     config.shim['main/module'].deps.push('angular-mocks-backend');
     
     var mainStartDeps = config.shim['main/start'].deps;
     config.shim['main/start'].deps = mainStartDeps.concat([
-      'resources/mock/allow-jsonp-pass-external',
-      'resources/mock/UserMock'
+      'resources/mock/allow-pass-external',
+      'resources/mock/UserMock',
+      'resources/mock/GitHubUserResourceMock'
     ]);    
 
   }
