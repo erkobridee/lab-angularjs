@@ -37,7 +37,7 @@ angular.mock.backend.addResource(function($httpBackend, regexpUrl, getParams) {
   function findUserByLogin(login) {
     for(var i = 0, len = users.length; i < len; i++) {
       if(users[i].login === login) return users[i];
-    };
+    }
     return null;
   }
 
