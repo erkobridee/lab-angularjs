@@ -100,7 +100,8 @@
 
     config.shim['main/module'].deps.push('angular-mocks-backend');
     
-    config.shim['main/start'].deps.concat([
+    var mainStartDeps = config.shim['main/start'].deps;
+    config.shim['main/start'].deps = mainStartDeps.concat([
       'resources/mock/allow-jsonp-pass-external',
       'resources/mock/UserMock'
     ]);    
