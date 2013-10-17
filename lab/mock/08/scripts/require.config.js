@@ -99,9 +99,11 @@
     };
 
     config.shim['main/module'].deps.push('angular-mocks-backend');
-
-    config.shim['main/start'].deps.push('resources/mock/allow-jsonp-pass-external');
-    config.shim['main/start'].deps.push('resources/mock/UserMock');
+    
+    config.shim['main/start'].deps.concat([
+      'resources/mock/allow-jsonp-pass-external',
+      'resources/mock/UserMock'
+    ]);    
 
   }
 
