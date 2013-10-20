@@ -29,6 +29,7 @@ angular.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl, ge
 
   httpBackend.when('GET', regexpUrl(/local\/users(\?|$)/))
     .respond(function(method, url, data) {
+      console.log(url);
       var params = getParams(url);
       if(params) {
         var result = [];
@@ -51,7 +52,7 @@ angular.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl, ge
 
   //---
 
-  httpBackend.when('POST', regexpUrl(baseURL))
+  httpBackend.when('POST', regexpUrl(baseURL)) 
     .respond(function(method, url, data) {
       data = angular.fromJson(data);
 

@@ -6,13 +6,13 @@ angular.mock.backend.addResource(function($httpBackend, regexpUrl, getParams) {
   //--- URL match
 
   // URL ended with /users without anything else
-  $httpBackend.when('GET', regexpUrl(/users(\/)?$/))
+  $httpBackend.when('GET', regexpUrl(/api\.github\.com\/users(\/)?$/))
     .respond(function(method, url, data) {
       return [404, angular.copy(notFound)];
     });
 
     
-  $httpBackend.when('GET', regexpUrl(/users\/[A-z0-9]+$/))
+  $httpBackend.when('GET', regexpUrl(/api\.github\.com\/users\/[A-z0-9]+$/))
     .respond(function(method, url, data) {
       console.log(url);
       

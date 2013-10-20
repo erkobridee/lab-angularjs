@@ -5,6 +5,6 @@ angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
   httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
 
   // Allow GET users from GitHub API
-  //httpBackend.when('GET', regexpUrl(/users(\/)?([A-z0-9]+)?$/)).passThrough();
+  //httpBackend.when('GET', regexpUrl(/api\.github\.com\/users(\/)?([A-z0-9]+)?$/)).passThrough();
 
 });

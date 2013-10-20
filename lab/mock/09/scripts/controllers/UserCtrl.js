@@ -37,6 +37,7 @@ angular.module('app').controller(
     // Get a list of all the users
     $http.get('/local/users').success(function(data) {
       console.log("GOT all available users");
+      console.log(data);
       $scope.users = data; 
     });
 
