@@ -18,7 +18,7 @@
       'angular': [ 
         '//ajax.googleapis.com/ajax/libs/angularjs/'+ANGULAR_VERSION+'/angular.min',
         '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min',
-        'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular.min'      
+        'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular.min'
       ],
 
       'angular_resource': [
