@@ -15,7 +15,7 @@
 
 * 06 - separação da definição do módulo da aplicação do controllers.js para o arquivo app.js
 
-* 07 - alteração da forma de iniciar a aplicação do Angular.js atrabés da funcionalidade de "inicialização" (bootstrap) do próprio Angular.js
+* 07 - alteração da forma de iniciar a aplicação do Angular.js através da funcionalidade de "inicialização" (bootstrap) do próprio Angular.js
 
 * 08 - última etapa de otimização, onde toda a configuração da aplicação Angular.js é definida através de uma configuração para o require.js
 
