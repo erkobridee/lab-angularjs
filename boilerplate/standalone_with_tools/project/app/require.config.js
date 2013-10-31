@@ -8,15 +8,15 @@ require({
     ],
 
     bootstrap: [
-      '../vendor/bootstrap/js/bootstrap.min'
+      '../vendor/bootstrap/js/bootstrap-3.0.1.min'
     ],
 
     angular: [
-      '../vendor/angular/angular.min'
+      '../vendor/angular/angular-1.1.5.min'
     ],
 
     angular_resource: [
-      '../vendor/angular/angular-resource.min'
+      '../vendor/angular/angular-resource-1.1.5.min'
     ]
 
   },
