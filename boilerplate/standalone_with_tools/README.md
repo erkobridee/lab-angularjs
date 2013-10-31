@@ -2,9 +2,11 @@
 
 Projeto Standalone, com ferramental de suporte para o desenvolvimento
 
+
 ## TODO
 
-* definir e/ou usar um componente para o NavBar, resolvendo o problema de funcionamento do dropdown, em uma app angular.js que possui definição de rotas
+* definir e/ou usar um componente para o NavBar
+
 
 ## Estrutura do projeto
 
