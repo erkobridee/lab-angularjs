@@ -10,24 +10,23 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <!-- Le styles -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- For IE less than 9 -->
   <!--[if lt IE 9]>
-  <script src="vendor/js/html5shiv.js"></script>
-  <script src="vendor/js/respond.min.js"></script>
-
   <script type="text/javascript">
-    var customTags = ['ng-include', 'ng-pluralize', 'ng-view']
+    var customTags = ['ng-include', 'ng-pluralize', 'ng-view', 'ng-repeat']
       //.concat(['tabs', 'pane']) // TODO: ADD HERE APP CUSTOM TAGS
       .concat(['ng:include', 'ng:pluralize', 'ng:view']); // Optionally these for CSS
     for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);
     if(!window.console) window.console = {}; window.console.log = function(msg) {};
   </script>
+
+  <script src="vendor/js/html5shiv.js"></script>
+  <script src="vendor/js/respond.min.js"></script>
   <![endif]-->
 
   <!-- css -->
+  <link href="vendor/bootstrap/css/bootstrap-3.0.1.min.css" rel="stylesheet">
+
   <link href="styles/app.css" rel="stylesheet">
 
   <!-- favicon -->
@@ -42,7 +41,7 @@
 <div class="container ng-view"></div>
 
 <!-- javascript -->
-<script data-main="app/require.config" src="vendor/js/require.min.js"></script>
+<script data-main="app/require.config" src="vendor/js/require-2.1.9.min.js"></script>
 
 </body>
 </html>
