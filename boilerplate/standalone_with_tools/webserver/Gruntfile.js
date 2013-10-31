@@ -15,4 +15,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dev', ['build_dev', 'connect:dev', 'watch']);
 
+  // TODO: define build_prod and prod tasks
+
 };

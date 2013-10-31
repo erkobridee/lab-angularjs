@@ -14,7 +14,7 @@ module.exports = {
     options: {
        // These paths are searched for @imports
       paths: ['<%= app.path %>'],
-      yuicompress: true
+      compress: true
     },
     files: {
       '<%= app.path %>/styles/app.css': '<%= app.path %>/styles/less/app.less'
