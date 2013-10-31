@@ -15,8 +15,13 @@ module.exports = {
       '<%= app.path %>/**/*.js'
     ],
     tasks : [ 'jshint' ]
-  }
+  },
 
-  // TODO: watch less and call less compile task
+  less: {
+    files: [
+      '<%= app.path %>/**/*.less'
+    ],
+    tasks : [ 'less:dev' ]
+  }
 
 };

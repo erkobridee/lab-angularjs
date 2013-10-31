@@ -11,6 +11,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint']); 
 
-  grunt.registerTask('dev', ['jshint', 'connect:dev', 'watch']);
+  grunt.registerTask('build_dev', ['jshint', 'less:dev']);
+
+  grunt.registerTask('dev', ['build_dev', 'connect:dev', 'watch']);
 
 };
