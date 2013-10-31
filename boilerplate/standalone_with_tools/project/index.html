@@ -34,11 +34,24 @@
 
 </head>
 <body>
-<!-- navbar -->
-<div ng-include="'app/main/navbar.tpl.html'"></div>
 
-<!-- app content -->
-<div class="container ng-view"></div>
+<!-- Wrap all page content here -->
+<div id="wrap">
+
+  <!-- navbar -->
+  <div ng-include="'app/main/navbar.tpl.html'"></div>
+
+  <!-- app content -->
+  <div class="container ng-view"></div>
+
+</div>
+
+<div id="footer" class="hidden-xs">
+  <div class="container">
+    <p class="text-muted">Angular.js Modular Boilerplate with dev tools - by <a href="https://twitter.com/erkobridee">@ErkoBridee</a></p>
+  </div>
+</div>
+
 
 <!-- javascript -->
 <script data-main="app/require.config" src="vendor/js/require-2.1.9.min.js"></script>
