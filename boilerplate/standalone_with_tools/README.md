@@ -68,4 +68,4 @@ Projeto Standalone, com ferramental de suporte para o desenvolvimento
 
 * `grunt` >> irá o jshint nos arquivos .js para verificar a qualidade de código
 
-* `grunt dev` >> irá executar o jshin, iniciar o servidor com suporte ao livereload e irá verificar se houve alterações nos arquivos *.html, .css, ou .js* para atualizar a página automaticamente
+* `grunt dev` >> irá executar o jshint, iniciar o servidor com suporte ao livereload e irá verificar se houve alterações nos arquivos *.html, .css, ou .js* para atualizar a página automaticamente
