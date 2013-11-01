@@ -36,3 +36,5 @@ A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js
 * 08 - Incluído o require.js para gerenciar as dependências de bibliotecas da aplicação e dependências entre os arquivos JavaScript, onde no arquivo de configuração para o require.js através de um flag, a aplicação é configurada ou não para utilizar o mock. Evolução do 07.
 
 * 09 - Implementando um recurso "real", consumingo informações de usuários do GitHub e criando o respectivo mock do recurso. Evolução do 08.
+
+* 10 - Alteração da estrutura de diretórios do projeto para uma estrutura modular. Foi criado um resource para o Users, no qual foi utilizado promises. A configuração de exemplo de como possibilitar que um recurso passe pelo mock foi colocado no inicio do mock dos usuários do GitHub. Também foi separado em outro arquivo require a configuração dos mocks. Evolução do 09.
