@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS : mock 10 : ngMockBackend</title>
+
+<!--[if lt IE 9]>
+<script type="text/javascript">
+  var customTags = ['ng-include', 'ng-pluralize', 'ng-view', 'ng-repeat']
+  .concat(["ng:include", "ng:pluralize", "ng:view"]);// Optionally these for CSS
+  for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);
+  if(!window.console) window.console = {}; window.console.log = function(msg) {}; 
+</script>
+<![endif]-->
+
+</head>
+<body>
+
+  <div ng-view></div>
+
+  <!-- 
+  about google chrome console error 
+  https://github.com/jrburke/requirejs/issues/876
+
+  caused by Evernote extension on Chrome
+  -->
+
+  <script type="text/javascript">(function() {
+    'use strict';
+    window.GLOBAL_APP = {
+      str_ANGULAR_VERSION: '1.0.7',
+      moduleName: 'app',
+      moduleDeps: ['ngResource']
+    };
+  })();</script>
+  <script 
+    data-main="app/require.config" 
+    src="vendor/js/require-2.1.9.min.js"></script>
+
+
+</body>
+</html>
