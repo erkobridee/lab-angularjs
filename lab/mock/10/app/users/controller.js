@@ -28,7 +28,7 @@ angular.module('app').controller(
         },
         // fail
         function(error) {
-          console.log(error)
+          console.log(error);
         }
       );
 
