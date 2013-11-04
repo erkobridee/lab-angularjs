@@ -27,6 +27,12 @@ function ($routeProvider) {
         controller: 'HelpCtrl',
         templateUrl: 'app/help/tpl.html'
       }
+    )
+    .when(
+      '/help/rest-url-design',
+      {
+        templateUrl: 'app/help/restUrlDesign/tpl.html'
+      }
     );
 
 }]);
