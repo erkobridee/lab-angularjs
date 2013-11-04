@@ -35,22 +35,24 @@
 </head>
 <body>
 
+
 <!-- Wrap all page content here -->
 <div id="wrap">
 
   <!-- navbar -->
-  <div ng-include="'app/main/navbar.tpl.html'"></div>
+  <div ng-include="'app/main/layout/navbar.tpl.html'"></div>
+
+  <!-- ie warning alert -->
+  <div ng-include="'app/main/layout/ie-warning-alert.tpl.html'"></div>
 
   <!-- app content -->
   <div class="container ng-view"></div>
 
 </div>
 
-<div id="footer" class="hidden-xs">
-  <div class="container">
-    <p class="text-muted">Angular.js Modular Boilerplate with dev tools - by <a href="https://twitter.com/erkobridee">@ErkoBridee</a></p>
-  </div>
-</div>
+<!-- footer -->
+<div ng-include="'app/main/layout/footer.tpl.html'"></div>
+
 
 
 <!-- javascript -->
