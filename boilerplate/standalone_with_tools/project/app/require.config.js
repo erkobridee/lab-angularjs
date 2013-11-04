@@ -36,9 +36,13 @@ require({
       deps: ['angular']
     },
 
+    //---
+
     'main/module': {
       deps: ['angular', 'angular_resource']
     },
+
+    //--- @begin app files ---
 
     'home/controller': {
       deps: ['main/module']
@@ -52,8 +56,10 @@ require({
       deps: ['main/module']
     },
 
+    //--- @end app files ---
+
     'main/routes': {
-      deps: [
+      deps: [ // TODO: review and add app controllers ref's
         'home/controller',
         'about/controller',
         'help/controller'
@@ -61,7 +67,7 @@ require({
     },
 
     'main/start': {
-      deps: [
+      deps: [ // TODO: review and add app routes and view componentes ref's
         'main/routes'
       ]
     }
