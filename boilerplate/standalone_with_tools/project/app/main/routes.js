@@ -29,10 +29,12 @@ function ($routeProvider) {
       }
     )
     .when(
-      '/help/rest-url-design',
+      '/404',
       {
-        templateUrl: 'app/help/restUrlDesign/tpl.html'
+        templateUrl: 'app/404/tpl.html'
       }
-    );
+    )
+
+    .otherwise({redirectTo:'/404'});
 
 }]);

@@ -1,74 +1,50 @@
 require({
 
-  // libraries dependencies with fallback
-  paths: {
-
-    jquery: [
-      '../vendor/js/jquery-1.10.2.min'
-    ],
-
-    bootstrap: [
-      '../vendor/bootstrap/js/bootstrap-3.0.1.min'
-    ],
-
-    angular: [
-      '../vendor/angular/angular-1.1.5.min'
-    ],
-
-    angular_resource: [
-      '../vendor/angular/angular-resource-1.1.5.min'
-    ]
-
-  },
-
   // define js scripts dependencies
   shim: {
 
-    'bootstrap': {
-      deps: ['jquery']
-    },
+    //--- 
 
-    'angular': {
-      deps: ['bootstrap']
-    },
-
-    'angular_resource': {
-      deps: ['angular']
-    },
-
-    //---
-
-    'main/module': {
-      deps: ['angular', 'angular_resource']
-    },
-
-    //--- @begin app files ---
-
-    'home/controller': {
-      deps: ['main/module']
-    },
-
-    'about/controller': {
-      deps: ['main/module']
-    },
-
-    'help/controller': {
-      deps: ['main/module']
-    },
-
-    //--- @end app files ---
-
-    'main/routes': {
-      deps: [ // TODO: review and add app controllers ref's
-        'home/controller',
-        'about/controller',
-        'help/controller'
+    'app/main/module': {
+      deps: [
+        'angular', 
+        'angular_resource',
+        'shared/components/loadingBar/module'
       ]
     },
 
-    'main/start': {
+    //--- @begin app files
+
+    'app/main/controller': {
+      deps: ['app/main/module']
+    },
+
+    'app/home/controller': {
+      deps: ['app/main/module']
+    },
+
+    'app/about/controller': {
+      deps: ['app/main/module']
+    },
+
+    'app/help/controller': {
+      deps: ['app/main/module']
+    },
+
+    //--- @end app files
+
+    'app/main/routes': {
+      deps: [ // TODO: review and add app controllers ref's
+        'app/home/controller',
+        'app/about/controller',
+        'app/help/controller'
+      ]
+    },
+
+    'app/main/start': {
       deps: [ // TODO: review and add app routes and view componentes ref's
-        'main/routes'
+        'app/main/controller',
+        'app/main/routes'     
       ]
     }
 
@@ -78,8 +54,8 @@ require({
 
 ['require'], function(require) {
 
-  console.log('calling main/start.js');
+  console.log('app require.js config');
 
-  require(['main/start']);
+  require(['app/main/start']);
 
 });
