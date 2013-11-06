@@ -2,6 +2,7 @@
 
 Projeto Standalone, com ferramental de suporte para o desenvolvimento
 
+* **Importante**: para definir a comunicação com entre a aplicação frontend, com o backend (parte do servidor), observe e procure seguir a proposta [REST URL Design](https://gist.github.com/erkobridee/3868035)
 
 ## TODO
 
@@ -15,6 +16,8 @@ Projeto Standalone, com ferramental de suporte para o desenvolvimento
 ```
 /project
   /app
+    /404
+      tpl.html
     /about
       tpl.html
       controller.js
@@ -25,16 +28,34 @@ Projeto Standalone, com ferramental de suporte para o desenvolvimento
       tpl.html
       controller.js
     /main
-      navbar.tpl.html
+      /layout
+        footer.tpl.html
+        ie-warning-alert.tpl.html
+        navbar.tpl.html
+      controller.js
       module.js
       routes.js
-      start.js
-    require.config.js
+      start.js 
+    require.config.js     
     /shared
       # componentes e outros recursos compartilhados no projeto o qual podem potencialmente ser reutilizados em um novo projeto
+      /components
+        /loadingBar
+          interceptor.js
+          module.js
+          ngProgress.less
+          progressConfig.js
+          progressStatus.js
+          start.js
+          require.config.js
+    /styles
+      /less
+        app.less
+      app.css
     /vendor
-      # bibliotecas, css e outros recursos de terceiros utilizados no projeto, ex.: twitter bootstrap
+      # bibliotecas, css e outros recursos de terceiros utilizados no projeto, ex.: twitter bootstrap  
   index.html
+  require.config.js
 ```
 
 ## webserver : ferramenta de apoio ao desenvolvimento
