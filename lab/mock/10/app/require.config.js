@@ -10,24 +10,15 @@
     paths: {
 
       'angular': [ 
-        /*
-        '//ajax.googleapis.com/ajax/libs/angularjs/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min',
-        '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min',
-        'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min'
-        */
-        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min'
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.ANGULAR_VERSION+'/angular.min'
       ],
 
       'angular_route': [
-        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-route.min'
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.ANGULAR_VERSION+'/angular-route.min'
       ],
 
       'angular_resource': [
-        /*
-        '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-resource.min',
-        'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-resource.min'
-        */
-        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-resource.min'
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.ANGULAR_VERSION+'/angular-resource.min'
       ]
 
     },
@@ -59,7 +50,10 @@
       },
 
       'github/users/controller': {
-        deps: ['main/module', 'github/users/resource']
+        deps: [
+          'main/module', 
+          'github/users/resource'
+        ]
       },
 
       'home/controller': {

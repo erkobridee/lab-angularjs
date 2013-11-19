@@ -5,6 +5,7 @@
 
   var MOCK_FLAG = true;
 
+  // http://code.angularjs.org/1.2.1/
   var ANGULAR_VERSION = '1.2.1';
 
   //---
@@ -15,12 +16,7 @@
     // libraries dependencies with fallback 
     paths: {
 
-      'angular': [ 
-        /*
-        '//ajax.googleapis.com/ajax/libs/angularjs/'+ANGULAR_VERSION+'/angular.min',
-        '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min',
-        'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular.min',
-        */
+      'angular': [         
         '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min'
       ],
 
@@ -79,7 +75,6 @@
     // add more libraries dependencies
 
     config.paths['angular-mocks'] = [
-      /*'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular-mocks'*/
       '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular-mocks'
     ];
 
