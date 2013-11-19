@@ -10,7 +10,8 @@
     paths: {
 
       'angular-mocks': [
-        'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-mocks'
+        /*'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-mocks'*/
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-mocks'
       ],
 
       'angular-mocks-backend': [
@@ -23,11 +24,14 @@
     shim: {
 
       'angular-mocks': {
-        deps: ['angular', 'angular_resource']
+        deps: [
+          'angular_route', 
+          'angular_resource'
+        ]
       },
 
       'angular-mocks-backend': {
-        deps: ['angular', 'angular-mocks']
+        deps: ['angular-mocks']
       },
 
       //--- @begin: mock resources

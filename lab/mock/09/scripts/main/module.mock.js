@@ -1,1 +1,1 @@
-angular.module('app', ['ngResource', 'ngMockBackend']);
+angular.module('app', ['ngRoute', 'ngResource', 'ngMockBackend']);
