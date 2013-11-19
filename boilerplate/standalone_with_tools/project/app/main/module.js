@@ -1,2 +1,2 @@
 //Declaração da aplicação
-angular.module('app', ['loadingBar']);
+angular.module('app', ['ngRoute', 'loadingBar']);
