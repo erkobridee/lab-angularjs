@@ -1,2 +1,1 @@
-//angular.module('app', ['ngResource']);
-angular.module(GLOBAL_APP.moduleName, GLOBAL_APP.moduleDeps);
+angular.module('app', GLOBAL_APP.moduleDeps);

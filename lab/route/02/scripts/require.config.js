@@ -39,7 +39,6 @@ require({
 
     'main/module': { 
       deps: [
-        'angular', 
         'angular_route',
         'angular_resource'
       ] 

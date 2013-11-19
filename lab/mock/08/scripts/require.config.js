@@ -5,7 +5,7 @@
 
   var MOCK_FLAG = true;
 
-  var ANGULAR_VERSION = '1.0.7';
+  var ANGULAR_VERSION = '1.2.1';
 
   //---
 
@@ -16,9 +16,16 @@
     paths: {
 
       'angular': [ 
+        /*
         '//ajax.googleapis.com/ajax/libs/angularjs/'+ANGULAR_VERSION+'/angular.min',
         '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min',
-        'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular.min'      
+        'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular.min',
+        */
+        '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min'
+      ],
+
+      'angular_route': [
+        '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular-route.min'
       ]
 
     },
@@ -26,8 +33,12 @@
     // define js scripts dependencies 
     shim: {
 
-      'main/module': { 
+      'angular_route': {
         deps: ['angular'] 
+      },
+
+      'main/module': { 
+        deps: ['angular_route'] 
       },
 
       'controllers/AboutCtrl': { 
@@ -68,7 +79,8 @@
     // add more libraries dependencies
 
     config.paths['angular-mocks'] = [
-      'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular-mocks'
+      /*'http://code.angularjs.org/'+ANGULAR_VERSION+'/angular-mocks'*/
+      '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular-mocks'
     ];
 
     config.paths['angular-mocks-backend'] = [

@@ -10,14 +10,24 @@
     paths: {
 
       'angular': [ 
+        /*
         '//ajax.googleapis.com/ajax/libs/angularjs/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min',
         '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min',
         'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min'
+        */
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular.min'
+      ],
+
+      'angular_route': [
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-route.min'
       ],
 
       'angular_resource': [
+        /*
         '//cdnjs.cloudflare.com/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-resource.min',
         'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-resource.min'
+        */
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-resource.min'
       ]
 
     },
@@ -25,12 +35,19 @@
     // define js scripts dependencies 
     shim: {
 
+      'angular_route': {
+        deps: ['angular'] 
+      },
+
       'angular_resource': {
         deps: ['angular'] 
       },
 
       'main/module': { 
-        deps: ['angular', 'angular_resource'] 
+        deps: [
+          'angular_route', 
+          'angular_resource'
+        ] 
       },
 
       'about/controller': {
