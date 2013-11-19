@@ -8,7 +8,8 @@ require({
       '//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min'      
     ],
 
-    angular: [ 
+    // http://code.angularjs.org/1.2.1/
+    angular: [       
       '/cdn/ajax/libs/angular.js/1.2.1/angular.min'
     ],
 

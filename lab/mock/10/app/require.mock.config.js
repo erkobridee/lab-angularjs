@@ -10,8 +10,7 @@
     paths: {
 
       'angular-mocks': [
-        /*'http://code.angularjs.org/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-mocks'*/
-        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.str_ANGULAR_VERSION+'/angular-mocks'
+        '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.ANGULAR_VERSION+'/angular-mocks'
       ],
 
       'angular-mocks-backend': [
