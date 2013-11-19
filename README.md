@@ -6,9 +6,6 @@
 
 * [Página do projeto](http://erkobridee.github.io/lab-angularjs/)
 
-* [[GitHub] NebuPookins / git-submodule-tutorial](https://github.com/NebuPookins/git-submodule-tutorial) - A tutorial on how to use git submodule to share a model across multiple applications
-
-
 ## Local dos testes
 
 * Os códigos dos testes realizados, estão dentro de `lab`
@@ -35,6 +32,20 @@
 * `grunt test` - gera a versão que será publicada no `gh-pages` no diretório `dist` e levanta o servidor na porta 1337 apontando para este diretório
 
 * `grunt publish` - realiza a atualização do `gh-pages`
+
+
+## Git SubModules
+
+* update submodule
+
+```bash
+git submodule init
+git submodule update --remote
+```
+
+* [[GitHub] NebuPookins / git-submodule-tutorial](https://github.com/NebuPookins/git-submodule-tutorial) - A tutorial on how to use git submodule to share a model across multiple applications
+
+* [Git SubModule Docs | Mac Developer Library](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/git-submodule.1.html)
 
 
 ## Licença
