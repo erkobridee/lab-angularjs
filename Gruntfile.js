@@ -36,8 +36,8 @@ module.exports = function(grunt) {
       dev: {
         options: {
           port: serverPort,
-          base: 'lab',
-          keepalive: true
+          base: 'dist'//,
+          //keepalive: true
         }
       },
 
@@ -74,8 +74,33 @@ module.exports = function(grunt) {
 
     //----------
 
+    watch: {
+      lab: {
+        files : ['lab/**/*.{js,css,html}'],
+        tasks: ['newer:jshint', 'newer:copy:lab']
+      },
+      site: {
+        files : ['site/**/*.{js,css,html}'],
+        tasks: ['newer:copy:site']
+      }
+    },
+
+    //----------
+
     copy: {
       
+      lab: {
+        files: [
+          {expand: true, cwd: 'lab/', src: ['**', '!**/*.md'], dest: '<%= paths.build %>/lab/'}
+        ]
+      },
+
+      site: {
+        files: [
+          {expand: true, cwd: 'site/', src: ['**'], dest: '<%= paths.build %>/'}
+        ]
+      },
+
       build: {
         files: [
           {expand: true, cwd: 'lab/', src: ['**', '!**/*.md'], dest: '<%= paths.build %>/lab/'},
@@ -117,9 +142,12 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint']);
 
   grunt.registerTask('dev', [
-    'jshint', 
+    'newer:jshint', 
+    'clean:build', 
+    'newer:copy:build',    
+    'connect:dev',
     'open',
-    'connect:dev'
+    'watch'    
   ]);
 
   grunt.registerTask('test', [
