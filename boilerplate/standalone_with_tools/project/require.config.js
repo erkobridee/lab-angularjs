@@ -12,11 +12,15 @@ require({
     ],
 
     angular: [
-      'vendor/angular.js/1.1.5/angular.min'
+      'vendor/angular.js/1.2.1/angular.min'
+    ],
+
+    angular_route: [
+      'vendor/angular.js/1.2.1/angular-route.min'
     ],
 
     angular_resource: [
-      'vendor/angular.js/1.1.5/angular-resource.min'
+      'vendor/angular.js/1.2.1/angular-resource.min'
     ],
 
     ngProgress: [
@@ -34,6 +38,10 @@ require({
 
     'angular': {
       deps: ['bootstrap']
+    },
+
+    'angular_route': {
+      deps: ['angular']
     },
 
     'angular_resource': {
