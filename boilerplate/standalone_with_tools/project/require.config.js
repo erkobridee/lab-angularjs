@@ -4,23 +4,23 @@ require({
   paths: {
 
     jquery: [
-      'vendor/js/jquery-1.10.2.min'
+      'vendor/jquery/1.10.2/jquery.min'
     ],
 
     bootstrap: [
-      'vendor/bootstrap/js/bootstrap-3.0.1.min'
+      'vendor/bootstrap/3.0.2/js/bootstrap.min'
     ],
 
     angular: [
-      'vendor/angular/angular-1.1.5.min'
+      'vendor/angular.js/1.1.5/angular.min'
     ],
 
     angular_resource: [
-      'vendor/angular/angular-resource-1.1.5.min'
+      'vendor/angular.js/1.1.5/angular-resource.min'
     ],
 
     ngProgress: [
-      'vendor/angular/ngProgress.min'
+      'vendor/ngProgress/1.0.3/ngProgress.min'
     ]
 
   },
