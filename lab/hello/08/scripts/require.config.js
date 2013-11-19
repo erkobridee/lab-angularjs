@@ -4,7 +4,7 @@ require({
   paths: {
 
     angular: [ 
-      '/vendor/angular/1.2.1/angular.min'
+      '/cdn/ajax/libs/angular.js/1.2.1/angular.min'
     ]
 
   },
