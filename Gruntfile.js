@@ -103,6 +103,7 @@ module.exports = function(grunt) {
 
       build: {
         files: [
+          {expand: true, cwd: 'cdn/', src: ['**', '!**/*.md', '!site/**'], dest: '<%= paths.build %>/cdn/'},
           {expand: true, cwd: 'lab/', src: ['**', '!**/*.md'], dest: '<%= paths.build %>/lab/'},
           {expand: true, cwd: 'site/', src: ['**'], dest: '<%= paths.build %>/'}
         ]
