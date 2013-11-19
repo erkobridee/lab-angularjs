@@ -4,8 +4,7 @@ require({
   paths: {
 
     angular: [ 
-      'http://code.angularjs.org/1.0.7/angular.min',
-      '//cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.7/angular.min'
+      '/vendor/angular/1.2.1/angular.min'
     ]
 
   },
@@ -27,7 +26,9 @@ require({
       ] 
     }
 
-  }
+  },
+
+  waitSeconds: 2
 
 },
 
