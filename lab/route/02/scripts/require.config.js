@@ -9,15 +9,15 @@ require({
     ],
 
     angular: [ 
-      '/vendor/angular/1.2.1/angular.min'
+      '/cdn/ajax/libs/angular.js/1.2.1/angular.min'
     ],
 
     angular_route: [
-      '/vendor/angular/1.2.1/angular-route.min'
+      '/cdn/ajax/libs/angular.js/1.2.1/angular-route.min'
     ],
 
     angular_resource: [
-      '/vendor/angular/1.2.1/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.2.1/angular-resource.min'
     ]
 
   },
