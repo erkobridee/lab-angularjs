@@ -62,6 +62,7 @@ require({
 
   require([
     'shared/components/progressbar/loading/require.config',
+    'vendor/toastr/require.config',
     'app/require.config'
   ]);
 

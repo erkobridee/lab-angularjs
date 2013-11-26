@@ -4,11 +4,15 @@ angular.module('app').controller(
   'HomeCtrl',
 
   // dependencies injection
-  ['$scope',
+  ['$scope', 'toaster',
 
 // controller definition
-function ($scope) {
+function ($scope, $toaster) {
 
   $scope.pageName = 'Home Page';
+
+  $scope.popup = function(type) {
+	$toaster.pop(type, 'Título', 'Breve texto descritivo aqui...');
+  };
 
 }]);

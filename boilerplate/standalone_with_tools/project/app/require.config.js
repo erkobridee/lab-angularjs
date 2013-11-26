@@ -9,7 +9,8 @@ require({
       deps: [
         'angular_route', 
         'angular_resource',
-        'shared/components/progressbar/loading/module'
+        'shared/components/progressbar/loading/module',
+        'vendor/toastr/toaster-ng.1.1.5'
       ]
     },
 
