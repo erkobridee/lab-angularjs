@@ -1,2 +1,13 @@
-//Declaração da aplicação
-angular.module('app', ['ngRoute', 'fend.comp.progressbar.loading', 'toaster']);
+// Module definition
+angular.module(
+
+  // module name
+  'app', 
+
+  // module dependencies
+  [
+    'fend.comp.progressbar.loading', 
+    'ngRoute',     
+    'toaster'
+  ]
+);

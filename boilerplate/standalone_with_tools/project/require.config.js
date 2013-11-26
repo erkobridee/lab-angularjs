@@ -23,8 +23,16 @@ require({
       'vendor/angular.js/1.2.1/angular-resource.min'
     ],
 
+    angular_animate: [
+      'vendor/angular.js/1.2.1/angular-animate.min'
+    ],
+
     ngProgress: [
       'vendor/ngProgress/1.0.3/ngProgress.min'
+    ],
+
+    toaster: [
+      'vendor/toaster/0.3.0/toaster'
     ]
 
   },
@@ -48,8 +56,16 @@ require({
       deps: ['angular']
     },
 
+    'angular_animate': {
+      deps: ['angular']
+    },
+
     'ngProgress': {
       deps: ['angular']
+    },
+
+    'toaster': {
+      deps:['angular_animate']
     }
 
   }
@@ -62,7 +78,6 @@ require({
 
   require([
     'shared/components/progressbar/loading/require.config',
-    'vendor/toastr/require.config',
     'app/require.config'
   ]);
 

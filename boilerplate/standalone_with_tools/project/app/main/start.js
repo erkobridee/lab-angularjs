@@ -1,2 +1,2 @@
-//Start da aplicação
+// Start da aplicação
 angular.bootstrap(document, ['app']);
