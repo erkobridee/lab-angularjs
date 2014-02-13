@@ -9,6 +9,6 @@ angular.module('app').controller(
 // controller definition
 function($scope) {
   
-  $scope.pageName = 'Home Page';
+  $scope.greetings = 'Home controller say: Welcome to Angular Routes Example';
 
 }]);
