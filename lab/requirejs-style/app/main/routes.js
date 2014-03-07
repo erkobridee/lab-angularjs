@@ -19,7 +19,7 @@ function(module) {
       .when(
         '/404',
         {
-          templateUrl: 'app/404/template.html'
+          templateUrl: 'app/main/templates/404.html'
         }
       )
       .otherwise({redirectTo:'/404'});
