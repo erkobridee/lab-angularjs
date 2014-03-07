@@ -10,7 +10,8 @@ function($routeProvider) {
         '/', 
         {
           controller: 'HomeCtrl',
-          templateUrl:'views/home.html'}
+          templateUrl:'views/home.html'
+        }
       )
       .when(
         '/about', 
