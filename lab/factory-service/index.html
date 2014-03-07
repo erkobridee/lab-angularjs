@@ -79,7 +79,7 @@
         return 'Factory'; // return value, or some object instance
       });
 
-      app.service('theService', Service); // instantiate new object when inject
+      app.service('theService', Service); // instantiate new object (and cache this) when inject
 
       app.service('theSingletonService', Singleton);
 
