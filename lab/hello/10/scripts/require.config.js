@@ -4,7 +4,7 @@ require.config({
 
     angular: [
       '/cdn/ajax/libs/angular.js/1.2.1/angular.min'
-    ] /*,
+    ],
 
     angularRoute: [
       '/cdn/ajax/libs/angular.js/1.2.1/angular-route.min'
@@ -12,14 +12,14 @@ require.config({
 
     angularResource: [
       '/cdn/ajax/libs/angular.js/1.2.1/angular-resource.min'
-    ]*/
+    ]
 
   },
 
   shim: {
     'angular': {
       exports: 'angular'
-    }/*,
+    },
 
     'angularRoute': {
       deps: ['angular']
@@ -27,7 +27,7 @@ require.config({
 
     'angularResource': {
       deps: ['angular']
-    }*/
+    }
   },
 
   priority: [

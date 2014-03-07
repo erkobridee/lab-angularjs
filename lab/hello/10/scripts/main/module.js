@@ -1,10 +1,9 @@
 define(
 // require.js dependency injection
 [
-  'angular' /*,
+  'angular',
   'angularRoute',
   'angularResource'
-  */
 ], 
 
 // require.js module scope
@@ -17,9 +16,9 @@ function(ng) {
     'main',
 
     // module dependencies
-    [/*
+    [
       'ngRoute',
-      'ngResource'*/
+      'ngResource'
     ]
   );
 
