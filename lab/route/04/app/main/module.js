@@ -23,7 +23,7 @@ function(ng) {
       'ngRoute', 
       'ngResource',
 
-      //'about',
+      //'about', // TODO: uncomment
       'home'
     ]
   ); 
