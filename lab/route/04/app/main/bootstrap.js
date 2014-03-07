@@ -13,6 +13,20 @@ function(ng, module) {
 
   console.log('bootstrap : ' + module.name);
 
-  ng.bootstrap(document, [module.name]);  
+  console.log(module.value('appName').requires);
+
+  console.log('define new main module, and add more dependecies');
+  
+  var runModule = ng.module(
+    // module name
+    'run',
+
+    // module dependencies
+    [module.name, 'about']
+  );
+
+  console.log(runModule.value('appName').requires);
+
+  ng.bootstrap(document, [runModule.name]);  
 
 });
