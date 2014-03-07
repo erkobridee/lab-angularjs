@@ -21,3 +21,5 @@
 
 * 09 - definido um diretório /main para centralizar as configurações principais da aplicação, como definição do módulo e inicialização da aplicação, onde a aplicação é configurada usando o require.js
 
+* 10 - aplicação angular.js, utilizando o estilo de codificação do require.js para definir os módulos e respectivas dependências de cada um
+
