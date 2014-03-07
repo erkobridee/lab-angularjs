@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS : 10 : Hello World</title>
+
+  <!-- 
+    Doc Angular.js :: ng-clock 
+    http://docs.angularjs.org/api/ng.directive:ngCloak
+  -->
+  <style type="text/css">
+  /* class defined here, becuse angular.js will be loaded later */
+  .ng-cloak {
+    display: none;
+  }
+  </style>
+
+</head>
+<body>
+  
+  <div ng-controller="ctrl.Hello" class="ng-cloak">
+    {{hello}}
+  </div> 
+
+  <script 
+    data-main="scripts/require.config" 
+    src="/cdn/ajax/libs/require.js/2.1.9/require.min.js"></script>
+
+</body>
+</html>
