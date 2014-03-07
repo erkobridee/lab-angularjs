@@ -9,6 +9,6 @@ angular.module('app').controller(
 // controller definition
 function($scope) {
   
-  $scope.pageName = 'About Page';
+  $scope.someValue = 'Value from About Controller';
 
 }]);
