@@ -1,16 +1,15 @@
 define(
 // require.js dependency injection
 [
-  'angular',
-  'angularMocksBackend'
+  'mock/backend'
 ], 
 
 // require.js module scope
-function(ng) {
+function(backend) {
   'use strict';
 
 
-  ng.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl, getParams) {
+  backend.addResource(function($rootScope, httpBackend, regexpUrl, getParams) {
 
     // Some statefullness
     /*
