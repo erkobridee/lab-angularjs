@@ -9,23 +9,9 @@ define(
 function(ng) {
   'use strict';
 
-  
-  console.log('angular');
-  console.log(ng);
-  console.log('angular mock module');
-  console.log(ng.mock);
-  
+  // get mock module
+  var mockModule = ng.module('ngMockBackend');
 
-  var module = ng.module(
-    // module name
-    'mock',
-
-    // module dependencies
-    [
-      'ngMockBackend'
-    ]
-  );
-
-  return module;
+  return mockModule;
 
 });
