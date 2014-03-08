@@ -1,17 +1,16 @@
 define(
 // require.js dependency injection
 [
-  'angular',
-  'angularMocksBackend'
+  'mock/backend'
 ], 
 
 // require.js module scope
-function(ng) {
+function(backend) {
   'use strict';
 
   console.log('load jsonp allow pass mock');
 
-  ng.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
+  backend.addResource(function(angular, httpBackend, regexpUrl) {
     
     // Allow JSONP to pass to external services (ie Solr) 
     httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
