@@ -3,7 +3,7 @@ define(
 [
   'angular',
 
-  './mock/require.load',
+  //'./mock/require.load',
   './main/require.load'
 ], 
 
@@ -18,7 +18,7 @@ function(ng) {
 
     // module dependencies
     [
-      'ngMockBackend',
+      //'ngMockBackend',
       'main'      
     ]
   );
