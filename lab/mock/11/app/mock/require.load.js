@@ -9,7 +9,8 @@ define(
     // load mock's
   './allow-pass-jsonp',
 
-  '../users/mock/url-interceptors'
+  '../users/mock/url-interceptors',
+  '../github/user/mock/require.load'
 
 ], 
 
