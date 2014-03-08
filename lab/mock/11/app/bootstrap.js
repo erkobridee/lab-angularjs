@@ -18,7 +18,7 @@ function(ng) {
 
     // module dependencies
     [
-      'mock',
+      'ngMockBackend',
       'main'      
     ]
   );
