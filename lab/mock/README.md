@@ -38,3 +38,5 @@ A idéia é utilizar o $httpBackend disponível no suporte de Mock do Angular.js
 * 09 - Implementando um recurso "real", consumingo informações de usuários do GitHub e criando o respectivo mock do recurso. Evolução do 08.
 
 * 10 - Alteração da estrutura de diretórios do projeto para uma estrutura modular. Foi criado um resource para o Users, no qual foi utilizado promises. A configuração de exemplo de como possibilitar que um recurso passe pelo mock foi colocado no inicio do mock dos usuários do GitHub. Também foi separado em outro arquivo require a configuração dos mocks. Evolução do 09.
+
+* 11 - Utilizado uma estrutura de projeto modular e a codificação dos JavaScript foi utilizado o recurso e estilo de codificação modular do require.js. Evolução do 10.
