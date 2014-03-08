@@ -10,12 +10,18 @@ function(backend) {
 
   console.log('load jsonp allow pass mock');
 
-  backend.addResource(function(angular, httpBackend, regexpUrl) {
+  backend.addResource(
+
+    // mock resource dependencies injection
+    ['$httpBackend', 'regexpUrl',
+
+  // mock resource definition
+  function(httpBackend, regexpUrl) {
     
     // Allow JSONP to pass to external services (ie Solr) 
     httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
 
-  });
+  }]);
 
 
 });
