@@ -2,12 +2,14 @@ define(
 // require.js dependency injection
 [
   './require.config',
+  
   './module',
+  './backend',
 
     // load mock's
   './allow-pass-jsonp',
 
-  '../users/mock/resource'
+  '../users/mock/url-interceptors'
 
 ], 
 
