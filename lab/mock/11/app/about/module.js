@@ -3,32 +3,24 @@ define(
 [
   'angular',
   'angularRoute',
-  'angularResource',
-
-  '../about/require.load',
-  '../home/require.load'
+  'angularResource'
 ], 
 
 // require.js module scope
 function(ng) {
   'use strict';
 
-
   var module = ng.module(
     // module name
-    'main', 
+    'about',
 
     // module dependencies
     [
-      'ngRoute', 
-      'ngResource',
-
-      //'about', // TODO: uncomment
-      'home'
+      'ngRoute',
+      'ngResource'
     ]
-  ); 
+  );
 
   return module;
-
 
 });

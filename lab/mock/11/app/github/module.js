@@ -3,10 +3,7 @@ define(
 [
   'angular',
   'angularRoute',
-  'angularResource',
-
-  '../about/require.load',
-  '../home/require.load'
+  'angularResource'
 ], 
 
 // require.js module scope
@@ -16,17 +13,15 @@ function(ng) {
 
   var module = ng.module(
     // module name
-    'main', 
+    'github', 
 
     // module dependencies
     [
-      'ngRoute', 
-      'ngResource',
-
-      //'about', // TODO: uncomment
-      'home'
-    ]
-  ); 
+      'ngRoute',
+      'ngResource'
+    ] 
+  
+  );
 
   return module;
 

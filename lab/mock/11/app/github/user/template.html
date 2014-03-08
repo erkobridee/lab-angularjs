@@ -1,0 +1,25 @@
+<p><a href="#/">Back to Home</a></p>
+<br>
+<div>
+  GitHub user: 
+  <form ng-submit="findLoginAction()">
+    <input type="text" ng-model="login">
+    <button type="submit">Find</button>
+  </form>
+</div>
+<br>
+
+<div ng-show="notFound">
+  <p>User not found.</p>
+</div>
+
+
+<div ng-show="user">
+  <p>login: {{user.login}}</p>
+  <p>type: {{user.type}}</p>
+  <p>public repos: {{user.public_repos}}</p>
+  <p>public gists: {{user.public_gists}}</p>
+  <p><a href="{{user.html_url}}" target="_blank">github.com/{{user.login}}</a></p>
+  <br>
+  <pre>{{user | json}}</pre>
+</div>

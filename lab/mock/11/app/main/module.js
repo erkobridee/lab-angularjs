@@ -6,29 +6,34 @@ define(
   'angularResource',
 
   '../about/require.load',
-  '../home/require.load'
+  '../home/require.load',
+
+  '../users/require.load',
+  '../github/require.load'
+
 ], 
 
 // require.js module scope
 function(ng) {
   'use strict';
 
-
   var module = ng.module(
     // module name
-    'main', 
+    'main',
 
     // module dependencies
     [
-      'ngRoute', 
+      'ngRoute',
       'ngResource',
 
-      //'about', // TODO: uncomment
-      'home'
+      'about',
+      'home',
+
+      'users',
+      'github'
     ]
-  ); 
+  );
 
   return module;
-
 
 });
