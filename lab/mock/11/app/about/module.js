@@ -10,7 +10,9 @@ define(
 function(ng) {
   'use strict';
 
-  var module = ng.module(
+  
+  // module definiton
+  return ng.module(
     // module name
     'about',
 
@@ -21,6 +23,5 @@ function(ng) {
     ]
   );
 
-  return module;
 
 });

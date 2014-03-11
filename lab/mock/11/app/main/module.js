@@ -17,7 +17,9 @@ define(
 function(ng) {
   'use strict';
 
-  var module = ng.module(
+
+  // module definition
+  return ng.module(
     // module name
     'main',
 
@@ -33,7 +35,6 @@ function(ng) {
       'github'
     ]
   );
-
-  return module;
+  
 
 });
