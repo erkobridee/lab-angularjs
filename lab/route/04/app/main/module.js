@@ -14,7 +14,8 @@ function(ng) {
   'use strict';
 
 
-  var module = ng.module(
+  // module definition
+  return ng.module(
     // module name
     'main', 
 
@@ -26,9 +27,7 @@ function(ng) {
       //'about', // TODO: uncomment
       'home'
     ]
-  ); 
-
-  return module;
+  );
 
 
 });
