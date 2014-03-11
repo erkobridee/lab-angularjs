@@ -18,6 +18,6 @@ require.config({
     'angular'
   ],
 
-  deps: ['./main/bootstrap']
+  deps: ['./main/ng.bootstrap']
 
 });
