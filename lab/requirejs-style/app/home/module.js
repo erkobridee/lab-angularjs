@@ -11,7 +11,8 @@ function(ng) {
   'use strict';
 
 
-  var module = ng.module(
+  // module definition
+  return ng.module(
     // module name
     'home', 
 
@@ -21,8 +22,6 @@ function(ng) {
       'ngResource'
     ]
   );
-
-  return module;
 
 
 });
