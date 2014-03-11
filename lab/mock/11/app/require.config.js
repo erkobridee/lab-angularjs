@@ -45,6 +45,6 @@ require({
     'angular'
   ],
 
-  deps: ['./bootstrap']
+  deps: ['./ng.bootstrap']
 
 });
