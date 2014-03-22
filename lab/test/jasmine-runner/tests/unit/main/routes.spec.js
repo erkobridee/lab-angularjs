@@ -57,7 +57,7 @@ describe('Angular.js \'app\' Routes', function() {
 
     });
 
-    
+
     describe('location \'/dep1\'', function() {
 
       it('should be defined', function() {
@@ -72,7 +72,7 @@ describe('Angular.js \'app\' Routes', function() {
         expect(route.routes['/dep1'].templateUrl).toEqual('modules/dep1/tpl.html');
       });
 
-    });    
+    });
 
     describe('otherwise is the empty string', function() {
 

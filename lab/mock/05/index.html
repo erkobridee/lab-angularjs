@@ -5,11 +5,11 @@
   <title>AngularJS : 05 : mock with httpBackend</title>
 </head>
 <body>
-  
+
   <div ng-controller="UserCtrl" class="no-cloak">
     <ul>
         <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
-        
+
         <button ng-click="addUser()">Add user (HTTP POST)</button>
     </ul>
   </div>
@@ -22,10 +22,10 @@
   <script src="scripts/mock/mock-config.js"></script>
   <script src="scripts/mock/resources/UserMock.js"></script>
   <script src="scripts/mock/mock-run.js"></script>
-  
+
   <script src="scripts/app-main.js"></script>
   <script src="scripts/controllers/UserCtrl.js"></script>
-  
+
   <script src="scripts/app-start.js"></script>
 
 </body>

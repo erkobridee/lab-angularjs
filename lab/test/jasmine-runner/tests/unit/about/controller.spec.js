@@ -5,7 +5,7 @@ describe('Unit: Testing About Controller', function() {
   // excuted before each "it" is run
   beforeEach(function() {
 
-     // load the module
+    // load the module
     module('app');
 
     // inject dependencies
@@ -15,7 +15,7 @@ describe('Unit: Testing About Controller', function() {
       ctrl = $controller('AboutCtrl', {
         $scope: scope
       });
-    });    
+    });
 
   });
 

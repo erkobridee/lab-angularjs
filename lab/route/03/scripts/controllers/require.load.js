@@ -3,7 +3,7 @@ define(
 [
   './about',
   './home'
-], 
+],
 
 // require.js module scope
 function() {});

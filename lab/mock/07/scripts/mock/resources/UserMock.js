@@ -37,4 +37,3 @@ angular.mock.backend.addResource(function(angular, httpBackend, regexpUrl) {
     });
 
 });
-

@@ -3,7 +3,7 @@ require({
   // libraries dependencies with fallback
   paths: {
 
-    angular: [ 
+    angular: [
       // http://code.angularjs.org/1.2.1/angular.min
       '/cdn/ajax/libs/angular.js/1.2.1/angular.min'
     ]
@@ -13,18 +13,18 @@ require({
   // define js scripts dependencies
   shim: {
 
-    'main/module': { 
-      deps: ['angular'] 
+    'main/module': {
+      deps: ['angular']
     },
 
-    'controllers': { 
-      deps: ['main/module'] 
+    'controllers': {
+      deps: ['main/module']
     },
 
-    'main/start': { 
-      deps: [ 
+    'main/start': {
+      deps: [
         'controllers'
-      ] 
+      ]
     }
 
   }

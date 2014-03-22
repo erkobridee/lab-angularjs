@@ -17,14 +17,14 @@
       return checkMsg(msg) + '???';
     };
 
-    return ClassDef; 
+    return ClassDef;
 
   })();
 
   angular.module('modules.dep1').service(
 
     // service name
-    'Dep1Service', 
+    'Dep1Service',
 
     // dependencies injection
     [ //'$http', //,

@@ -5,13 +5,13 @@ describe('Unit: Testing modules.dep1 Filter', function() {
   // excuted before each "it" is run
   beforeEach(function() {
 
-     // load the module
+    // load the module
     module('modules.dep1');
 
     // inject dependencies
     inject(function($filter) {
       filter = $filter('reverse');
-    });    
+    });
 
   });
 
@@ -20,7 +20,7 @@ describe('Unit: Testing modules.dep1 Filter', function() {
     expect(filter).toBeDefined(true);
   });
   */
-  
+
   it('should reverse string \'This is Sparta\' to \'atrapS si sihT\'', function() {
     expect(filter('This is Sparta')).toEqual('atrapS si sihT');
   });

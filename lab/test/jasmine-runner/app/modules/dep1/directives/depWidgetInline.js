@@ -1,20 +1,20 @@
 angular.module('modules.dep1').directive(
 
   // directive name
-  'depWidgetInline', 
+  'depWidgetInline',
 
 // directive definition
 function() {
 
   return {
 
-    restrict: 'EA', 
-      // E - Element <dep-widget-inline title="my widget">widget content</dep-widget-inline> 
+    restrict: 'EA',
+      // E - Element <dep-widget-inline title="my widget">widget content</dep-widget-inline>
       // A - Attribute <div data-dep-widget-inline title="my widget">widget content</div>
       // C - Class <div class="dep-widget-inline" title="my widget">widget content</div>
     replace: true,
     transclude: true,
-    
+
     template: '<div class="widget"><div class="content" ng-transclude></div></div>',
 
     link: function(scope, element, attrs) {

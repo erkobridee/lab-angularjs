@@ -1,7 +1,7 @@
 angular.module('modules.dep1').factory(
-  
+
   // factory name
-  'Dep1Factory', 
+  'Dep1Factory',
 
   // dependencies injection
   [ //,

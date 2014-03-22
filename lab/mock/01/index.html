@@ -5,11 +5,11 @@
   <title>AngularJS : 01 : mock with httpBackend</title>
 </head>
 <body>
-  
+
   <div ng-controller="UserCtrl" class="no-cloak">
     <ul>
         <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
-        
+
         <button ng-click="addUser()">Add user (HTTP POST)</button>
     </ul>
   </div>
@@ -29,9 +29,9 @@
     app.controller(
       // controller name
       'UserCtrl',
-      
+
       // dependency injection
-      ['$scope', '$http', 
+      ['$scope', '$http',
 
       function($scope, $http) {
 
@@ -46,7 +46,7 @@
           ];
 
           var sentData = {userName: names[addedUsers++ % 9]};
-          
+
           $http.post('/users', sentData).success(function(data) {
             console.log(data);
 
@@ -59,7 +59,7 @@
         // Get a list of all the users
         $http.get('/users').success(function(data) {
           console.log("GOT all available users");
-          $scope.users = data; 
+          $scope.users = data;
         });
 
     }]);
@@ -67,7 +67,7 @@
     //--- mock definition
 
       // provider
-      // You can also just use provide to blanket replace $httpBackend 
+      // You can also just use provide to blanket replace $httpBackend
       // with the mock
     app.config(['$provide', function($provide) {
       // Decorate by passing in the constructor for mock $httpBackend
@@ -91,7 +91,7 @@
 
       //---
 
-      // Allow JSONP to pass to external services (ie Solr) 
+      // Allow JSONP to pass to external services (ie Solr)
       $httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
 
       //---
@@ -133,7 +133,7 @@
 
       //---
 
-      // A "run loop" of sorts to get httpBackend to 
+      // A "run loop" of sorts to get httpBackend to
       // issue responses and trigger the client code's callbacks
       var flushBackend = function() {
         try {

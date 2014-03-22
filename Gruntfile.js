@@ -1,4 +1,4 @@
-module.exports = function(grunt) {  
+module.exports = function(grunt) {
   'use strict';
 
   // load all grunt tasks -> see package.json :: devDependencies
@@ -20,9 +20,24 @@ module.exports = function(grunt) {
 
     //----------
 
+    lintspaces: {
+      all: {
+        src: [
+          '*.{html,css,js,coffee,less,md}',
+          'lab/**/*.{html,css,js,coffee,less,md}',
+          '!lab/**/{lib,vendor}/**/*'
+        ],
+        options: {
+          editorconfig: '.editorconfig'
+        }
+      }
+    },
+
+    //----------
+
     jshint: {
       all: [
-        'Gruntfile.js',        
+        'Gruntfile.js',
         'lab/**/*.js',
         '!lab/**/{scripts/libs,vendor}/**/*.min.js',
         '!lab/**/jasmine*.js'
@@ -62,7 +77,7 @@ module.exports = function(grunt) {
     //----------
 
     clean: {
-      
+
       build: ['<%= paths.build %>/'],
 
       gh_pages: [
@@ -88,7 +103,7 @@ module.exports = function(grunt) {
     //----------
 
     copy: {
-      
+
       lab: {
         files: [
           {expand: true, cwd: 'lab/', src: ['**', '!**/*.md'], dest: '<%= paths.build %>/lab/'}
@@ -140,29 +155,29 @@ module.exports = function(grunt) {
 
   grunt.initConfig(gruntConfig);
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['lintspaces', 'jshint']);
 
   grunt.registerTask('dev', [
-    'newer:jshint', 
-    'clean:build', 
-    'newer:copy:build',    
+    'newer:jshint',
+    'clean:build',
+    'newer:copy:build',
     'connect:dev',
     'open',
-    'watch'    
+    'watch'
   ]);
 
   grunt.registerTask('test', [
-    'jshint', 
-    'clean:build', 
-    'copy:build', 
+    'jshint',
+    'clean:build',
+    'copy:build',
     'open',
-    'connect:test'    
+    'connect:test'
   ]);
 
   grunt.registerTask('publish', [
-    'jshint', 
-    'clean:gh_pages', 
-    'copy:gh_pages', 
+    'jshint',
+    'clean:gh_pages',
+    'copy:gh_pages',
     'githubPages:gh_pages'
   ]);
 

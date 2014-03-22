@@ -7,7 +7,7 @@ https://github.com/codefuze/js-mobile-tablet-redirect/blob/master/mobile-redirec
 */
 
 (function() {
-  
+
   var DeviceCheck = {
 
     init : function() {

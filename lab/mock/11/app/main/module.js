@@ -11,7 +11,7 @@ define(
   '../users/require.load',
   '../github/require.load'
 
-], 
+],
 
 // require.js module scope
 function(ng) {
@@ -35,6 +35,6 @@ function(ng) {
       'github'
     ]
   );
-  
+
 
 });

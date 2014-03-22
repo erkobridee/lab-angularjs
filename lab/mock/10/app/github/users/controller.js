@@ -1,10 +1,10 @@
 angular.module('app').controller(
-  
+
   // controller name
   'GitHubUserCtrl',
-  
+
   // dependency injection
-  ['$scope', 'GitHubUsersResource', 
+  ['$scope', 'GitHubUsersResource',
 
 // controller definition
 function($scope, resource) {

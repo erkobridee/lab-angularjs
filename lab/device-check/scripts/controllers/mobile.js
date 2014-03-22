@@ -1,10 +1,10 @@
 angular.module('app').controller(
 
   // controller name
-  'ctrl.Mobile', 
+  'ctrl.Mobile',
 
   // dependencies injection
-  ['$scope', 
+  ['$scope',
 
 // controller definition
 function($scope) {

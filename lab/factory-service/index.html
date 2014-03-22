@@ -5,9 +5,9 @@
 </head>
 <body>
   <div ng-controller="theController">
-    {{providerValue}} 
+    {{providerValue}}
     <br /><br />
-    {{factoryValue}} 
+    {{factoryValue}}
     <br /><br />
     {{serviceValue}}
     <br /><br />
@@ -16,7 +16,7 @@
 
   <!-- http://code.angularjs.org/1.2.1/ -->
   <script src="/cdn/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
-  
+
   <script type="text/javascript">
     (function() {
       'use strict';
@@ -85,17 +85,18 @@
 
       app.controller(
         // controller name
-        'theController', 
+        'theController',
 
         // inject dependencies
-        ['$scope', 'theProvider', 'theFactory', 
-         'theService', 'theSingletonService',
+        [
+          '$scope', 'theProvider', 'theFactory',
+          'theService', 'theSingletonService',
 
-      // controller code  
+      // controller code
       function($scope, theProvider, theFactory, theService, theSingletonService) {
 
         $scope.providerValue = theProvider;
-        
+
         $scope.factoryValue = theFactory;
 
         $scope.serviceValue = theService.log();

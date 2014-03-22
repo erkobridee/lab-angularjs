@@ -25,11 +25,11 @@
   if(!angular.mock) throw new LibError('AngularJS Mocks (angular-mocks.js)');
 
 
-  //--- Backend mock support 
+  //--- Backend mock support
 
     // add to angular-mocks namespace
   angular.mock.backend = (function() {
-    
+
     var regexpUrl = function(regexp) {
       return {
         test: function(url) {
@@ -56,7 +56,7 @@
     };
 
 
-    var configAllow = function(httpBackend) {      
+    var configAllow = function(httpBackend) {
       // Allow get html to load templates
       httpBackend.when('GET', regexpUrl(/.html$/)).passThrough();
     };
@@ -71,7 +71,7 @@
 
     var configResources = function(angular, httpBackend) {
       var i = (resources.length - 1);
-      
+
       while(i > -1) {
         resources[i--](angular, httpBackend, regexpUrl);
       }
@@ -103,11 +103,11 @@
 
   // provider
 
-    // You can also just use provide to blanket replace $httpBackend 
+    // You can also just use provide to blanket replace $httpBackend
     // with the mock
   ngMockBackend.config(
 
-    ['$provide', 
+    ['$provide',
 
   function($provide) {
 
@@ -132,7 +132,7 @@
 
     //---
 
-    // A "run loop" of sorts to get httpBackend to 
+    // A "run loop" of sorts to get httpBackend to
     // issue responses and trigger the client code's callbacks
     var flushBackend = function() {
       try {

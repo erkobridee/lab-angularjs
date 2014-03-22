@@ -2,7 +2,7 @@ define(
 // require.js dependency injection
 [
   '../module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -11,17 +11,17 @@ function(module) {
 
   module.factory(
     // resource name
-    'GitHubUsersResource', 
+    'GitHubUsersResource',
 
     // dependency injection
-    ['$resource', 
+    ['$resource',
 
   // resource definition
   function(resource){
-      
+
       var user = resource(
         'https://api.github.com/users/:login'
-      ); 
+      );
 
       return user;
 

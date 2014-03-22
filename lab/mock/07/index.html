@@ -5,11 +5,11 @@
   <title>AngularJS : 07 : mock with httpBackend</title>
 </head>
 <body>
-  
+
   <div ng-controller="UserCtrl" class="no-cloak">
     <ul>
         <li ng-repeat="user in users">{{user.userId}}: {{user.userName}}</li>
-        
+
         <button ng-click="addUser()">Add user (HTTP POST)</button>
     </ul>
   </div>
@@ -19,7 +19,7 @@
   <script src="http://code.angularjs.org/1.0.7/angular-mocks.js"></script>
   -->
 
-  <!-- test: ok - running 
+  <!-- test: ok - running
   <script src="http://code.angularjs.org/1.0.8/angular.min.js"></script>
   <script src="http://code.angularjs.org/1.0.8/angular-mocks.js"></script>
   -->
@@ -42,10 +42,10 @@
   <script src="scripts/mock/resources/allow-jsonp-pass-external.js"></script>
   <script src="scripts/mock/resources/UserMock.js"></script>
 
-  
+
   <script src="scripts/app-main.js"></script>
   <script src="scripts/controllers/UserCtrl.js"></script>
-  
+
   <script src="scripts/app-start.js"></script>
 
 </body>

@@ -3,7 +3,7 @@ define(
 [
   './module',
   './resource'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -11,14 +11,14 @@ function(module) {
 
 
   module.controller(
-    
+
     // controller name
     'UserCtrl',
-    
-    // dependency injection
-    ['$scope', 'UsersResource', 
 
-    function(scope, resource) { 
+    // dependency injection
+    ['$scope', 'UsersResource',
+
+    function(scope, resource) {
 
       var addedUsers = 0;
 
@@ -31,7 +31,7 @@ function(module) {
         ];
 
         var newUser = {userName: names[addedUsers++ % 9]};
-        
+
         resource.post(newUser).then(
           // success
           function(data) {
@@ -64,7 +64,7 @@ function(module) {
         function(data) {
           console.log("GOT all available users");
           console.log(data);
-          scope.users = data; 
+          scope.users = data;
         },
         errorHandler
       );

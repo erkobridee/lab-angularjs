@@ -1,9 +1,9 @@
 define(
 // require.js dependecy injection
 [
- 'angular',
- 'angularRoute',
- 'angularResource' 
+  'angular',
+  'angularRoute',
+  'angularResource'
 ],
 
 //require.js module scope
@@ -13,14 +13,14 @@ function(ng) {
   // module definition
   return ng.module(
     // module name
-    'about', 
+    'about',
 
     // module dependencies
     [
-      'ngRoute', 
+      'ngRoute',
       'ngResource'
     ]
   );
-  
+
 
 });

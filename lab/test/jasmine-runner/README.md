@@ -51,4 +51,3 @@ Angular.js App following bdd (modularity) architecture style
 * [[GitHub] ricardohbin / angularjs-meetup-sp](https://github.com/ricardohbin/angularjs-meetup-sp)
 
 * [[GitHub] daniellmb / angular-test-patterns](https://github.com/daniellmb/angular-test-patterns) - High Quality Guide for Testing AngularJS
-

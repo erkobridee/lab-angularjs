@@ -5,7 +5,7 @@ define(
 
   './module',
   './routes'
-], 
+],
 
 // require.js module scope
 function(ng, module) {
@@ -29,7 +29,7 @@ function(ng, module) {
 
   console.log(runModule.value('appName').requires);
 
-  ng.bootstrap(document, [runModule.name]); 
-  // @end: new main module definition test 
+  ng.bootstrap(document, [runModule.name]);
+  // @end: new main module definition test
 
 });

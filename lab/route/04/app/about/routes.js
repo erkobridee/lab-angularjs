@@ -2,7 +2,7 @@ define(
 // require.js dependency inection
 [
   './module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -18,7 +18,7 @@ function(module) {
 
       routeProvider
         .when(
-          '/about', 
+          '/about',
           {
             controller: 'AboutCtrl',
             templateUrl:'app/about/template.html'

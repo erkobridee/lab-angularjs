@@ -1,10 +1,10 @@
 angular.module('app').controller(
 
   // controller name
-  'ctrl.CheckDevice', 
+  'ctrl.CheckDevice',
 
   // dependencies injection
-  ['$scope', '$location', 
+  ['$scope', '$location',
 
 // controller definition
 function($scope, $location) {

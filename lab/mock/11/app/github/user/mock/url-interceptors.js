@@ -4,7 +4,7 @@ define(
   'angular',
   'mock/backend',
   './data'
-], 
+],
 
 // require.js module scope
 function(ng, backend) {
@@ -27,17 +27,17 @@ function(ng, backend) {
         return [404, ng.copy(db.notFound)];
       });
 
-      
+
     httpBackend.when('GET', regexpUrl(/api\.github\.com\/users\/[A-z0-9]+$/))
       .respond(function(method, url, data) {
         console.log(url);
-        
+
         var user = null, login = getLoginFromURL(url);
         if(login) user = findUserByLogin(login);
 
-        var result = [404, ng.copy(db.notFound)]; 
+        var result = [404, ng.copy(db.notFound)];
         if(user) result = [200, ng.copy(user)];
-        
+
         return result;
       });
 

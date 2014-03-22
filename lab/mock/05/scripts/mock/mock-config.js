@@ -1,10 +1,10 @@
 // provider
 
-  // You can also just use provide to blanket replace $httpBackend 
+  // You can also just use provide to blanket replace $httpBackend
   // with the mock
 angular.module('app.mock').config(
 
-  ['$provide', 
+  ['$provide',
 
 function($provide) {
 
@@ -20,7 +20,7 @@ var MockService = (function() {
   "use strict";
 
   //---
-  
+
   var regexpUrl = function(regexp) {
     return {
       test: function(url) {
@@ -48,7 +48,7 @@ var MockService = (function() {
   //---
 
   var configJSONP = function(httpBackend) {
-    // Allow JSONP to pass to external services (ie Solr) 
+    // Allow JSONP to pass to external services (ie Solr)
     httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
   };
 
@@ -62,7 +62,7 @@ var MockService = (function() {
 
   var configResources = function(angular, httpBackend) {
     var i = (resources.length - 1);
-    
+
     while(i > -1) {
       resources[i--](angular, httpBackend, regexpUrl);
     }

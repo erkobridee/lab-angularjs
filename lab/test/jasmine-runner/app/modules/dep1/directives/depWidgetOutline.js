@@ -1,20 +1,20 @@
 angular.module('modules.dep1').directive(
 
   // directive name
-  'depWidgetOutline', 
+  'depWidgetOutline',
 
 // directive definition
 function() {
 
   return {
 
-    restrict: 'EA', 
-      // E - Element <dep-widget-outline title="my widget">widget content</dep-widget-outline> 
+    restrict: 'EA',
+      // E - Element <dep-widget-outline title="my widget">widget content</dep-widget-outline>
       // A - Attribute <div data-dep-widget-outline title="my widget">widget content</div>
       // C - Class <div class="dep-widget-outline" title="my widget">widget content</div>
     replace: true,
     transclude: true,
-    
+
     scope: {
       title: '@'
     },
@@ -27,7 +27,7 @@ function() {
       // fallback
       if(!scope.title) scope.title = attrs.title || '';
     }
-    
+
 
   };
 

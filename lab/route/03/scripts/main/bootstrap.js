@@ -6,7 +6,7 @@ define(
   './module',
   './routes',
   '../controllers/require.load'
-], 
+],
 
 // require.js module scope
 function(ng, module) {
@@ -14,6 +14,6 @@ function(ng, module) {
 
   console.log('bootstrap : ' + module.name);
 
-  ng.bootstrap(document, [module.name]);  
+  ng.bootstrap(document, [module.name]);
 
 });

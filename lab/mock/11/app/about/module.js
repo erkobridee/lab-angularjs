@@ -4,13 +4,13 @@ define(
   'angular',
   'angularRoute',
   'angularResource'
-], 
+],
 
 // require.js module scope
 function(ng) {
   'use strict';
 
-  
+
   // module definiton
   return ng.module(
     // module name

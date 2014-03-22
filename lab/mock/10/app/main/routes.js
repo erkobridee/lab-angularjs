@@ -7,7 +7,7 @@ function($routeProvider) {
 
     $routeProvider
       .when(
-        '/', 
+        '/',
         {
           controller: 'HomeCtrl',
           templateUrl:'app/home/tpl.html'
@@ -24,11 +24,11 @@ function($routeProvider) {
         '/github/users',
         {
           controller: 'GitHubUserCtrl',
-          templateUrl: 'app/github/users/tpl.html' 
+          templateUrl: 'app/github/users/tpl.html'
         }
-      )      
+      )
       .when(
-        '/about', 
+        '/about',
         {
           controller: 'AboutCtrl',
           templateUrl:'app/about/tpl.html'

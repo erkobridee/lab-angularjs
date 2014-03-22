@@ -2,8 +2,8 @@ define(
 // require.js dependency injection
 [
   './module',
-  './routes' 
-], 
+  './routes'
+],
 
 // require.js module scope
 function() {});

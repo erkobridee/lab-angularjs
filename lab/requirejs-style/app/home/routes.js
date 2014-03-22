@@ -11,7 +11,7 @@ function(module) {
 
   module.config(
     // dependency injection
-    ['$routeProvider', 
+    ['$routeProvider',
 
   function(routeProvider) {
 

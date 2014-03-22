@@ -4,7 +4,7 @@ define(
   'angular',
   './module',
   './routes'
-], 
+],
 
 // require.js module scope
 function(ng, module) {

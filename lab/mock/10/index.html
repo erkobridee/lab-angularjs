@@ -9,7 +9,7 @@
   var customTags = ['ng-include', 'ng-pluralize', 'ng-view', 'ng-repeat']
   .concat(["ng:include", "ng:pluralize", "ng:view"]);// Optionally these for CSS
   for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);
-  if(!window.console) window.console = {}; window.console.log = function(msg) {}; 
+  if(!window.console) window.console = {}; window.console.log = function(msg) {};
 </script>
 <![endif]-->
 
@@ -18,8 +18,8 @@
 
   <div ng-view></div>
 
-  <!-- 
-  about google chrome console error 
+  <!--
+  about google chrome console error
   https://github.com/jrburke/requirejs/issues/876
 
   caused by Evernote extension on Chrome
@@ -33,8 +33,8 @@
     };
   })();</script>
 
-  <script 
-    data-main="app/require.config" 
+  <script
+    data-main="app/require.config"
     src="/cdn/ajax/libs/require.js/2.1.9/require.min.js"></script>
 
 

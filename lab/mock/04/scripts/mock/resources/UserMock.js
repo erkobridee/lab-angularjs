@@ -21,7 +21,7 @@ var UserMock = (function() {
   }
 
   //---
-  
+
   function routes() {
 
     httpBackend.when('GET', '/users')

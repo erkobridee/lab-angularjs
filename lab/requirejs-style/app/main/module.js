@@ -2,7 +2,7 @@ define(
 // require.js dependency injection
 [
   'angular',
-  
+
   '../moduleA/require.load',
   '../home/require.load',
   '../about/require.load',
@@ -18,7 +18,7 @@ function(ng) {
   // module definition
   return ng.module(
     // module name
-    'main', 
+    'main',
 
     // module dependencies
     [

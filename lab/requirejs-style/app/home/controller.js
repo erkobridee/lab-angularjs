@@ -11,10 +11,10 @@ function(module) {
 
   module.controller(
     // controller name
-    'HomeCtrl', 
+    'HomeCtrl',
 
     // dependency injection
-    ['$scope', 
+    ['$scope',
 
   // controller definition
   function(scope) {

@@ -27,6 +27,7 @@
     "grunt-github-pages": "0.0.3",
     "grunt-open": "~0.2.1",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-newer": "~0.6.0"
+    "grunt-newer": "~0.6.0",
+    "grunt-lintspaces": "^0.4.1"
   }
 }

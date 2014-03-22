@@ -7,7 +7,7 @@ function($routeProvider) {
 
     $routeProvider
       .when(
-        '/', 
+        '/',
         {
           controller: 'HomeCtrl',
           templateUrl:'templates/home.html'
@@ -21,7 +21,7 @@ function($routeProvider) {
         }
       )
       .when(
-        '/about', 
+        '/about',
         {
           controller: 'AboutCtrl',
           templateUrl:'templates/about.html'

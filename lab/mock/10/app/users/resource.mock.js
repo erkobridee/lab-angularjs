@@ -52,7 +52,7 @@ angular.mock.backend.addResource(function($rootScope, httpBackend, regexpUrl, ge
 
   //---
 
-  httpBackend.when('POST', regexpUrl(baseURL)) 
+  httpBackend.when('POST', regexpUrl(baseURL))
     .respond(function(method, url, data) {
       data = angular.fromJson(data);
 
