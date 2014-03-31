@@ -26,6 +26,10 @@ function(ng) {
   );
 
   // start angular app
-  ng.bootstrap(document, ['run']);
+  ng.element(document).ready(function() {
+
+    ng.bootstrap(document, ['run']);
+
+  });
 
 });
