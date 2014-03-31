@@ -10,8 +10,12 @@ define(
 function(ng, module) {
   'use strict';
 
-  console.log('bootstrap : ' + module.name);
+  ng.element(document).ready(function() {
 
-  ng.bootstrap(document, [module.name]);
+    console.log('bootstrap : ' + module.name);
+
+    ng.bootstrap(document, [module.name]);
+
+  });
 
 });

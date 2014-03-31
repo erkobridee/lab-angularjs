@@ -47,20 +47,22 @@
 
           var sentData = {userName: names[addedUsers++ % 9]};
 
-          $http.post('/users', sentData).success(function(data) {
-            console.log(data);
+          $http.post('/users', sentData)
+            .success(function(data) {
+              console.log(data);
 
-            $scope.users[data.userId] = data;
+              $scope.users[data.userId] = data;
 
-            //console.log($scope.users);
-          });
+              //console.log($scope.users);
+            });
         };
 
         // Get a list of all the users
-        $http.get('/users').success(function(data) {
-          console.log("GOT all available users");
-          $scope.users = data;
-        });
+        $http.get('/users')
+          .success(function(data) {
+            console.log("GOT all available users");
+            $scope.users = data;
+          });
 
     }]);
 
@@ -104,32 +106,35 @@
 
       //---
 
-      $httpBackend.when('GET', '/users')
-        .respond(function(method, url, data) {
-          return [200, angular.copy(users)];
-        });
+      $httpBackend
+        .when('GET', '/users')
+          .respond(function(method, url, data) {
+            return [200, angular.copy(users)];
+          });
 
       //--
 
-      $httpBackend.when('GET', regexpUrl(/users\/(\d+)/))
-        .respond(function(method, url, data) {
-          data = angular.fromJson(data);
-          return [200, angular.copy(users[data.userId])];
-        });
+      $httpBackend
+        .when('GET', regexpUrl(/users\/(\d+)/))
+          .respond(function(method, url, data) {
+            data = angular.fromJson(data);
+            return [200, angular.copy(users[data.userId])];
+          });
 
       //---
 
-      $httpBackend.when('POST', '/users')
-        .respond(function(method, url, data) {
-          data = angular.fromJson(data);
+      $httpBackend
+        .when('POST', '/users')
+          .respond(function(method, url, data) {
+            data = angular.fromJson(data);
 
-          var newUser = {userName: data.userName, userId: userId};
+            var newUser = {userName: data.userName, userId: userId};
 
-          users[userId] = newUser;
-          userId++;
+            users[userId] = newUser;
+            userId++;
 
-          return [200, angular.copy(newUser)];
-        });
+            return [200, angular.copy(newUser)];
+          });
 
       //---
 
@@ -148,7 +153,11 @@
     }]);
 
     //--- bootstrap
-    angular.bootstrap(document, ['app']);
+    angular.element(document).ready(function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
 
   })();
   </script>
