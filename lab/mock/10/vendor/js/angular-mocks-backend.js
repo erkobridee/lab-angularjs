@@ -1,6 +1,6 @@
 /*
-  AngularJS Mocks Backend v0.1.3
-  (c) 2013 Erko Bridee - https://github.com/erkobridee/angular-mocks-backend/releases/tag/v0.1.3
+  AngularJS Mocks Backend v0.1.4
+  (c) 2014 Erko Bridee - https://github.com/erkobridee/angular-mocks-backend/releases/tag/v0.1.4
   License: MIT
 */
 (function(angular) {
@@ -57,7 +57,7 @@
     var checkRegexp = function(regexp) {
       var outRegexp, objType = checkType(regexp);
 
-      if('RegExp' === objType) { 
+      if('RegExp' === objType) {
         outRegexp = regexp;
       } else if('String' === objType) {
         outRegexp = buildRegexp(regexp);
@@ -103,11 +103,11 @@
       }
       return ret;
     };
-    
+
   })();
 
 
-  //--- Backend mock support 
+  //--- Backend mock support
 
     // add to angular-mocks namespace
   angular.mock.backend = (function() {
@@ -128,7 +128,7 @@
     };
 
 
-    var configAllow = function(httpBackend) {      
+    var configAllow = function(httpBackend) {
       // Allow get html to load templates
       httpBackend.when('GET', regexpUrl(/.html$/)).passThrough();
     };
@@ -141,9 +141,9 @@
       if(resource) resources.push(resource);
     };
 
-    var configResources = function(injector) {  
+    var configResources = function(injector) {
       var i = (resources.length - 1);
-      
+
       while(i > -1) {
         injector.invoke(resources[i--]);
       }
@@ -183,13 +183,16 @@
 
   // provider
 
-    // You can also just use provide to blanket replace $httpBackend 
+    // You can also just use provide to blanket replace $httpBackend
     // with the mock
   ngMockBackend.config(
 
-    ['$provide', 
+    ['$provide',
 
   function($provide) {
+
+    var obj = new angular.mock.$HttpBackendProvider(),
+        createHttpBackendMock = obj.$get[1];
 
     // Decorate by passing in the constructor for mock $httpBackend
     $provide.decorator('$httpBackend', createHttpBackendMock);
@@ -212,7 +215,7 @@
 
     //---
 
-    // A "run loop" of sorts to get httpBackend to 
+    // A "run loop" of sorts to get httpBackend to
     // issue responses and trigger the client code's callbacks
     var flushBackend = function() {
       try {
