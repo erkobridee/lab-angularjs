@@ -1,7 +1,7 @@
 angular.module('modules.dep1').controller(
-  
+
   // controller name
-  'Dep1Ctrl', 
+  'Dep1Ctrl',
 
   // dependencies injection
   ['$scope', 'Dep1Factory', 'Dep1Service',

@@ -3,7 +3,7 @@ define(
 [
   './module',
   './routes'
-], 
+],
 
 // require.js module scope
 function() {});

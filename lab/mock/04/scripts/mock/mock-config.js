@@ -1,10 +1,10 @@
 // provider
 
-  // You can also just use provide to blanket replace $httpBackend 
+  // You can also just use provide to blanket replace $httpBackend
   // with the mock
 angular.module('app.mock').config(
 
-  ['$provide', 
+  ['$provide',
 
 function($provide) {
 
@@ -12,7 +12,3 @@ function($provide) {
   $provide.decorator('$httpBackend', createHttpBackendMock);
 
 }]);
-
-
-//---
-

@@ -1,7 +1,7 @@
 define(
 // require.js dependecy injection
 [
- './module' 
+  './module'
 ],
 
 //require.js module scope
@@ -11,10 +11,10 @@ function(module) {
 
   module.controller(
     // controller name
-    'AboutCtrl', 
+    'AboutCtrl',
 
     // dependency injection
-    ['$scope', 
+    ['$scope',
 
   // controller definition
   function(scope){

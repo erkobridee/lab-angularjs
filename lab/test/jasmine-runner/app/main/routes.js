@@ -7,20 +7,20 @@ function($routeProvider) {
 
     $routeProvider
       .when(
-        '/', 
+        '/',
         {
           controller: 'HomeCtrl',
           templateUrl:'home/tpl.html'}
       )
       .when(
-        '/about', 
+        '/about',
         {
           controller: 'AboutCtrl',
           templateUrl:'about/tpl.html'
         }
       )
       .when(
-        '/dep1', 
+        '/dep1',
         {
           controller: 'Dep1Ctrl',
           templateUrl: 'modules/dep1/tpl.html'

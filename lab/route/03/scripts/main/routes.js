@@ -2,7 +2,7 @@ define(
 // require.js dependency inection
 [
   './module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -18,19 +18,26 @@ function(module) {
 
       routeProvider
         .when(
-          '/', 
+          '/',
           {
             controller: 'HomeCtrl',
             templateUrl:'views/home.html'
           }
         )
         .when(
-          '/about', 
+          '/about',
           {
             controller: 'AboutCtrl',
             templateUrl:'views/about.html'
           }
-        );
+        )
+        .when(
+          '/404',
+          {
+            templateUrl: 'views/404.html'
+          }
+        )
+        .otherwise({ redirectTo: '/404' });
 
   }]);
 

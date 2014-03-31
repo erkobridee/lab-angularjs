@@ -4,7 +4,7 @@ define(
   'angular',
   'angularRoute',
   'angularResource'
-], 
+],
 
 // require.js module scope
 function(ng) {
@@ -13,17 +13,16 @@ function(ng) {
 
   var module = ng.module(
     // module name
-    'main', 
+    'main',
 
     // module dependencies
     [
-      'ngRoute', 
+      'ngRoute',
       'ngResource'
     ]
-  ); 
+  );
 
   return module;
 
 
 });
-

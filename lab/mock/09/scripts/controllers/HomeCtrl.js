@@ -1,14 +1,14 @@
 angular.module('app').controller(
 
   // controller name
-  'HomeCtrl', 
+  'HomeCtrl',
 
   // dependencies injection
-  ['$scope', 
+  ['$scope',
 
 // controller definition
 function($scope) {
-  
+
   $scope.pageName = 'Home Page';
 
 }]);

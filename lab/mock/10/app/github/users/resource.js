@@ -1,16 +1,16 @@
 angular.module('app').factory(
 
   // resource name
-  'GitHubUsersResource', 
+  'GitHubUsersResource',
 
   // dependency injection
-  ['$resource', 
+  ['$resource',
 
 function($resource) {
 
   var user = $resource(
     'https://api.github.com/users/:login'
-  ); 
+  );
 
   return user;
 

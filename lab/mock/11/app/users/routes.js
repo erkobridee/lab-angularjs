@@ -2,7 +2,7 @@ define(
 // require.js dependency injection
 [
   './module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -16,9 +16,9 @@ function(module) {
 
   function(routeProvider) {
 
-      routeProvider   
+      routeProvider
         .when(
-          '/users', 
+          '/users',
           {
             controller: 'UserCtrl',
             templateUrl:'app/users/template.html'

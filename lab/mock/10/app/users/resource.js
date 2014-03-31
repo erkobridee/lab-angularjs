@@ -1,10 +1,10 @@
 angular.module('app').factory(
 
   // resource name
-  'UsersResource', 
+  'UsersResource',
 
   // dependency injection
-  ['$http', '$q', 
+  ['$http', '$q',
 
 function($http, $q) {
 
@@ -18,7 +18,7 @@ function($http, $q) {
 
   //---
   var successHandler = function(response) {
-     if (typeof response.data === 'object') {
+      if (typeof response.data === 'object') {
         return response.data;
       } else {
         // invalid response

@@ -1,14 +1,14 @@
 angular.module('app').controller(
 
   // controller name
-  'AboutCtrl', 
+  'AboutCtrl',
 
   // dependencies injection
-  ['$scope', 
+  ['$scope',
 
 // controller definition
 function($scope) {
-  
+
   $scope.pageName = 'About Page';
 
 }]);

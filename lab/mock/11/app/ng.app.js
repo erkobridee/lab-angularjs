@@ -5,7 +5,7 @@ define(
 
   './mock/require.load',
   './main/require.load'
-], 
+],
 
 // require.js module scope
 function(ng) {
@@ -21,11 +21,15 @@ function(ng) {
     // module dependencies
     [
       'ngMockBackend',
-      'main'      
+      'main'
     ]
   );
 
   // start angular app
-  ng.bootstrap(document, ['run']);
+  ng.element(document).ready(function() {
+
+    ng.bootstrap(document, ['run']);
+
+  });
 
 });

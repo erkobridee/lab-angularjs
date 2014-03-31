@@ -7,7 +7,7 @@ describe('Unit: Testing modules.dep1 depWidgetInline Directive', function() {
 
     //load the module
     module('modules.dep1');
-    
+
     // inject dependencies
     inject(function($rootScope, $compile) {
       scope = $rootScope.$new();
@@ -17,7 +17,7 @@ describe('Unit: Testing modules.dep1 depWidgetInline Directive', function() {
   });
 
   describe('as attribute', function(){
-    
+
     var element;
 
     beforeEach(function() {
@@ -58,7 +58,7 @@ describe('Unit: Testing modules.dep1 depWidgetInline Directive', function() {
   });
 
   describe('as element', function() {
-    
+
     var element;
 
     beforeEach(function() {

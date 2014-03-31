@@ -4,8 +4,8 @@ define(
   './module',
   './user/controller',
   './user/resource',
-  './routes'  
-], 
+  './routes'
+],
 
 // require.js module scope
 function() {});

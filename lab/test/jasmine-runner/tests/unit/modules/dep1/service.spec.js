@@ -5,13 +5,13 @@ describe('Unit: Testing modules.dep1 Service', function() {
   // excuted before each "it" is run
   beforeEach(function() {
 
-     // load the module
+    // load the module
     module('modules.dep1');
 
     // inject dependencies
     inject(function(Dep1Service) {
       service = Dep1Service;
-    });    
+    });
 
   });
 
@@ -22,10 +22,10 @@ describe('Unit: Testing modules.dep1 Service', function() {
   */
 
   // check to see if it has the expected function
-  it('should have a questionText function', function () { 
+  it('should have a questionText function', function () {
     expect(angular.isFunction(service.questionText)).toBe(true);
   });
-  
+
   // check to see if it does what it's supposed to do
   it('should make question text', function () {
     var result = service.questionText('Where to go');

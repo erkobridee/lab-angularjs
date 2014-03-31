@@ -6,7 +6,7 @@
   // require object config
   var config = {
 
-    // libraries dependencies with fallback 
+    // libraries dependencies with fallback
     paths: {
 
       'angular-mocks': [
@@ -19,12 +19,12 @@
 
     },
 
-    // define js scripts dependencies 
+    // define js scripts dependencies
     shim: {
 
       'angular-mocks': {
         deps: [
-          'angular_route', 
+          'angular_route',
           'angular_resource'
         ]
       },
@@ -62,7 +62,7 @@
     }
 
   };
-  
+
   console.log('require mock config object');
   console.log(config);
 

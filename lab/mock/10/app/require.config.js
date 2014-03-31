@@ -6,10 +6,10 @@
   // require object config
   var config = {
 
-    // libraries dependencies with fallback 
+    // libraries dependencies with fallback
     paths: {
 
-      'angular': [ 
+      'angular': [
         '/cdn/ajax/libs/angular.js/'+GLOBAL_APP.ANGULAR_VERSION+'/angular.min'
       ],
 
@@ -23,22 +23,22 @@
 
     },
 
-    // define js scripts dependencies 
+    // define js scripts dependencies
     shim: {
 
       'angular_route': {
-        deps: ['angular'] 
+        deps: ['angular']
       },
 
       'angular_resource': {
-        deps: ['angular'] 
+        deps: ['angular']
       },
 
-      'main/module': { 
+      'main/module': {
         deps: [
-          'angular_route', 
+          'angular_route',
           'angular_resource'
-        ] 
+        ]
       },
 
       'about/controller': {
@@ -51,17 +51,17 @@
 
       'github/users/controller': {
         deps: [
-          'main/module', 
+          'main/module',
           'github/users/resource'
         ]
       },
 
       'home/controller': {
-        deps: ['main/module'] 
+        deps: ['main/module']
       },
 
       'users/resource': {
-        deps: ['main/module'] 
+        deps: ['main/module']
       },
 
       'users/controller': {
@@ -77,10 +77,10 @@
         ]
       },
 
-      'main/start': { 
+      'main/start': {
         deps: [
           'main/routes'
-        ] 
+        ]
       }
 
     }
@@ -99,11 +99,11 @@ function(require) {
 
   // app only
   //require(['main/start']);
-  
+
   // app with mock
   require([
     'main/start', // app
-    'require.mock.config' // mock    
+    'require.mock.config' // mock
   ]);
 
 });

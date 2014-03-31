@@ -11,17 +11,17 @@ angular.mock.backend.addResource(function($httpBackend, regexpUrl, getParams) {
       return [404, angular.copy(notFound)];
     });
 
-    
+
   $httpBackend.when('GET', regexpUrl(/api\.github\.com\/users\/[A-z0-9]+$/))
     .respond(function(method, url, data) {
       console.log(url);
-      
+
       var user = null, login = getLoginFromURL(url);
       if(login) user = findUserByLogin(login);
 
-      var result = [404, angular.copy(notFound)]; 
+      var result = [404, angular.copy(notFound)];
       if(user) result = [200, angular.copy(user)];
-      
+
       return result;
     });
 

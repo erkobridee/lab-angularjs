@@ -4,7 +4,7 @@
   // you can pass this as the url argument to $httpBackend.[when|expect]
 angular.module('app.mock').run(
 
-  ['$httpBackend', '$timeout', 
+  ['$httpBackend', '$timeout',
 
 function($httpBackend, $timeout) {
 
@@ -19,7 +19,7 @@ function($httpBackend, $timeout) {
 
   //---
 
-  // Allow JSONP to pass to external services (ie Solr) 
+  // Allow JSONP to pass to external services (ie Solr)
   $httpBackend.when('JSONP', regexpUrl(/http:\/\/.*/)).passThrough();
 
   //---
@@ -28,7 +28,7 @@ function($httpBackend, $timeout) {
 
   //---
 
-  // A "run loop" of sorts to get httpBackend to 
+  // A "run loop" of sorts to get httpBackend to
   // issue responses and trigger the client code's callbacks
   var flushBackend = function() {
     try {

@@ -2,7 +2,7 @@ define(
 // require.js dependency injection
 [
   './module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -12,14 +12,14 @@ function(module) {
   module.controller(
 
     // controller name
-    'AboutCtrl', 
+    'AboutCtrl',
 
     // dependencies injection
-    ['$scope', 
+    ['$scope',
 
   // controller definition
   function(scope) {
-    
+
     scope.pageName = 'About Page';
 
   }]);

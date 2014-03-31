@@ -2,9 +2,9 @@ define(
 // require.js dependency injection
 [
   'angular'
-], 
+],
 
-// require.js module scope 
+// require.js module scope
 function(ng) {
   'use strict';
 
@@ -12,11 +12,11 @@ function(ng) {
   // module definition
   return ng.module(
     // module name
-    'moduleA', 
+    'moduleA',
 
     // module dependencies
     []
   );
 
-  
+
 });

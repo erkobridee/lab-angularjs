@@ -3,7 +3,7 @@ define(
 [
   'angular',
   'mock/backend'
-], 
+],
 
 // require.js module scope
 function(ng, backend) {
@@ -69,7 +69,7 @@ function(ng, backend) {
 
     //---
 
-    httpBackend.when('POST', regexpUrl(baseURL)) 
+    httpBackend.when('POST', regexpUrl(baseURL))
       .respond(function(method, url, data) {
         data = ng.fromJson(data);
 

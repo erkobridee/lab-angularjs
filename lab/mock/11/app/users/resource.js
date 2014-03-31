@@ -2,7 +2,7 @@ define(
 // require.js dependency injection
 [
   './module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -12,10 +12,10 @@ function(module) {
   module.factory(
 
     // resource name
-    'UsersResource', 
+    'UsersResource',
 
     // dependency injection
-    ['$http', '$q', 
+    ['$http', '$q',
 
   function($http, $q) {
 
@@ -29,7 +29,7 @@ function(module) {
 
     //---
     var successHandler = function(response) {
-       if (typeof response.data === 'object') {
+        if (typeof response.data === 'object') {
           return response.data;
         } else {
           // invalid response

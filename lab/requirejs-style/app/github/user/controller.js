@@ -3,7 +3,7 @@ define(
 [
   '../module',
   './resource'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -12,7 +12,7 @@ function(module) {
 
   module.controller(
     // controller name
-    'GitHubUserCtrl', 
+    'GitHubUserCtrl',
 
     // dependency injection
     ['$scope', 'GitHubUsersResource',
@@ -42,7 +42,7 @@ function(module) {
           scope.notFound = result.data;
         }
       );
-    };      
+    };
 
   }]);
 

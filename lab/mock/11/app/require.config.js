@@ -5,11 +5,11 @@ require({
 
     jquery: [
       '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min',
-      '//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min'      
+      '//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min'
     ],
 
     // http://code.angularjs.org/1.2.1/
-    angular: [       
+    angular: [
       '/cdn/ajax/libs/angular.js/1.2.1/angular.min'
     ],
 
@@ -45,6 +45,6 @@ require({
     'angular'
   ],
 
-  deps: ['./ng.bootstrap']
+  deps: ['./ng.app']
 
 });

@@ -1,12 +1,12 @@
 var app = angular.module('app', []);
 
 app.controller(
-  
+
   // controller name
-  'ctrl.Hello', 
-  
+  'ctrl.Hello',
+
   // dependency injection
-  ['$scope', 
+  ['$scope',
 
 function(scope) {
 

@@ -1,10 +1,10 @@
 angular.module('app').controller(
 
   // controller name
-  'ctrl.Tablet', 
+  'ctrl.Tablet',
 
   // dependencies injection
-  ['$scope', 
+  ['$scope',
 
 // controller definition
 function($scope) {

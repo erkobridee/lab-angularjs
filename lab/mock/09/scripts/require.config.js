@@ -13,10 +13,10 @@
   // require object config
   var config = {
 
-    // libraries dependencies with fallback 
+    // libraries dependencies with fallback
     paths: {
 
-      'angular': [ 
+      'angular': [
         '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min'
       ],
 
@@ -30,45 +30,45 @@
 
     },
 
-    // define js scripts dependencies 
+    // define js scripts dependencies
     shim: {
 
       'angular_resource': {
-        deps: ['angular'] 
+        deps: ['angular']
       },
 
       'angular_route': {
-        deps: ['angular'] 
+        deps: ['angular']
       },
 
-      'main/module': { 
+      'main/module': {
         deps: [
-          'angular_route', 
+          'angular_route',
           'angular_resource'
-        ] 
+        ]
       },
 
       'resources/GitHubUserResource': {
-        deps: ['main/module'] 
+        deps: ['main/module']
       },
 
-      'controllers/GitHubUserCtrl': { 
+      'controllers/GitHubUserCtrl': {
         deps: [
-          'main/module', 
+          'main/module',
           'resources/GitHubUserResource'
-        ] 
-      },      
-
-      'controllers/AboutCtrl': { 
-        deps: ['main/module'] 
+        ]
       },
 
-      'controllers/HomeCtrl': { 
-        deps: ['main/module'] 
+      'controllers/AboutCtrl': {
+        deps: ['main/module']
       },
 
-      'controllers/UserCtrl': { 
-        deps: ['main/module'] 
+      'controllers/HomeCtrl': {
+        deps: ['main/module']
+      },
+
+      'controllers/UserCtrl': {
+        deps: ['main/module']
       },
 
       'main/routes': {
@@ -80,16 +80,16 @@
         ]
       },
 
-      'main/start': { 
+      'main/start': {
         deps: [
           'main/routes'
-        ] 
+        ]
       }
 
     }
 
   };
-  
+
   //---
 
   if(MOCK_FLAG) {
@@ -133,13 +133,13 @@
     };
 
     config.shim['main/module'].deps.push('angular-mocks-backend');
-    
+
     var mainStartDeps = config.shim['main/start'].deps;
     config.shim['main/start'].deps = mainStartDeps.concat([
       'resources/mock/allow-pass-external',
       'resources/mock/UserMock',
       'resources/mock/GitHubUserResourceMock'
-    ]);    
+    ]);
 
   }
 

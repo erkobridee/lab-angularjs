@@ -14,11 +14,11 @@ function(ng) {
   // module definition
   return ng.module(
     // module name
-    'home', 
+    'home',
 
     // module dependencies
     [
-      'ngRoute', 
+      'ngRoute',
       'ngResource'
     ]
   );

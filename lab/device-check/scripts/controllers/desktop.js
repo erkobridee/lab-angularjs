@@ -1,10 +1,10 @@
 angular.module('app').controller(
 
   // controller name
-  'ctrl.Desktop', 
+  'ctrl.Desktop',
 
   // dependencies injection
-  ['$scope', 
+  ['$scope',
 
 // controller definition
 function($scope) {

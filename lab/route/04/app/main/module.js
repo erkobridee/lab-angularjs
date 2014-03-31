@@ -7,7 +7,7 @@ define(
 
   '../about/require.load',
   '../home/require.load'
-], 
+],
 
 // require.js module scope
 function(ng) {
@@ -17,14 +17,14 @@ function(ng) {
   // module definition
   return ng.module(
     // module name
-    'main', 
+    'main',
 
     // module dependencies
     [
-      'ngRoute', 
+      'ngRoute',
       'ngResource',
 
-      //'about', // TODO: uncomment
+      'about',
       'home'
     ]
   );

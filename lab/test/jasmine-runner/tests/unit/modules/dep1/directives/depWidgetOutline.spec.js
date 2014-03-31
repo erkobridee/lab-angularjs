@@ -12,7 +12,7 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
       // decorate directive
       // http://angular-tips.com/blog/2013/09/experiment-decorating-directives/
 
-       $provide.decorator('depWidgetOutlineDirective', function($delegate) {
+      $provide.decorator('depWidgetOutlineDirective', function($delegate) {
           var directive = $delegate[0];
 
           //console.log(directive);
@@ -21,7 +21,7 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
           directive.template = '<div class="widget"><div class="title">{{title}}</div><div class="content" ng-transclude></div></div>';
 
           return $delegate;
-        });
+      });
 
     });
 
@@ -35,7 +35,7 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
 
 
   describe('as attribute', function(){
-    
+
     var element;
 
     beforeEach(function() {
@@ -78,7 +78,7 @@ describe('Unit: Testing modules.dep1 depWidgetOutline Directive', function() {
 
 
   describe('as element', function() {
-    
+
     var element;
 
     beforeEach(function() {

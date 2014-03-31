@@ -36,4 +36,3 @@ MockService.addResource(function(angular, httpBackend, regexpUrl) {
     });
 
 });
-

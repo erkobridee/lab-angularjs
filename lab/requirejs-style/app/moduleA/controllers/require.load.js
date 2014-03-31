@@ -3,7 +3,7 @@ define(
 [
   './edit',
   './list'
-], 
+],
 
 // require.js module scope
 function() {});

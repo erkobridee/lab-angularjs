@@ -12,7 +12,7 @@ function($httpBackend, $timeout, MockService) {
 
   //---
 
-  // A "run loop" of sorts to get httpBackend to 
+  // A "run loop" of sorts to get httpBackend to
   // issue responses and trigger the client code's callbacks
   var flushBackend = function() {
     try {

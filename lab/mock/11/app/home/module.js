@@ -4,7 +4,7 @@ define(
   'angular',
   'angularRoute',
   'angularResource'
-], 
+],
 
 // require.js module scope
 function(ng) {
@@ -22,6 +22,6 @@ function(ng) {
       'ngResource'
     ]
   );
-  
+
 
 });

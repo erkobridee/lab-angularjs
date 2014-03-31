@@ -13,10 +13,10 @@
   // require object config
   var config = {
 
-    // libraries dependencies with fallback 
+    // libraries dependencies with fallback
     paths: {
 
-      'angular': [         
+      'angular': [
         '/cdn/ajax/libs/angular.js/'+ANGULAR_VERSION+'/angular.min'
       ],
 
@@ -26,27 +26,27 @@
 
     },
 
-    // define js scripts dependencies 
+    // define js scripts dependencies
     shim: {
 
       'angular_route': {
-        deps: ['angular'] 
+        deps: ['angular']
       },
 
-      'main/module': { 
-        deps: ['angular_route'] 
+      'main/module': {
+        deps: ['angular_route']
       },
 
-      'controllers/AboutCtrl': { 
-        deps: ['main/module'] 
+      'controllers/AboutCtrl': {
+        deps: ['main/module']
       },
 
-      'controllers/HomeCtrl': { 
-        deps: ['main/module'] 
+      'controllers/HomeCtrl': {
+        deps: ['main/module']
       },
 
-      'controllers/UserCtrl': { 
-        deps: ['main/module'] 
+      'controllers/UserCtrl': {
+        deps: ['main/module']
       },
 
       'main/routes': {
@@ -57,16 +57,16 @@
         ]
       },
 
-      'main/start': { 
+      'main/start': {
         deps: [
           'main/routes'
-        ] 
+        ]
       }
 
     }
 
   };
-  
+
   //---
 
   if(MOCK_FLAG) {
@@ -106,12 +106,12 @@
     };
 
     config.shim['main/module'].deps.push('angular-mocks-backend');
-    
+
     var mainStartDeps = config.shim['main/start'].deps;
     config.shim['main/start'].deps = mainStartDeps.concat([
       'resources/mock/allow-jsonp-pass-external',
       'resources/mock/UserMock'
-    ]);    
+    ]);
 
   }
 

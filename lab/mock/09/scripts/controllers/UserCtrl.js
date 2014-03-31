@@ -1,10 +1,10 @@
 angular.module('app').controller(
-  
+
   // controller name
   'UserCtrl',
-  
+
   // dependency injection
-  ['$scope', '$http', 
+  ['$scope', '$http',
 
   function($scope, $http) {
 
@@ -19,7 +19,7 @@ angular.module('app').controller(
       ];
 
       var sentData = {userName: names[addedUsers++ % 9]};
-      
+
       $http.post('/local/users', sentData).success(function(data) {
         console.log(data);
 
@@ -38,7 +38,7 @@ angular.module('app').controller(
     $http.get('/local/users').success(function(data) {
       console.log("GOT all available users");
       console.log(data);
-      $scope.users = data; 
+      $scope.users = data;
     });
 
 }]);

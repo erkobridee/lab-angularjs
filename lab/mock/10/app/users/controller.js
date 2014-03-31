@@ -1,12 +1,12 @@
 angular.module('app').controller(
-  
+
   // controller name
   'UserCtrl',
-  
-  // dependency injection
-  ['$scope', 'UsersResource', 
 
-  function($scope, resource) { 
+  // dependency injection
+  ['$scope', 'UsersResource',
+
+  function($scope, resource) {
 
     var addedUsers = 0;
 
@@ -19,7 +19,7 @@ angular.module('app').controller(
       ];
 
       var newUser = {userName: names[addedUsers++ % 9]};
-      
+
       resource.post(newUser).then(
         // success
         function(data) {
@@ -52,7 +52,7 @@ angular.module('app').controller(
       function(data) {
         console.log("GOT all available users");
         console.log(data);
-        $scope.users = data; 
+        $scope.users = data;
       },
       errorHandler
     );

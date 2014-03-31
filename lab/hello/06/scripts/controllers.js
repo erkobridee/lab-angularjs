@@ -1,10 +1,10 @@
 angular.module('app').controller(
-  
+
   // controller name
-  'ctrl.Hello', 
-  
+  'ctrl.Hello',
+
   // dependency injection
-  ['$scope', 
+  ['$scope',
 
 function(scope) {
 

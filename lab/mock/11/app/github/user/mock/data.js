@@ -2,7 +2,7 @@ define(
 // require.js dependency injection
 [
   'mock/module'
-], 
+],
 
 // require.js module scope
 function(module) {
@@ -12,10 +12,10 @@ function(module) {
 
   module.factory(
     // factory name
-    'GitHubUsersData', 
-    
+    'GitHubUsersData',
+
     // factory dependencies
-    [//'', 
+    [//'',
 
   // factory definition
   function(){

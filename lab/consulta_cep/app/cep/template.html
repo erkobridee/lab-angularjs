@@ -1,0 +1,23 @@
+<br>
+<div>
+  <input type="text" ng-model="cep" ng-keypress="keypressFn($event)">
+  <button type="button" ng-click="buscarFn()">Buscar</button>
+</div>
+
+<div ng-show="resultado">
+
+  <br><hr><br>
+
+  <div>{{resultado | json}}</div>
+
+  <br><hr><br>
+
+  <ul>
+    <li><b>Estado:</b> {{resultado.estado}}</li>
+    <li><b>Cidade:</b> {{resultado.cidade}}</li>
+    <li><b>Bairro:</b> {{resultado.bairro}}</li>
+    <li><b>Logradouro:</b> {{resultado.logradouro}}</li>
+    <li><b>Complemento:</b> {{resultado.complemento}}</li>
+  </ul>
+
+</div>

@@ -7,7 +7,7 @@ describe('Unit: Testing modules.dep1 depWelcome Directive', function() {
 
     //load the module
     module('modules.dep1');
-    
+
     // inject dependencies
     inject(function($rootScope, $compile) {
       scope = $rootScope.$new();
@@ -17,7 +17,7 @@ describe('Unit: Testing modules.dep1 depWelcome Directive', function() {
   });
 
   describe('as attribute', function(){
-    
+
     it("should display the welcome text properly", function() {
       var element = compile('<div data-dep-welcome>User</div>')(scope);
       scope.$digest();
@@ -31,14 +31,14 @@ describe('Unit: Testing modules.dep1 depWelcome Directive', function() {
   });
 
   describe('as element', function() {
-    
+
     it('should display the welcome text properly', function() {
       var element = compile('<dep-welcome>User</dep-welcome>')(scope);
       scope.$digest();
 
       var html = element.html();
       //console.log(html);
-      
+
       expect(html).toMatch(/Welcome/i);
     });
 
@@ -52,11 +52,10 @@ describe('Unit: Testing modules.dep1 depWelcome Directive', function() {
 
       var html = element.html();
       //console.log(html);
-      
+
       expect(html).not.toMatch(/Welcome/i);
     });
 
   });
 
 });
-
