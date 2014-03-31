@@ -14,9 +14,9 @@
     </ul>
   </div>
 
-  <!-- http://code.angularjs.org/1.2.1/ -->
-  <script src="/cdn/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
-  <script src="/cdn/ajax/libs/angular.js/1.2.1/angular-mocks.js"></script>
+  <!-- http://code.angularjs.org/1.2.15/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular-mocks.js"></script>
 
   <script type="text/javascript">
   (function() {
@@ -68,18 +68,21 @@
 
     //--- mock definition
 
-      // provider
-      // You can also just use provide to blanket replace $httpBackend
-      // with the mock
+    // provider
+    // You can also just use provide to blanket replace $httpBackend
+    // with the mock
     app.config(['$provide', function($provide) {
+      var obj = new angular.mock.$HttpBackendProvider(),
+          createHttpBackendMock = obj.$get[1];
+
       // Decorate by passing in the constructor for mock $httpBackend
       $provide.decorator('$httpBackend', createHttpBackendMock);
     }]);
 
 
-      // run
-      // Mark urls that match regexp as a match,
-      // you can pass this as the url argument to $httpBackend.[when|expect]
+    // run
+    // Mark urls that match regexp as a match,
+    // you can pass this as the url argument to $httpBackend.[when|expect]
     app.run(['$httpBackend', '$timeout', function($httpBackend, $timeout) {
 
       var regexpUrl = function(regexp) {
