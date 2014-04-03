@@ -39,9 +39,9 @@ module.exports = function(grunt) {
         ];
 
     tasks = tasks.concat([
-      //'shell:buildDist',
+      'shell:buildDist',
       'copy:projectDist',
-      //'shell:cleanDist',
+      'shell:cleanDist',
       'githubPages:codeDist'
     ]);
 
