@@ -27,7 +27,7 @@
 
 ## Local dos testes
 
-* Os códigos dos testes realizados, estão dentro de `lab`
+* Os códigos dos testes realizados, estão dentro de `src/lab`
 
 
 ## Material de apoio
@@ -59,9 +59,10 @@ $ [sudo] npm install -g grunt-cli
 $ git clone https://github.com/erkobridee/lab-angularjs.git
 ```
 
-* Depois de clonar o projeto para o seu computador, execute o comando dentro do diretório do projeto, para poder executar as tarefas do Grunt.js
+* Depois de clonar o projeto para o seu computador, execute o comando dentro do diretório do projeto, para poder executar as tarefas do Grunt.js que estão disponíveis dentro do diretório `/tools`
 
 ```bash
+$ cd tools/
 $ npm install
 ```
 
@@ -85,13 +86,13 @@ git submodule update --remote
 
 ## Grunt.js: tarefas disponíveis
 
+> Executar os respectivos comandos dentro do diretório `/tools`
+
 * `grunt` - executa jshint (por enquanto apenas no Gruntfile.js, falta ajustar os demais .js)
 
-* `grunt dev` - levanta o servidor na porta 1337 disponibilizando o diretório `lab`
+* `grunt dev` - levanta o servidor na porta 1337 disponibilizando o diretório `src`
 
-* `grunt test` - gera a versão que será publicada no `gh-pages` no diretório `dist` e levanta o servidor na porta 1337 apontando para este diretório
-
-* `grunt publish` - realiza a atualização do `gh-pages`
+* `grunt dist` - gera a versão que será publicada no `gh-pages` no diretório `dist` e levanta o servidor na porta 1337 apontando para este diretório
 
 
 ## Licença
