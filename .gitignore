@@ -17,6 +17,7 @@ npm-debug.log
 cache
 build
 dist
+.local
 
 #-----------
 # Windows
