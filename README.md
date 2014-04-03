@@ -68,7 +68,7 @@ $ npm install
 
 ### Git SubModules
 
-> Este projeto utiliza sub módulos referenciando outro repositório GitHub, [[GitHub] erkobridee / cdn](https://github.com/erkobridee/cdn) onde estão as bibliotecas javascript utilizadas nesse projeto
+> Este projeto utiliza sub módulos referenciando outro repositório GitHub, [[GitHub] erkobridee / cdn](https://github.com/erkobridee/cdn) onde estão as bibliotecas javascript utilizadas nesse projeto. (Sub módulo clonado no diretório `src/cdn`)
 
 * Iniciando e atualizando o sub módulo
 
