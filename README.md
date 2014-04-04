@@ -66,16 +66,24 @@ $ cd tools/
 $ npm install
 ```
 
+
 ### Git SubModules
 
 > Este projeto utiliza sub módulos referenciando outro repositório GitHub, [[GitHub] erkobridee / cdn](https://github.com/erkobridee/cdn) onde estão as bibliotecas javascript utilizadas nesse projeto. (Sub módulo clonado no diretório `src/cdn`)
 
+* Comando que adicionou o sub módulo
+
+```bash
+$ git submodule add -b gh-pages https://github.com/erkobridee/cdn.git src/cdn
+```
+
 * Iniciando e atualizando o sub módulo
 
 ```bash
-git submodule init
-git submodule update --remote
+$ git submodule init
+$ git submodule update --remote
 ```
+
 
 #### Git SubModules: referências
 
