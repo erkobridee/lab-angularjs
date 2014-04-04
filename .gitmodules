@@ -1,3 +1,0 @@
-[submodule "src/cdn"]
-	path = src/cdn
-	url = https://github.com/erkobridee/cdn.git
