@@ -3,9 +3,8 @@ module.exports = {
   all: {
     src: [
       '<%= project.paths.src %>/*.{html,css,js,coffee}',
-      '<%= project.paths.src %>/{app/,shared/}**/*.{html,css,js,coffee,less}',
-      '<%= project.paths.src %>/styles/less/*.less',
-      '<%= project.paths.src %>/helpers/**/*.js'
+      '<%= project.paths.src %>/lab/**/*.{html,css,js,coffee,less}',
+      '!<%= project.paths.src %>/lab/**/lib/**/*.{html,css,js,coffee,less}'
     ],
     options: {
       editorconfig: '<%= project.paths.editorconfig %>'
