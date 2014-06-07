@@ -1,5 +1,7 @@
 // https://github.com/sindresorhus/grunt-shell
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('shell', {
 
   buildDist: {
     command: 'grunt build',
@@ -20,5 +22,7 @@ module.exports = {
       }
     }
   }
+
+});
 
 };

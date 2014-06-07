@@ -1,11 +1,13 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('copy', {
 
   gitignore: {
     files: [
       {
         cwd: './',
         src: ['.gitignore'],
-        dest: '<%= project.paths.gh_pages %>/'
+        dest: '<%= project.gitclone.directory %>/'
       }
     ]
   },
@@ -15,10 +17,12 @@ module.exports = {
       {
         cwd: '<%= project.paths.project.dist %>/',
         src: ['**'],
-        dest: '<%= project.paths.gh_pages %>/',
+        dest: '<%= project.gitclone.directory %>/',
         expand: true
       }
     ]
   }
+
+});
 
 };

@@ -1,14 +1,18 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('githubPages', {
 
   codeDist: {
 
     options: {
       // The default commit message for the gh-pages branch
-      commitMessage: 'gh-pages auto commit <%= project.isoUtcDateTime %> (UTC)'
+      commitMessage: '<%= project.gitclone.branch %> automated commit <%= project.isoUtcDateTime %> (UTC)'
     },
 
     // The folder where your gh-pages repo is
-    src: '<%= project.paths.gh_pages %>'
+    src: '<%= project.gitclone.directory %>'
   }
+
+});
 
 };
