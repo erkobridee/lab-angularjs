@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('lintspaces', {
 
   all: {
     src: [
@@ -10,5 +12,7 @@ module.exports = {
       editorconfig: '<%= project.paths.editorconfig %>'
     }
   }
+
+});
 
 };

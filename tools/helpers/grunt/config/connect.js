@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('connect', {
 
   dev: {
     options: {
@@ -22,5 +24,7 @@ module.exports = {
       open: 'http://localhost:<%= project.frontend.port.connect %>'
     }
   }
+
+});
 
 };

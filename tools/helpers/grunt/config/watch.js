@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('watch', {
 
   js: {
     files: [
@@ -6,5 +8,7 @@ module.exports = {
     ],
     tasks : [ 'jshint:project' ]
   }
+
+});
 
 };

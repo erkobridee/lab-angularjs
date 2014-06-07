@@ -1,7 +1,7 @@
 {
   "name": "tools-for-lab-angularjs",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "frontend dev tool support",
   "keywords": [
     "frontend",
@@ -16,7 +16,6 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "load-grunt-config": "^0.8.0",
     "grunt": "^0.4.5",
     "grunt-contrib-copy": "^0.5.0",
     "grunt-cleanempty": "^0.2.1",
@@ -26,6 +25,7 @@
     "grunt-contrib-connect": "^0.5.0",
     "grunt-contrib-watch": "^0.5.3",
     "grunt-lintspaces": "^0.4.1",
-    "time-grunt": "^0.3.2"
+    "time-grunt": "^0.3.2",
+    "jit-grunt": "^0.7.0"
   }
 }

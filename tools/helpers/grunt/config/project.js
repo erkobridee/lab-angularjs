@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('project', {
 
   paths: {
     src: '../src',
@@ -12,5 +14,7 @@ module.exports = {
       livereload: 9999 // default: 35729
     }
   }
+
+});
 
 };

@@ -2,21 +2,17 @@ module.exports = function(grunt) {
   'use strict';
 
   require('time-grunt')(grunt);
+  require('jit-grunt')(grunt)({
+    customTasksDir: 'helpers/grunt/tasks'
+  });
 
-  var path = require('path');
+  // Initialize config
+  grunt.initConfig({
+    pkg: require('./package.json')
+  });
 
-  grunt.log.writeln('\nloading grunt plugins and configs...');
-  require('load-grunt-config')(
-    grunt, {
-      configPath: path.join(process.cwd(), 'helpers/grunt/config')
-    }
-  );
-  grunt.log.writeln('...done\n');
-
-  // load custom tasks
-  grunt.loadTasks('helpers/grunt/tasks'); // grunt helloworld
-  //grunt.task.run('helloworld');
-
+  // load tasks config per file
+  grunt.loadTasks('helpers/grunt/config');
 
   //--- grunt tasks
 

@@ -1,4 +1,6 @@
-module.exports = {
+module.exports = function(grunt) {
+
+grunt.config('copy', {
 
   labToDist: {
     files: [
@@ -32,5 +34,7 @@ module.exports = {
       }
     ]
   }
+
+});
 
 };
