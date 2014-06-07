@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
   'use strict';
 
+  require('time-grunt')(grunt);
+
   var path = require('path');
 
   grunt.log.writeln('\nloading grunt plugins and configs...');
