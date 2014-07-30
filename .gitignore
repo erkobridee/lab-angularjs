@@ -18,6 +18,7 @@ cache
 build
 dist
 .local
+.temp
 
 #-----------
 # Windows
