@@ -16,7 +16,7 @@ function(module) {
   // routes definition
   function ($routeProvider, $httpProvider) {
 
-    // allow to access cross domain resource
+    // allow access to cross domain resource
     $httpProvider.defaults.useXDomain = true;
 
     $routeProvider
