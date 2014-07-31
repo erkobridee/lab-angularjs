@@ -27,21 +27,7 @@
 
       angularMocks: [
         '/cdn/ajax/libs/angular.js/1.2.15/angular-mocks'
-      ],
-
-
-      jasmine: [
-        '/cdn/ajax/libs/jasmine/2.0.1/jasmine'
-      ],
-
-      jasmineHtml: [
-        '/cdn/ajax/libs/jasmine/2.0.1/jasmine-html'
-      ],
-
-      jasmineBoot: [
-        '/cdn/ajax/libs/jasmine/2.0.1/boot'
       ]
-
 
     },
 
@@ -67,22 +53,7 @@
 
       'angularMocks': {
         deps: ['angular']
-      },
-
-      'jasmine': {
-        exports: 'window.jasmineRequire'
-      },
-
-      'jasmineHtml': {
-        exports: 'window.jasmineRequire',
-        deps: ['jasmine']
-      },
-
-      'jasmineBoot': {
-        exports: 'window.jasmineRequire',
-        deps: ['jasmine', 'jasmineHtml']
       }
-
 
     },
 
@@ -95,7 +66,7 @@
 
       'angularMocks',
 
-      'jasmineBoot'
+      '../tests/unit/require.load'
     ],
 
     callback: onRequireReadyHandler
@@ -109,12 +80,8 @@
     $( document ).ready(function() {
         console.log( "document ready!" );
 
-        require(['../tests/unit/require.load'], function() {
-
-          // Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
-          window.onload();
-
-        });
+        // Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
+        window.onload();
 
     });
   }
