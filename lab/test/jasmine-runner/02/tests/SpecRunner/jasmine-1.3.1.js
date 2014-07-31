@@ -27,17 +27,7 @@
 
       angularMocks: [
         '/cdn/ajax/libs/angular.js/1.2.15/angular-mocks'
-      ],
-
-
-      jasmine: [
-        '/cdn/ajax/libs/jasmine/1.3.1/jasmine'
-      ],
-
-      jasmineHtml: [
-        '/cdn/ajax/libs/jasmine/1.3.1/jasmine-html'
       ]
-
 
     },
 
@@ -63,15 +53,6 @@
 
       'angularMocks': {
         deps: ['angular']
-      },
-
-      'jasmine': {
-        exports: 'jasmine'
-      },
-
-      'jasmineHtml': {
-        exports: 'jasmine',
-        deps: ['jasmine']
       }
 
     },
@@ -84,7 +65,6 @@
       './ng.app',
 
       'angularMocks',
-      'jasmineHtml',
 
       '../tests/unit/require.load'
     ],
