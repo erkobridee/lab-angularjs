@@ -1,0 +1,16 @@
+.widget {
+    border: 1px solid #333;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.widget .title {
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+.widget .content {
+    padding: 10px;
+}
