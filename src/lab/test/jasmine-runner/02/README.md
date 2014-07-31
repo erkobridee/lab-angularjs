@@ -1,4 +1,6 @@
-# Angular.js + Require.js + Jasmine Tests and Runner
+# Angular Test : Jasmine Runner : 02
+
+> Angular.js + Require.js + Jasmine Tests and Runner
 
 Angular.js App following bdd (modularity) architecture style with require.js
 
