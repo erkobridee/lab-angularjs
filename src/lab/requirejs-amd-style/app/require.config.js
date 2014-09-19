@@ -34,6 +34,6 @@ require.config({
     'angular'
   ],
 
-  deps: ['./main/ng.bootstrap']
+  deps: ['./ng.app']
 
 });

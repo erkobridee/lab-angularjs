@@ -2,8 +2,8 @@ define(
 // require.js dependency injection
 [
   'angular',
-  './module',
-  './routes'
+
+  './main/require.load'
 ],
 
 // require.js module scope
@@ -12,9 +12,9 @@ function(ng, module) {
 
   ng.element(document).ready(function() {
 
-    console.log('bootstrap : ' + module.name);
+    console.log('bootstrap : main');
 
-    ng.bootstrap(document, [module.name]);
+    ng.bootstrap(document, ['main']);
 
   });
 
