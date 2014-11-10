@@ -16,7 +16,11 @@ grunt.config('copy', {
     files: [
       {
         cwd: '<%= project.paths.project.dist %>/',
-        src: ['**'],
+        src: [
+          './assets/**',
+          './lab/**',
+          'index.html'
+        ],
         dest: '<%= project.gitclone.directory %>/',
         expand: true
       }
