@@ -1,0 +1,111 @@
+<html ng-app="app">
+<head>
+  <meta chartset="UTF-8">
+  <title>AngularJS : Factory and Service</title>
+</head>
+<body>
+  <div ng-controller="theController">
+    {{providerValue}}
+    <br /><br />
+    {{factoryValue}}
+    <br /><br />
+    {{serviceValue}}
+    <br /><br />
+    {{singletonValue}}
+  </div>
+
+  <!-- http://code.angularjs.org/1.2.15/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      'use strict';
+
+      //---
+
+      var Service = (function() {
+        var ClassDef = function() {};
+
+        ClassDef.prototype.log = function() {
+          return 'Service';
+        };
+
+        return ClassDef;
+      })();
+
+      var s = new Service();
+
+      console.log(s.log());
+
+      //--- === ---
+
+      var Singleton = (function() {
+
+        var instance;
+
+        var ClassDef = function() {
+          if ( instance )
+            return instance;
+          instance = this;
+        };
+
+        ClassDef.prototype.value = 'Singleton Value';
+
+        ClassDef.prototype.log = function() {
+          return 'Singleton';
+        };
+
+        return ClassDef;
+      })();
+
+      var s1 = new Singleton(),
+          s2 = new Singleton();
+
+      console.log( s1 === s2 );
+      console.log( 's1.value: ' + s1.value + ' | s2.value: ' + s2.value );
+      console.log( 'set s1.value = new Singleton Value ' );
+      s1.value = 'new Singleton Value';
+      console.log( 's1.value: ' + s1.value + ' | s2.value: ' + s2.value );
+
+      //--- === ---
+
+      var app = angular.module('app', []);
+
+      app.provider('theProvider', { $get: function() {
+        return 'Provider';
+      } });
+
+      app.factory('theFactory', function() {
+        return 'Factory'; // return value, or some object instance
+      });
+
+      app.service('theService', Service); // instantiate new object (and cache this) when inject
+
+      app.service('theSingletonService', Singleton);
+
+      app.controller(
+        // controller name
+        'theController',
+
+        // inject dependencies
+        [
+          '$scope', 'theProvider', 'theFactory',
+          'theService', 'theSingletonService',
+
+      // controller code
+      function($scope, theProvider, theFactory, theService, theSingletonService) {
+
+        $scope.providerValue = theProvider;
+
+        $scope.factoryValue = theFactory;
+
+        $scope.serviceValue = theService.log();
+
+        $scope.singletonValue = theSingletonService.value;
+
+      }]);
+
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app id="ng-app">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS : 01 : Hello World</title>
+</head>
+<body>
+
+  <div ng-controller="HelloCtrl">
+    {{hello}}
+  </div>
+
+  <!-- http://code.angularjs.org/1.2.15/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+
+  <script type="text/javascript">
+    function HelloCtrl($scope) {
+      $scope.hello = 'Angular JS - Hello World 01';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular.js + Jasmine Runner</title>
+
+  <link rel="stylesheet" href="modules/dep1/directives/depWidget.css">
+
+<!--[if lte IE 8]>
+<script type="text/javascript">
+var customTags = ['ng-include', 'ng-pluralize', 'ng-view', 'dep-widget-inline', 'dep-widget-outline']
+.concat(["ng:include", "ng:pluralize", "ng:view"]);// Optionally these for CSS
+for(var t=0, len=customTags.length;t<len;t++) document.createElement(customTags[t]);</script>
+<![endif]-->
+
+</head>
+<body>
+
+  <div ng-view></div>
+
+  <!-- http://code.angularjs.org/1.2.15/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular-route.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular-mocks.js"></script>
+
+  <script src="modules/dep1/module.js"></script>
+  <script src="modules/dep1/factory.js"></script>
+  <script src="modules/dep1/service.js"></script>
+  <script src="modules/dep1/filter.js"></script>
+  <script src="modules/dep1/controller.js"></script>
+
+  <script src="modules/dep1/directives/depWelcome.js"></script>
+  <script src="modules/dep1/directives/depWidgetInline.js"></script>
+  <script src="modules/dep1/directives/depWidgetOutline.js"></script>
+
+
+  <script src="main/module.js"></script>
+  <script src="home/controller.js"></script>
+  <script src="about/controller.js"></script>
+  <script src="main/routes.js"></script>
+  <script src="main/start.js"></script>
+
+</body>
+</html>
