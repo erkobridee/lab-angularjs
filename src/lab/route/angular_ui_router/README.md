@@ -4,7 +4,12 @@
 
   * [Angular UI router](http://angular-ui.github.io/ui-router/site)
 
+  * [Frequently Asked Questions | wiki](https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions)
+
+
 * [[YouTube] AngularJS Tutorial for Beginners - Learn Angular.js using UI-Router](https://www.youtube.com/watch?v=QETUuZ27N0w) - 19/12/2013 - [Working Angularjs Code Sample on Plunkr](http://plnkr.co/tZg6EfbMCJX1MLtUAcb1)
+
+* [The basics of using ui-router with AngularJS | @jhooks](http://joelhooks.com/blog/2013/07/22/the-basics-of-using-ui-router-with-angularjs/)
 
 * [Advanced routing and resolves | Medium](https://medium.com/opinionated-angularjs/a2fcbf874a1c) - Use the AngularUI Router instead of ngRoute
 
