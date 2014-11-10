@@ -5,8 +5,11 @@ angular.module('app').config(
 
 function($stateProvider, $urlRouterProvider) {
 
-    // For any unmatched url, redirect to /404
-    $urlRouterProvider.otherwise("/404");
+
+    $urlRouterProvider
+      .when('', '/') // default
+      .otherwise("/404"); // For any unmatched url, redirect to /404
+
 
     $stateProvider
       .state('home', {
