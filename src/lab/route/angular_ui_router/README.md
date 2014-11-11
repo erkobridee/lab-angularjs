@@ -4,6 +4,8 @@
 
   * [Angular UI router](http://angular-ui.github.io/ui-router/site)
 
+  * [In-Depth Guide | wiki](https://github.com/angular-ui/ui-router/wiki)
+
   * [Frequently Asked Questions | wiki](https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions)
 
 
