@@ -19,14 +19,14 @@ define(function(require) {
           url: '/dashboard',
           views: {
             'master': { // load page layout
-              controller: 'DashboardMainCtrl',
+              controller: 'DashboardMainCtrl as main',
               templateUrl: 'app/dashboard/templates/layout.html'
             },
             'header@dashboard': {
               templateUrl: 'app/dashboard/templates/header.html'
             },
             'sidebar@dashboard': {
-              controller: 'DashboardSidebarCtrl',
+              controller: 'DashboardSidebarCtrl as sidebar',
               templateUrl: 'app/dashboard/templates/sidebar.html'
             }
           }
@@ -35,7 +35,7 @@ define(function(require) {
           url: '/overview',
           views: {
             'content@dashboard': {
-              controller: 'DashboardOverviewCtrl',
+              controller: 'DashboardOverviewCtrl as overview',
               templateUrl: 'app/dashboard/templates/overview.html'
             }
           }
@@ -44,7 +44,7 @@ define(function(require) {
           url: '/reports',
           views: {
             'content@dashboard': {
-              controller: 'DashboardReportsCtrl',
+              controller: 'DashboardReportsCtrl as reports',
               templateUrl: 'app/dashboard/templates/reports.html'
             }
           }
@@ -53,7 +53,7 @@ define(function(require) {
           url: '/analytics',
           views: {
             'content@dashboard': {
-              controller: 'DashboardAnalyticsCtrl',
+              controller: 'DashboardAnalyticsCtrl as analytics',
               templateUrl: 'app/dashboard/templates/analytics.html'
             }
           }
@@ -62,7 +62,7 @@ define(function(require) {
           url: '/export',
           views: {
             'content@dashboard': {
-              controller: 'DashboardExportCtrl',
+              controller: 'DashboardExportCtrl as export',
               templateUrl: 'app/dashboard/templates/export.html'
             }
           }
