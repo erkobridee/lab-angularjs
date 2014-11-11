@@ -7,11 +7,16 @@
       name: 'cart',
       files: ['app/cart/cart.js']
     }]
-  ).controller('StoreCtrl', ['list', function (list) {
+  ).controller('StoreCtrl', StoreCtrl);
 
-    var store = this;
-    store.message = list.items;
+  //---
 
-  }]);
+  StoreCtrl.$inject = ['list'];
+
+  function StoreCtrl(list) {
+    var vm = this;
+
+    vm.message = list.items;
+  }
 
 })();
