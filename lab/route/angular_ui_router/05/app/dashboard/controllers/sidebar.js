@@ -3,19 +3,17 @@ define(function(require) {
 
   var module = require('../module');
 
-    module.controller(
+  module.controller('DashboardSidebarCtrl', DashboardSidebarCtrl);
 
-    // controller name
-    'DashboardSidebarCtrl',
+  //---
 
-    // dependencies injection
-    ['$scope',
+  //DashboardSidebarCtrl.$inject = [];
 
-  // controller definition
-  function(scope) {
+  function DashboardSidebarCtrl() {
+    var vm = this;
 
-    this.someValue = 'Value from Dashboad Sidebar Controller';
+    vm.someValue = 'Value from Dashboad Sidebar Controller';
 
-  }]);
+  }
 
 });

@@ -3,51 +3,51 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.config(
+  module.config(configure);
 
-    // dependencies injection
-    ['$stateProvider', '$urlRouterProvider',
+  //---
 
-  function($stateProvider, $urlRouterProvider) {
+  configure.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+  function configure($stateProvider, $urlRouterProvider) {
+
+    $urlRouterProvider
+      .when('', '/') // default
+      .otherwise("/404"); // For any unmatched url, redirect to /404
 
 
-      $urlRouterProvider
-        .when('', '/') // default
-        .otherwise("/404"); // For any unmatched url, redirect to /404
+    $stateProvider
 
-
-      $stateProvider
-
-        .state('page', {
-          url: '/page',
-          views: {
-            'master': {
-              templateUrl: 'app/main/templates/page_layout.html'
-            },
-            'header@page': {
-              templateUrl: 'app/main/templates/page_header.html'
-            },
-            'content@page': {
-              templateUrl: 'app/main/templates/page_content.html'
-            }
+      .state('page', {
+        url: '/page',
+        views: {
+          'master': {
+            templateUrl: 'app/main/templates/page_layout.html'
+          },
+          'header@page': {
+            templateUrl: 'app/main/templates/page_header.html'
+          },
+          'content@page': {
+            templateUrl: 'app/main/templates/page_content.html'
           }
-        })
+        }
+      })
 
-        .state('404', {
-          url: '/404',
-          views: {
-            'master': {
-              templateUrl: 'app/main/templates/page_layout.html'
-            },
-            'header@404': {
-              templateUrl: 'app/main/templates/404_header.html'
-            },
-            'content@404': {
-              templateUrl: 'app/main/templates/404_content.html'
-            }
+      .state('404', {
+        url: '/404',
+        views: {
+          'master': {
+            templateUrl: 'app/main/templates/page_layout.html'
+          },
+          'header@404': {
+            templateUrl: 'app/main/templates/404_header.html'
+          },
+          'content@404': {
+            templateUrl: 'app/main/templates/404_content.html'
           }
-        });
+        }
+      });
 
-  }]);
+  }
 
 });

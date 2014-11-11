@@ -3,19 +3,16 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.controller(
+  module.controller('AboutCtrl', AboutCtrl);
 
-    // controller name
-    'AboutCtrl',
+  //---
 
-    // dependencies injection
-    ['$scope',
+  //AboutCtrl.$inject = [];
 
-  // controller definition
-  function(scope) {
+  function AboutCtrl() {
+    var vm = this;
 
-    scope.someValue = 'Value from About Controller';
-
-  }]);
+    vm.someValue = 'Value from About Controller';
+  }
 
 });

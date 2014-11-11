@@ -3,19 +3,17 @@ define(function(require) {
 
   var module = require('../module');
 
-    module.controller(
+  module.controller('DashboardAnalyticsCtrl', DashboardAnalyticsCtrl);
 
-    // controller name
-    'DashboardAnalyticsCtrl',
+  //---
 
-    // dependencies injection
-    ['$scope',
+  // DashboardAnalyticsCtrl.$inject = [];
 
-  // controller definition
-  function(scope) {
+  function DashboardAnalyticsCtrl() {
+    var vm = this;
 
-    this.someValue = 'Value from Dashboad Analytics Controller';
+    vm.someValue = 'Value from Dashboad Analytics Controller';
 
-  }]);
+  }
 
 });

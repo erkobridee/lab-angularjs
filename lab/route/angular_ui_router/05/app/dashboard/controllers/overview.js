@@ -3,19 +3,17 @@ define(function(require) {
 
   var module = require('../module');
 
-    module.controller(
+  module.controller('DashboardOverviewCtrl', DashboardOverviewCtrl);
 
-    // controller name
-    'DashboardOverviewCtrl',
+  //---
 
-    // dependencies injection
-    ['$scope',
+  //DashboardOverviewCtrl.$inject = [];
 
-  // controller definition
-  function(scope) {
+  function DashboardOverviewCtrl() {
+    var vm = this;
 
-    this.someValue = 'Value from Dashboad Overview Controller';
+    vm.someValue = 'Value from Dashboad Overview Controller';
 
-  }]);
+  }
 
 });

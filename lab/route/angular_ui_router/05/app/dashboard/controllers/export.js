@@ -3,19 +3,17 @@ define(function(require) {
 
   var module = require('../module');
 
-    module.controller(
+  module.controller('DashboardExportCtrl', DashboardExportCtrl);
 
-    // controller name
-    'DashboardExportCtrl',
+  //---
 
-    // dependencies injection
-    ['$scope',
+  //DashboardExportCtrl.$inject = [];
 
-  // controller definition
-  function(scope) {
+  function DashboardExportCtrl() {
+    var vm = this;
 
-    this.someValue = 'Value from Dashboad Export Controller';
+    vm.someValue = 'Value from Dashboad Export Controller';
 
-  }]);
+  }
 
 });
