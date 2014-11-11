@@ -14,7 +14,7 @@ define(function(require) {
   // controller definition
   function(scope) {
 
-    scope.someValue = 'Value from Dashboad Sidebar Controller';
+    this.someValue = 'Value from Dashboad Sidebar Controller';
 
   }]);
 
