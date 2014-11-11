@@ -3,31 +3,32 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.config(
+  module.config(configure);
 
-    // dependencies injection
-    ['$stateProvider', '$urlRouterProvider',
+  //---
 
-  function($stateProvider, $urlRouterProvider) {
+  configure.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-      $stateProvider
-        .state('home', {
-          url: '/',
-          views: {
-            'master': {
-              //controller: 'HomeCtrl',
-              templateUrl: 'app/main/templates/page_layout.html'
-            },
-            'header@home': {
-              templateUrl: 'app/home/templates/header.html'
-            },
-            'content@home': {
-              controller: 'HomeCtrl',
-              templateUrl: 'app/home/templates/content.html'
-            }
+  function configure($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('home', {
+        url: '/',
+        views: {
+          'master': {
+            //controller: 'HomeCtrl as home',
+            templateUrl: 'app/main/templates/page_layout.html'
+          },
+          'header@home': {
+            templateUrl: 'app/home/templates/header.html'
+          },
+          'content@home': {
+            controller: 'HomeCtrl as home',
+            templateUrl: 'app/home/templates/content.html'
           }
-        });
+        }
+      });
 
-  }]);
+  }
 
 });

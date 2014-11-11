@@ -3,35 +3,33 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.controller(
+  module.controller('HomeCtrl', HomeCtrl);
 
-    // controller name
-    'HomeCtrl',
+  //---
 
-    // dependencies injection
-    ['$scope', '$state',
+  HomeCtrl.$inject = ['$state'];
 
-  // controller definition
-  function(scope, state) {
+  function HomeCtrl(state) {
+    var vm = this;
 
-    scope.greetings = 'Home controller say: Welcome to Angular Routes Example';
+    vm.greetings = 'Home controller say: Welcome to Angular Routes Example';
 
-    scope.goToAbout = function() {
+    vm.goToAbout = function() {
       console.log('home controller :: goToAbout');
       state.go('about');
 
     };
 
-    scope.gotToPage = function() {
+    vm.gotToPage = function() {
       console.log('home controller :: goToPage');
       state.go('page');
     };
 
-    scope.gotToDashboard = function() {
+    vm.gotToDashboard = function() {
       console.log('home controller :: goToDashboard');
       state.go('dashboard');
     };
 
-  }]);
+  }
 
 });

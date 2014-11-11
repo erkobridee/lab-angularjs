@@ -5,30 +5,19 @@ define(function(require) {
   var mainModule = require('./main/require.load');
 
   console.log('bootstrap : ' + mainModule.name);
-  //ng.bootstrap(document, [mainModule.name]);
 
-  // @begin: new main module definition test
   console.log(mainModule.value('appName').requires);
 
-  console.log('define new main module, and add more dependecies');
+  angular.element(document).ready(bootstrap);
 
-  var runModule = angular.module(
-    // module name
-    'run',
+  //---
 
-    // module dependencies
-    [mainModule.name]
-  );
+  function bootstrap() {
 
-  console.log(runModule.value('appName').requires);
+    console.log('bootstrap : ' + mainModule.name);
 
-  angular.element(document).ready(function() {
+    angular.bootstrap(document, [mainModule.name]);
 
-    console.log('bootstrap : ' + runModule.name);
-
-    angular.bootstrap(document, [runModule.name]);
-
-  });
-  // @end: new main module definition test
+  }
 
 });
