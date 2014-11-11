@@ -3,12 +3,14 @@
 
   angular
     .module('cart', [])
-    .service('list', list);
+    .service('list', ListService);
 
   //---
 
-  function list() {
-    this.items = ['shoe', 'apple', 'phone'];
+  function ListService() {
+    var vm = this;
+
+    vm.items = ['shoe', 'apple', 'phone'];
   }
 
 })();
