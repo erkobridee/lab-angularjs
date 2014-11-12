@@ -10,6 +10,8 @@
 
 * [Lazy-loading with AngularJS + requirejs + ocLazyLoad | Plunker](http://embed.plnkr.co/bwaBRv/app.js)
 
+* [Lazy Loading ui-router states with ocLazyLoad and ui-router-extras futureStates | Karan's Blog](http://bardo.io/posts/oclazyload-future-states/)
+
 --
 
 * [Load a module on demand with AngularJS | getElementsByIdea](http://blog.getelementsbyidea.com/load-a-module-on-demand-with-angularjs/)
