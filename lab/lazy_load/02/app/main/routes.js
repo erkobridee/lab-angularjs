@@ -7,7 +7,6 @@ define(function(require) {
 
   //---
 
-
   configure.$inject = ['$stateProvider', '$ocLazyLoadProvider'];
 
   function configure($stateProvider, $ocLazyLoadProvider) {
@@ -17,10 +16,7 @@ define(function(require) {
         asyncLoader: require
       });
 
-
-      $stateProvider.state('store', {
-        templateUrl: 'app/store/store.html',
-        controller: 'StoreCtrl as store',
+      $stateProvider.state('lazy_store', {
         resolve: {
           store: resolveStore
         }
@@ -30,12 +26,16 @@ define(function(require) {
 
   //---
 
-  resolveStore.$inject = ['$ocLazyLoad'];
+  resolveStore.$inject = ['$ocLazyLoad', '$state'];
 
-  function resolveStore($ocLazyLoad) {
+  function resolveStore($ocLazyLoad, $state) {
     return $ocLazyLoad.load({
       name: 'store',
-      files: ['app/store/store.js']
+      files: ['store/require.load'] // load require AMD
+    })
+    .then(function() { // After load
+      console.log('store module loaded');
+      $state.go('store');
     });
   }
 
