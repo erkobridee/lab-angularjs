@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS : 02 : ocLazyLoad + require.js</title>
+</head>
+<body ng-controller="AppCtrl as app">
+
+  <h1>ocLazyLoad + Require.js</h1>
+
+  <p>see: <a href="https://egghead.io/lessons/angularjs-simple-lazy-loaded-angular-module-syntax-with-oclazyload" target="_blank">Simple Lazy Loaded Angular Module Syntax with ocLazyLoad | egghead.io</a></p>
+
+  <hr>
+
+  <button ng-click="app.click()">Click me!</button>
+
+  <br>
+
+  <div ui-view></div>
+
+  <!-- javascripts -->
+
+    <!-- libs -->
+  <!--
+  <script src="/cdn/ajax/libs/angular.js/1.3.1/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular-ui/ui-router/0.2.11/angular-ui-router.min.js"></script>
+  <script src="/cdn/ajax/libs/ocLazyLoad/0.4.2/ocLazyLoad.min.js"></script>
+  -->
+
+    <!-- app -->
+  <!--
+  <script src="app/main.js"></script>
+  <script src="app/bootstrap.js"></script>
+  -->
+
+  <script
+    data-main="app/require.config"
+    src="/cdn/ajax/libs/require.js/2.1.11/require.min.js"></script>
+
+</body>
+</html>
