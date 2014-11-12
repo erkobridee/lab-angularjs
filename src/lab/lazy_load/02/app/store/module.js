@@ -16,7 +16,7 @@ define(function(require) {
 
       { // lazy load by ocLazyLoad
         name: 'cart',
-        files: ['cart/require.load']
+        files: ['cart/require.load'] // load require AMD
       }
     ]
   );

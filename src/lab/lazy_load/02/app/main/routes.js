@@ -31,9 +31,9 @@ define(function(require) {
   function resolveStore($ocLazyLoad, $state) {
     return $ocLazyLoad.load({
       name: 'store',
-      files: ['store/require.load']
+      files: ['store/require.load'] // load require AMD
     })
-    .then(function() {
+    .then(function() { // After load
       console.log('store module loaded');
       $state.go('store');
     });
