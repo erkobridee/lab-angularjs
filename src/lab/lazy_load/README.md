@@ -2,11 +2,13 @@
 
 * [[SlideShare] Angularjs - lazy loading techniques](http://www.slideshare.net/nirkaufman/angularjs-lazy-loading-techniques)
 
-  * [[GitHub] nirkaufman / lazyLoadingDemo](https://github.com/nirkaufman/lazyLoadingDemo) - Demo project
+* [[GitHub] nirkaufman / lazyLoadingDemo](https://github.com/nirkaufman/lazyLoadingDemo) - Demo project
 
-  * [[GitHub] ocombe / ocLazyLoad](https://github.com/ocombe/ocLazyLoad) - Load modules on demand (lazy load) in AngularJS
+* [[GitHub] ocombe / ocLazyLoad](https://github.com/ocombe/ocLazyLoad) - Load modules on demand (lazy load) in AngularJS
 
-    * [Simple Lazy Loaded Angular Module Syntax with ocLazyLoad - AngularJS Video Tutorial](https://egghead.io/lessons/angularjs-simple-lazy-loaded-angular-module-syntax-with-oclazyload) - ocLazyLoad offers several ways to lazy load your AngularJS modules. This lesson looks at the syntax for lazy loading dependencies declared in the module definition.
+* [Simple Lazy Loaded Angular Module Syntax with ocLazyLoad - AngularJS Video Tutorial](https://egghead.io/lessons/angularjs-simple-lazy-loaded-angular-module-syntax-with-oclazyload) - ocLazyLoad offers several ways to lazy load your AngularJS modules. This lesson looks at the syntax for lazy loading dependencies declared in the module definition.
+
+* [Lazy-loading with AngularJS + requirejs + ocLazyLoad | Plunker](http://embed.plnkr.co/bwaBRv/app.js)
 
 --
 
