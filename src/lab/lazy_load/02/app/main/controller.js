@@ -13,7 +13,7 @@ define(function(require) {
     var vm = this;
 
     vm.click = function () {
-        $state.go('store');
+      $state.go('lazy_store');
     };
   }
 
