@@ -2,7 +2,7 @@ define(function(require) {
   'use strict';
 
   var angular = require('angular');
-  var mainModule = require('./main/require.load');
+  var mainModule = require('./main/package');
 
   console.log('bootstrap : ' + mainModule.name);
 
