@@ -1,13 +1,16 @@
-angular.module('app').controller(
+(function() {
+  'use strict';
 
-  // controller name
-  'ctrl.Hello',
+  angular.module('app').controller('ctrl.Hello', HelloCtrl);
 
-  // dependency injection
-  ['$scope',
+  //---
 
-function(scope) {
+  HelloCtrl.$inject = ['$scope'];
 
-  scope.hello = 'Angular JS - Hello World 08 :: With require.js';
+  function HelloCtrl(scope) {
 
-}]);
+    scope.hello = 'Angular JS - Hello World 08 :: With require.js';
+
+  }
+
+})();
