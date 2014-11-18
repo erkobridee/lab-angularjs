@@ -1,15 +1,18 @@
-var app = angular.module('app', []);
+(function() {
+  'use strict';
 
-app.controller(
+  var app = angular.module('app', []);
 
-  // controller name
-  'ctrl.Hello',
+  app.controller('ctrl.Hello', HelloCtrl);
 
-  // dependency injection
-  ['$scope',
+  //---
 
-function(scope) {
+  HelloCtrl.$inject = ['$scope'];
 
-  scope.hello = 'Angular JS - Hello World 05';
+  function HelloCtrl(scope) {
 
-}]);
+    scope.hello = 'Angular JS - Hello World 05';
+
+  }
+
+})();
