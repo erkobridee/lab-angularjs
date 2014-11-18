@@ -9,19 +9,17 @@ function(module) {
   'use strict';
 
 
-  module.controller(
-    // controller name
-    'ctrl.Hello',
+  module.controller('ctrl.Hello', HelloCtrl);
 
-    // dependency injection
-    ['$scope',
+  //---
 
-  // controller definition
-  function(scope){
+  HelloCtrl.$inject = ['$scope'];
+
+  function HelloCtrl(scope) {
 
     scope.hello = 'Angular JS - Hello World 10 :: Require.js code style';
 
-  }]);
+  }
 
 
 });
