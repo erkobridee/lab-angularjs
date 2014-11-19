@@ -7,7 +7,9 @@ define(function(require) {
 
   //---
 
-  function depWidgetOutline() {
+  depWidgetOutline.$inject = ['$log'];
+
+  function depWidgetOutline(console) {
 
     var directive = {
 
@@ -50,11 +52,11 @@ define(function(require) {
 
     function linkFunc(scope, element, attrs) {
 
-      console.log('depWidgetOutLine directive link');
+      console.debug('depWidgetOutLine directive link');
 
-      console.log('LINK: attrs.title = %s', attrs.title);
-      console.log('LINK: scope.title = %s', scope.title);
-      console.log('LINK: scope.vm.title = %s', scope.vm.title);
+      console.debug('LINK: attrs.title = %s', attrs.title);
+      console.debug('LINK: scope.title = %s', scope.title);
+      console.debug('LINK: scope.vm.title = %s', scope.vm.title);
 
       // fallback
       if(!scope.title) scope.title = attrs.title || '';

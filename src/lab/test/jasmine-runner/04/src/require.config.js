@@ -14,16 +14,16 @@
         '/cdn/ajax/libs/angular.js/1.3.1/angular.min'
       ],
 
-      angularRoute: [
-        '/cdn/ajax/libs/angular.js/1.3.1/angular-route.min'
-      ],
-
       angularResource: [
         '/cdn/ajax/libs/angular.js/1.3.1/angular-resource.min'
       ],
 
       angularMocks: [
         '/cdn/ajax/libs/angular.js/1.3.1/angular-mocks'
+      ],
+
+      uiRouter: [
+        '/cdn/ajax/libs/angular-ui/ui-router/0.2.11/angular-ui-router.min'
       ]
 
     },
@@ -40,11 +40,11 @@
         deps: ['jquery']
       },
 
-      'angularRoute': {
+      'angularResource': {
         deps: ['angular']
       },
 
-      'angularResource': {
+      'uiRouter': {
         deps: ['angular']
       },
 

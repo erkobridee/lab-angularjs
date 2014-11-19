@@ -13,7 +13,7 @@ describe('Unit: Testing Home Controller', function() {
       scope = $rootScope.$new();
 
       vm = $controller('HomeCtrl', {
-        $scope: scope
+        $scope: scope,
         console: $log
       });
     });
