@@ -1,47 +1,86 @@
-describe('Angular.js \'about\' Routes', function() {
+describe('ui.router: \'about\'', function() {
 
-  var route;
+  var state;
 
   beforeEach(function() {
     module('about');
 
-    inject(function($route) {
-      route = $route;
+    inject(function($state) {
+      state = $state;
     });
   });
 
-  /* only to check if injection work fine
-  it('$route should be defined', function() {
-    expect(route).not.toEqual(null);
-  });
-  */
 
-  describe('Routes Map', function() {
+  describe("States Maps", function() {
 
-    /* only to check if injection work fine
-    it('$route should be present', function() {
-      expect(route).not.toEqual(null);
-    });
-    */
+    describe("$state", function() {
 
-
-    describe('location \'/about\'', function() {
-
-      it('should be defined', function() {
-        expect(route.routes['/about']).toBeDefined();
-      });
-
-      it('should map to controller AboutCtrl', function() {
-        expect(route.routes['/about'].controller).toBe('AboutCtrl');
-      });
-
-      it('should map to templateUrl app/about/template.html', function() {
-        expect(route.routes['/about'].templateUrl).toEqual('app/about/template.html');
+      it("should be define", function() {
+        expect(state).toBeDefined();
       });
 
     });
 
+    describe("about state", function() {
 
-  }); //--- end: Routes Map
+      var config;
+
+      it("should be define", function() {
+        // arrange
+        config = state.get('about');
+
+        // assertions
+        expect(config).toBeDefined();
+      });
+
+      it("should map to url \'/about\'", function() {
+        expect(config.url).toEqual('/about');
+      });
+
+      describe("views", function() {
+
+        var views;
+
+        it("should be defined", function() {
+          // arrange
+          views = config.views;
+
+          // assertions
+          expect(views).toBeDefined();
+        });
+
+        describe("master", function() {
+
+          var master;
+
+          it("should be defined", function() {
+            // arrange
+            master = views.master;
+
+            // assertions
+            expect(master).toBeDefined();
+          });
+
+          it("should map to templateUrl \'app/about/template.html\'", function() {
+            expect(master.templateUrl).toBeDefined('app/about/template.html');
+          });
+
+          it("should map to controller AboutCtrl", function() {
+            expect(master.controller).toEqual('AboutCtrl');
+          });
+
+          it("should map to controllerAs vm", function() {
+            expect(master.controllerAs).toEqual('vm');
+          });
+
+        });
+
+
+      });
+
+    });
+
+  }); //--- end: States Map
+
 
 });
