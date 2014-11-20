@@ -11,6 +11,7 @@
 			 	 $translateProvider
 			 	 	
 			 	 	.translations('en-US', {
+			 	 		'CHANGE_LANGUAGE': 'Change language',
 				 	 	'MESSAGE': {
 				  			'CONTROLLER': 'Translated on controller',
 				  			'HTML': 'Translated on html'
@@ -18,6 +19,7 @@
 				  	})
 			  		
 			  		.translations('pt-BR', {
+			  			'CHANGE_LANGUAGE': 'Alterar idioma',
 				  		'MESSAGE': {
 				  			'CONTROLLER': 'Traduzido no controller',
 				  			'HTML': 'Traduzido no html'
