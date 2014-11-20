@@ -1,47 +1,84 @@
-describe('Angular.js \'home\' Routes', function() {
+describe('ui.router: \'home\'', function() {
 
-  var route;
+  var state;
 
   beforeEach(function() {
     module('home');
 
-    inject(function($route) {
-      route = $route;
+    inject(function($state) {
+      state = $state;
     });
 
   });
 
-  /* only to check if injection work fine
-  it('$route should be defined', function() {
-    expect(route).not.toEqual(null);
-  });
-  */
+  describe("States Map", function() {
 
-  describe('Routes Map', function() {
+    describe("$state", function() {
 
-    /* only to check if injection work fine
-    it('$route should be present', function() {
-      expect(route).not.toEqual(null);
-    });
-    */
-
-    describe('location \'/\'', function() {
-
-      it('should be defined', function() {
-        expect(route.routes['/']).toBeDefined();
-      });
-
-      it('should map to controller HomeCtrl', function() {
-        expect(route.routes['/'].controller).toBe('HomeCtrl');
-      });
-
-      it('should map to templateUrl app/home/template.html', function() {
-        expect(route.routes['/'].templateUrl).toEqual('app/home/template.html');
+      it("should be define", function() {
+        expect(state).toBeDefined();
       });
 
     });
 
+    describe("home state", function() {
 
-  }); //--- end: Routes Map
+      var config;
+
+      it("should be defined", function() {
+        // arrange
+        config = state.get('home');
+
+        // assertions
+        expect(config).toBeDefined();
+      });
+
+      it("should map to url \'/\'", function() {
+        expect(config.url).toEqual('/');
+      });
+
+      describe("views", function() {
+
+        var views;
+
+        it("should be defined", function() {
+          // arrange
+          views = config.views;
+
+          // assertions
+          expect(views).toBeDefined();
+        });
+
+        describe("master", function() {
+
+          var master;
+
+          it("should be defined", function() {
+            // arrange
+            master = views.master;
+
+            // assertions
+            expect(master).toBeDefined();
+          });
+
+          it("should map to templateUrl \'app/home/template.html\'", function() {
+            expect(master.templateUrl).toBeDefined('app/home/template.html');
+          });
+
+          it("should map to controller HomeCtrl", function() {
+            expect(master.controller).toEqual('HomeCtrl');
+          });
+
+          it("should map to controllerAs vm", function() {
+            expect(master.controllerAs).toEqual('vm');
+          });
+
+        });
+
+      });
+
+    });
+
+  }); //--- end: States Map
 
 });
