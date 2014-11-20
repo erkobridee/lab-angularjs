@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS : 02 : i18n</title>
+</head>
+<body ng-controller="MainCtrl">
+
+  <div >
+
+	<div>
+		<span>Alterar idioma</span>
+	  	<select 
+	  		ng-model="selected"
+	  		ng-options="lang for lang in languages"
+	  		ng-change="itemSelected()">
+	  	</select>
+	</div>
+    
+    <h1>{{ 'MESSAGE.HTML' | translate }}</h1>
+
+    <h1>{{ message }}</h1>
+
+  </div>
+
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bower-angular-translate/2.0.1/angular-translate.js"></script>
+  <script src="scripts/app.js"></script>
+
+</body>
+</html>

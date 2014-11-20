@@ -1,0 +1,9 @@
+define(
+
+[
+	'./module',
+	'./routes'
+],
+
+
+function() {});
