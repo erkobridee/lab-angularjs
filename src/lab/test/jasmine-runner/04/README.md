@@ -7,6 +7,9 @@ Angular.js App following bdd (modularity [ code + tests ]) architecture style wi
 
 ## Links
 
+* [[GitHub] johnpapa / angularjs-styleguide](https://github.com/johnpapa/angularjs-styleguide) - A starting point for AngularJS development teams to provide consistency through good practices
+
+
 ### Unit Tests
 
 * [Unit-test your ui-router configuration | Karan's Blog](http://bardo.io/posts/testing-your-ui-router-configuration/)
