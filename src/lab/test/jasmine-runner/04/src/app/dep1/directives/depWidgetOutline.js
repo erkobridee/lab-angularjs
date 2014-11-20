@@ -37,11 +37,11 @@ define(function(require) {
 
     };
 
+    DepWidgetOutlineCtrl.$inject = ['$scope'];
+
     return directive;
 
     //---
-
-    DepWidgetOutlineCtrl.$inject = ['$scope'];
 
     function DepWidgetOutlineCtrl($scope) {
       var vm = this;
