@@ -1,47 +1,86 @@
-describe('Angular.js \'dep1\' Routes', function() {
+describe('ui.router: \'dep1\'', function() {
 
-  var route;
+  var state;
 
   beforeEach(function() {
     module('dep1');
 
-    inject(function($route) {
-      route = $route;
+    inject(function($state) {
+      state = $state;
     });
   });
 
-  /* only to check if injection work fine
-  it('$route should be defined', function() {
-    expect(route).not.toEqual(null);
-  });
-  */
+  describe("States Map", function() {
 
-  describe('Routes Map', function() {
+    var config;
 
-    /* only to check if injection work fine
-    it('$route should be present', function() {
-      expect(route).not.toEqual(null);
-    });
-    */
+    it("should be defined", function() {
+      // arrange
+      config = state.get('dep1');
 
-
-    describe('location \'/dep1\'', function() {
-
-      it('should be defined', function() {
-        expect(route.routes['/dep1']).toBeDefined();
-      });
-
-      it('should map to controller DependencyCtrl', function() {
-        expect(route.routes['/dep1'].controller).toBe('Dep1Ctrl');
-      });
-
-      it('should map to templateUrl app/dep1/template.html', function() {
-        expect(route.routes['/dep1'].templateUrl).toEqual('app/dep1/template.html');
-      });
-
+      // assertions
+      expect(config).toBeDefined();
     });
 
+    describe("about state", function() {
 
-  }); //--- end: Routes Map
+      var config;
+
+      it("should be define", function() {
+        // arrange
+        config = state.get('dep1');
+
+        // assertions
+        expect(config).toBeDefined();
+      });
+
+      it("should map to url \'/dep1\'", function() {
+        expect(config.url).toEqual('/dep1');
+      });
+
+      describe("views", function() {
+
+        var views;
+
+        it("should be defined", function() {
+          // arrange
+          views = config.views;
+
+          // assertions
+          expect(views).toBeDefined();
+        });
+
+        describe("master", function() {
+
+          var master;
+
+          it("should be defined", function() {
+            // arrange
+            master = views.master;
+
+            // assertions
+            expect(master).toBeDefined();
+          });
+
+          it("should map to templateUrl \'app/dep1/template.html\'", function() {
+            expect(master.templateUrl).toBeDefined('app/dep1/template.html');
+          });
+
+          it("should map to controller Dep1Ctrl", function() {
+            expect(master.controller).toEqual('Dep1Ctrl');
+          });
+
+          it("should map to controllerAs vm", function() {
+            expect(master.controllerAs).toEqual('vm');
+          });
+
+        });
+
+
+      });
+
+    });
+
+  }); //--- end: States Map
 
 });
