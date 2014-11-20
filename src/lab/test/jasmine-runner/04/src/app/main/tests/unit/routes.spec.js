@@ -1,4 +1,4 @@
-describe('Angular.js \'main\' Routes', function() {
+describe('ui.router: \'main\'', function() {
 
   var state, stateProvider, urlRouterProvider;
 
@@ -31,7 +31,7 @@ describe('Angular.js \'main\' Routes', function() {
 
     describe("404 state", function() {
 
-      var config, views;
+      var config;
 
       it("should be defined", function() {
         // arrange
@@ -45,16 +45,34 @@ describe('Angular.js \'main\' Routes', function() {
         expect(config.url).toEqual('/404');
       });
 
-      it("should views be defined", function() {
-        // arrange
-        views = config.views;
+      describe("views", function() {
+        var view;
 
-        // assertions
-        expect(views).toBeDefined();
-      });
+        it("should views be defined", function() {
+          // arrange
+          views = config.views;
 
-      it("should map views.master templateUrl to \''app/main/templates/404.html'\'", function() {
-        expect(views.master.templateUrl).toEqual('app/main/templates/404.html');
+          // assertions
+          expect(views).toBeDefined();
+        });
+
+        describe("master", function() {
+          var master;
+
+          it("should be defined", function() {
+            // arrange
+            master = views.master;
+
+            // assertions
+            expect(master).toBeDefined();
+          });
+
+          it("should map to templateUrl \''app/main/templates/404.html'\'", function() {
+            expect(master.templateUrl).toEqual('app/main/templates/404.html');
+          });
+
+        });
+
       });
 
     });
