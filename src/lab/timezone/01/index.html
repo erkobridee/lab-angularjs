@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS : 01 : timezone</title>
+</head>
+<body ng-controller="MainCtrl">
+
+  	<div>
+
+        <div>
+          <span>Exemplo 01: Formatando data e hora atual</span>
+        </div>
+    
+        <div>
+            {{ date | amDateFormat: 'DD/MM/YYYY HH:mm:ss' }}
+        </div>
+
+    </div>
+
+  	<script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  	<script src="/cdn/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+  	<script src="/cdn/ajax/libs/angular-moment/0.8.2/angular-moment.min.js"></script>
+  
+  	<script type="text/javascript">
+  		(function() {
+
+  			angular
+    				.module('App', ['angularMoment'])
+    				.controller('MainCtrl', MainCtrl);
+
+    				MainCtrl.$inject = [ '$scope' ];
+
+    				function MainCtrl($scope) {
+    					  $scope.date = new Date();
+    				}
+
+  		})();		
+  </script>
+
+</body>
+</html>
