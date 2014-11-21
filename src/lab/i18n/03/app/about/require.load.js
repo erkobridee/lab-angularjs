@@ -1,9 +1,0 @@
-define(
-
-[
-	'./module',
-	'./routes'
-],
-
-
-function() {});

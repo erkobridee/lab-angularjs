@@ -1,24 +1,20 @@
 
-define(
-// require.js dependency injection
-[
-	'./module',
-	'./locale/pt',
-	'./locale/en'
-],
+define(function(require) {
+    'use strict';
 
-// require.js module scope
-function(module, pt, en) {
-  'use strict';
+    var module = require('./module');
 
-  		module.config(['$translateProvider', translateProvider]);
+  		module.config(translateProvider);
   
-		function translateProvider($translateProvider) {
+  		translateProvider.$inject = [ '$translateProvider' ];
 
+		function translateProvider($translateProvider) {
 			$translateProvider
-			  	.translations('en-US', en)
-			  	.translations('pt-BR', pt)
-			  	.preferredLanguage(navigator.language);
+			  	
+			  	.translations('en_US', require('./locale/en_US'))
+			  	.translations('pt_BR', require('./locale/pt_BR'))
+			  	
+  				.determinePreferredLanguage();
 		}
-		
+
 });

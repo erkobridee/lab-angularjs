@@ -1,21 +1,12 @@
-define(
-        [
-          'angular',
-          'angularRoute',
-          './../i18n/require.load',
-          './../home/require.load',
-          './../about/require.load'
-        ],
+define(function(require){
+    'use strict';
 
-        function(ng) {
-          'use strict';
+    var angular = require('angular');                
           
-          return ng.module('main',  
-                [ 
-                  'ngRoute',
-                  'translate',
-                  'home',
-                  'about'
+    return angular.module('main',  [
+                  require('./../i18n/package').name,
+                  require('./../home/package').name,
+                  require('./../about/package').name
                 ]
           );
 

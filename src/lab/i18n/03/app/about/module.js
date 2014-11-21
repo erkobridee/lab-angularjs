@@ -1,17 +1,13 @@
-define(
-        [
-          'angular',
-          'angularRoute',
-          'angularTranslate'
-        ],
+define(function(require) {
+    'use strict';
 
-        function(ng) {
-          'use strict';
+    var angular = require('angular');
+                  require('angularRoute');
+                  require('./../i18n/package');
           
-          return ng.module('about',  
-                [ 
+    return angular.module('about', [ 
                   'ngRoute',
-                  'pascalprecht.translate'
+                  'translate'
                 ]
           );
 

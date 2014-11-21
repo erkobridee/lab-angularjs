@@ -10,7 +10,10 @@ define(function(require) {
     function routesConfig($routeProvider, $locationProvider) {
       
         $routeProvider
-            .when('/about', { templateUrl: 'app/about/templates/about.html' });
+            .when('/about', { 
+            		templateUrl: 'app/about/templates/about.html',
+            		controller: 'AboutCtrl' 
+            	});
 
         $locationProvider.html5Mode(true);
     }

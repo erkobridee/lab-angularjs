@@ -12,8 +12,12 @@ require.config({
 
 	    angularTranslate: [
 	    	'//rawgit.com/PascalPrecht/bower-angular-translate/master/angular-translate.min'
-	    ]
+	    ],
 
+	    angularTranslateLoaderPartial: [
+	    	'//rawgit.com/PascalPrecht/bower-angular-translate-loader-partial/master/angular-translate-loader-partial.min'
+	    ]
+	  
 	},
 
 	shim: {
@@ -22,13 +26,16 @@ require.config({
 			exports: 'angular'
 		},
 
-
 		'angularRoute': {
-	      deps: ['angular']
+	      	deps: ['angular']
 	    },
 
 		'angularTranslate': {
 			deps: ['angular']
+		},
+
+		'angularTranslateLoaderPartial': {
+			deps: ['angularTranslate']
 		}
 
 	},
