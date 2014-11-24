@@ -1,0 +1,17 @@
+<div>
+  
+  <ul>
+    <li><a ng-href="about" translate>{{ 'MENU.ABOUT'}}</a></li>
+  </ul>
+
+  <div>
+    <p>{{ 'HOME.TITLE' | translate }}</p>
+    <p translate>PASSED_AS_TEXT</p>
+    <p translate="PASSED_AS_ATTRIBUTE"></p>
+    <p translate>{{ 'PASSED_AS_INTERPOLATION' }}</p>
+    <p translate="{{ 'PASSED_AS_INTERPOLATION' }}"></p>
+    <p translate="VARIABLE_REPLACEMENT" translate-values="{ name: 'PascalPrecht'}"></p>
+    <p translate="VARIABLE_REPLACEMENT" translate-value-name="PascalPrecht"></p>    
+  </div>
+
+</div>
