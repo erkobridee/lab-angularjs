@@ -43,7 +43,7 @@
       $scope.ValidarDataExemplo05 = function() {
         var isValid = moment($scope.exemplo5, 'DD/MM/YYYY', true).isValid();
         $scope.exemplo5Result = isValid ? 'Data válida' : 'Data inválida';
-      }
+      };
 
       // Data salva com utc padrão (+00:00)
       var dataUtcPadrao = '24/11/2014 12:29:39 +00:00';
