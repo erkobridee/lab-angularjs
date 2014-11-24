@@ -4,7 +4,7 @@ define(function(require) {
   var module = require('./module');
 
   module.config(routeProvider);
-    
+
   routeProvider.$inject = [ '$routeProvider', '$locationProvider' ];
 
   function routeProvider($routeProvider, $locationProvider) {

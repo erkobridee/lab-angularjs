@@ -1,11 +1,11 @@
 <div>
-  
-  <select 
+
+  <select
       ng-model="selected"
       ng-options="lang for lang in languages"
       ng-change="itemSelected()">
   </select>
-  
+
   <ul>
     <li><a ng-href="about" translate>{{ 'ABOUT.TITLE'}}</a></li>
   </ul>
@@ -18,7 +18,7 @@
     <p translate>{{ 'PASSED_AS_INTERPOLATION' }}</p>
     <p translate="{{ 'PASSED_AS_INTERPOLATION' }}"></p>
     <p translate="VARIABLE_REPLACEMENT" translate-values="{ name: 'PascalPrecht'}"></p>
-    <p translate="VARIABLE_REPLACEMENT" translate-value-name="PascalPrecht"></p>    
+    <p translate="VARIABLE_REPLACEMENT" translate-value-name="PascalPrecht"></p>
   </div>
 
 </div>

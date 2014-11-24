@@ -1,13 +1,13 @@
 define(function(require) {
-	'use strict';
+  'use strict';
 
-	var angular = require('angular');
+  var angular = require('angular');
 
-	angular.element(document).ready(bootstrap);
+  angular.element(document).ready(bootstrap);
 
-	function bootstrap() {
-		var module = require('./main/package');
-	   angular.bootstrap(document, [module.name]);
-	}
+  function bootstrap() {
+    var module = require('./main/package');
+     angular.bootstrap(document, [module.name]);
+  }
 
 });

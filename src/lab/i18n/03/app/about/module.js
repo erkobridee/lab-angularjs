@@ -4,8 +4,8 @@ define(function(require) {
   var angular = require('angular');
                 require('angularRoute');
                 require('./../i18n/package');
-          
-  return angular.module('about', [ 
+
+  return angular.module('about', [
                   'ngRoute',
                   'translate'
                 ]

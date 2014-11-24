@@ -8,7 +8,7 @@ define(function(require) {
   AboutCtrl.$inject = [ '$scope' ];
 
   function AboutCtrl($scope) {
-  		
+
   }
 
 });

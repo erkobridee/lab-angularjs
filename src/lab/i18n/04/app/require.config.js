@@ -1,49 +1,49 @@
 require.config({
 
-	paths: {
-		
-		angular: [
-	      '/cdn/ajax/libs/angular.js/1.3.1/angular.min'
-	   	],
+  paths: {
 
-	    angularRoute: [
-	     	'/cdn/ajax/libs/angular.js/1.2.15/angular-route.min'
-	    ],
+    angular: [
+        '/cdn/ajax/libs/angular.js/1.3.1/angular.min'
+      ],
 
-	    angularTranslate: [
-	    	'/cdn/ajax/libs/angular-translate/2.0.1/angular-translate.min'
-	    ],
+      angularRoute: [
+        '/cdn/ajax/libs/angular.js/1.2.15/angular-route.min'
+      ],
 
-	    angularTranslateLoaderPartial: [
-	    	'/cdn/ajax/libs/angular-translate-loader-partial/2.4.2/angular-translate-loader-partial.min'
-	    ]
-	  
-	},
+      angularTranslate: [
+        '/cdn/ajax/libs/angular-translate/2.0.1/angular-translate.min'
+      ],
 
-	shim: {
+      angularTranslateLoaderPartial: [
+        '/cdn/ajax/libs/angular-translate-loader-partial/2.4.2/angular-translate-loader-partial.min'
+      ]
 
-		'angular': {
-			exports: 'angular'
-		},
+  },
 
-		'angularRoute': {
-	      	deps: ['angular']
-	    },
+  shim: {
 
-		'angularTranslate': {
-			deps: ['angular']
-		},
+    'angular': {
+      exports: 'angular'
+    },
 
-		'angularTranslateLoaderPartial': {
-			deps: ['angularTranslate']
-		}
+    'angularRoute': {
+          deps: ['angular']
+      },
 
-	},
+    'angularTranslate': {
+      deps: ['angular']
+    },
 
-	priority: [
-		'angular'
-	],
+    'angularTranslateLoaderPartial': {
+      deps: ['angularTranslate']
+    }
 
-	deps: ['./ng.app']
+  },
+
+  priority: [
+    'angular'
+  ],
+
+  deps: ['./ng.app']
 
 });
