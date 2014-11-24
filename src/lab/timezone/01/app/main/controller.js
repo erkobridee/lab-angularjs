@@ -1,23 +1,23 @@
 (function() {
-	'use strict';
+  'use strict';
 
-	angular
-		.module( 'App' )
-		.controller( 'MainCtrl', MainCtrl );
+  angular
+    .module( 'App' )
+    .controller( 'MainCtrl', MainCtrl );
 
-		MainCtrl.$inject = [ '$scope' ];
+    MainCtrl.$inject = [ '$scope' ];
 
-		function MainCtrl( $scope ) {
+    function MainCtrl( $scope ) {
 
-		  //# i18n para os dias da semana. Mais exemplos em http://momentjs.com/docs/#/i18n/changing-locale/
+      //# i18n para os dias da semana. Mais exemplos em http://momentjs.com/docs/#/i18n/changing-locale/
       moment.locale('pt_BR', {
         weekdays : [
-          'Domingo', 
-          'Segunda-Feira', 
-          'Terça-Feira', 
-          'Quarta-Feira', 
-          'Quinta-Feira', 
-          'Sexta-Feira', 
+          'Domingo',
+          'Segunda-Feira',
+          'Terça-Feira',
+          'Quarta-Feira',
+          'Quinta-Feira',
+          'Sexta-Feira',
           'Sábado'
         ]
       });
@@ -41,7 +41,7 @@
 
       // Valida se a data inserida está no padrão correto
       $scope.ValidarDataExemplo05 = function() {
-        var isValid = moment($scope.exemplo5, 'DD/MM/YYYY', true).isValid();     
+        var isValid = moment($scope.exemplo5, 'DD/MM/YYYY', true).isValid();
         $scope.exemplo5Result = isValid ? 'Data válida' : 'Data inválida';
       }
 
