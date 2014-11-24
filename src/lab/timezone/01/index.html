@@ -7,32 +7,49 @@
 <body ng-controller="MainCtrl">
 
   	<div>
-
-        <div>
-          <span>Exemplo 01: Formatando data e hora atual</span>
-        </div>
     
         <div>
-            {{ date | amDateFormat: 'DD/MM/YYYY HH:mm:ss' }}
+          <span>Exemplo 01: Formatando data e hora atual :: </span>{{ exemplo1 }}
+        </div>
+
+        <div>
+          <span>Exemplo 02: Formatando data e hora de uma variavel Date() :: </span>{{ exemplo2 }}
+        </div>
+
+        <div>
+          <span>Exemplo 03: Pegando dia da semana atual :: </span>{{ exemplo3 }}
+        </div>
+
+        <div>
+          <span>Exemplo 04: Verificando data valida :: </span>
+          <input type="text" placeholder="Exemplo: 25/09/1992" ng-model="exemplo4">
+          <button ng-click="ValidarDataExemplo04()">Validar</button>
+          <span>{{exemplo4inputResult}}</span>
         </div>
 
     </div>
 
   	<script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
   	<script src="/cdn/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-  	<script src="/cdn/ajax/libs/angular-moment/0.8.2/angular-moment.min.js"></script>
   
   	<script type="text/javascript">
   		(function() {
 
   			angular
-    				.module('App', ['angularMoment'])
+    				.module('App', [])
     				.controller('MainCtrl', MainCtrl);
 
     				MainCtrl.$inject = [ '$scope' ];
 
     				function MainCtrl($scope) {
-    					  $scope.date = new Date();
+    					  $scope.exemplo1 = moment().format('DD/MM/YYYY HH:mm:ss Z');
+                $scope.exemplo2 = moment(new Date()).format('DD/MM/YYYY HH:mm:ss');
+                $scope.exemplo3 = moment().format('dddd');
+
+                $scope.ValidarDataExemplo04 = function() {
+                  $scope.exemplo4inputResult = moment($scope.exemplo4, 'DD/MM/YYYY').isValid(); 
+                }
+
     				}
 
   		})();		
