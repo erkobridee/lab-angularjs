@@ -3,20 +3,20 @@ require.config({
   paths: {
 
     angular: [
-        '/cdn/ajax/libs/angular.js/1.3.1/angular.min'
-      ],
+      '/cdn/ajax/libs/angular.js/1.3.1/angular.min'
+    ],
 
-      angularRoute: [
-        '/cdn/ajax/libs/angular.js/1.2.15/angular-route.min'
-      ],
+    angularRoute: [
+      '/cdn/ajax/libs/angular.js/1.2.15/angular-route.min'
+    ],
 
-      angularTranslate: [
-        '/cdn/ajax/libs/angular-translate/2.0.1/angular-translate.min'
-      ],
+    angularTranslate: [
+      '/cdn/ajax/libs/angular-translate/2.0.1/angular-translate.min'
+    ],
 
-      angularTranslateLoaderPartial: [
-        '/cdn/ajax/libs/angular-translate-loader-partial/2.4.2/angular-translate-loader-partial.min'
-      ]
+    angularTranslateLoaderPartial: [
+      '/cdn/ajax/libs/angular-translate-loader-partial/2.4.2/angular-translate-loader-partial.min'
+    ]
 
   },
 

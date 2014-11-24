@@ -1,7 +1,7 @@
 define(function(require) {
 
   var module = require('./module');
-  require('./translate.config');
+  require('./translates');
 
   return module;
 

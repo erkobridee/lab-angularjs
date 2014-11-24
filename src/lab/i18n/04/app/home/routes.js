@@ -5,9 +5,12 @@ define(function(require) {
 
   module.config(routeProvider);
 
+  //---
+
   routeProvider.$inject = [ '$routeProvider', '$locationProvider' ];
 
   function routeProvider($routeProvider, $locationProvider) {
+
     $routeProvider
       .when('/', { redirectTo:'/home' })
       .when(
@@ -17,7 +20,8 @@ define(function(require) {
         }
       );
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
+
   }
 
 });

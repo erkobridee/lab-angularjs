@@ -2,12 +2,16 @@ define(function(require) {
   'use strict';
 
   var angular = require('angular');
-                require('angularTranslate');
-                require('angularTranslateLoaderPartial');
+  require('angularTranslate');
+  require('angularTranslateLoaderPartial');
 
-  return angular
-          .module('translate', [
-                  'pascalprecht.translate'
-              ]);
+
+  // angular module definition
+  return angular.module(
+    'translate',
+    [
+      'pascalprecht.translate'
+    ]
+  );
 
 });

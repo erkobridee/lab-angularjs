@@ -5,9 +5,12 @@ define(function(require) {
 
   module.config(i18nConfig);
 
+  //---
+
   i18nConfig.$inject = [ '$translateProvider', '$translatePartialLoaderProvider' ];
 
   function i18nConfig($translateProvider, $translatePartialLoaderProvider) {
+
     $translatePartialLoaderProvider.addPart('core');
 
     $translateProvider.useLoader('$translatePartialLoader', {
@@ -15,6 +18,7 @@ define(function(require) {
     });
 
     $translateProvider.determinePreferredLanguage();
+
   }
 
 });
