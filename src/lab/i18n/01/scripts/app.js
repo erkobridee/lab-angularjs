@@ -3,10 +3,14 @@
 
   angular
     .module('App', ['pascalprecht.translate'])
-    .config(['$translateProvider', translateProvider]);
+    .config(translateProvider);
 
+  //---
+
+  translateProvider.$inject = ['$translateProvider'];
 
   function translateProvider($translateProvider) {
+
     $translateProvider.translations('en', {
       'TITLE': 'Hello',
       'FOO': 'This is a paragraph'
