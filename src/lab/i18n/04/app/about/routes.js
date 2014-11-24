@@ -4,14 +4,14 @@ define(function(require) {
   var module = require('./module');
 
   module.config(routesConfig);
-    
-  routesConfig.$inject = [ '$routeProvider', '$locationProvider' ]; 
 
-  function routesConfig($routeProvider, $locationProvider) {    
+  routesConfig.$inject = [ '$routeProvider', '$locationProvider' ];
+
+  function routesConfig($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/about', { 
+      .when('/about', {
         templateUrl: 'app/about/templates/about.html',
-        controller: 'AboutCtrl' 
+        controller: 'AboutCtrl'
       });
 
     $locationProvider.html5Mode(true);
