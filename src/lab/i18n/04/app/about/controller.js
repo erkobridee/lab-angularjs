@@ -5,11 +5,10 @@ define(function(require) {
 
   	module.controller( 'AboutCtrl', AboutCtrl );
 
-  	AboutCtrl.$inject = [ '$scope', '$translatePartialLoader', '$translate' ];
+  	AboutCtrl.$inject = [ '$scope' ];
 
-  	function AboutCtrl($scope, $translatePartialLoader, $translate) {
-  		$translatePartialLoader.addPart('about');
-  		$translate.refresh();
+  	function AboutCtrl($scope) {
+  		
   	}
 
 });

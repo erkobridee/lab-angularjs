@@ -8,6 +8,10 @@ define(function(require) {
     return angular.module('about', [ 
                   'ngRoute',
                   'translate'
-                ]);
+                ])
+    			.run(function($translatePartialLoader, $translate) {
+    				$translatePartialLoader.addPart('about');
+  					$translate.refresh();
+    			});
 
 });

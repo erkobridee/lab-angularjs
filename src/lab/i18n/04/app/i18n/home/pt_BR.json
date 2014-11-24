@@ -1,10 +1,6 @@
-{  
-	"PAGENOTFOUND": "Ops. Página não encontrada",
+{
 	"HOME": {
 		"TITLE": "Página Principal"
-	},
-	"ABOUT": {
-		"TITLE": "Sobre"
 	},
 	"PASSED_AS_TEXT": "Olá! Eu estou passando como texto!",
 	"PASSED_AS_ATTRIBUTE": "Eu estou passando um valor de atributo, legal não?",

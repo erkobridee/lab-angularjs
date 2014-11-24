@@ -8,7 +8,7 @@ define(function(require) {
 		i18nConfig.$inject = [ '$translateProvider', '$translatePartialLoaderProvider' ];
 
 		function i18nConfig($translateProvider, $translatePartialLoaderProvider) {			
-			$translatePartialLoaderProvider.addPart('home');
+			$translatePartialLoaderProvider.addPart('core');
 					
 			$translateProvider.useLoader('$translatePartialLoader', {
 				urlTemplate: 'app/i18n/{part}/{lang}.json'
