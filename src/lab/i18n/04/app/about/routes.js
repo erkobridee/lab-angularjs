@@ -1,21 +1,20 @@
 define(function(require) {
-    'use strict';
+  'use strict';
 
-    var module = require('./module');
+  var module = require('./module');
 
-    module.config(routesConfig);
+  module.config(routesConfig);
     
-    routesConfig.$inject = [ '$routeProvider', '$locationProvider' ]; 
+  routesConfig.$inject = [ '$routeProvider', '$locationProvider' ]; 
 
-    function routesConfig($routeProvider, $locationProvider) {
-      
-        $routeProvider
-            .when('/about', { 
-            		templateUrl: 'app/about/templates/about.html',
-            		controller: 'AboutCtrl' 
-            	});
+  function routesConfig($routeProvider, $locationProvider) {    
+    $routeProvider
+      .when('/about', { 
+        templateUrl: 'app/about/templates/about.html',
+        controller: 'AboutCtrl' 
+      });
 
-        $locationProvider.html5Mode(true);
-    }
+    $locationProvider.html5Mode(true);
+  }
 
 });

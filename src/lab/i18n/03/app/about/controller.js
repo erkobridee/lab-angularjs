@@ -1,14 +1,12 @@
 define(function(require) {
   'use strict';
 
-  	var module = require('./module');
+  var module = require('./module');
 
-  	module.controller( 'AboutCtrl', AboutCtrl );
+  module.controller( 'AboutCtrl', AboutCtrl );
 
-  	AboutCtrl.$inject = [ '$scope', '$translate' ];
+  AboutCtrl.$inject = [ '$scope', '$translate' ];
 
-  	function AboutCtrl($scope, $translate) {
-  		
-  	}
+  function AboutCtrl($scope, $translate) { }
 
 });

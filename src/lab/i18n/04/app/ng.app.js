@@ -7,7 +7,7 @@ define(function(require) {
 
 	function bootstrap() {
 		var module = require('./main/package');
-	    angular.bootstrap(document, [module.name]);
+	   angular.bootstrap(document, [module.name]);
 	}
 
 });

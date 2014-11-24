@@ -1,11 +1,11 @@
 define(function(require) {
-    'use strict';
+  'use strict';
 
-    var angular = require('angular');
-                  require('angularRoute');
-                  require('./../i18n/package');
+  var angular = require('angular');
+                require('angularRoute');
+                require('./../i18n/package');
           
-    return angular.module('about', [ 
+  return angular.module('about', [ 
                   'ngRoute',
                   'translate'
                 ]

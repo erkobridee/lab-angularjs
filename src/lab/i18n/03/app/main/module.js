@@ -1,13 +1,12 @@
 define(function(require){
-    'use strict';
+  'use strict';
 
-    var angular = require('angular');                
+  var angular = require('angular');                
           
-    return angular.module('main',  [
-                  require('./../i18n/package').name,
-                  require('./../home/package').name,
-                  require('./../about/package').name
-                ]
+  return angular.module('main',  [
+            require('./../i18n/package').name,
+            require('./../home/package').name,
+            require('./../about/package').name    ]
           );
 
 });

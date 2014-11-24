@@ -1,14 +1,14 @@
 define(function(require) {
   'use strict';
 
-  	var module = require('./module');
+  var module = require('./module');
 
-  	module.controller( 'AboutCtrl', AboutCtrl );
+  module.controller( 'AboutCtrl', AboutCtrl );
 
-  	AboutCtrl.$inject = [ '$scope' ];
+  AboutCtrl.$inject = [ '$scope' ];
 
-  	function AboutCtrl($scope) {
+  function AboutCtrl($scope) {
   		
-  	}
+  }
 
 });

@@ -5,58 +5,58 @@
   <title>AngularJS : 01 : timezone</title>
 
   <style type="text/css">
-      body {
-        font-family: sans-serif;
-      }  
+    body {
+      font-family: sans-serif;
+    }  
 
-      #exemplos > div{
-        margin: 20px;
-      }
+    #exemplos > div{
+      margin: 20px;
+    }
   </style>
 
 </head>
 
 <body ng-controller="MainCtrl">
 
-  	<div id="exemplos">
+  <div id="exemplos">
     
-        <div>
-          <span>Exemplo 01: Formatando data e hora atual :: </span>{{ exemplo1 }}
-        </div>
-
-        <div>
-          <span>Exemplo 02: Formatando data e hora atual no padrão UTC :: </span>{{ exemplo2 }}
-        </div>         
-
-        <div>
-          <span>Exemplo 03: Formatando data e hora de uma variável Date() existente :: </span>{{ exemplo3 }}
-        </div>
-
-        <div>
-          <span>Exemplo 04: Pegando dia da semana atual e usando internacionalização nos dias da semana :: </span>{{ exemplo4 }}
-        </div>
- 
-        <div>
-          <span>Exemplo 05: Verificando se a data é válida :: </span>
-          <input 
-              type="text" 
-              placeholder="Exemplo: 25/09/1992" 
-              ng-model="exemplo5" 
-              ng-change="ValidarDataExemplo05()">
-          <span>{{ exemplo5Result }}</span>
-        </div>
-
-        <div>
-          <span>Exemplo 06: Transforma uma data salva no utc padrão (24/11/2014 12:29:39 +00:00) para o utc local :: </span>{{ exemplo6 }}
-        </div>
-
+    <div>
+      <span>Exemplo 01: Formatando data e hora atual :: </span>{{ exemplo1 }}
     </div>
 
-  	<script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
-  	<script src="/cdn/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <div>
+      <span>Exemplo 02: Formatando data e hora atual no padrão UTC :: </span>{{ exemplo2 }}
+    </div>         
 
-    <script src="app/main/module.js"></script>
-    <script src="app/main/controller.js"></script>
+    <div>
+      <span>Exemplo 03: Formatando data e hora de uma variável Date() existente :: </span>{{ exemplo3 }}
+    </div>
+
+    <div>
+      <span>Exemplo 04: Pegando dia da semana atual e usando internacionalização nos dias da semana :: </span>{{ exemplo4 }}
+    </div>
+ 
+    <div>
+      <span>Exemplo 05: Verificando se a data é válida :: </span>
+      <input 
+        type="text" 
+        placeholder="Exemplo: 25/09/1992" 
+        ng-model="exemplo5" 
+        ng-change="ValidarDataExemplo05()">
+      <span>{{ exemplo5Result }}</span>
+    </div>
+
+    <div>
+      <span>Exemplo 06: Transforma uma data salva no utc padrão (24/11/2014 12:29:39 +00:00) para o utc local :: </span>{{ exemplo6 }}
+    </div>
+
+  </div>
+
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 {  
-	"PAGENOTFOUND": "Ops. Página não encontrada",
-	"MENU": {
-		"ABOUT": "Sobre",
-		"HOME": "Pagina principal"
-	}
+  "PAGENOTFOUND": "Ops. Página não encontrada",
+  "MENU": {
+    "ABOUT": "Sobre",
+    "HOME": "Pagina principal"
+  }
 }

@@ -1,8 +1,8 @@
 define(function(require) {
   'use strict';
 
-  	var module = require('./module');
+  var module = require('./module');
 
-  	return module;
+  return module;
 
 });

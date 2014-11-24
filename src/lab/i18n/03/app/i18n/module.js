@@ -1,13 +1,12 @@
 define(function(require) {
-    'use strict';
+  'use strict';
         
-    var angular = require('angular');
-                  require('angularTranslate');
-                  //require('angularTranslateStorageLocal');
+  var angular = require('angular');
+                require('angularTranslate');
           
-    return angular.module('translate', [ 
-                  'pascalprecht.translate'
-                ]
+  return angular.module('translate', [ 
+                    'pascalprecht.translate'
+                  ]
           );
 
 });

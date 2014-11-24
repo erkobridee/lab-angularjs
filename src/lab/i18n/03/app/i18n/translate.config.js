@@ -1,20 +1,18 @@
-
 define(function(require) {
-    'use strict';
+  'use strict';
 
-    var module = require('./module');
+  var module = require('./module');
 
-  		module.config(translateProvider);
+  module.config(translateProvider);
   
-  		translateProvider.$inject = [ '$translateProvider' ];
+  translateProvider.$inject = [ '$translateProvider' ];
 
-		function translateProvider($translateProvider) {
-			$translateProvider
+	function translateProvider($translateProvider) {
+		$translateProvider	  	
+			.translations('en_US', require('./locale/en_US'))
+			.translations('pt_BR', require('./locale/pt_BR'))
 			  	
-			  	.translations('en_US', require('./locale/en_US'))
-			  	.translations('pt_BR', require('./locale/pt_BR'))
-			  	
-  				.determinePreferredLanguage();
-		}
+  		.determinePreferredLanguage();
+	}
 
 });
