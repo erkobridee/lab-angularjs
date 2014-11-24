@@ -2,8 +2,6 @@
 	'use strict';
 	
 	angular
-		.module( 'App', [ 
-			'angularMoment'
-		]);
+		.module( 'App', []);
 
 })();
