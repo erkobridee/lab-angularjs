@@ -5,9 +5,11 @@ define(function(require) {
 
   angular.element(document).ready(bootstrap);
 
+  //---
+
   function bootstrap() {
     var module = require('./main/package');
-      angular.bootstrap(document, [module.name]);
+    angular.bootstrap(document, [module.name]);
   }
 
 });

@@ -5,6 +5,8 @@ define(function(require) {
 
   module.controller( 'AboutCtrl', AboutCtrl );
 
+  //---
+
   AboutCtrl.$inject = [ '$scope', '$translate' ];
 
   function AboutCtrl($scope, $translate) { }

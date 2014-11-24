@@ -5,13 +5,17 @@ define(function(require) {
 
   module.config(routesConfig);
 
+  //---
+
   routesConfig.$inject = [ '$routeProvider', '$locationProvider' ];
 
   function routesConfig($routeProvider, $locationProvider) {
+
     $routeProvider
       .when('/about', { templateUrl: 'app/about/templates/about.html' });
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
+
   }
 
 });
