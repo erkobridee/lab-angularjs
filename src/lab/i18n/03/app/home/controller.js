@@ -13,7 +13,7 @@ define(function(require) {
 
     $scope.itemSelected = function() {
       $translate.use($scope.selected);
-    }
+    };
   }
 
 });

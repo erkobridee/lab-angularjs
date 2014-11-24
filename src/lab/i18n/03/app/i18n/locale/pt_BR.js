@@ -14,6 +14,6 @@ define(function () {
         PASSED_AS_ATTRIBUTE: 'Eu estou passando um valor de atributo, legal não?',
         PASSED_AS_INTERPOLATION: 'Iniciantes! Eu estou interpolando!',
         VARIABLE_REPLACEMENT: 'Olá, {{name}}'
-  }
+  };
 
 });

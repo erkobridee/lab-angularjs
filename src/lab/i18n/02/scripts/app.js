@@ -34,7 +34,7 @@
       $scope.itemSelected = function() {
         $translate.use($scope.selected);
         translateMessages();
-      }
+      };
 
       function translateMessages() {
         $translate('MESSAGE.CONTROLLER').then(function (message) {

@@ -2,7 +2,7 @@ define(function(require) {
 
   var module =  require('./module');
                 require('./routes');
-                require('./controller')
+                require('./controller');
 
   return module;
 
