@@ -2,17 +2,17 @@ define(function(require) {
   'use strict';
 
   var angular = require('angular');
-  var mainModule = require('./main/package');
+  var mainModule = require('app/main/package');
 
   console.log('bootstrap : ' + mainModule.name);
 
   console.log(mainModule.value('appName').requires);
 
-  angular.element(document).ready(bootstrap);
+  angular.element(document).ready(startAngularApp);
 
   //---
 
-  function bootstrap() {
+  function startAngularApp() {
 
     console.log('bootstrap : ' + mainModule.name);
 

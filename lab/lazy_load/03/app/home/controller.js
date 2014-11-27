@@ -24,7 +24,7 @@ define(function(require) {
 
       ocLazyLoad.load({
         name: 'about',
-        files: ['about/package'] // load
+        files: ['app/about/package'] // load
       })
       .then(function() { // After load
         console.log('about module loaded');
@@ -38,7 +38,7 @@ define(function(require) {
 
       ocLazyLoad.load({
         name: 'dashboard',
-        files: ['dashboard/package'] // load
+        files: ['app/dashboard/package'] // load
       })
       .then(function() { // After load
         console.log('dashboard module loaded');
