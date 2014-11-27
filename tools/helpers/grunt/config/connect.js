@@ -8,7 +8,6 @@ grunt.config('connect', {
       base: '<%= project.paths.src %>',
       directory: '<%= project.paths.src %>',
       hostname: '*',
-      keepalive: true,
       open: 'http://localhost:<%= project.frontend.port.connect %>'
     }
   },
