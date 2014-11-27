@@ -1,33 +1,28 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.config(
+  var module = require('./module');
 
-    // dependencies injection
-    ['$routeProvider', '$httpProvider',
+  module.config(configureRoutes);
 
-  // routes definition
-  function ($routeProvider, $httpProvider) {
+  //---
 
-    // allow access to cross domain resource
-    $httpProvider.defaults.useXDomain = true;
+  // https://code.angularjs.org/1.3.3/docs/api/ngRoute
+
+  configureRoutes.$inject = ['$routeProvider'];
+
+  function configureRoutes($routeProvider) {
 
     $routeProvider
       .when(
         '/cep',
         {
-          controller: 'CepCtrl',
-          templateUrl: 'app/cep/template.html'
+          templateUrl   : 'app/cep/template.html',
+          controller    : 'CepCtrl',
+          controllerAs  : 'vm'
         }
       );
 
-  }]);
+  }
 
 });

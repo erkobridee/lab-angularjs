@@ -1,37 +1,35 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.config(
+  var module = require('./module');
 
-    // dependencies injection
-    ['$routeProvider',
+  module.config(configureRoutes);
 
-  // routes definition
-  function ($routeProvider) {
+  //---
+
+  // https://code.angularjs.org/1.3.3/docs/api/ngRoute
+
+  configureRoutes.$inject = ['$routeProvider'];
+
+  function configureRoutes($routeProvider) {
 
     $routeProvider
       .when(
         '/',
         {
-          controller: 'HomeCtrl',
-          templateUrl: 'app/main/templates/home.html'
+          templateUrl   : 'app/main/templates/home.html',
+          controller    : 'HomeCtrl',
+          controllerAs  : 'vm'
         }
       )
       .when(
         '/404',
         {
-          templateUrl: 'app/main/templates/404.html'
+          templateUrl   : 'app/main/templates/404.html'
         }
       )
       .otherwise({ redirectTo: '/404' });
 
-  }]);
+  }
 
 });

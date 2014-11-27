@@ -1,46 +1,45 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.controller(
-    // controller name
-    'CepCtrl',
+  var module = require('./module');
 
-    // dependencies injection
-    [
-      '$scope', 'CepResource',
+  module.controller('CepCtrl', CepCtrl);
 
-  // controller definition
-  function ($scope, resource) {
+  //---
 
-    $scope.cep = '';
+  CepCtrl.$inject = ['CepResource'];
 
-    $scope.buscarFn = function() {
+  function CepCtrl(resource) {
+    var vm = this;
 
-      if('' !== $scope.cep) {
+    vm.cep = '';
+
+    vm.buscarFn = buscarFn;
+
+    vm.keypressFn = keypressFn;
+
+    //---
+
+    function buscarFn() {
+
+      if('' !== vm.cep) {
         resource.get({
-          cep: $scope.cep
+          cep: vm.cep
         }, function(result) {
-          $scope.resultado = result;
-          $scope.resultadoJson = angular.toJson(result, true);
+          vm.resultado = result;
+          vm.resultadoJson = angular.toJson(result, true);
         });
       }
 
-    };
+    }
 
-    $scope.keypressFn = function(event) {
+    function keypressFn(event) {
       // enter key
       if (event.which === 13) {
-        $scope.buscarFn();
+        vm.buscarFn();
       }
-    };
+    }
 
-  }]);
+  }
 
 });

@@ -1,19 +1,13 @@
-define(
-// require.js dependency injection
-[
-  'angular',
-  'angularRoute',
-  'angularResource',
-
-  '../cep/require.load'
-],
-
-// require.js module scope
-function(ng) {
+define(function(require) {
   'use strict';
 
-  // module definition
-  return ng.module(
+  var angular = require('angular');
+  require('angularRoute');
+  require('angularResource');
+
+
+  // angular module definition
+  return angular.module(
     // module name
     'main',
 
@@ -22,7 +16,7 @@ function(ng) {
       'ngRoute',
       'ngResource',
 
-      'cep'
+      require('app/cep/package').name
     ]
   );
 
