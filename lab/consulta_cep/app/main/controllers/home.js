@@ -1,26 +1,23 @@
-define(
-// require.js dependency injection
-[
-  '../module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.controller(
-    // controller name
-    'HomeCtrl',
+  var module = require('../module');
 
-    // dependencies injection
-    [
-      '$scope', '$location',
+  module.controller('HomeCtrl', HomeCtrl);
 
-  // controller definition
-  function ($scope, $location) {
+  //---
+
+  HomeCtrl.$inject = ['$scope', '$location'];
+
+  function HomeCtrl($scope, $location) {
+    var vm = this;
+
+    // TODO: define vm (ViewModel) attribures
+
+    //---
 
     $location.path('/cep');
 
-  }]);
+  }
 
 });

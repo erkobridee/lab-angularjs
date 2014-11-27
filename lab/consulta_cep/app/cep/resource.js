@@ -1,28 +1,22 @@
-define(
-// require.js dependency injection
-[
-  './module'
-],
-
-// require.js module scope
-function(module) {
+define(function(require) {
   'use strict';
 
-  module.factory(
-    // resource name
-    'CepResource',
+  var module = require('./module');
 
-    // dependencies injection
-    [
-      '$resource',
+  module.factory('CepResource', CepResource);
 
-  // resource definition
-  function ($resource) {
+  //---
+
+  // https://code.angularjs.org/1.3.3/docs/api/ngResource/service/
+
+  CepResource.$inject = ['$resource'];
+
+  function CepResource($resource) {
 
     return $resource(
       'http://api.postmon.com.br/v1/cep/:cep'
     );
 
-  }]);
+  }
 
 });
