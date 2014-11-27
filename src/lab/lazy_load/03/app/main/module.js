@@ -20,7 +20,7 @@ define(function(require) {
 
       'oc.lazyLoad',
 
-      require('../home/package').name
+      require('app/home/package').name
     ]
   );
 
