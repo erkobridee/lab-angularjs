@@ -1,5 +1,11 @@
 <div>
 
+  <select
+    ng-model="selected"
+    ng-options="lang for lang in languages"
+    ng-change="itemSelected()">
+  </select>
+
   <ul>
     <li><a href="#/about" translate>{{ 'MENU.ABOUT'}}</a></li>
   </ul>
