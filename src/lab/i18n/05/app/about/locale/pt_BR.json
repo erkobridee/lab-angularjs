@@ -1,0 +1,6 @@
+{
+  "ABOUT": {
+    "TITLE": "Sobre",
+    "DESCRIPTION": "Isso não faz nada {{ usuario }}"
+  }
+}
