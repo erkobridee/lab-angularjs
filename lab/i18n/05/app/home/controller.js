@@ -17,6 +17,13 @@ define(function(require) {
     $translatePartialLoader.addPart('home');
     $translate.refresh();
 
+    $scope.languages = [ 'pt_BR', 'en_US' ];
+    $scope.selected = $translate.use();
+
+    $scope.itemSelected = function() {
+      $translate.use($scope.selected);
+    };
+
   }
 
 });
