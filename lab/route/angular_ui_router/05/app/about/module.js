@@ -3,7 +3,7 @@ define(function(require) {
 
   var angular = require('angular');
   require('angularResource');
-  require('angular_ui_router');
+  require('uiRouter');
 
   // angular module definition
   return angular.module(
