@@ -5,8 +5,6 @@ define(function(require) {
   require('angularResource');
   require('uiRouter');
 
-  console.log('app/home/module.js');
-
   // angular module definition
   return angular.module(
     // module name

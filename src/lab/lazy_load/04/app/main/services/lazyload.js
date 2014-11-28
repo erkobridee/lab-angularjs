@@ -20,6 +20,14 @@ define(function(require) {
 
     //---
 
+    /*
+    Angular $q
+    https://docs.angularjs.org/api/ng/service/$q
+
+    Promises and design patterns in AngularJS | Xebia Blog
+    http://blog.xebia.com/2014/02/23/promises-and-design-patterns-in-angularjs/
+    */
+
     function lazyLoad(name) {
 
       return ocLazyLoad.load({
@@ -30,10 +38,12 @@ define(function(require) {
     }
 
     function lazyStateLoad(name) {
+
       return lazyLoad(name)
-        .then(function() {
+        .then(function() {  // After load
           return $state.go(name);
         });
+
     }
 
   }
