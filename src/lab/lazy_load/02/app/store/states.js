@@ -12,8 +12,9 @@ define(function(require) {
   function configureStates($stateProvider) {
 
       $stateProvider.state('store', {
-        templateUrl: 'app/store/template.html',
-        controller: 'StoreCtrl as store'
+        templateUrl   : 'app/store/template.html',
+        controller    : 'StoreCtrl',
+        controllerAs  : 'store'
       });
 
   }
