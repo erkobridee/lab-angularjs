@@ -5,8 +5,8 @@
 
   var MOCK_FLAG = true;
 
-  // http://code.angularjs.org/1.2.15/
-  var ANGULAR_VERSION = '1.2.15';
+  // http://code.angularjs.org/1.3.4/
+  var ANGULAR_VERSION = '1.3.4';
 
   //---
 
