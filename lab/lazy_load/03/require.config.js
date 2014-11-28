@@ -9,13 +9,13 @@ require({
       '/cdn/ajax/libs/jquery/2.1.1/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.3.3/
+    // http://code.angularjs.org/1.3.4/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.3.3/angular.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular.min'
     ],
 
     angularResource: [
-      '/cdn/ajax/libs/angular.js/1.3.3/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular-resource.min'
     ],
 
     uiRouter: [
@@ -23,7 +23,7 @@ require({
     ],
 
     bootstrap: [
-      '/cdn/ajax/libs/bootstrap/3.3.0/js/bootstrap.min'
+      '/cdn/ajax/libs/bootstrap/3.3.1/js/bootstrap.min'
     ],
 
     holder: [
@@ -31,7 +31,7 @@ require({
     ],
 
     ocLazyLoad: [
-      '/cdn/ajax/libs/ocLazyLoad/0.4.2/ocLazyLoad.min'
+      '/cdn/ajax/libs/ocLazyLoad/0.5.1/ocLazyLoad.min'
     ]
 
   },

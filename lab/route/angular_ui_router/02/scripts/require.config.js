@@ -9,13 +9,13 @@ require({
       '/cdn/ajax/libs/jquery/2.1.1/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.3.1/
+    // http://code.angularjs.org/1.3.4/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.3.1/angular.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular.min'
     ],
 
     angular_resource: [
-      '/cdn/ajax/libs/angular.js/1.3.1/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular-resource.min'
     ],
 
     angular_ui_router: [
