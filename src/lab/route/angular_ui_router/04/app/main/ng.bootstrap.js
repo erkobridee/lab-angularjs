@@ -4,7 +4,7 @@ define(
   'angular',
 
   './module',
-  './routes'
+  './states'
 ],
 
 // require.js module scope

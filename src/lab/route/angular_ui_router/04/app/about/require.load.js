@@ -3,7 +3,7 @@ define(
 [
   './module',
   './controller',
-  './routes'
+  './states'
 ],
 
 // require.js module scope
