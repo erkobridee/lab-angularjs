@@ -15,7 +15,9 @@ define(function(require) {
     [
       'ngResource',
 
-      'ui.router'
+      'ui.router',
+
+      'oc.lazyLoad'
     ]
   );
 

@@ -3,13 +3,13 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.config(configure);
+  module.config(configureStates);
 
   //---
 
-  configure.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider'];
+  configureStates.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider'];
 
-  function configure($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+  function configureStates($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
     $ocLazyLoadProvider.config({
       loadedModules: [
