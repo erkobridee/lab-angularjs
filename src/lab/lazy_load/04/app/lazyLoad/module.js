@@ -2,26 +2,20 @@ define(function(require) {
   'use strict';
 
   var angular = require('angular');
-  require('angularResource');
+
   require('uiRouter');
-  require('bootstrap');
-  // require('ocLazyLoad');
+  require('ocLazyLoad');
 
   // angular module definition
   return angular.module(
     // module name
-    'main',
+    'lazyLoad',
 
     // module dependencies
     [
-      'ngResource',
-
       'ui.router',
 
-      // 'oc.lazyLoad',
-
-      require('app/lazyLoad/package').name,
-      require('app/home/package').name
+      'oc.lazyLoad'
     ]
   );
 

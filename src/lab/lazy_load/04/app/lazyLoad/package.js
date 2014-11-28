@@ -2,11 +2,8 @@ define(function(require) {
   'use strict';
 
   var module = require('./module');
-
-  require('./states');
-
-  // require('./lazyload');
-  // require('./services/lazyload');
+  require('./config');
+  require('./service');
 
   return module;
 
