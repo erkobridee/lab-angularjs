@@ -4,22 +4,22 @@ require({
   paths: {
 
     jquery: [
-      '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min',
-      '//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min',
-      '/cdn/ajax/libs/jquery/1.11.0/jquery.min'
+      '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
+      '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
+      '/cdn/ajax/libs/jquery/2.1.1/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.2.15/
+    // http://code.angularjs.org/1.3.4/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.2.15/angular.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular.min'
     ],
 
     angularRoute: [
-      '/cdn/ajax/libs/angular.js/1.2.15/angular-route.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular-route.min'
     ],
 
     angularResource: [
-      '/cdn/ajax/libs/angular.js/1.2.15/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.3.4/angular-resource.min'
     ]
 
   },
