@@ -35,6 +35,16 @@ define(function(require) {
 
     };
 
+    vm.loadAllModules = function() {
+
+      lazyLoad
+        .load(['about', 'dashboard'])
+        .then(function( result ) {
+          console.log( 'modules loaded...' );
+        });
+
+    };
+
   }
 
 });
