@@ -1,0 +1,20 @@
+<div class="container-fluid">
+
+  <div class="row"><p>{{greetings}}</p></div>
+
+  <div class="row">&nbsp;</div>
+
+  <div class="row">
+
+    <p><a href="" ng-click="home.goToAbout()">About</a></p>
+
+    <p><a href="" ng-click="home.gotToDashboard()">Dashboard</a></p>
+
+    <p>Page : <a href="#/page">link</a> | <a ui-sref="page">state | <a href="" ng-click="home.gotToPage()">controller</a></p>
+
+    <p><a href="" ng-click="home.loadAllModules()">Load all lazy modules</a> (see devtools)</p>
+
+    <p>404 - Invalid URL : <a href="#/invalid_url">link</a></p>
+  </div>
+
+</div>
