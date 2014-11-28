@@ -3,13 +3,13 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.config(configure);
+  module.config(configureStates);
 
   //---
 
-  configure.$inject = ['$stateProvider'];
+  configureStates.$inject = ['$stateProvider'];
 
-  function configure($stateProvider) {
+  function configureStates($stateProvider) {
 
       $stateProvider.state('store', {
         templateUrl: 'app/store/template.html',
