@@ -5,31 +5,12 @@
   <title>AngularJS - Device Check</title>
 </head>
 <body>
+
   <div ng-view></div>
 
-  <!--
-    https://developers.google.com/speed/libraries/devguide
-  -->
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" ></script> -->
-  <script src="/cdn/ajax/libs/jquery/2.1.1/jquery.min.js" ></script>
-
-  <!-- AngularJS resources -->
-  <!-- http://code.angularjs.org/1.3.4/ -->
-  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
-  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular-route.min.js"></script>
-  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular-resource.min.js"></script>
-
-  <script src="scripts/util/jquery.devicecheck.js"></script>
-
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/devicecheck.js"></script>
-  <script src="scripts/controllers/mobile.js"></script>
-  <script src="scripts/controllers/tablet.js"></script>
-  <script src="scripts/controllers/desktop.js"></script>
-  <script src="scripts/routes.js"></script>
-  <script src="scripts/start_app.js"></script>
-
-  <!-- based on /lab/hello/07/ with you want use angular.js with require.js check /lab/hello/08/ -->
+  <script
+    data-main="require.config"
+    src="/cdn/ajax/libs/require.js/2.1.11/require.min.js"></script>
 
 </body>
 </html>
