@@ -5,7 +5,6 @@ define(function(require) {
   require('angularResource');
   require('uiRouter');
   require('bootstrap');
-  // require('ocLazyLoad');
 
   // angular module definition
   return angular.module(
@@ -17,8 +16,6 @@ define(function(require) {
       'ngResource',
 
       'ui.router',
-
-      // 'oc.lazyLoad',
 
       require('app/lazyLoad/package').name,
       require('app/home/package').name

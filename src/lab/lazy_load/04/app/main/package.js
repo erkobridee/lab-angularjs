@@ -5,9 +5,6 @@ define(function(require) {
 
   require('./states');
 
-  // require('./lazyload');
-  // require('./services/lazyload');
-
   return module;
 
 });
