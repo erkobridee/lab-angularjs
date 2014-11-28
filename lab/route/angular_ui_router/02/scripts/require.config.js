@@ -54,7 +54,7 @@ require({
       deps: ['main/module']
     },
 
-    'main/routes': {
+    'main/states': {
       deps: [
         'controllers/home',
         'controllers/about'
@@ -63,7 +63,7 @@ require({
 
     'main/start': {
       deps: [
-        'main/routes'
+        'main/states'
       ]
     }
 

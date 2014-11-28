@@ -3,13 +3,13 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.config(configure);
+  module.config(configureStates);
 
   //---
 
-  configure.$inject = ['$stateProvider', '$urlRouterProvider'];
+  configureStates.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function configure($stateProvider, $urlRouterProvider) {
+  function configureStates($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider
       .when('', '/') // default
@@ -22,13 +22,13 @@ define(function(require) {
         url: '/page',
         views: {
           'master': {
-            templateUrl: 'app/main/templates/page_layout.html'
+            templateUrl   : 'app/main/templates/page_layout.html'
           },
           'header@page': {
-            templateUrl: 'app/main/templates/page_header.html'
+            templateUrl   : 'app/main/templates/page_header.html'
           },
           'content@page': {
-            templateUrl: 'app/main/templates/page_content.html'
+            templateUrl   : 'app/main/templates/page_content.html'
           }
         }
       })
@@ -37,13 +37,13 @@ define(function(require) {
         url: '/404',
         views: {
           'master': {
-            templateUrl: 'app/main/templates/page_layout.html'
+            templateUrl   : 'app/main/templates/page_layout.html'
           },
           'header@404': {
-            templateUrl: 'app/main/templates/404_header.html'
+            templateUrl   : 'app/main/templates/404_header.html'
           },
           'content@404': {
-            templateUrl: 'app/main/templates/404_content.html'
+            templateUrl   : 'app/main/templates/404_content.html'
           }
         }
       });

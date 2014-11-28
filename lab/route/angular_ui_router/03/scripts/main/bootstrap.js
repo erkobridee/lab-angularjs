@@ -4,7 +4,7 @@ define(
   'angular',
 
   './module',
-  './routes',
+  './states',
   '../controllers/require.load'
 ],
 
