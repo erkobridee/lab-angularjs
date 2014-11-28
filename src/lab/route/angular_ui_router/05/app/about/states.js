@@ -16,15 +16,17 @@ define(function(require) {
         url: '/about',
         views: {
           'master': {
-            controller: 'AboutCtrl as about',
-            templateUrl: 'app/main/templates/page_layout.html'
+            templateUrl   : 'app/main/templates/page_layout.html',
+            controller    : 'AboutCtrl',
+            controllerAs  : 'about'
           },
           'header@about': {
-            templateUrl: 'app/about/templates/header.html'
+            templateUrl   : 'app/about/templates/header.html'
           },
           'content@about': {
-            //controller: 'AboutCtrl as about',
-            templateUrl: 'app/about/templates/content.html'
+            templateUrl   : 'app/about/templates/content.html' //,
+            // controller    : 'AboutCtrl',
+            // controllerAs  : 'about'
           }
         }
       });

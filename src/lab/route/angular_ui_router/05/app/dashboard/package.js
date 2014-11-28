@@ -12,7 +12,7 @@ define(function(require) {
 
   require('./directives/myHolder');
 
-  require('./routes');
+  require('./states');
 
   return module;
 
