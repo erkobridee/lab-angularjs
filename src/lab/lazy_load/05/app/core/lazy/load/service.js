@@ -66,6 +66,12 @@ define(function(require) {
       } else if( angular.isObject( toLoad ) ) {
 
         // TODO: check attributes
+        /*
+          toLoad: {
+            name: 'packageName',
+            path: 'packagePath'
+          }
+        */
 
         name = toLoad.name;
         promise = load( toLoad.name, toLoad.path );
