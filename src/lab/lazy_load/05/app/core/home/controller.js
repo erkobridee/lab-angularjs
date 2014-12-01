@@ -23,7 +23,10 @@ define(function(require) {
 
       console.log('home controller :: goToAbout');
 
-      lazyLoad.state('about');
+      lazyLoad.state({
+        name: 'about',
+        path: 'app/modules/pages/'
+      });
 
     };
 
@@ -31,7 +34,10 @@ define(function(require) {
 
       console.log('home controller :: goToDashboard');
 
-      lazyLoad.state('dashboard');
+      lazyLoad.state({
+        name: 'dashboard',
+        path: 'app/modules/useCases/'
+      });
 
     };
 
@@ -41,6 +47,7 @@ define(function(require) {
         .load(['pages', 'useCases'])
         .then(function( result ) {
           console.log( 'modules loaded...' );
+          console.log( result );
         });
 
     };

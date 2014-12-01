@@ -6,15 +6,23 @@
 
   <div class="row">
 
-    <p><a href="" ng-click="home.goToAbout()">About</a></p>
+    <b>Core:</b>
+    <ul>
+      <li>Page : <a href="#/page">link</a> | <a ui-sref="page">state | <a href="" ng-click="home.gotToPage()">controller</a></li>
+      <li>404 - Invalid URL : <a href="#/invalid_url">link</a></li>
+    </ul>
 
-    <p><a href="" ng-click="home.gotToDashboard()">Dashboard</a></p>
+    <b>Lazy Load: (see devtools)</b>
+    <ul>
+      <li><a href="" ng-click="home.loadAllModules()">Load all macro modules</a> [pages, useCases]</li>
+      <li>Load micro modules and go to state
+        <ul>
+          <li><a href="" ng-click="home.goToAbout()">About</a></li>
+          <li><a href="" ng-click="home.gotToDashboard()">Dashboard</a></li>
+        </ul>
+      </li>
+    </ul>
 
-    <p>Page : <a href="#/page">link</a> | <a ui-sref="page">state | <a href="" ng-click="home.gotToPage()">controller</a></p>
-
-    <p><a href="" ng-click="home.loadAllModules()">Load all lazy modules</a> (see devtools)</p>
-
-    <p>404 - Invalid URL : <a href="#/invalid_url">link</a></p>
   </div>
 
 </div>

@@ -20,12 +20,12 @@ define(function(require) {
 
     //---
 
-    function lazyLoad(toLoad) {
+    function lazyLoad( toLoad ) {
 
-      if( angular.isString( toLoad ) ) {
-        return loadOne( toLoad );
-      } else if( angular.isArray( toLoad ) ) {
+      if( angular.isArray( toLoad ) ) {
         return loadAll( toLoad );
+      } else {
+        return loadOne( toLoad );
       }
 
     }
@@ -41,32 +41,67 @@ define(function(require) {
     http://blog.xebia.com/2014/02/23/promises-and-design-patterns-in-angularjs/
     */
 
-    function loadAll(toLoadArray) {
+    function loadAll( toLoadArray ) {
 
       var promises = [];
 
       angular.forEach(toLoadArray, function createPromise( value ) {
-        if( angular.isString( value ) ) this.push( loadOne( value ) );
+        this.push( loadOne( value ) );
       }, promises);
 
-      return $q.all(promises);
+      return $q.all( promises );
 
     }
 
-    function loadOne(name) {
+    function loadOne( toLoad, returnName ) {
+
+      var promise = null;
+      var name = null;
+
+      if( angular.isString( toLoad ) ) {
+
+        name = toLoad;
+        promise = load( toLoad );
+
+      } else if( angular.isObject( toLoad ) ) {
+
+        // TODO: check attributes
+
+        name = toLoad.name;
+        promise = load( toLoad.name, toLoad.path );
+      }
+
+      if( returnName ) {
+
+        promise = promise.then(function() {
+          return name;
+        });
+
+      }
+
+      return promise;
+
+    }
+
+    function load( name, path ) {
+
+      path = path || 'app/modules/';
+      var packageFile = path + name + '/package';
 
       return ocLazyLoad.load({
         name: name,
-        files: ['app/modules/'+ name +'/package'] // load
+        files: [ packageFile ] // load
       });
 
     }
 
-    function lazyStateLoad(name) {
+    //---
 
-      return lazyLoad(name)
-        .then(function() {  // After load
-          return $state.go(name);
+    function lazyStateLoad( toLoad ) {
+
+      return loadOne( toLoad, true )
+        .then(function( gotoState ) { // After load
+          return $state.go( gotoState );
         });
 
     }

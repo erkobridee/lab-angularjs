@@ -13,7 +13,7 @@ define(function(require) {
 
     $ocLazyLoadProvider.config({
       loadedModules: [
-        require('app/core/lazy/load/package').name,
+        module.name,
         require('app/core/home/package').name,
         require('app/core/page/package').name,
         require('app/core/404/package').name
