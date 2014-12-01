@@ -25,11 +25,11 @@
 
     <div ng-if="home.menu.length > 0">
       <hr>
-      <span>{{ home.menu | json }}</span>
-      <hr>
       <p>
         <span ng-repeat="item in home.menu"><a ui-sref="{{item.state}}">{{item.label}}</a>&nbsp;|&nbsp;</span>
       </p>
+      <hr>
+      <pre><code>{{ home.menu | json }}</code></pre>
       <br><br>
     </div>
 
