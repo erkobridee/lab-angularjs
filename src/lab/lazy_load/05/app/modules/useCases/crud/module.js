@@ -2,20 +2,19 @@ define(function(require) {
   'use strict';
 
   var angular = require('angular');
-
+  require('angularResource');
   require('uiRouter');
 
   // angular module definition
   return angular.module(
     // module name
-    'useCases',
+    'crud',
 
     // module dependencies
     [
-      'ui.router',
+      'ngResource',
 
-      require('./crud/package').name,
-      require('./dashboard/package').name
+      'ui.router'
     ]
   );
 

@@ -13,6 +13,7 @@ define(function(require) {
   require('./directives/myHolder');
 
   require('./states');
+  require('./run');
 
   return module;
 
