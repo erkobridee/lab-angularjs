@@ -1,0 +1,14 @@
+define(function(require) {
+  'use strict';
+
+  return {
+    "HOME": {
+      "TITLE": "Home"
+    },
+    "PASSED_AS_TEXT": "Hey there! I'm passed as text value!",
+    "PASSED_AS_ATTRIBUTE": "I'm passed as attribute value, cool ha?",
+    "PASSED_AS_INTERPOLATION": "Beginners! Im interpolated!",
+    "VARIABLE_REPLACEMENT": "Hi, {{name}}"
+  };
+
+});
