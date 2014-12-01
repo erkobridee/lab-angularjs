@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+  <div class="row"><p>{{home.greetings}}</p></div>
+
+  <div class="row">&nbsp;</div>
+
+  <div class="row">
+
+    <b>Core:</b>
+    <ul>
+      <li>Page : <a href="#/page">link</a> | <a ui-sref="page">state | <a href="" ng-click="home.gotToPage()">controller</a></li>
+      <li>404 - Invalid URL : <a href="#/invalid_url">link</a></li>
+    </ul>
+
+    <b>Lazy Load: (see devtools)</b>
+    <ul>
+      <li><a href="" ng-click="home.loadAllModules()">Load all macro modules</a> [pages, useCases]</li>
+      <li>Load micro modules and go to state
+        <ul>
+          <li><a href="" ng-click="home.goToAbout()">About</a></li>
+          <li><a href="" ng-click="home.gotToDashboard()">Dashboard</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div ng-if="home.menu.length > 0">
+      <hr>
+      <p>
+        <span ng-repeat="item in home.menu"><a ui-sref="{{item.state}}">{{item.label}}</a>&nbsp;|&nbsp;</span>
+      </p>
+      <hr>
+      <pre><code>{{ home.menu | json }}</code></pre>
+      <br><br>
+    </div>
+
+  </div>
+
+</div>
