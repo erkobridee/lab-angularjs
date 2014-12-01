@@ -7,19 +7,32 @@ define(function(require) {
 
   //---
 
-  HomeCtrl.$inject = ['$state', 'LazyLoadService'];
+  HomeCtrl.$inject = ['$state', 'LazyLoadService', 'MenuService'];
 
-  function HomeCtrl(state, lazyLoad) {
+  function HomeCtrl(state, lazyLoad, menu) {
     var vm = this;
 
     vm.greetings = 'Home controller say: Welcome to Angular Routes Example';
 
-    vm.gotToPage = function() {
+    vm.menu = menu.items;
+
+    vm.gotToPage = gotToPage;
+
+    vm.goToAbout = goToAbout;
+
+    vm.gotToDashboard = gotToDashboard;
+
+    vm.loadAllModules = loadAllModules;
+
+    //---
+
+    function gotToPage() {
       console.log('home controller :: goToPage');
       state.go('page');
-    };
+    }
 
-    vm.goToAbout = function() {
+      // @begin: lazy load
+    function goToAbout() {
 
       console.log('home controller :: goToAbout');
 
@@ -28,9 +41,9 @@ define(function(require) {
         path: 'app/modules/pages/'
       });
 
-    };
+    }
 
-    vm.gotToDashboard = function() {
+    function gotToDashboard() {
 
       console.log('home controller :: goToDashboard');
 
@@ -39,9 +52,9 @@ define(function(require) {
         path: 'app/modules/useCases/'
       });
 
-    };
+    }
 
-    vm.loadAllModules = function() {
+    function loadAllModules() {
 
       lazyLoad
         .load(['pages', 'useCases'])
@@ -50,7 +63,8 @@ define(function(require) {
           console.log( result );
         });
 
-    };
+    }
+      // @end: lazy load
 
   }
 

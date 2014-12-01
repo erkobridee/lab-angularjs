@@ -13,7 +13,8 @@ define(function(require) {
       require('app/core/lazy/load/package').name,
       require('app/core/home/package').name,
       require('app/core/page/package').name,
-      require('app/core/404/package').name
+      require('app/core/404/package').name,
+      require('app/core/menu/package').name
     ]
   );
 

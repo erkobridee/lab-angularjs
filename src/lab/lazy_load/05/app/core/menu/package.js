@@ -3,9 +3,7 @@ define(function(require) {
 
   var module = require('./module');
 
-  require('./controller');
-  require('./states');
-  require('./run');
+  require('./service');
 
   return module;
 
