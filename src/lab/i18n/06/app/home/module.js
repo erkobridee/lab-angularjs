@@ -12,7 +12,6 @@ define(function(require) {
     [
       'ngRoute',
       'pascalprecht.translate'
-      //require('i18n/package').name
     ]
   );
 

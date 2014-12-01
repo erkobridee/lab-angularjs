@@ -13,13 +13,7 @@ require.config({
     angularTranslate: [
       '/cdn/ajax/libs/angular-translate/2.0.1/angular-translate.min'
     ]
-    /*
-    ,
 
-    angularTranslateLoaderPartial: [
-      '/cdn/ajax/libs/angular-translate-loader-partial/2.4.2/angular-translate-loader-partial.min'
-    ]
-    */
   },
 
   shim: {
@@ -35,11 +29,6 @@ require.config({
     'angularTranslate': {
       deps: ['angular']
     }
-    /*,
-
-    'angularTranslateLoaderPartial': {
-      deps: ['angularTranslate']
-    }*/
 
   },
 

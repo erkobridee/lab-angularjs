@@ -17,8 +17,6 @@ define(function(require) {
         controller: 'AboutCtrl'
       });
 
-    // $locationProvider.html5Mode(true);
-
   }
 
 });

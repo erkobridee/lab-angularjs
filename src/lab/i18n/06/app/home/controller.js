@@ -2,7 +2,6 @@ define(function(require) {
   'use strict';
 
   var module = require('./module');
-  //require('i18n/package');
 
   module.controller( 'HomeCtrl', HomeCtrl );
 
