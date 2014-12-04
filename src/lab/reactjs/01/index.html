@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ReactJS : 01 : Hello world</title>
+</head>
+<body>
+
+<script src="/cdn/ajax/libs/reactjs/0.12.1/react.min.js"></script>
+
+<script>
+  (function() {
+    'use strict';
+
+    var HelloMessage = React.createClass({
+      render: function() {
+        return React.DOM.div( {}, 'Hello World' );
+      }
+    });
+
+    React.renderComponent( HelloMessage( {} ), document.body );
+
+  })();
+</script>
+
+</body>
+</html>
