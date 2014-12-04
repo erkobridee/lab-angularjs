@@ -6,7 +6,7 @@
     getDefaultProps: function() {
       return {
         item: {}
-      }
+      };
     },
 
     render: function() {
@@ -22,12 +22,12 @@
     getDefaultProps: function() {
       return {
         items: []
-      }
+      };
     },
 
     render: function() {
       var items = this.props.items.map( function( item, i ) {
-        return MenuItem({
+        return new MenuItem({
           item: item
         });
       });
@@ -37,7 +37,7 @@
 
   });
 
-  React.renderComponent( Menu({
+  React.renderComponent( new Menu({
     items: [ 'Home', 'Dashboard', 'About' ]
   }), document.body );
 

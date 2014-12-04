@@ -1,28 +1,10 @@
 (function() {
   'use strict';
 
-  var Menu = React.createClass({
-
-    getDefaultProps: function() {
-      return { items: [] }
-    },
-
-    render: function() {
-      var items = this.props.items.map( function( item, i ) {
-        return MenuItem( { item: item } );
-      });
-
-      return React.DOM.ul( {}, items );
-    }
-
-  });
-
-  //---
-
   var MenuItem = React.createClass({
 
     getDefaultProps: function() {
-      return { item: {} }
+      return { item: {} };
     },
 
     render: function() {
@@ -33,9 +15,31 @@
 
   //---
 
+  var Menu = React.createClass({
+
+    getDefaultProps: function() {
+      return { items: [] };
+    },
+
+    render: function() {
+      var items = this.props.items.map( function( item, i ) {
+        return new MenuItem( { item: item } );
+      });
+
+      return React.DOM.ul( {}, items );
+    }
+
+  });
+
+  //---
+
   angular.module( 'app' ).directive( 'menu', menu );
 
   function menu() {
+
+    var scope = {
+      items: '='
+    };
 
     var directive = {
       restrict: 'EA',
@@ -47,15 +51,11 @@
 
     //---
 
-    var scope = {
-      items: '='
-    };
-
     function link( scope, el, attrs ) {
 
-      scope.$watch( 'vm.items', function( newValue, oldValue ){
+      scope.$watch( 'items', function( newValue, oldValue ){
 
-        React.renderComponent( Menu({
+        React.renderComponent( new Menu({
           items: newValue
         }), el[0] );
 
