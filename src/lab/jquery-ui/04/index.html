@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery-ui : 06 : Datepicker inside a directive</title>
+
+  <style>
+
+    form {
+      width: 300px;
+      margin: 100px;
+    }
+
+    form > div {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .ng-cloak { display: none !important; }
+
+  </style>
+
+  <link rel="stylesheet" href="/cdn/ajax/libs/jquery-ui/1.11.2/css/jquery-ui.min.css">
+
+</head>
+<body ng-controller="MainCtrl as main">
+
+  Date Of Birth:
+  <datepicker ng-model="main.user.dateOfBirth" ></datepicker>
+
+  <br>
+  <br>
+
+  Current user's date of birth:
+  <span class="ng-cloak">{{ main.user.dateOfBirth  | date: 'dd/MM/yyyy' }}</span>
+
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/cdn/ajax/libs/jquery-ui/1.11.2/js/jquery-ui.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/datepicker/directive.js"></script>
+
+</body>
+</html>
