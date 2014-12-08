@@ -3,10 +3,17 @@
 
   angular.module( 'app' ).controller( 'MainCtrl', MainCtrl );
 
+  //---
+
+  MainCtrl.$inject = [ ];
+
   function MainCtrl() {
     var vm = this;
 
-    vm.items= [ 'Home', 'Dashboard', 'About' ];
+    vm.user = {
+      dateOfBirth: new Date()
+    };
+
   }
 
 })();

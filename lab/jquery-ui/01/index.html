@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery-ui : 01 : Hello world datepicker</title>
+  <link rel="stylesheet" href="/cdn/ajax/libs/jquery-ui/1.11.2/css/jquery-ui.min.css">
+</head>
+<body>
+
+  <input type="text" id="datepicker">
+
+  <script src="/cdn/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/cdn/ajax/libs/jquery-ui/1.11.2/js/jquery-ui.min.js"></script>
+
+  <script>
+    (function() {
+      'use strict';
+
+      $( '#datepicker' ).datepicker({
+        onSelect: selectDatepicker
+      });
+
+      function selectDatepicker(date) {
+        console.log(date);
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
