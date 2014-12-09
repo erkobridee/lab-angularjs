@@ -14,9 +14,7 @@
 
     render: function() {
       var controller = this.props.controller;
-      return  React.DOM.form({
-          onSubmit: controller.onSubmitForm
-        },
+      return  React.DOM.form({},
 
         //---
 
@@ -52,7 +50,9 @@
 
         //---
 
-        React.DOM.div( {}, React.DOM.button( {}, 'Submit' ) )
+        React.DOM.div( {}, React.DOM.button( {
+          onClick: controller.onSubmitForm
+        }, 'Submit' ) )
 
       );
     }

@@ -5,9 +5,9 @@
 
   //---
 
-  MainCtrl.$inject = [ 'Scopes' ];
+  MainCtrl.$inject = [ '$scope', 'Scopes' ];
 
-  function MainCtrl(Scopes) {
+  function MainCtrl( $scope, Scopes ) {
     var vm = this;
 
     vm.name = '';
@@ -15,6 +15,8 @@
 
     vm.email = '';
     vm.setEmail = setEmail;
+
+    vm.result = '';
 
     vm.onSubmitForm = onSubmitForm;
 
@@ -31,9 +33,13 @@
     }
 
     function onSubmitForm() {
-      console.log( 'MainCtrl Submit Form' );
-      console.log( 'name :', vm.name );
-      console.log( 'email:', vm.email );
+      $scope.$apply(function() {
+        vm.result = 'MainCtrl Submit Form \n';
+        vm.result += 'Name: ' + vm.name + '\n';
+        vm.result += 'Email: ' + vm.email + '\n';
+      });
+
+      return false;
     }
 
   }
