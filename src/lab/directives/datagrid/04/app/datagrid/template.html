@@ -1,0 +1,14 @@
+<div>
+
+  <input
+    ng-if="vm.query !== undefined"
+    ng-model="vm.query"
+    ng-change="vm.search()"
+    type="text"
+    placeholder="Search">
+
+  <hr ng-if="vm.query !== undefined" />
+
+  <table border="1" ng-transclude></table>
+
+</div>
