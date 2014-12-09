@@ -5,6 +5,13 @@
 * [Creating Custom Directives | Angular.js Guide](https://docs.angularjs.org/guide/directive)
 
 
+## Examples
+
+* [JQuery UI](jquery-ui)
+
+* [React.js](reactjs)
+
+
 ## Links 
 
 * [[GitHub] IgorMinar / directives-workshop](https://github.com/IgorMinar/directives-workshop)
