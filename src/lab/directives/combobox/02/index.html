@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Combobox : 02 : Select inside a directive</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <div>Selecione um carro:
+    <select-one
+      data="main.carros"
+      selected="main.carroSelecionado"></select-one>
+  </div>
+
+  </br>
+
+  <div>Carro selecionado: {{ main.carroSelecionado }} </div>
+
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/selectone/directive.js"></script>
+
+</body>
+</html>
