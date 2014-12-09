@@ -5,9 +5,9 @@
 
   //---
 
-  datagrid.$inject = [ '$filter' ];
+  // datagrid.$inject = [];
 
-  function datagrid( $filter ) {
+  function datagrid() {
 
     var scope = {
       titles: '=',
@@ -59,9 +59,9 @@
 
   //---
 
-  DatagridController.$inject = [ '$scope' ];
+  DatagridController.$inject = [ '$scope', '$filter' ];
 
-  function DatagridController( $scope ) {
+  function DatagridController( $scope, $filter ) {
     var vm = this;
 
     //---
