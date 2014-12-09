@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Combobox : 03 : Select with generic value</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <div>Selecione o estado:
+    <select-one
+      value="name"
+      data="main.estados"
+      selected="main.estadoSelecionado"></select-one>
+  </div>
+  <hr/>
+
+  <div>Selecione a cidade:
+    <select-one
+      data="main.estadoSelecionado.cidades"
+      selected="main.cidadeSelecionada"></select-one>
+  </div>
+  <hr/>
+
+  <div>Cidade selecionada: {{ main.cidadeSelecionada }} </div>
+
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/selectone/directive.js"></script>
+
+</body>
+</html>
