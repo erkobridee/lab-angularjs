@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChartJS : 01 : Hello World</title>
+</head>
+<body>
+
+  <div style="width: 30%">
+    <canvas id="canvas" height="200"></canvas>
+  </div>
+
+  <script src="/cdn/ajax/libs/chart.js/1.0.1-beta.4/Chart.min.js"></script>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var barChartData = {
+
+        labels: [
+          'Janeiro',
+          'Fevereiro',
+          'Março',
+          'Abril',
+          'Maio',
+          'Junho',
+          'Julho'
+        ],
+
+        datasets: [
+          {
+            fillColor: 'rgba(220,220,220,0.5)',
+            data: [
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber()
+            ]
+          },
+          {
+            fillColor: 'rgba(151,187,205,0.5)',
+            data: [
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber(),
+              randomNumber()
+            ]
+          }
+        ]
+      };
+
+      //---
+
+      var data = barChartData;
+      window.onload = onload;
+
+      //---
+
+      function onload(){
+        var ctx = document.getElementById( 'canvas' ).getContext( '2d' );
+        new Chart( ctx ).Bar( data, { responsive : true } );
+      }
+
+      //---
+
+      function randomNumber() {
+        return Math.round( Math.random() * 100 );
+      }
+
+    })();
+  </script>
+</body>
+</html>
