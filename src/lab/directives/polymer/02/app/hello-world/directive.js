@@ -35,7 +35,7 @@
       //---
 
       function init() {
-        Polymer( 'hello-world', {} );
+        new Polymer( 'hello-world', {} );
       }
 
     }
