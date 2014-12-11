@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Highcharts : 02 : Integration with AngularJS</title>
+  <style>
+    .container { width: 30%; float: left; margin: 20px;}
+  </style>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <div class="container">
+    <chart-column options="main.chart.column.options"></chart-column>
+  </div>
+
+  <div class="container">
+    <chart-line options="main.chart.line.options"></chart-line>
+  </div>
+
+  <div class="container">
+    <chart-area options="main.chart.area.options"></chart-area>
+  </div>
+
+  <script src="/cdn/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/cdn/ajax/libs/highcharts/4.0.4/highcharts.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/chart/column/directive.js"></script>
+  <script src="app/chart/line/directive.js"></script>
+  <script src="app/chart/area/directive.js"></script>
+
+</body>
+</html>
