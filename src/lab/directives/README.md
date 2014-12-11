@@ -13,11 +13,17 @@
 
   * [datagrid](angularjs/datagrid)
 
-* [Chart.js](chart.js)  
+* [Graphics](graphics)
+
+  * [Chart.js](graphics/chart.js)
+
+  * [Highcharts](graphics/highcharts)
+
+  * [Highstock](graphics/highstock)
 
 * [JQuery UI](jquery-ui)
 
-* [Polymer](polymer)  
+* [Polymer](polymer)
 
 * [React.js](reactjs)
 
