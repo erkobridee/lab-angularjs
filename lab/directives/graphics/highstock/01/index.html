@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highstock : 01 : Hello World</title>
+</head>
+<body>
+
+  <div id="container" style="width: 50%; float: left; margin: 20px;"></div>
+
+  <script src="/cdn/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/cdn/ajax/libs/highstock/2.0.4/highstock.js"></script>
+
+  <script>
+    (function() {
+      'use strict';
+
+      $.getJSON( 'data.json', function( data ) {
+
+        var chart = {
+          alignTicks: false
+        };
+
+        var rangeSelector = {
+          selected: 1
+        };
+
+        var title = {
+          text: 'Hello World'
+        };
+
+        var series =[{
+          type: 'area',
+          name: 'Stock Volume',
+          data: data
+        }];
+
+        var options = {
+          chart: chart,
+          title: title,
+          rangeSelector: rangeSelector,
+          series: series
+        };
+
+        $( '#container' ).highcharts( 'StockChart', options );
+
+      });
+
+    })();
+  </script>
+</body>
+</html>

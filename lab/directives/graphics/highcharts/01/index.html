@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Highcharts : 01 : Hello World</title>
+  <style>
+    #container { width: 25%; }
+  </style>
+</head>
+<body>
+
+  <div id="container"></div>
+
+  <script src="/cdn/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/cdn/ajax/libs/highcharts/4.0.4/highcharts.js"></script>
+
+  <script>
+    (function() {
+      'use strict';
+
+      var chart = {
+        type: 'column'
+      };
+
+      //---
+
+      var title = {
+        text: 'Hello World with Highcharts'
+      };
+
+      var subtitle = {
+        text: 'Source: WorldClimate.com'
+      };
+
+      //--
+
+      var xAxis = {
+        categories: [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril'
+        ]
+      };
+
+      var yAxis = {
+        min: 0,
+        title: {
+            text: 'Rainfall (mm)'
+        }
+      };
+
+      //---
+
+      var tooltip = {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr> \
+                        <td style="color:{series.color};padding:0">{series.name}: </td> \
+                        <td style="padding:0"><b>{point.y:.1f} mm</b></td> \
+                      </tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+      };
+
+      //---
+
+      var series = [
+        {
+          name: 'Tokyo',
+          data: [ 49.9, 71.5, 106.4, 129.2 ]
+        },
+        {
+          name: 'New York',
+          data: [ 83.6, 78.8, 98.5, 93.4 ]
+        }
+      ];
+
+      //---
+
+      var options = {
+        chart: chart,
+        title: title,
+        subtitle: subtitle,
+        xAxis: xAxis,
+        yAxis: yAxis,
+        tooltip: tooltip,
+        series : series
+      }
+
+      //---
+
+      $( '#container' ).highcharts( options );
+
+    })();
+  </script>
+</body>
+</html>
