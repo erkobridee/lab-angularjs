@@ -28,6 +28,10 @@
 
 --
 
+* [Angular Modules](http://ngmodules.org/) - Encontre (Módulos, Plugins e Directives) para o Angular.js 
+
+--
+
 * [Hacking Core Directives in AngularJS | Brian Ford](http://briantford.com/blog/angular-hacking-core.html)
 
   * [[GitHub] damienklinnert / angular-decorate](https://github.com/damienklinnert/angular-decorate) - Use AngularJS' decorate function with ease
