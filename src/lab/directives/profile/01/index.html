@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile : 01 : Hello World</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <profile user="main.user.profile" permissions="USER">
+    <div><b>Welcome User</b></div>
+  </profile>
+
+  <profile user="main.user.profile" permissions="ADMIN">
+    <div><b>Welcome Admin</b></div>
+  </profile>
+
+  <profile user="main.user.profile" permissions="USER, ADMIN">
+    <div>How are you?</div>
+  </profile>
+
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+  <script src="app/profile/directive.js"></script>
+</body>
+</html>
