@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart-table : 01 : Hello World</title>
+  <link rel="stylesheet" href="/cdn/ajax/libs/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <style>
+    table { max-width: 50% !important; margin: 20px; }
+    h3 {margin: 20px; }
+  </style>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <h3>Hello World</h3>
+
+  <table st-table="main.rowCollection" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Birth date</th>
+        <th>Balance</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in main.rowCollection">
+        <td>{{row.firstName}}</td>
+        <td>{{row.lastName}}</td>
+        <td>{{row.birthDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{row.balance}}</td>
+        <td>{{row.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular-smart-table/1.4.5/smart-table.min.js"></script>
+
+  <script>
+    (function() {
+      'use strict';
+
+      angular
+        .module( 'app', [ 'smart-table' ] )
+        .controller('MainCtrl', MainCtrl);
+
+        //---
+
+        MainCtrl.$inject = [ ];
+
+        function MainCtrl() {
+          var vm = this;
+
+          var rowCollection = [
+            {
+              firstName: 'Laurent',
+              lastName: 'Renard',
+              birthDate: new Date('1987-05-21'),
+              balance: 102,
+              email: 'whatever@gmail.com'
+            },
+            {
+              firstName: 'Blandine',
+              lastName: 'Faivre',
+              birthDate: new Date('1987-04-25'),
+              balance: -2323.22,
+              email: 'oufblandou@gmail.com'
+            },
+            {
+              firstName: 'Francoise',
+              lastName: 'Frere',
+              birthDate: new Date('1955-08-27'),
+              balance: 42343,
+              email: 'raymondef@gmail.com'
+            }
+          ];
+
+          //---
+
+          vm.rowCollection = rowCollection;
+
+        }
+
+    })();
+  </script>
+</body>
+</html>
