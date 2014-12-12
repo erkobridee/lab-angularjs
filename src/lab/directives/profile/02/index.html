@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile : 02</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <div>
+    <h3>Menu</h3>
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/404">404</a></li>
+    </ul>
+  </div>
+
+  <hr/>
+
+  <label>
+    Change profile:
+    <select ng-model="main.user.profile" ng-options="item for item in main.profiles"></select>
+  </label>
+
+  <hr/>
+
+  <div ng-view></div>
+
+  <!-- vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular-route.min.js"></script>
+
+  <!-- app -->
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+  <script src="app/404/route.js"></script>
+
+  <script src="app/home/controller.js"></script>
+  <script src="app/home/route.js"></script>
+
+  <script src="app/about/controller.js"></script>
+  <script src="app/about/route.js"></script>
+
+  <script src="app/profile/factory.js"></script>
+  <script src="app/profile/directive.js"></script>
+</body>
+</html>
