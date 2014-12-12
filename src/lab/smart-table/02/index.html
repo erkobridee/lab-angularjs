@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart-table : 02 : Smart-table with search</title>
+  <link rel="stylesheet" href="/cdn/ajax/libs/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <style>
+    table { max-width: 50% !important; margin: 20px; }
+    h3 {margin: 20px; }
+  </style>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <h3>Smart-table with search</h3>
+
+  <table st-table="main.rowCollection" class="table table-striped">
+    <thead>
+      <tr>
+        <th st-sort="firstName">First name</th>
+        <th st-sort="lastName">Last name</th>
+        <th st-sort="birthDate">Birth date</th>
+        <th st-sort="balance">Balance</th>
+        <th>Email</th>
+      </tr>
+      <tr>
+        <th>
+          <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+        </th>
+        <th colspan="4">
+          <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in main.rowCollection">
+        <td>{{row.firstName | uppercase}}</td>
+        <td>{{row.lastName}}</td>
+        <td>{{row.birthDate | date: 'dd/MM/yyyy' }}</td>
+        <td>{{row.balance | currency}}</td>
+        <td><a ng-href="mailto:{{row.email}}">email</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="/cdn/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular-smart-table/1.4.5/smart-table.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+</body>
+</html>
