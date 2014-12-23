@@ -36,8 +36,7 @@
 
       //---
 
-      scope.$watch('row.datatableSelected', function(value) {
-        delete row.datatableSelected;
+      scope.$watch('row.isSelected', function(value) {
         element.find('input')[0].checked = value;
       });
 

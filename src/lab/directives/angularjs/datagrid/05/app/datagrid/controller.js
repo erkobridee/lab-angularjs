@@ -46,7 +46,7 @@
         $scope.selectedValues.splice(selectedIndex, 1);
       }
 
-      row.datatableSelected = value;
+      row.isSelected = value;
 
       var allSelected = ($scope.selectedValues.length === $scope.data.length);
       $scope.$emit('datatable:allSelected', allSelected);
