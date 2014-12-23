@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Datagrid : 05 : Table with selectAll</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <!--@begin table -->
+  <table datagrid="main.data" selected-values="main.selectedValues" border="1">
+    <thead>
+      <th select-all></th>
+      <th>Name</th>
+      <th>Age</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in main.data">
+        <td select="item"></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!--@end table -->
+
+  <!--@begin table reflected -->
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Age</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in main.selectedValues">
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!--@end table reflected -->
+
+  <!--@begin vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
+  <!--@end vendors -->
+
+  <!--@begin app -->
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/datagrid/controller.js"></script>
+  <script src="app/datagrid/directive.js"></script>
+  <script src="app/datagrid/directive.select.js"></script>
+  <script src="app/datagrid/directive.selectAll.js"></script>
+  <!--@end app -->
+
+</body>
+</html>
