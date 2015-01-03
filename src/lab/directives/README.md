@@ -198,6 +198,10 @@
 
 --
 
+* [Breaking Down AngularJS to Smaller Components | Medium](https://medium.com/@srph/breaking-down-angularjs-to-smaller-components-f2ab70a104d0) - by Kier Borromeo (2014/12/19)
+
+--
+
 * [[YouTube] Complex forms with Advanced Directives in AngularJS](https://www.youtube.com/watch?v=G5MzkDJQkoQ) - 2014/11/26
 
   * [[Slides] Complex forms with advanced directives in AngularJS](http://slides.yearofmoo.com/ng-mtv-meetup-nov2014/index.html)
