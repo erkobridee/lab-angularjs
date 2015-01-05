@@ -4,6 +4,13 @@
 
 * [Creating Custom Directives | Angular.js Guide](https://docs.angularjs.org/guide/directive)
 
+* [$compile | Angular.js API](https://docs.angularjs.org/api/ng/service/$compile)
+
+
+> **bindToController**
+>
+> Quando é utilizado um escopo isolado para um componente, e o `controllerAs` é utilizado, a configuração `bindToController : true` irá possibilitar que o compoenente possua as propriedades associadas ao escopo. Quando o `controller` for instanciado, os valores iniciais do escopo estarão disponíveis.
+
 
 ## Examples
 
