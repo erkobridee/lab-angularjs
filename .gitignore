@@ -11,8 +11,15 @@ pids
 logs
 results
 
+#-----------
+# node.js
+
+node
 node_modules
 npm-debug.log
+
+#-----------
+# project files
 
 cache
 build
@@ -36,3 +43,12 @@ dist
 # Files that might appear on external disk
 **/.Spotlight-V100
 **/.Trashes
+
+#-----------
+# eclipse
+.project
+.settings
+
+#-----------
+# Webstorm
+**/.idea
