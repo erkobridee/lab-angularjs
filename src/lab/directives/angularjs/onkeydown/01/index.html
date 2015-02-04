@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>OnKeyDown : 01 : on key down directive</title>
+</head>
+<body ng-controller="MainCtrl as vm">
+
+  <!-- === -->
+
+  <p>OnKeyDown : 01 : on key down directive</p>
+  <br>
+  <p>press: ENTER key</p><button ng-click="vm.clearLog()">Clear</button>
+  <br>
+  <p>see DevTools console</p>
+
+
+  <onkeydown code="13" handler="vm.onEnter();"/>
+  <!-- <onkeydown code="27" handler="vm.onEsc();"/> -->
+
+  <!-- === -->
+
+  <script src="/cdn/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/onkeydown/directive.js"></script>
+</body>
+</html>
