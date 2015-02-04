@@ -20,6 +20,10 @@
 
   * [datagrid](angularjs/datagrid)
 
+  * [onkeydown](angularjs/onkeydown)
+
+  * [profile](angularjs/profile)
+
 * [Graphics](graphics)
 
   * [Chart.js](graphics/chart.js)
