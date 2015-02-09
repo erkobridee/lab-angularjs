@@ -77,6 +77,10 @@
 
 --
 
+* [Sobre Diretivas e Como usar corretamente plugins jQuery com AngularJS | pedronauck.com](http://pedronauck.com/angularjs/sobre-diretivas-e-como-usar-corretamente-plugins-jquery-com-angularjs)
+
+--
+
 * [Using NgModelController with Custom Directives | Christopher Nadeau](http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/)
 
 --
