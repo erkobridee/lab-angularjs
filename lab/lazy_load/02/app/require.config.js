@@ -4,18 +4,18 @@ require({
   paths: {
 
     jquery: [
-      '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min',
-      '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min',
-      '/cdn/ajax/libs/jquery/2.1.1/jquery.min'
+      '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min',
+      '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min',
+      '/cdn/ajax/libs/jquery/2.1.3/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.3.4/
+    // http://code.angularjs.org/1.3.13/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.3.4/angular.min'
+      '/cdn/ajax/libs/angular.js/1.3.13/angular.min'
     ],
 
     angularResource: [
-      '/cdn/ajax/libs/angular.js/1.3.4/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.3.13/angular-resource.min'
     ],
 
     uiRouter: [
