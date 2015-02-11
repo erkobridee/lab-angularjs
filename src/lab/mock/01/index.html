@@ -14,9 +14,9 @@
     </ul>
   </div>
 
-  <!-- http://code.angularjs.org/1.3.4/ -->
-  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular.min.js"></script>
-  <script src="/cdn/ajax/libs/angular.js/1.3.4/angular-mocks.js"></script>
+  <!-- http://code.angularjs.org/1.3.13/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.3.13/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.3.13/angular-mocks.js"></script>
 
   <script type="text/javascript">
   (function() {
@@ -73,7 +73,7 @@
     // with the mock
     app.config(['$provide', function($provide) {
       var obj = new angular.mock.$HttpBackendProvider(),
-          createHttpBackendMock = obj.$get[1];
+          createHttpBackendMock = obj.$get[ obj.$get.length - 1 ];
 
       // Decorate by passing in the constructor for mock $httpBackend
       $provide.decorator('$httpBackend', createHttpBackendMock);
