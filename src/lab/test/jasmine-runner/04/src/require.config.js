@@ -7,19 +7,19 @@
     paths: {
 
       jquery: [
-        '/cdn/ajax/libs/jquery/2.1.1/jquery.min'
+        '/cdn/ajax/libs/jquery/2.1.3/jquery.min'
       ],
 
       angular: [
-        '/cdn/ajax/libs/angular.js/1.3.4/angular.min'
+        '/cdn/ajax/libs/angular.js/1.3.13/angular.min'
       ],
 
       angularResource: [
-        '/cdn/ajax/libs/angular.js/1.3.4/angular-resource.min'
+        '/cdn/ajax/libs/angular.js/1.3.13/angular-resource.min'
       ],
 
       angularMocks: [
-        '/cdn/ajax/libs/angular.js/1.3.4/angular-mocks'
+        '/cdn/ajax/libs/angular.js/1.3.13/angular-mocks'
       ],
 
       uiRouter: [
