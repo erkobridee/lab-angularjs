@@ -1,6 +1,6 @@
 /*
-  AngularJS Mocks Backend v0.1.4
-  (c) 2014 Erko Bridee - https://github.com/erkobridee/angular-mocks-backend/releases/tag/v0.1.4
+  AngularJS Mocks Backend v0.1.7
+  https://github.com/the-front/angular-mocks-backend/releases/tag/0.1.7
   License: MIT
 */
 (function(angular) {
@@ -192,7 +192,7 @@
   function($provide) {
 
     var obj = new angular.mock.$HttpBackendProvider(),
-        createHttpBackendMock = obj.$get[1];
+        createHttpBackendMock = obj.$get[ obj.$get.length - 1 ]; // for angular mock 1.3.4 +
 
     // Decorate by passing in the constructor for mock $httpBackend
     $provide.decorator('$httpBackend', createHttpBackendMock);
@@ -207,9 +207,9 @@
     // you can pass this as the url argument to $httpBackend.[when|expect]
   ngMockBackend.run(
 
-    ['$timeout', 'ngMockBackendService', '$injector',
+    ['$interval', 'ngMockBackendService', '$injector',
 
-  function($timeout, service, $injector) {
+  function($interval, service, $injector) {
 
     service.config($injector);
 
@@ -217,15 +217,34 @@
 
     // A "run loop" of sorts to get httpBackend to
     // issue responses and trigger the client code's callbacks
-    var flushBackend = function() {
-      try {
-        $httpBackend.flush();
-      } catch (err) {
-        // ignore that there's nothing to flush
+    // https://github.com/angular/angular.js/blob/master/src/ng/interval.js#L55
+    var engine = (function() {
+      var gear;
+
+      function flushBackend() {
+        try {
+          $httpBackend.flush();
+        } catch (err) {
+          // ignore that there's nothing to flush
+        }
       }
-      $timeout(flushBackend, RUN_LOOP_TIMEOUT);
-    };
-    $timeout(flushBackend, RUN_LOOP_TIMEOUT);
+
+      return {
+        start: function() {
+          // Don't start a new fight if we are already fighting
+          if ( angular.isDefined(gear) ) return;
+          gear = $interval(flushBackend, RUN_LOOP_TIMEOUT);
+        },
+        stop: function() {
+          if (angular.isDefined(gear)) {
+            $interval.cancel(gear);
+            gear = null;
+          }
+        }
+      };
+
+    })();
+    engine.start();
 
   }]);
 

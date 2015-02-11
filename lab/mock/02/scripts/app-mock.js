@@ -9,7 +9,7 @@ angular.module('app').config(
 function($provide) {
 
   var obj = new angular.mock.$HttpBackendProvider(),
-      createHttpBackendMock = obj.$get[1];
+      createHttpBackendMock = obj.$get[ obj.$get.length - 1 ];
 
   // Decorate by passing in the constructor for mock $httpBackend
   $provide.decorator('$httpBackend', createHttpBackendMock);
