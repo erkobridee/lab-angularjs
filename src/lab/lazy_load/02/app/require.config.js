@@ -23,7 +23,7 @@ require({
     ],
 
     ocLazyLoad: [
-      '/cdn/ajax/libs/ocLazyLoad/0.5.1/ocLazyLoad.min'
+      '/cdn/ajax/libs/ocLazyLoad/0.5.2/ocLazyLoad.min'
     ]
 
   },
