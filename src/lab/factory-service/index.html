@@ -72,9 +72,28 @@
 
       var app = angular.module('app', []);
 
-      app.provider('theProvider', { $get: function() {
-        return 'Provider';
-      } });
+
+      app.provider('theProvider', function() {
+        var config = {
+          name: 'default provider value'
+        };
+
+        this.$get = function() {
+
+          return 'Hello ' + config.name + '!';
+
+        };
+
+        this.setName = function( newName ) {
+          config.name = newName;
+        };
+
+      });
+
+      app.config(['theProviderProvider', function(theProvider) {
+        theProvider.setName('provider configured');
+      }]);
+
 
       app.factory('theFactory', function() {
         return 'Factory'; // return value, or some object instance
