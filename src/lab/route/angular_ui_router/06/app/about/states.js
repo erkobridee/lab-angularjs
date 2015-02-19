@@ -28,14 +28,6 @@ define(function(require) {
             // controller    : 'AboutCtrl',
             // controllerAs  : 'about'
           }
-        },
-        onEnter: function() {
-          console.log( 'about stateProvider on enter:' );
-          console.log( this );
-        },
-        onExit: function() {
-          console.log( 'about stateProvider on exit:' );
-          console.log( this );
         }
       });
 

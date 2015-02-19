@@ -4,17 +4,14 @@ define(function(require) {
   var angular = require('angular');
   var mainModule = require('app/main/package');
 
-  console.log('bootstrap : ' + mainModule.name);
-
-  console.log(mainModule.value('appName').requires);
-
   angular.element(document).ready(startAngularApp);
 
   //---
 
   function startAngularApp() {
 
-    console.log('bootstrap : ' + mainModule.name);
+    console.log( 'bootstrap : ' + mainModule.name );
+    console.log( mainModule.value('appName').requires );
 
     angular.bootstrap(document, [mainModule.name]);
 
