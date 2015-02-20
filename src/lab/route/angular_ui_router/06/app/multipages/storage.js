@@ -7,9 +7,9 @@ define(function(require) {
 
   //---
 
-  MultiPagesStorage.$inject = ['$localForage'];
+  MultiPagesStorage.$inject = ['$localForage', '$window']; // TODO: remove $window
 
-  function MultiPagesStorage($localForage) {
+  function MultiPagesStorage($localForage, $window) {
 
     var ds;
 
@@ -21,7 +21,7 @@ define(function(require) {
       }
     })();
 
-    var INDEX_KEY = 'index';
+    var INDEX_KEY = '_INDEX_PAGES_';
 
     //---
 
@@ -38,6 +38,10 @@ define(function(require) {
       },
       clear: clear
     };
+
+    // TODO: remove
+    $window.multipages = $window.multipages  || {};
+    $window.multipages.storage = service;
 
     return service;
 
