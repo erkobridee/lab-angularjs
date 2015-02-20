@@ -4,8 +4,6 @@ require({
   paths: {
 
     jquery: [
-      '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min',
-      '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min',
       '/cdn/ajax/libs/jquery/2.1.3/jquery.min'
     ],
 
@@ -26,8 +24,12 @@ require({
       '/cdn/ajax/libs/bootstrap/3.3.2/js/bootstrap.min'
     ],
 
-    holder: [
-      '/cdn/ajax/libs/holder/2.4.1/holder.min'
+    localForage: [
+      '/cdn/ajax/libs/localForage/1.2.1/localforage.min'
+    ],
+
+    angularLocalForage: [
+      '/cdn/ajax/libs/angular-localforage/1.2.2/angular-localForage.min'
     ]
 
   },
@@ -52,8 +54,8 @@ require({
       deps: ['jquery']
     },
 
-    'holder': {
-      exports: 'Holder'
+    'angularLocalForage': {
+      deps: ['angular', 'localForage']
     }
 
   },

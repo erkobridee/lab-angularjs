@@ -2,25 +2,22 @@ define(function(require) {
   'use strict';
 
   var angular = require('angular');
-  require('angularResource');
+
   require('uiRouter');
-  require('bootstrap');
+  require('angularLocalForage');
 
   // angular module definition
   return angular.module(
     // module name
-    'main',
+    'multipages',
 
     // module dependencies
     [
-      'ngResource',
-
       'ui.router',
 
-      require('app/multipages/package').name,
+      'LocalForageModule',
 
-      require('app/about/package').name,
-      require('app/home/package').name
+      // TODO: review
     ]
   );
 

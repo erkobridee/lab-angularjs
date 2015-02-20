@@ -7,33 +7,26 @@ define(function(require) {
 
   //---
 
-  AboutCtrl.$inject = [ '$state' ];
+  AboutCtrl.$inject = [ '$state', 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
 
-  function AboutCtrl( $state ) {
+  function AboutCtrl( $state, multipages, snapshot ) {
+    console.log( snapshot );
+
     var vm = this;
 
-    vm.someValue = 'Value from About Controller';
+    vm.title = 'About';
+
+    vm.model = {
+      someValue: 'Value from About Controller'
+    };
 
     //---
 
     console.log( 'AboutCtrl:' );
     console.log( $state );
-    configStateHandlers( $state.current, vm );
 
-  }
-
-  function configStateHandlers( state, ctrl ) {
-
-    console.log( 'AboutCtrl configStateHandlers:' );
-    console.log( 'current state : ', state );
-    console.log( 'controller: ', ctrl );
-
-    state.onExit = function() {
-      console.log( 'AboutCtrl - onExit : ', this );
-
-      state.onExit = null;
-      delete state.onExit;
-    };
+    // currentStateObject, controllerObject, fieldsArray, snapshotObject
+    multipages.set( $state.current, vm, ['title', 'model'], snapshot );
 
   }
 
