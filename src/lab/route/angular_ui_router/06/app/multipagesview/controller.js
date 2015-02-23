@@ -35,14 +35,12 @@ define(function(require) {
       multipages
         .remove
         .page( stateName )
-        .then(function( _list ) {
+        .then(function( list ) {
 
-          console.log( _list );
+          console.log( list );
 
-          multipages.list().then(function(list) {
-            vm.model.list = list;
-            vm.flag.showRemoveAll = ( list && list.length > 0 );
-          });
+          vm.model.list = list;
+          vm.flag.showRemoveAll = ( list && list.length > 0 );
 
         });
 
