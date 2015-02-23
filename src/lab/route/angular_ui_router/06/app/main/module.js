@@ -18,6 +18,7 @@ define(function(require) {
       'ui.router',
 
       require('app/multipages/package').name,
+      require('app/multipagesview/package').name,
 
       require('app/about/package').name,
       require('app/home/package').name

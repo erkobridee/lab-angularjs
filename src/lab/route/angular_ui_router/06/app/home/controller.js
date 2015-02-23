@@ -30,6 +30,11 @@ define(function(require) {
       state.go('dashboard');
     };
 
+    vm.navTo = function( stateName ) {
+      console.log( 'home controller :: navTo : ', stateName );
+      state.go( stateName );
+    };
+
   }
 
 });

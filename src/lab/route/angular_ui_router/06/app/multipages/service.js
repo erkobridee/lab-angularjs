@@ -8,11 +8,12 @@ define(function(require) {
 
   //---
 
-  MultiPagesService.$inject = ['MultiPagesStorage', '$state', '$window']; //  TODO: remove $window
+  MultiPagesService.$inject = ['$q', '$state', 'MultiPagesStorage', '$window']; //  TODO: remove $window
 
-  function MultiPagesService( storage, $state, $window ) {
+  function MultiPagesService( $q, $state, storage, $window ) {
 
     var service = {
+      navto: navto,
       set: setPage,
       get: getPage,
       list: listPages,
@@ -30,6 +31,10 @@ define(function(require) {
 
     //---
 
+    function navto( stateName ) {
+      $state.go( stateName );
+    }
+
     function setPage( currentStateObject, controllerObject, fieldsArray, snapshotObject ) {
       var currentStateName = currentStateObject.name;
 
@@ -39,6 +44,8 @@ define(function(require) {
       console.log( 'controller: ', controllerObject );
 
       applySnapshotObject();
+
+      // TODO: remove old if exists?
 
 
       //---
@@ -58,7 +65,7 @@ define(function(require) {
         var snapshot = getSnapshotObject();
         console.log( 'snapshot object: ', snapshot );
 
-        storage
+        var indexPromise = storage
           .index
           .get()
           .then(function(indexObject) {
@@ -66,19 +73,33 @@ define(function(require) {
             indexObject[currentStateName] = snapshotIndex;
             return indexObject;
           })
-          .then(function(indexObject) {
-            return storage.index.set(indexObject);
+          .then(function( indexObject ) {
+            return storage.index.set( indexObject );
           })
-          .then(function(savedObject) {
-            console.log('snapshot index object from < ' + currentStateName + ' > - saved: ', (savedObject[currentStateName] === snapshotIndex) );
+          .then(function( savedObject ) {
+            var msg = 'snapshot index object from < ' + currentStateName + ' > - saved: ' + (savedObject[currentStateName] === snapshotIndex);
+            // console.log( msg );
+            return msg;
           });
 
-        storage
+        var dataPromise = storage
           .data
           .set( currentStateName, snapshot )
-          .then(function(savedObject) {
-            console.log('snapshot object from < ' + currentStateName + ' > - saved: ', (snapshot === savedObject) );
+          .then(function( savedObject ) {
+            var msg = 'snapshot object from < ' + currentStateName + ' > - saved: ' + (snapshot === savedObject);
+            // console.log( msg );
+            return msg;
           });
+
+        // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
+        $q.all([ indexPromise, dataPromise ]).then(function( results ) {
+
+          // TODO: remove
+          console.log(results);
+
+          snapshotIndex = null;
+          snapshot = null;
+        });
       };
 
       function removeOnExitHandler( state ) {
@@ -136,8 +157,11 @@ define(function(require) {
         .then(function(value) {
           var output = value || {};
           output._info_ = msg;
+
+          // TODO: remove
           console.log( 'storage - ' + stateName + ' : ',  value );
           console.log( msg );
+
           return output;
         });
 
@@ -150,22 +174,76 @@ define(function(require) {
       return storage
         .index
         .get()
-        .then(function(indexObject) {
-          var pages = [];
-          angular.forEach(indexObject, function(value, key) {
-            this.push( value );
-          }, pages);
-          return pages;
+        .then(function( indexObject ) {
+          return indexObjectToArray( indexObject );
         });
 
     }
 
     function removePage( stateName ) {
       // TODO: define
+      console.log( 'TODO: define removePage - ' + stateName );
+
+      return storage
+        .data
+        .remove( stateName )
+        .then(function( oldValue ) {
+
+          // TODO: remove
+          console.log( oldValue );
+
+          return storage
+            .index
+            .get();
+        })
+        .then(function( indexObject ) {
+
+          // TODO: remove
+          console.log( indexObject );
+
+          if( stateName in indexObject ) {
+            delete indexObject[ stateName ];
+          }
+
+          // TODO: remove
+          console.log( indexObject );
+
+          return storage
+            .index
+            .set( indexObject );
+
+        })
+        .then(function( indexObject ) {
+
+          console.log( 'index object updated : ', indexObject );
+
+          return indexObjectToArray( indexObject );
+
+        });
+
     }
 
     function removeAllPages() {
-      // TODO: define
+
+      // TODO: remove
+      console.log( 'TODO: define removeAllPages' );
+
+      return storage.clear();
+    }
+
+    //---
+
+    function indexObjectToArray( indexObject ) {
+      var pages = [];
+      angular.forEach(indexObject, function(value, key) {
+        this.push( value );
+      }, pages);
+
+      // TODO: remove
+      console.log( 'indexObject: ', indexObject );
+      console.log( 'pages: ', pages );
+
+      return pages;
     }
 
   }
