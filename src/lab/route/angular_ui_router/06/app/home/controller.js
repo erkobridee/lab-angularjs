@@ -12,28 +12,16 @@ define(function(require) {
   function HomeCtrl(state) {
     var vm = this;
 
-    vm.greetings = 'Home controller say: Welcome to Angular Routes Example';
+    vm.greetings = 'Home controller say: Welcome to Angular Routes Example 06';
 
-    vm.goToAbout = function() {
-      console.log('home controller :: goToAbout');
-      state.go('about');
+    vm.navTo = navTo;
 
-    };
+    //---
 
-    vm.gotToPage = function() {
-      console.log('home controller :: goToPage');
-      state.go('page');
-    };
-
-    vm.gotToDashboard = function() {
-      console.log('home controller :: goToDashboard');
-      state.go('dashboard');
-    };
-
-    vm.navTo = function( stateName ) {
+    function navTo( stateName ) {
       console.log( 'home controller :: navTo : ', stateName );
       state.go( stateName );
-    };
+    }
 
   }
 

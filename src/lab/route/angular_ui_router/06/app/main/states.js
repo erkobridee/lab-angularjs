@@ -18,21 +18,6 @@ define(function(require) {
 
     $stateProvider
 
-      .state('page', {
-        url: '/page',
-        views: {
-          'master': {
-            templateUrl   : 'app/main/templates/page_layout.html'
-          },
-          'header@page': {
-            templateUrl   : 'app/main/templates/page_header.html'
-          },
-          'content@page': {
-            templateUrl   : 'app/main/templates/page_content.html'
-          }
-        }
-      })
-
       .state('404', {
         url: '/404',
         views: {
