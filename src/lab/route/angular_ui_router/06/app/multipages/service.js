@@ -43,11 +43,13 @@ define(function(require) {
     //---
 
     function navto( stateName ) {
+
       cleanUpCurrentPage();
       $state.go( stateName );
+
     } // @end: navto
 
-    function setPage( currentStateObject, controllerObject, fieldsArray, snapshotObject ) {
+    function setPage( controllerObject, fieldsArray, snapshotObject ) {
 
       currentPage.stateName        = $state.current.name;
       currentPage.stateObject      = $state.current;
@@ -57,16 +59,9 @@ define(function(require) {
 
       //---
 
-      // TODO: review
-      console.log( 'currentStateObject === $state.current : ' + (currentStateObject === $state.current) );
-      console.log( $state.current );
-
-      console.log( 'current state : ', currentStateObject );
-      console.log( 'controller: ', controllerObject );
-
-
       defineOnExitHandler( currentPage.stateObject );
 
+      // TODO: remove
       console.log( Object.keys(snapshotObject) );
       console.log( snapshotObject );
 

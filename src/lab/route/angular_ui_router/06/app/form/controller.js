@@ -7,12 +7,9 @@ define(function(require) {
 
   //---
 
-  PageCtrl.$inject = [ '$state', 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
+  PageCtrl.$inject = [ 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
 
-  function PageCtrl( $state, multipages, snapshot ) {
-
-    // TODO: remove
-    console.log( snapshot );
+  function PageCtrl( multipages, snapshot ) {
 
     var vm = this;
 
@@ -26,11 +23,8 @@ define(function(require) {
 
     //---
 
-    console.log( 'PageCtrl:' );
-    console.log( $state );
-
-    // currentStateObject, controllerObject, fieldsArray, snapshotObject
-    multipages.set( $state.current, vm, ['title', 'model'], snapshot );
+    // controllerObject, fieldsArray, snapshotObject
+    multipages.set( vm, ['title', 'model'], snapshot );
 
   }
 
