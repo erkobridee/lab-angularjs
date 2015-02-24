@@ -12,7 +12,6 @@ define(function(require) {
 
   function MultiPagesService( $q, $state, storage, $window ) {
 
-    // TODO: review
     var currentPage = {
       stateName        : null,
       stateObject      : null,
@@ -24,14 +23,14 @@ define(function(require) {
     //---
 
     var service = {
-      navto: navto,
-      get: getPage,
-      set: setPage, // TODO: review
-      // TODO: create show service?
-      list: listPages, // TODO: review
-      remove: {
-        page: removePage,
-        all: removeAllPages
+      navto  : navto,
+      get    : getPage,
+      set    : setPage,
+      show   : showPages,
+      list   : listPages,
+      remove : {
+        page : removePage,
+        all  : removeAllPages
       }
     };
 
@@ -46,139 +45,17 @@ define(function(require) {
     function navto( stateName ) {
       cleanUpCurrentPage();
       $state.go( stateName );
-    }
-
-    /*
-    function setPage( currentStateObject, controllerObject, fieldsArray, snapshotObject ) {
-      var currentStateName = currentStateObject.name;
-
-      // TODO: review
-      console.log( 'currentStateObject === $state.current : ' + (currentStateObject === $state.current) );
-      console.log( $state.current );
-
-      console.log( 'current state : ', currentStateObject );
-      console.log( 'controller: ', controllerObject );
-
-      applySnapshotObject();
-
-      // TODO: remove old if exists?
-
-
-      //---
-
-      // http://www.ng-newsletter.com/posts/angular-ui-router.html
-      // https://github.com/angular-ui/ui-router/wiki#onenter-and-onexit-callbacks
-      currentStateObject.onExit = function() {
-
-        console.log( 'currentStateObject === $state.current : ' + (currentStateObject === $state.current) );
-        console.log( $state.current );
-
-        removeOnExitHandler( this );
-        console.log( 'onExit : ', this, controllerObject );
-
-        var snapshotIndex = getSnapshotIndexObject();
-        console.log( 'snapshot index object: ', snapshotIndex );
-
-        var snapshot = getSnapshotObject();
-        console.log( 'snapshot object: ', snapshot );
-
-        var indexPromise = storage
-          .index
-          .get()
-          .then(function(indexObject) {
-            indexObject = indexObject || {};
-            indexObject[currentStateName] = snapshotIndex;
-            return indexObject;
-          })
-          .then(function( indexObject ) {
-            return storage.index.set( indexObject );
-          })
-          .then(function( savedObject ) {
-            var msg = 'snapshot index object from < ' + currentStateName + ' > - saved: ' + (savedObject[currentStateName] === snapshotIndex);
-            // console.log( msg );
-            return msg;
-          });
-
-        var dataPromise = storage
-          .data
-          .set( currentStateName, snapshot )
-          .then(function( savedObject ) {
-            var msg = 'snapshot object from < ' + currentStateName + ' > - saved: ' + (snapshot === savedObject);
-            // console.log( msg );
-            return msg;
-          });
-
-        // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
-        $q.all([ indexPromise, dataPromise ]).then(function( results ) {
-
-          // TODO: remove
-          console.log(results);
-
-          snapshotIndex = null;
-          snapshot = null;
-        });
-      };
-
-      function removeOnExitHandler( state ) {
-        state.onExit = null;
-        delete state.onExit;
-      }
-
-      //---
-
-      function getSnapshotIndexObject() {
-        var snapshotIndex = {};
-
-        snapshotIndex._t = new Date().getTime();
-        snapshotIndex.state = currentStateName;
-        if( controllerObject.title ) snapshotIndex.title = controllerObject.title;
-
-        // TODO: take and resize(?) screenshot
-        snapshotIndex.screenshot = 'not available';
-
-        return snapshotIndex;
-      }
-
-      function getSnapshotObject() {
-        var snapshot = {};
-        var len = fieldsArray.length;
-        if(len > 0) snapshot._t = new Date().getTime();
-        for (var i = len - 1; i >= 0; i--) {
-          var field = fieldsArray[i];
-          snapshot[field] = controllerObject[field];
-        }
-        return snapshot;
-      }
-
-      function applySnapshotObject() {
-        if( angular.isObject( snapshotObject ) ) {
-          for (var i = fieldsArray.length - 1; i >= 0; i--) {
-            var field = fieldsArray[i];
-            var value = snapshotObject[field];
-            if(value) {
-              if( angular.isObject(value) ) {
-                // https://docs.angularjs.org/api/ng/function/angular.extend
-                angular.extend(controllerObject[field], value);
-              } else {
-                controllerObject[field] = value;
-              }
-            }
-          }
-        }
-      }
-
-    } //@end: setPage
-    */
+    } // @end: navto
 
     function setPage( currentStateObject, controllerObject, fieldsArray, snapshotObject ) {
+
       currentPage.stateName        = $state.current.name;
       currentPage.stateObject      = $state.current;
       currentPage.controllerObject = controllerObject;
       currentPage.fieldsArray      = fieldsArray;
       currentPage.snapshotObject   = snapshotObject;
-      //---
 
-      var currentStateName = currentStateObject.name;
+      //---
 
       // TODO: review
       console.log( 'currentStateObject === $state.current : ' + (currentStateObject === $state.current) );
@@ -187,92 +64,59 @@ define(function(require) {
       console.log( 'current state : ', currentStateObject );
       console.log( 'controller: ', controllerObject );
 
-      applySnapshotObject();
 
-      // TODO: remove old if exists?
+      defineOnExitHandler( currentPage.stateObject );
 
+      console.log( Object.keys(snapshotObject) );
+      console.log( snapshotObject );
 
-      //---
+      if( snapshotObject._defined_ ) {
+        applySnapshotObject();
+        removePage( currentPage.stateName )
+          .then(function( pagesList ) {
 
-      // http://www.ng-newsletter.com/posts/angular-ui-router.html
-      // https://github.com/angular-ui/ui-router/wiki#onenter-and-onexit-callbacks
-      currentStateObject.onExit = function() {
+            console.log( pagesList );
 
-        console.log( 'currentStateObject === $state.current : ' + (currentStateObject === $state.current) );
-        console.log( $state.current );
+            while( pagesList.length > 0 ) {
+              pagesList.pop();
+            }
 
-        removeOnExitHandler( this );
-        console.log( 'onExit : ', this, controllerObject );
-
-
-        var snapshotIndex = getSnapshotIndexObject();
-        console.log( 'snapshot index object: ', snapshotIndex );
-
-        var indexPromise = storage
-          .index
-          .get()
-          .then(function( indexObject ) {
-            indexObject = indexObject || {};
-            indexObject[currentStateName] = snapshotIndex;
-            return indexObject;
-          })
-          .then(function( indexObject ) {
-            return storage.index.set( indexObject );
-          })
-          .then(function( savedObject ) {
-            var msg = 'snapshot index object from < ' + currentStateName + ' > - saved: ' + (savedObject[currentStateName] === snapshotIndex);
-            return msg;
           });
-
-
-        var snapshot = getSnapshotObject();
-        console.log( 'snapshot object: ', snapshot );
-
-        var dataPromise = storage
-          .data
-          .set( currentStateName, snapshot )
-          .then(function( savedObject ) {
-            var msg = 'snapshot object from < ' + currentStateName + ' > - saved: ' + (snapshot === savedObject);
-            return msg;
-          });
-
-        // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
-        $q.all([ indexPromise, dataPromise ]).then(function( results ) {
-
-          // TODO: remove
-          console.log( results );
-
-          snapshotIndex = null;
-          snapshot = null;
-        });
-      };
+      }
 
     } //@end: setPage
 
 
     function getPage( stateName ) {
 
-      // TODO: review
-      var msg = 'snapshot object from : ' + stateName + ' | ' + new Date(); //.toUTCString();
+      var msg = 'snapshot object from : ' + stateName + ' | ' + new Date();
 
       return storage
         .data
-        .get( stateName ) // TODO: update index | remove object from storage?
+        .get( stateName )
         .then(function(value) {
           var output = value || {};
+          output._defined_ = !!value;
           output._info_ = msg;
-
-          // TODO: remove
-          console.log( 'storage - ' + stateName + ' : ',  value );
-          console.log( msg );
-
           return output;
         });
 
     } // end: getPage
 
+    function showPages() {
 
-    // https://docs.angularjs.org/api/ng/function/angular.forEach
+      return collectAndStoreData()
+        .then(function( results ) {
+
+          // TODO: remove
+          console.log( results );
+
+          return listPages();
+
+        });
+
+    } // @end: showPages
+
     function listPages() {
 
       return storage
@@ -282,15 +126,13 @@ define(function(require) {
           return indexObjectToArray( indexObject );
         });
 
-    }
+    } // @end: listPages
 
     function removePage( stateName ) {
-      // TODO: remove
-      console.log( 'TODO: define removePage - ' + stateName );
 
       return storage
         .data
-        .remove( stateName )
+        .remove( stateName ) // TODO: review
         .then(function( oldValue ) {
 
           // TODO: remove
@@ -302,15 +144,9 @@ define(function(require) {
         })
         .then(function( indexObject ) {
 
-          // TODO: remove
-          console.log( angular.copy( indexObject ) );
-
           if( stateName in indexObject ) {
             delete indexObject[ stateName ];
           }
-
-          // TODO: remove
-          console.log( angular.copy( indexObject ) );
 
           return storage
             .index
@@ -319,22 +155,24 @@ define(function(require) {
         })
         .then(function( indexObject ) {
 
+          // TODO: remove
           console.log( 'index object updated : ', indexObject );
 
           return indexObjectToArray( indexObject );
 
         });
 
-    }
+    } // @end: removePage
 
     function removeAllPages() {
 
       return storage.clear();
 
-    }
+    } //@end: removeAllPages
 
     //---
 
+    // https://docs.angularjs.org/api/ng/function/angular.forEach
     function indexObjectToArray( indexObject ) {
       var pages = [];
       angular.forEach(indexObject, function(value, key) {
@@ -349,17 +187,63 @@ define(function(require) {
     }
 
     function cleanUpCurrentPage() {
-        currentPage.stateName = null;
-        currentPage.controllerObject = null;
-        currentPage.fieldsArray = null;
-        currentPage.snapshotObject = null;
+      if( !currentPage.stateName ) return;
 
-        if(currentPage.stateObject) {
-          if(currentPage.stateObject.onExit) {
-            removeOnExitHandler( currentPage.stateObject );
+      currentPage.stateName = null;
+      currentPage.controllerObject = null;
+      currentPage.snapshotObject = null;
+
+      if( currentPage.fieldsArray ) {
+        if( angular.isArray( currentPage.fieldsArray ) ) {
+          while( currentPage.fieldsArray.length > 0 ) {
+            currentPage.fieldsArray.pop();
           }
-          currentPage.stateObject = null;
         }
+        currentPage.fieldsArray = null;
+      }
+
+      if(currentPage.stateObject) {
+        if(currentPage.stateObject.onExit) {
+          removeOnExitHandler( currentPage.stateObject );
+        }
+        currentPage.stateObject = null;
+      }
+
+      currentPage = null;
+
+      currentPage = {
+        stateName        : null,
+        stateObject      : null,
+        controllerObject : null,
+        fieldsArray      : null,
+        snapshotObject   : null
+      };
+    }
+
+    function defineOnExitHandler( state ) {
+
+      // http://www.ng-newsletter.com/posts/angular-ui-router.html
+      // https://github.com/angular-ui/ui-router/wiki#onenter-and-onexit-callbacks
+      state.onExit = function() {
+
+        console.log( 'currentStateObject === $state.current : ' + (currentPage.stateObject === $state.current) );
+        console.log( $state.current );
+
+        removeOnExitHandler( this );
+        console.log( 'onExit : ', this, currentPage.controllerObject );
+
+        collectAndStoreData()
+          .then(function( results ) {
+
+            // TODO: remove
+            console.log( results );
+
+            cleanUpCurrentPage();
+
+          });
+
+      };
+
     }
 
     function removeOnExitHandler( state ) {
@@ -426,7 +310,45 @@ define(function(require) {
     // TODO: review
     function collectAndStoreData() {
 
-      // TODO: define code
+      var snapshotIndex = getSnapshotIndexObject();
+      console.log( 'snapshot index object: ', snapshotIndex );
+
+      var indexPromise = storage
+        .index
+        .get()
+        .then(function( indexObject ) {
+          indexObject = indexObject || {};
+          indexObject[currentPage.stateName] = snapshotIndex;
+          return indexObject;
+        })
+        .then(function( indexObject ) {
+          return storage.index.set( indexObject );
+        })
+        .then(function( savedObject ) {
+          var msg = 'snapshot index object from < ' + currentPage.stateName + ' > - saved: ' + (savedObject[currentPage.stateName] === snapshotIndex);
+          return msg;
+        });
+
+
+      var snapshot = getSnapshotObject();
+      console.log( 'snapshot object: ', snapshot );
+
+      var dataPromise = storage
+        .data
+        .set( currentPage.stateName, snapshot )
+        .then(function( savedObject ) {
+          var msg = 'snapshot object from < ' + currentPage.stateName + ' > - saved: ' + (snapshot === savedObject);
+          return msg;
+        });
+
+      // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
+      return $q.all([ indexPromise, dataPromise ]).then(function( results ) {
+
+        snapshotIndex = null;
+        snapshot = null;
+
+        return results;
+      });
 
     }
 
