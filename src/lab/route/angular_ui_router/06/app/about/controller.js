@@ -19,7 +19,8 @@ define(function(require) {
     vm.title = 'About';
 
     vm.model = {
-      someValue: 'Value from About Controller'
+      someValue: 'Value from About Controller',
+      areaValue: ''
     };
 
     //---

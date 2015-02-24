@@ -138,7 +138,12 @@ define(function(require) {
           for (var i = fieldsArray.length - 1; i >= 0; i--) {
             var field = fieldsArray[i];
             var value = snapshotObject[field];
-            if(value) controllerObject[field] = value;
+            if(value) {
+              if( angular.isObject(value) )
+                controllerObject[field] = angular.extend(controllerObject[field], value);
+              else
+                controllerObject[field] = value;
+            }
           }
         }
       }
