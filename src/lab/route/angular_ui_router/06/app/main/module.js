@@ -22,6 +22,7 @@ define(function(require) {
 
       require('app/about/package').name,
       require('app/page/package').name,
+      require('app/form/package').name,
       require('app/home/package').name
     ]
   );

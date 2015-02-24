@@ -23,9 +23,9 @@ define(function(require) {
     vm.flag.showRemoveAll = ( multipageslist && multipageslist.length > 0 );
 
     vm.actions = {
-      navto: multipages.navto,
-      remove: removePage,
-      removeAll: removeAllPages
+      navto     : multipages.navto,
+      remove    : removePage,
+      removeAll : removeAllPages
     };
 
     //---
@@ -44,7 +44,6 @@ define(function(require) {
 
         });
 
-      // TODO: reload pages list
     }
 
     function removeAllPages() {

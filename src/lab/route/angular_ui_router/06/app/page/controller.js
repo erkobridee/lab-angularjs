@@ -19,8 +19,8 @@ define(function(require) {
     vm.title = 'Page';
 
     vm.model = {
-      someValue: 'some value for page content',
-      areaValue: 'page textarea value'
+      someValue : 'some value for page content',
+      areaValue : 'page textarea value'
     };
 
     //---

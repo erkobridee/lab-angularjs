@@ -3,29 +3,30 @@ define(function(require) {
 
   var module = require('./module');
 
-  module.controller('AboutCtrl', AboutCtrl);
+  module.controller('FormCtrl', PageCtrl);
 
   //---
 
-  AboutCtrl.$inject = [ '$state', 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
+  PageCtrl.$inject = [ '$state', 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
 
-  function AboutCtrl( $state, multipages, snapshot ) {
+  function PageCtrl( $state, multipages, snapshot ) {
 
     // TODO: remove
     console.log( snapshot );
 
     var vm = this;
 
-    vm.title = 'About';
+    vm.title = 'Form';
 
     vm.model = {
-      someValue : 'Value from About Controller',
-      areaValue : ''
+      someValue  : 'some value for form content',
+      inputValue : 'form input value',
+      areaValue  : 'form textarea value'
     };
 
     //---
 
-    console.log( 'AboutCtrl:' );
+    console.log( 'PageCtrl:' );
     console.log( $state );
 
     // currentStateObject, controllerObject, fieldsArray, snapshotObject
