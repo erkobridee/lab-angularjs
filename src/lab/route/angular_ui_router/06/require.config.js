@@ -16,12 +16,16 @@ require({
       '/cdn/ajax/libs/angular.js/1.3.13/angular-resource.min'
     ],
 
-    uiRouter: [
-      '/cdn/ajax/libs/angular-ui/ui-router/0.2.11/angular-ui-router.min'
-    ],
-
     bootstrap: [
       '/cdn/ajax/libs/bootstrap/3.3.2/js/bootstrap.min'
+    ],
+
+    uiBootstrap: [
+      '/cdn/ajax/libs/angular-ui/bootstrap/0.12.0/ui-bootstrap-tpls.min'
+    ],
+
+    uiRouter: [
+      '/cdn/ajax/libs/angular-ui/ui-router/0.2.11/angular-ui-router.min'
     ],
 
     localForage: [
@@ -52,6 +56,10 @@ require({
 
     'bootstrap': {
       deps: ['jquery']
+    },
+
+    'uiBootstrap': {
+      deps: ['bootstrap']
     },
 
     'angularLocalForage': {

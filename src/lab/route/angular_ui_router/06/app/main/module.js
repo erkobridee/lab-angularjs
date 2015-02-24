@@ -3,8 +3,9 @@ define(function(require) {
 
   var angular = require('angular');
   require('angularResource');
-  require('uiRouter');
   require('bootstrap');
+  require('uiBootstrap');
+  require('uiRouter');
 
   // angular module definition
   return angular.module(
@@ -16,6 +17,7 @@ define(function(require) {
       'ngResource',
 
       'ui.router',
+      'ui.bootstrap',
 
       require('app/multipages/package').name,
       require('app/multipagesview/package').name,

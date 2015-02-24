@@ -8,9 +8,9 @@ define(function(require) {
 
   //---
 
-  MultiPagesService.$inject = ['$q', '$state', 'MultiPagesStorage', '$window']; //  TODO: remove $window
+  MultiPagesService.$inject = ['$q', '$state', 'MultiPagesStorage' ];
 
-  function MultiPagesService( $q, $state, storage, $window ) {
+  function MultiPagesService( $q, $state, storage ) {
 
     var currentPage = {
       stateName        : null,
@@ -23,20 +23,16 @@ define(function(require) {
     //---
 
     var service = {
-      navto  : navto,
-      get    : getPage,
-      set    : setPage,
-      show   : showPages,
-      list   : listPages,
+      navto         : navto,
+      get           : getPage,
+      set           : setPage,
+      list          : listPages,
+      prepareToShow : prepareToShowPages,
       remove : {
         page : removePage,
         all  : removeAllPages
       }
     };
-
-    // TODO: remove
-    $window.multipages = $window.multipages  || {};
-    $window.multipages.service = service;
 
     return service;
 
@@ -98,20 +94,6 @@ define(function(require) {
 
     } // end: getPage
 
-    function showPages() {
-
-      return collectAndStoreData()
-        .then(function( results ) {
-
-          // TODO: remove
-          console.log( results );
-
-          return listPages();
-
-        });
-
-    } // @end: showPages
-
     function listPages() {
 
       return storage
@@ -122,6 +104,28 @@ define(function(require) {
         });
 
     } // @end: listPages
+
+    function prepareToShowPages() {
+
+      var promise;
+
+      if( currentPage.stateName ) {
+        promise = collectAndStoreData()
+          .then(function( results ) {
+
+            // TODO: remove
+            console.log( results );
+
+            return listPages();
+
+          });
+      } else {
+        promise = listPages();
+      }
+
+      return promise;
+
+    } // @end: prepareToShowPages
 
     function removePage( stateName ) {
 
