@@ -19,7 +19,7 @@ define(function(require) {
     //---
 
     function navTo( stateName ) {
-      console.log( 'home controller :: navTo : ', stateName );
+      console.log( 'home controller :: navTo : ' + stateName );
       state.go( stateName );
     }
 
