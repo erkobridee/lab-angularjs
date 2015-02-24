@@ -139,10 +139,12 @@ define(function(require) {
             var field = fieldsArray[i];
             var value = snapshotObject[field];
             if(value) {
-              if( angular.isObject(value) )
-                controllerObject[field] = angular.extend(controllerObject[field], value);
-              else
+              if( angular.isObject(value) ) {
+                // https://docs.angularjs.org/api/ng/function/angular.extend
+                angular.extend(controllerObject[field], value);
+              } else {
                 controllerObject[field] = value;
+              }
             }
           }
         }
