@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <span>Home : <a href="#/">link</a> | <a ui-sref="home">state</a></span>
+
+    <div ng-if="multipagesview.flag.showRemoveAll">
+      <br>
+      <button
+        id="removeAllPages"
+        ng-click="multipagesview.actions.removeAll()">remove all pages</button>
+    </div>
+  </div>
+
+  <div class="row"><hr></div>
+
+  <div class="row" ng-repeat="page in multipagesview.model.list">
+    <img ng-src="{{::page.screenshot}}" alt="{{::page.title}}">
+    <div>{{::page.title}}</div><br>
+    <div>
+      <button
+        id="navTo"
+        ng-click="multipagesview.actions.navto( page.state )"
+        class="btn btn-primary">navTo</button>
+      <button
+        id="removePage"
+        ng-click="multipagesview.actions.remove( page.state )"
+        class="btn btn-primary">remove</button>
+    </div>
+    <br>
+  </div>
+
+
+</div>

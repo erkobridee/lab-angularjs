@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h3 class="modal-title">Multi Pages</h3>
+</div>
+<div class="modal-body">
+<div class="container">
+  <div
+    class="row"
+    ng-if="vm.showRemoveAll"
+    ng-repeat="page in vm.list">
+    <img ng-src="{{::page.screenshot}}" alt="{{::page.title}}">
+    <div>{{::page.title}}</div><br>
+    <div>
+      <button
+        id="navTo"
+        ng-click="vm.actions.navto( page.state )"
+        class="btn btn-primary">navTo</button>
+      <button
+        id="removePage"
+        ng-click="vm.actions.remove( page.state )"
+        class="btn btn-warning">remove</button>
+    </div>
+    <br>
+  </div>
+
+  <div ng-if="!vm.showRemoveAll">
+    EMPTY
+  </div>
+</div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="vm.actions.close()">Close</button>
+  <button
+    class="btn btn-danger"
+    ng-if="vm.showRemoveAll"
+    ng-click="vm.actions.removeAll()">Remove All</button>
+</div>

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+
+  <div class="row"><p>{{home.greetings}}</p></div>
+
+  <div class="row">&nbsp;</div>
+
+  <div class="row">
+    <p>About : <a href="#/about">link</a> | <a ui-sref="about">state</a> | <a href="" ng-click="home.navTo('about')">controller</a></p>
+
+    <p>Page : <a href="#/page">link</a> | <a ui-sref="page">state | <a href="" ng-click="home.navTo('page')">controller</a></p>
+
+    <p>Form : <a href="#/form">link</a> | <a ui-sref="form">state | <a href="" ng-click="home.navTo('form')">controller</a></p>
+  </div>
+
+  <div class="row">&nbsp;</div>
+
+  <div class="row">
+    <p>Multi Pages View : <a href="#/multipagesview">link</a> | <a ui-sref="multipagesview">state | <a href="" ng-click="home.navTo('multipagesview')">controller</a></p>
+
+    <p>404 - Invalid URL : <a href="#/invalid_url">link</a></p>
+  </div>
+
+</div>
