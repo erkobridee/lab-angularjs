@@ -4,6 +4,9 @@ define(function(require) {
   var angular = require('angular');
   var module = require('./module');
 
+  var screenshot = require('./lib/screenshot');
+
+
   module.factory('MultiPagesService', MultiPagesService);
 
   //---
@@ -169,7 +172,7 @@ define(function(require) {
 
     } //@end: removeAllPages
 
-    //---
+    //==========================================================================
 
     // https://docs.angularjs.org/api/ng/function/angular.forEach
     function indexObjectToArray( indexObject ) {
@@ -280,54 +283,73 @@ define(function(require) {
       return snapshot;
     }
 
-    // TODO: review and add promise
     function getSnapshotIndexObject() {
-      var snapshotIndex = {};
 
-      snapshotIndex._t = new Date().getTime();
-      snapshotIndex.state = currentPage.stateName;
-      if( currentPage.controllerObject.title ) {
-        snapshotIndex.title = currentPage.controllerObject.title;
-      }
+      return takeScreenshotAndResize()
+        .then(function( pngDataUrl ) {
 
-      // TODO: take and resize(?) screenshot
-      snapshotIndex.screenshot = 'not available';
+          // TODO: remove
+          console.log( pngDataUrl );
 
-      return snapshotIndex;
+          var snapshotIndex = {};
+
+          snapshotIndex._t = new Date().getTime();
+          snapshotIndex.state = currentPage.stateName;
+          if( currentPage.controllerObject.title ) {
+            snapshotIndex.title = currentPage.controllerObject.title;
+          }
+
+          snapshotIndex.screenshot = pngDataUrl;
+
+          return snapshotIndex;
+
+        });
+
     }
 
     function takeScreenshotAndResize() {
-      var deferred = $q.defer();
+      // px
+      var default_width = 250,
+          default_height = 200;
 
-      // TODO: define code to take and resize (250 x 200 px) screenshot
+      return screenshot
+        .thumbnail(default_width, default_height)
+        .then(function( canvas ) {
 
-      deferred.resolve( 'not available' );
+          // http://caniuse.com/#feat=canvas [ not work only on IE8 ]
 
-      return deferred.promise;
+          return canvas.toDataURL();
+
+        });
     }
 
     // TODO: review
     function collectAndStoreData() {
 
-      var snapshotIndex = getSnapshotIndexObject();
-      console.log( 'snapshot index object: ', snapshotIndex );
+      var indexPromise = getSnapshotIndexObject()
+        .then(function( snapshotIndex ) {
 
-      var indexPromise = storage
-        .index
-        .get()
-        .then(function( indexObject ) {
-          indexObject = indexObject || {};
-          indexObject[currentPage.stateName] = snapshotIndex;
-          return indexObject;
-        })
-        .then(function( indexObject ) {
-          return storage.index.set( indexObject );
-        })
-        .then(function( savedObject ) {
-          var msg = 'snapshot index object from < ' + currentPage.stateName + ' > - saved: ' + (savedObject[currentPage.stateName] === snapshotIndex);
-          return msg;
+          console.log( 'snapshot index object: ', snapshotIndex );
+
+          return storage
+            .index
+            .get()
+            .then(function( indexObject ) {
+              indexObject = indexObject || {};
+              indexObject[currentPage.stateName] = snapshotIndex;
+              return indexObject;
+            })
+            .then(function( indexObject ) {
+              return storage.index.set( indexObject );
+            })
+            .then(function( savedObject ) {
+              var msg = 'snapshot index object from < ' + currentPage.stateName + ' > - saved: ' + (savedObject[currentPage.stateName] === snapshotIndex);
+              return msg;
+            });
+
         });
 
+      // TODO: review
 
       var snapshot = getSnapshotObject();
       console.log( 'snapshot object: ', snapshot );
@@ -343,7 +365,6 @@ define(function(require) {
       // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
       return $q.all([ indexPromise, dataPromise ]).then(function( results ) {
 
-        snapshotIndex = null;
         snapshot = null;
 
         return results;

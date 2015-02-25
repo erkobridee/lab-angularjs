@@ -34,6 +34,10 @@ require({
 
     angularLocalForage: [
       '/cdn/ajax/libs/angular-localforage/1.2.2/angular-localForage.min'
+    ],
+
+    html2canvas: [
+      '/cdn/ajax/libs/html2canvas/0.5.0-alpha2/html2canvas.min'
     ]
 
   },

@@ -7,7 +7,7 @@
     class="row"
     ng-if="vm.showRemoveAll"
     ng-repeat="page in vm.list">
-    <div>screenshot {{::page.screenshot}}</div><br>
+    <img ng-src="{{::page.screenshot}}" alt="{{::page.title}}">
     <div>{{::page.title}}</div><br>
     <div>
       <button
