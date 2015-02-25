@@ -61,15 +61,16 @@ define(function(require) {
       defineOnExitHandler( currentPage.stateObject );
 
       // TODO: remove
-      console.log( Object.keys(snapshotObject) );
-      console.log( snapshotObject );
+      console.log( 'setPage', Object.keys(snapshotObject) );
+      console.log( 'setPage', snapshotObject );
 
       if( snapshotObject._defined_ ) {
         applySnapshotObject();
         removePage( currentPage.stateName )
           .then(function( pagesList ) {
 
-            console.log( pagesList );
+            // TODO: remove
+            console.log( 'setPage > removePage : ', currentPage.stateName, pagesList );
 
             while( pagesList.length > 0 ) {
               pagesList.pop();
@@ -117,7 +118,7 @@ define(function(require) {
           .then(function( results ) {
 
             // TODO: remove
-            console.log( results );
+            console.log( 'prepareToShowPages > collectAndStoreData :', results );
 
             return listPages();
 
@@ -134,11 +135,11 @@ define(function(require) {
 
       return storage
         .data
-        .remove( stateName ) // TODO: review
+        .remove( stateName )
         .then(function( oldValue ) {
 
           // TODO: remove
-          console.log( oldValue );
+          console.log( 'removePage : ', stateName, oldValue );
 
           return storage
             .index
@@ -176,19 +177,22 @@ define(function(require) {
 
     // https://docs.angularjs.org/api/ng/function/angular.forEach
     function indexObjectToArray( indexObject ) {
+
       var pages = [];
-      angular.forEach(indexObject, function(value, key) {
+      angular.forEach( indexObject, function( value, key ) {
         this.push( value );
-      }, pages);
+      }, pages );
 
       // TODO: remove
       console.log( 'indexObject: ', indexObject );
       console.log( 'pages: ', pages );
 
       return pages;
-    }
+
+    } // @end: indexObjectToArray
 
     function cleanUpCurrentPage() {
+
       if( !currentPage.stateName ) return;
 
       currentPage.stateName = null;
@@ -204,8 +208,8 @@ define(function(require) {
         currentPage.fieldsArray = null;
       }
 
-      if(currentPage.stateObject) {
-        if(currentPage.stateObject.onExit) {
+      if( currentPage.stateObject ) {
+        if( currentPage.stateObject.onExit ) {
           removeOnExitHandler( currentPage.stateObject );
         }
         currentPage.stateObject = null;
@@ -220,7 +224,8 @@ define(function(require) {
         fieldsArray      : null,
         snapshotObject   : null
       };
-    }
+
+    } // @end: cleanUpCurrentPage
 
     function defineOnExitHandler( state ) {
 
@@ -228,11 +233,12 @@ define(function(require) {
       // https://github.com/angular-ui/ui-router/wiki#onenter-and-onexit-callbacks
       state.onExit = function() {
 
-        console.log( 'currentStateObject === $state.current : ' + (currentPage.stateObject === $state.current) );
-        console.log( $state.current );
-
         removeOnExitHandler( this );
-        console.log( 'onExit : ', this, currentPage.controllerObject );
+
+        // TODO: remove
+        console.log( 'defineOnExitHandler > onExit : ', 'currentStateObject === $state.current : ' + (currentPage.stateObject === $state.current) );
+        console.log( 'defineOnExitHandler > onExit : ', $state.current );
+        console.log( 'defineOnExitHandler > onExit : ', this, currentPage.controllerObject );
 
         collectAndStoreData()
           .then(function( results ) {
@@ -246,50 +252,57 @@ define(function(require) {
 
       };
 
-    }
+    } // @end: defineOnExitHandler
 
     function removeOnExitHandler( state ) {
+
       state.onExit = null;
       delete state.onExit;
-    }
 
-    // TODO: review and add promise
+    } // @end: removeOnExitHandler
+
     function applySnapshotObject() {
+
       if( angular.isObject( currentPage.snapshotObject ) ) {
         for (var i = currentPage.fieldsArray.length - 1; i >= 0; i--) {
-          var field = currentPage.fieldsArray[i];
-          var value = currentPage.snapshotObject[field];
+          var field = currentPage.fieldsArray[ i ];
+          var value = currentPage.snapshotObject[ field ];
           if(value) {
-            if( angular.isObject(value) ) {
+            if( angular.isObject( value ) ) {
               // https://docs.angularjs.org/api/ng/function/angular.extend
-              angular.extend(currentPage.controllerObject[field], value);
+              angular.extend( currentPage.controllerObject[ field ], value );
             } else {
-              currentPage.controllerObject[field] = value;
+              currentPage.controllerObject[ field ] = value;
             }
           }
         }
       }
-    }
 
-    // TODO: review and add promise
+    } // @end: applySnapshotObject
+
     function getSnapshotObject() {
+
+      // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
+      var deferred = $q.defer();
+
       var snapshot = {};
       var len = currentPage.fieldsArray.length;
-      if(len > 0) snapshot._t = new Date().getTime();
+      if( len > 0 ) snapshot._t = new Date().getTime();
       for (var i = len - 1; i >= 0; i--) {
-        var field = currentPage.fieldsArray[i];
-        snapshot[field] = currentPage.controllerObject[field];
+        var field = currentPage.fieldsArray[ i ];
+        snapshot[ field ] = currentPage.controllerObject[field];
       }
-      return snapshot;
-    }
+
+      deferred.resolve( snapshot );
+
+      return deferred.promise;
+
+    } // @end: getSnapshotObject
 
     function getSnapshotIndexObject() {
 
       return takeScreenshotAndResize()
         .then(function( pngDataUrl ) {
-
-          // TODO: remove
-          console.log( pngDataUrl );
 
           var snapshotIndex = {};
 
@@ -305,9 +318,10 @@ define(function(require) {
 
         });
 
-    }
+    } // @end: getSnapshotIndexObject
 
     function takeScreenshotAndResize() {
+
       // px
       var default_width = 250,
           default_height = 200;
@@ -317,18 +331,17 @@ define(function(require) {
         .then(function( canvas ) {
 
           // http://caniuse.com/#feat=canvas [ not work only on IE8 ]
-
           return canvas.toDataURL();
 
         });
-    }
+    } // @end: takeScreenshotAndResize
 
-    // TODO: review
     function collectAndStoreData() {
 
       var indexPromise = getSnapshotIndexObject()
         .then(function( snapshotIndex ) {
 
+          // TODO: remove
           console.log( 'snapshot index object: ', snapshotIndex );
 
           return storage
@@ -349,29 +362,33 @@ define(function(require) {
 
         });
 
-      // TODO: review
+      var dataPromise = getSnapshotObject()
+        .then(function( snapshot ) {
 
-      var snapshot = getSnapshotObject();
-      console.log( 'snapshot object: ', snapshot );
+          // TODO: remove
+          console.log( 'snapshot object: ', snapshot );
 
-      var dataPromise = storage
-        .data
-        .set( currentPage.stateName, snapshot )
-        .then(function( savedObject ) {
-          var msg = 'snapshot object from < ' + currentPage.stateName + ' > - saved: ' + (snapshot === savedObject);
-          return msg;
+          return storage
+            .data
+            .set( currentPage.stateName, snapshot )
+            .then(function( savedObject ) {
+              var msg = 'snapshot object from < ' + currentPage.stateName + ' > - saved: ' + (snapshot === savedObject);
+              return msg;
+            });
+
         });
 
       // https://code.angularjs.org/1.3.13/docs/api/ng/service/$q
-      return $q.all([ indexPromise, dataPromise ]).then(function( results ) {
+      return $q
+        .all([ indexPromise, dataPromise ])
+        .then(function( results ) {
 
-        snapshot = null;
+          return results;
 
-        return results;
-      });
+        });
 
     }
 
-  }
+  } // @end: collectAndStoreData
 
 });
