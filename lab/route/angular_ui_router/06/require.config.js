@@ -29,7 +29,7 @@ require({
     ],
 
     localForage: [
-      '/cdn/ajax/libs/localForage/1.2.1/localforage.min'
+      '/cdn/ajax/libs/localForage/1.2.2/localforage.min'
     ],
 
     angularLocalForage: [

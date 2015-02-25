@@ -7,9 +7,9 @@ define(function(require) {
 
   //---
 
-  PageCtrl.$inject = [ 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
+  PageCtrl.$inject = [ 'MultiPagesService' ];
 
-  function PageCtrl( multipages, snapshot ) {
+  function PageCtrl( multipages ) {
 
     var vm = this;
 
@@ -22,8 +22,8 @@ define(function(require) {
 
     //---
 
-    // controllerObject, fieldsArray, snapshotObject
-    multipages.set( vm, ['title', 'model'], snapshot );
+    // controllerObject, fieldsArray
+    multipages.set( vm, ['title', 'model'] );
 
   }
 

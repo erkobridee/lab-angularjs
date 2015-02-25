@@ -28,11 +28,6 @@ define(function(require) {
             // controller    : 'AboutCtrl',
             // controllerAs  : 'about'
           }
-        },
-        resolve: {
-          MultiPagesSnapshotResolved: ['MultiPagesService', function(multipages) {
-            return multipages.get( this.self.name );
-          }]
         }
       });
 
