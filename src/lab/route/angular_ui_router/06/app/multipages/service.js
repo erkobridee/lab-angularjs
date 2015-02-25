@@ -48,36 +48,42 @@ define(function(require) {
 
     } // @end: navto
 
-    function setPage( controllerObject, fieldsArray, snapshotObject ) {
+    function setPage( controllerObject, fieldsArray ) {
 
       currentPage.stateName        = $state.current.name;
       currentPage.stateObject      = $state.current;
       currentPage.controllerObject = controllerObject;
       currentPage.fieldsArray      = fieldsArray;
-      currentPage.snapshotObject   = snapshotObject;
 
       //---
 
       defineOnExitHandler( currentPage.stateObject );
 
-      // TODO: remove
-      console.log( 'setPage', Object.keys(snapshotObject) );
-      console.log( 'setPage', snapshotObject );
+      getPage( currentPage.stateName )
+        .then(function( snapshotObject ) {
 
-      if( snapshotObject._defined_ ) {
-        applySnapshotObject();
-        removePage( currentPage.stateName )
-          .then(function( pagesList ) {
+          currentPage.snapshotObject   = snapshotObject;
 
-            // TODO: remove
-            console.log( 'setPage > removePage : ', currentPage.stateName, pagesList );
+          // TODO: remove
+          console.log( 'setPage > getPage : ', Object.keys(snapshotObject) );
+          console.log( 'setPage > getPage : ', snapshotObject );
 
-            while( pagesList.length > 0 ) {
-              pagesList.pop();
-            }
+          if( snapshotObject._defined_ ) {
+            applySnapshotObject();
+            removePage( currentPage.stateName )
+              .then(function( pagesList ) {
 
-          });
-      }
+                // TODO: remove
+                console.log( 'setPage > getPage > removePage : ', currentPage.stateName, pagesList );
+
+                while( pagesList.length > 0 ) {
+                  pagesList.pop();
+                }
+
+              });
+          }
+
+        });
 
     } //@end: setPage
 

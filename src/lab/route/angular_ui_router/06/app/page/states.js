@@ -26,11 +26,6 @@ define(function(require) {
           'content@page': {
             templateUrl   : 'app/page/templates/content.html'
           }
-        },
-        resolve: {
-          MultiPagesSnapshotResolved: ['MultiPagesService', function(multipages) {
-            return multipages.get( this.self.name );
-          }]
         }
       });
 

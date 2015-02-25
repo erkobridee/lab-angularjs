@@ -7,9 +7,9 @@ define(function(require) {
 
   //---
 
-  AboutCtrl.$inject = [ 'MultiPagesService', 'MultiPagesSnapshotResolved' ];
+  AboutCtrl.$inject = [ 'MultiPagesService' ];
 
-  function AboutCtrl( multipages, snapshot ) {
+  function AboutCtrl( multipages) {
 
     var vm = this;
 
@@ -22,8 +22,8 @@ define(function(require) {
 
     //---
 
-    // controllerObject, fieldsArray, snapshotObject
-    multipages.set( vm, ['title', 'model'], snapshot );
+    // controllerObject, fieldsArray
+    multipages.set( vm, ['title', 'model'] );
 
   }
 
