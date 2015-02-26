@@ -1,8 +1,8 @@
 # Angular UI Router / 06
 
-> multi pages support
-> take snapshot and screenshot from page when state.onExit > re apply when enter on page
-> list "opened pages", where you can navegate to or remove page
+> * multi pages support
+> * take snapshot and screenshot from page when state.onExit > re apply when enter on page
+> * list "opened pages", where you can navegate to or remove page
 
 ## Links
 
