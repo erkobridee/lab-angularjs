@@ -13,11 +13,11 @@
     var estados = [
       {
         'name': 'Paraná',
-        'cidades': [ 'Dois Vizinhos', 'Francisco Beltrão' ]
+        'cidades': [ 'Curitiba', 'Cascavel', 'Foz do Iguaçu', 'Dois Vizinhos', 'Francisco Beltrão' ]
       },
       {
         'name': 'Santa Catarina',
-        'cidades': [ 'Palma Sola', 'Anchieta' ]
+        'cidades': [ 'Florianópolis', 'Joinville', 'Palma Sola', 'Anchieta' ]
       }
     ];
 
