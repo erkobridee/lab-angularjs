@@ -92,12 +92,9 @@ define(function(require) {
     function load( name, path ) {
 
       path = path || 'app/modules/';
-      var packageFile = path + name + '/package';
+      var packagePath = path + name + '/package';
 
-      return ocLazyLoad.load({
-        name: name,
-        files: [ packageFile ] // load
-      });
+      return ocLazyLoad.load( packagePath );
 
     }
 

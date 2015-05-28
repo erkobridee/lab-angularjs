@@ -22,10 +22,7 @@ define(function(require) {
     vm.goToAbout = function() {
       console.log('home controller :: goToAbout');
 
-      ocLazyLoad.load({
-        name: 'about',
-        files: ['app/about/package'] // load
-      })
+      ocLazyLoad.load('app/about/package')
       .then(function() { // After load
         console.log('about module loaded');
         state.go('about');
@@ -36,10 +33,7 @@ define(function(require) {
     vm.gotToDashboard = function() {
       console.log('home controller :: goToDashboard');
 
-      ocLazyLoad.load({
-        name: 'dashboard',
-        files: ['app/dashboard/package'] // load
-      })
+      ocLazyLoad.load('app/dashboard/package')
       .then(function() { // After load
         console.log('dashboard module loaded');
         state.go('dashboard');

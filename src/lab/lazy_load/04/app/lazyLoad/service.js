@@ -55,10 +55,7 @@ define(function(require) {
 
     function loadOne(name) {
 
-      return ocLazyLoad.load({
-        name: name,
-        files: ['app/'+ name +'/package'] // load
-      });
+      return ocLazyLoad.load('app/'+ name +'/package');
 
     }
 

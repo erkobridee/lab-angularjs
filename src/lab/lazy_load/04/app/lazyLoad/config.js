@@ -12,12 +12,13 @@ define(function(require) {
   function configureLazyLoad($ocLazyLoadProvider) {
 
     $ocLazyLoadProvider.config({
-      loadedModules: [
+      modules: [
         module.name,
         require('app/main/package').name,
         require('app/home/package').name
       ],
-      asyncLoader: require
+      jsLoader: require,
+      debug: false
     });
 
   }
