@@ -3,7 +3,7 @@ require.config({
   paths: {
 
     angular: [
-      '/cdn/ajax/libs/angular.js/1.3.13/angular.min'
+      '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
     ]
 
   },

@@ -10,12 +10,16 @@
 
     var data = [
       {
-        'name': 'Eduardo',
+        'name': 'Eduardo Royer',
         'age': 22
       },
       {
-        'name': 'Royer',
+        'name': 'Akira',
         'age': 25
+      },
+      {
+        'name': 'Erko Bridee',
+        'age': 30
       }
     ];
 

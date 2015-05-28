@@ -1,3 +1,7 @@
+/*
+  [Gist] sebmarkbage / ElementFactoriesAndJSX.md
+  https://gist.github.com/sebmarkbage/d7bce729f38730399d28#comment-1377720
+*/
 (function() {
   'use strict';
 
@@ -31,10 +35,12 @@
 
     function compile( element, attrs ) {
 
-      var ContactForm = React.createClass({
+      var ContactFormClass = React.createClass({
         handleChange: handleChange,
         render: render
       });
+
+      var ContactForm = React.createFactory( ContactFormClass );
 
       var compileReturn = compileFunc;
 
