@@ -6,19 +6,25 @@
 </head>
 <body>
 
-<script src="/cdn/ajax/libs/reactjs/0.12.1/react.min.js"></script>
+<script src="/cdn/ajax/libs/reactjs/0.13.3/react.min.js"></script>
 
 <script>
+  /*
+    [Gist] sebmarkbage / ElementFactoriesAndJSX.md
+    https://gist.github.com/sebmarkbage/d7bce729f38730399d28#comment-1377720
+  */
   (function() {
     'use strict';
 
-    var HelloMessage = React.createClass({
+    var HelloMessageClass = React.createClass({
       render: function() {
         return React.DOM.div( {}, 'Hello World' );
       }
     });
 
-    React.renderComponent( HelloMessage( {} ), document.body );
+    var HelloMessage = React.createFactory( HelloMessageClass );
+
+    React.render( HelloMessage( {} ), document.body );
 
   })();
 </script>

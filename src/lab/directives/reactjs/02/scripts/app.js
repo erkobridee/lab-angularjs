@@ -1,7 +1,11 @@
+/*
+  [Gist] sebmarkbage / ElementFactoriesAndJSX.md
+  https://gist.github.com/sebmarkbage/d7bce729f38730399d28#comment-1377720
+*/
 (function() {
   'use strict';
 
-  var MenuItem = React.createClass({
+  var MenuItemClass = React.createClass({
 
     getDefaultProps: function() {
       return {
@@ -15,9 +19,11 @@
 
   });
 
+  var MenuItem = React.createFactory( MenuItemClass );
+
   //---
 
-  var Menu = React.createClass({
+  var MenuClass = React.createClass({
 
     getDefaultProps: function() {
       return {
@@ -37,7 +43,11 @@
 
   });
 
-  React.renderComponent( new Menu({
+  var Menu = React.createFactory( MenuClass );
+
+  //---
+
+  React.render( new Menu({
     items: [ 'Home', 'Dashboard', 'About' ]
   }), document.body );
 

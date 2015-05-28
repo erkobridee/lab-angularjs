@@ -1,7 +1,11 @@
+/*
+  [Gist] sebmarkbage / ElementFactoriesAndJSX.md
+  https://gist.github.com/sebmarkbage/d7bce729f38730399d28#comment-1377720
+*/
 (function() {
   'use strict';
 
-  var ContactForm = React.createClass({
+  var ContactFormClass = React.createClass({
 
     handleChange: function(callbackName) {
       var controller = this.props.controller;
@@ -57,6 +61,8 @@
       );
     }
   });
+
+  var ContactForm = React.createFactory( ContactFormClass );
 
   //---
 
