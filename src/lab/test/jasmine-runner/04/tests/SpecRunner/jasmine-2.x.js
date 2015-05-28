@@ -13,24 +13,24 @@
       ],
 
       angular: [
-        '/cdn/ajax/libs/angular.js/1.3.13/angular.min'
+        '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
       ],
 
       angularRoute: [
-        '/cdn/ajax/libs/angular.js/1.3.13/angular-route.min'
+        '/cdn/ajax/libs/angular.js/1.4.0/angular-route.min'
       ],
 
       angularResource: [
-        '/cdn/ajax/libs/angular.js/1.3.13/angular-resource.min'
+        '/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min'
       ],
 
       uiRouter: [
-        '/cdn/ajax/libs/angular-ui/ui-router/0.2.11/angular-ui-router.min'
+        '/cdn/ajax/libs/angular-ui/ui-router/0.2.15/angular-ui-router.min'
       ],
 
 
       angularMocks: [
-        '/cdn/ajax/libs/angular.js/1.3.13/angular-mocks'
+        '/cdn/ajax/libs/angular.js/1.4.0/angular-mocks'
       ]
 
     },
