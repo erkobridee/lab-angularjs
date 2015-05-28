@@ -4,26 +4,24 @@ require({
   paths: {
 
     jquery: [
-      '//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min',
-      '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min',
       '/cdn/ajax/libs/jquery/2.1.3/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.3.13/
+    // http://code.angularjs.org/1.4.0/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.3.13/angular.min'
+      '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
     ],
 
     angularResource: [
-      '/cdn/ajax/libs/angular.js/1.3.13/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min'
     ],
 
     uiRouter: [
-      '/cdn/ajax/libs/angular-ui/ui-router/0.2.11/angular-ui-router.min'
+      '/cdn/ajax/libs/angular-ui/ui-router/0.2.15/angular-ui-router.min'
     ],
 
     ocLazyLoad: [
-      '/cdn/ajax/libs/ocLazyLoad/0.5.2/ocLazyLoad.min'
+      '/cdn/ajax/libs/ocLazyLoad/1.0.0-beta.2/ocLazyLoad.require.min'
     ]
 
   },

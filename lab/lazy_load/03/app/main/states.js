@@ -12,11 +12,12 @@ define(function(require) {
   function configureStates($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
     $ocLazyLoadProvider.config({
-      loadedModules: [
+      modules: [
         module.name,
         require('app/home/package').name
       ],
-      asyncLoader: require
+      jsLoader: require,
+      debug: false
     });
 
     $urlRouterProvider
