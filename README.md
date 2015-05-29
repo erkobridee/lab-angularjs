@@ -76,7 +76,6 @@ git submodule update --remote
 
 ```bash
 npm install \
-  browser-sync \
   del \
   gulp \
   gulp-bump \
