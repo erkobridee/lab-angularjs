@@ -84,7 +84,6 @@ npm install \
   gulp-jshint \
   gulp-lintspaces \
   gulp-load-plugins \
-  gulp-plumber \
   gulp-print \
   gulp-shell \
   gulp-task-listing \
