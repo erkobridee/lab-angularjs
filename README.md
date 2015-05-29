@@ -56,7 +56,7 @@ git submodule init
   * add submodule
 
 ```bash
-git submodule add -b gh-pages https://github.com/erkobridee/cdn.git src/cdn
+git submodule add -b gh-pages https://github.com/erkobridee/cdn.git gitsubmodule/cdn
 ```
 
   * update submodule
