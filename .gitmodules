@@ -1,4 +1,4 @@
-[submodule "src/cdn"]
-	path = src/cdn
+[submodule "gitsubmodule/cdn"]
+	path = gitsubmodule/cdn
 	url = https://github.com/erkobridee/cdn.git
 	branch = gh-pages
