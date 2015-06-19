@@ -10,8 +10,8 @@
   function MainCtrl() {
     var vm = this;
 
-    vm.carros = [ 'Bmw M3', 'Ferrari Enzo', 'Fusca', 'Fiat 147' ];
-    vm.carroSelecionado = '';
+    vm.cars = [ 'Bmw M3', 'Ferrari Enzo', 'Fusca', 'Fiat 147' ];
+    vm.carSelected = '';
 
   }
 
