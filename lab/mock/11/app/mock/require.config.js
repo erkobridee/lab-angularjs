@@ -3,9 +3,9 @@ require({
   // libraries dependencies with fallback
   paths: {
 
-    // http://code.angularjs.org/1.3.13/
+    // http://code.angularjs.org/1.4.0/
     angularMocks: [
-      '/cdn/ajax/libs/angular.js/1.3.13/angular-mocks'
+      '/cdn/ajax/libs/angular.js/1.4.0/angular-mocks'
     ],
 
     angularMocksBackend: [

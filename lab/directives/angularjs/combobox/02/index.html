@@ -6,17 +6,17 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
-  <div>Selecione um carro:
+  <div>Select one car:
     <select-one
-      data="main.carros"
-      selected="main.carroSelecionado"></select-one>
+      data="main.cars"
+      selected="main.carSelected"></select-one>
   </div>
 
   </br>
 
-  <div>Carro selecionado: {{ main.carroSelecionado }} </div>
+  <div>Car selected: {{ main.carSelected }} </div>
 
-  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
 
   <script src="app/main/module.js"></script>
   <script src="app/main/controller.js"></script>
