@@ -6,15 +6,15 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
-  <div>Selecione um carro:
-    <select ng-model="main.carroSelecionado" ng-options="item for item in main.carros"></select>
+  <div>Select one car:
+    <select ng-model="main.carSelected" ng-options="item for item in main.cars"></select>
   </div>
 
   </br>
 
-  <div>Carro selecionado: {{ main.carroSelecionado }}</div>
+  <div>Car selected: {{ main.carSelected }}</div>
 
-  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
 
   <script>
     (function() {
@@ -31,9 +31,9 @@
         function MainCtrl() {
           var vm = this;
 
-          vm.carros = [ 'Bmw M3', 'Ferrari Enzo', 'Fusca', 'Fiat 147' ];
+          vm.cars = [ 'Bmw M3', 'Ferrari Enzo', 'Fusca', 'Fiat 147' ];
 
-          vm.carroSelecionado = '';
+          vm.carSelected = '';
 
         }
 
