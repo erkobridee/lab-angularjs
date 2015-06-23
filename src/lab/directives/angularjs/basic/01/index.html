@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic : 01 : Basic Angular Directive usage</title>
+
+<style>
+.blueColor {
+  color: blue;
+};
+</style>
+
+</head>
+<body ng-controller="MainCtrl as main">
+  <h1>Basic Angular Directive usage</h1>
+
+
+  <basic ng-if="true"
+    my-class="{blueColor: true}"
+    my-text="hello {{main.name}}"
+    my-two-way-bind="main.person1"
+    my-one-way-bind="main.person2"
+    on-message="main.receiveMessage(message)"
+    ctrl-handler="main.handler()"> 1, 2, 3, ... </basic>
+
+
+  <hr>
+  <h2>Controller data:<h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" name="name" ng-model="main.name">
+
+    <label for="message">Message:</label>
+    <input type="text" name="message" ng-model="main.message" readonly="true">
+  </form>
+  <br>
+  <pre>{{main.person1 | json}}</pre>
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+  <script src="app/basic/directive.js"></script>
+  <!-- @end: app -->
+</body>
+</html>
