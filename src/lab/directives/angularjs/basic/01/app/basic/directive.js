@@ -21,8 +21,8 @@
       text: '@myText',
       twoWayBind: '=myTwoWayBind',
       oneWayBind: '&myOneWayBind',
-      sendMessage: '&onMessage',
-      ctrlHandler: '&'
+      sendMessage: '&?onMessage',   // optional attribute
+      ctrlHandler: '&?'             // optional attribute
     };
 
     var directive = {
@@ -51,7 +51,8 @@
       var vm = this;
 
       vm.buttonClick = function() {
-        vm.sendMessage({message: '1: hello controller - message from directive controller'});
+        if(vm.sendMessage)
+          vm.sendMessage({message: '1: hello controller - message from directive controller'});
       };
 
       vm.updatePerson1 = function() {
@@ -64,7 +65,8 @@
 
       //---
 
-      vm.sendMessage({message: 'basic directive controller started'});
+      if(vm.sendMessage)
+        vm.sendMessage({message: 'basic directive controller started'});
 
       console.log('CTRL: vm.text = ', vm.text );
       console.log('CTRL: vm.twoWayBind = ', vm.twoWayBind );
