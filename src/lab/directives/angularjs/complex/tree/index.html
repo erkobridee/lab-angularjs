@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Tree Directive</title>
+</head>
+<body ng-controller="MainCtrl as main">
+  <h1>Angular Tree Directive</h1>
+  <p><b><i>See Console...</i></b></p>
+
+  <!-- @begin: tree def. -->
+  <tree-root ctrl-data="main.tree" debug="true">
+    <tree-node text="A"></tree-node>
+    <tree-node text="B">
+      <tree-node text="B.1"></tree-node>
+      <tree-node text="B.2">
+        <tree-node text="B.2.a1"></tree-node>
+        <tree-node text="B.2.a2"></tree-node>
+      </tree-node>
+      <tree-node text="B.3"></tree-node>
+    </tree-node>
+    <tree-node text="C"></tree-node>
+  </tree-root>
+  <!-- @end: tree def. -->
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+  <script src="app/tree/directives/tree-root.js"></script>
+  <script src="app/tree/directives/tree-node.js"></script>
+  <script src="app/tree/directives/tree-render.js"></script>
+  <script src="app/tree/directives/tree-node-render.js"></script>
+  <!-- @end: app -->
+</body>
+</html>
+
+<!--
+
+  [GitHub] angular / angular.js v1.3.0
+  https://github.com/angular/angular.js/tree/v1.3.0
+
+  [GitHub] angular / angular.js ISSUE #4518
+  Can't require a parent directive of an element with the same directive.
+  https://github.com/angular/angular.js/issues/4518#issuecomment-49334730
+
+
+  [YouTube] Advanced Directives with AngularJS - 2015/02/13 by David Mosher
+  https://www.youtube.com/watch?v=Ty8XcASK9js
+
+  [GitHub] davemo / advanced-directives-with-angular-js - Advanced Directives with Angular JS - Code for the Screencast
+  https://github.com/davemo/advanced-directives-with-angular-js
+
+  Building Nested Recursive Directives in Angular | Sebastian's Blog
+  https://sporto.github.io/blog/2013/06/24/nested-recursive-directives-in-angular/
+
+-->
