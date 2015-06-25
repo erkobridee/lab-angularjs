@@ -95,11 +95,11 @@
         '<div>JavaScript Objects</div>',
         '<ul>',
           '<li ng-if="vm.ctrlData">',
-            '<b>tree root data from controller:</b>',
+            '<b>tree data from controller:</b>',
             '<pre>{{vm.ctrlData | json}}</pre>',
           '</li>',
           '<li>',
-            '<b>tree root data from directives:</b>',
+            '<b>tree data directives config:</b>',
             '<pre>{{vm.getNodes() | json}}</pre>',
           '</li>',
         '</ul>'
