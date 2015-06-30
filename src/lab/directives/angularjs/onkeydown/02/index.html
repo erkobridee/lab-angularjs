@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>OnKeyDown : 02 : register multiple key down handlers</title>
+</head>
+<body ng-controller="MainCtrl as vm">
+
+  <!-- === -->
+
+  <p>OnKeyDown : 02 : register multiple key down handlers</p>
+  <br>
+  <p>press: ENTER or ESC key</p><button ng-click="vm.clearLog()">Clear</button>
+  <br>
+  <p>see DevTools console</p>
+
+
+  <onkeydown>
+    <keydown code="13" handler="vm.onEnter();"/>
+    <keydown code="27" handler="vm.onEsc();"/>
+  </onkeydown>
+
+  <!-- === -->
+
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/onkeydown/directive.js"></script>
+</body>
+</html>
