@@ -1,10 +1,6 @@
 (function() {
   'use strict';
 
-  // https://umur.io/angularjs-directives-using-isolated-scope-with-attributes/
-
-  // https://docs.angularjs.org/api/ng/directive/ngClass
-
   angular.module( 'app' ).directive('basic', basic);
 
   //---
