@@ -28,7 +28,7 @@ This leads to **more readable messages** that are easy to follow when looking th
 
 * Based on [[GitHub] angular / angular.js - CONTRIBUTING commit](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)
 
-* [[GitHub] robertmesserle / conventional-changelog](https://github.com/robertmesserle/conventional-changelog) - use git commit messages to **generate** the Changelog document
+* [[GitHub] ajoslin / conventional-changelog](https://github.com/ajoslin/conventional-changelog) - use git commit messages to **generate** the Changelog document
 
 
 ### <a name="commit-message-format"></a> Commit Message Format
