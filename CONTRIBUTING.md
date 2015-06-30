@@ -30,6 +30,8 @@ This leads to **more readable messages** that are easy to follow when looking th
 
 * [[GitHub] ajoslin / conventional-changelog](https://github.com/ajoslin/conventional-changelog) - use git commit messages to **generate** the Changelog document
 
+  * [[GitHub] btford / grunt-conventional-changelog](https://github.com/btford/grunt-conventional-changelog) - Grunt task for generating a changelog from git metadata
+
 
 ### <a name="commit-message-format"></a> Commit Message Format
 
