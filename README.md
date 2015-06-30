@@ -4,6 +4,15 @@
 
 * Checkout angular.js [code examples](src/lab)
 
+--
+
+* Git Commit Guidelines
+
+  * [angular/angular.js](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines)
+
+  * [angular/material](https://github.com/angular/material/blob/master/docs/guides/CONTRIBUTING.md#-git-commit-guidelines)
+
+--
 
 <!-- toc -->
 
