@@ -16,6 +16,14 @@
 
 * [Angular.js](angularjs)
 
+  * [basic](angularjs/basic)
+
+    * [scope parameters](angularjs/basic/scopeparameters)
+
+  * [complex](angularjs/complex)
+
+    * [tree](angularjs/complex)
+
   * [combobox](angularjs/combobox)
 
   * [datagrid](angularjs/datagrid)
