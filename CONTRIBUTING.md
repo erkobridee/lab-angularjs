@@ -24,7 +24,7 @@ English is the universal language nowadays, so please don't create or comment on
 
 This leads to **more readable messages** that are easy to follow when looking through the **project history**.
 
-* A detailed explanation can be found in this [document: commit message format](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#).
+* A detailed explanation can be found in this [document: commit message format](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit)
 
 * Based on [[GitHub] angular / angular.js - CONTRIBUTING commit](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)
 
