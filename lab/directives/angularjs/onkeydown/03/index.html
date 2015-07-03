@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- ng-app="app" -->
+<head>
+  <meta charset="UTF-8">
+  <title>OnKeyDown : 03 : register multiple key down handlers with namespace support</title>
+</head>
+<body ng-controller="MainCtrl as vm">
+
+  <!-- === -->
+
+  <p>OnKeyDown : 03 : register multiple key down handlers with namespace support</p>
+  <p>press one of: [A, S, D, W] keys</p>
+  <br>
+  <p>see DevTools console <button ng-click="vm.clearLog()">Clear</button></p>
+  <p></p>
+
+  <div ui-view></div>
+
+  <onkeydown>
+    <keydown code="65" handler="vm.onKey('A');"/>
+    <keydown code="83" handler="vm.onKey('S');"/>
+    <keydown code="68" handler="vm.onKey('D');"/>
+    <keydown code="87" handler="vm.onKey('W');"/>
+  </onkeydown>
+
+  <!-- === -->
+
+  <!-- AngularJS resources -->
+  <!-- http://code.angularjs.org/1.4.0/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min.js"></script>
+
+  <script src="/cdn/ajax/libs/angular-ui/ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+  <script src="ng-start.js"></script>
+  <script src="app/main/module.js"></script>
+  <script src="app/onkeydown/directive.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/home/controller.js"></script>
+  <script src="app/about/controller.js"></script>
+  <script src="app/main/states.js"></script>
+
+</body>
+</html>
+<!--
+  http://www.javascriptkeycode.com/
+-->
