@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Multi Transclude Directive</title>
+</head>
+<body>
+  <h1>Angular Multi Transclude Directive</h1>
+
+  <!-- @begin: app layout -->
+  <applayout>
+    <div transclude-to="header">
+      some content to append on application header
+    </div>
+    <div transclude-to="menu">
+      <ul>
+        <li>Menu Item 1</li>
+        <li>Menu Item 2</li>
+        <li>Menu Item 3</li>
+      </ul>
+    </div>
+    <div transclude-to="main">
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis quam id justo posuere, eget dapibus erat dignissim. Ut quis arcu ultrices, vehicula purus id, fringilla nunc. Mauris eget pulvinar dolor. Nulla dictum pretium euismod. Phasellus varius mattis euismod. Nunc nec quam lectus. Suspendisse ultrices ante nec congue eleifend.</p>
+
+<p>Aliquam accumsan non arcu feugiat varius. Nulla dictum odio a magna suscipit gravida nec sed lectus. Pellentesque quis elit id mauris mattis mollis non sit amet lorem. Aliquam in viverra risus, ut mollis felis. Sed gravida risus nibh, eu vehicula massa placerat eu. Vivamus congue sollicitudin turpis, nec bibendum elit lobortis sed. Sed efficitur lectus in est porta auctor. Duis cursus, odio vel varius maximus, leo orci porta ex, quis vestibulum diam justo ut nibh. Sed aliquet mauris diam, nec auctor elit mollis ac. Ut feugiat quis metus et luctus.</p>
+
+<p>Nulla facilisi. Cras elementum nulla vel arcu aliquet malesuada. Curabitur a neque vel est lacinia luctus ut eu est. Cras iaculis mollis lorem eget fermentum. Ut porta, quam ut pharetra luctus, tortor ligula finibus justo, quis feugiat odio ante quis diam. Vivamus posuere quam eget facilisis fermentum. Phasellus ut posuere risus, eu lobortis velit. Nunc eleifend magna ornare, bibendum erat nec, egestas justo. Curabitur eget ante facilisis, maximus sem eu, malesuada neque. Etiam viverra ullamcorper gravida. Nullam auctor vel mi non dictum. Morbi non vulputate sem.</p>
+
+    </div>
+    <div transclude-to="footer">
+      © 2015 EnterpriseName...
+    </div>
+  </applayout>
+  <!-- @end: app layout -->
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="ng-start.js"></script>
+  <script src="app/main/module.js"></script>
+  <script src="app/multitransclude/service.js"></script>
+  <script src="app/applayout/directive.js"></script>
+  <!-- @end: app -->
+
+</body>
+</html>
+<!--
+  Creating Container Components, Part 2: Angular 1.3 Directives | AirPair
+  https://www.airpair.com/angularjs/posts/creating-container-components-part-2-angular-1-directives
+-->
