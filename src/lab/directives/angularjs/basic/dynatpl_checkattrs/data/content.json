@@ -1,0 +1,26 @@
+[
+  {
+    "content_type": "type1",
+    "data": "some value abc to type 1"
+  },
+  {
+    "content_type": "blahblah",
+    "data": "some value blahblah"
+  },
+  {
+    "content_type": "type3",
+    "data": "some value xch to type 3"
+  },
+  {
+    "content_type": "type2",
+    "data": "some value ulah ulah to type 2"
+  },
+  {
+    "content_type": "type1",
+    "data": "some value 42 to type 1"
+  },
+  {
+    "content_type": "undefined",
+    "data": "some value ?????? to undefined"
+  }
+]
