@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- ng-app="app" -->
+<head>
+  <meta charset="UTF-8">
+  <title>Angular directives : basic : dynamic template and check required attributes</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <!-- === -->
+
+  <h1>Angular directives : basic : dynamic template and check required attributes</h1>
+  <hr/>
+
+  <h2>Dynamic Template based on data content</h2>
+  <div ng-controller="ContentCtrl as content">
+    <content-item
+      ng-repeat="item in content.data track by $index"
+      content="item" >
+    </content-item>
+  </div>
+
+  <hr/>
+
+  <h2>Check directive required attributes [requiredId, requiredText] <i>see console:</i></h2>
+  <check-attrs
+    require-id="1"
+    required-text="First"
+    optional-label="first label"></check-attrs>
+
+  <check-attrs
+    required-text="Second"></check-attrs>
+
+  <check-attrs
+    require-id="3"
+    optional-label="thrid label"></check-attrs>
+
+  <check-attrs
+    optional-label="fourth label"></check-attrs>
+  <hr/>
+
+  <!-- === -->
+
+  <!-- AngularJS resources -->
+  <!-- http://code.angularjs.org/1.4.0/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+
+  <script src="ng-start.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+  <script src="app/main/constant.js"></script>
+
+  <script src="app/content/controller.js"></script>
+  <script src="app/content/constant.js"></script>
+  <script src="app/content/service.js"></script>
+  <script src="app/content/directive.js"></script>
+
+  <script src="app/checkattrs/directive.js"></script>
+  <script src="app/checkattrs/service.js"></script>
+
+</body>
+</html>
+<!--
+  AngularJS Dynamic Templates - Yes We Can! | One Hungry Mind
+  http://onehungrymind.com/angularjs-dynamic-templates/
+-->
