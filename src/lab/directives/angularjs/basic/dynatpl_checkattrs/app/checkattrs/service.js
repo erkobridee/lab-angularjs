@@ -66,9 +66,9 @@
       function checkIfTrueAddFn() {
         var check;
         var add;
-        /* arguments:
-         *   [check, attrName, add]
-         */
+        /** arguments:
+          *   [check, attrName, add]
+          */
         if(arguments[2]) {
           check = arguments[0];
           check = check[arguments[1]];

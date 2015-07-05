@@ -53,7 +53,7 @@
         );
 
         return function postLink(scope) {
-           console.log('checkAttrs post link');
+          console.log('checkAttrs post link');
         };
       }
 
