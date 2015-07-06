@@ -159,9 +159,17 @@
 
 --
 
+* [Responsive template swapping with Angular Directives | CheapSteak.net](http://cheapsteak.net/posts/responsive-template-swapping-with-angular)
+
+--
+
 * [Understanding Transclusion in Angular | Nulogy Blog](http://engineering.nulogy.com/posts/transclusion-in-angular/)
 
 * [AngularJS: Multi-transclusion | Zach Snow](http://zachsnow.com/#!/blog/2013/angularjs-multi-transclusion/)
+
+* [The nitty-gritty of compile and link functions inside AngularJS directives | jvandemo.com](http://www.jvandemo.com/the-nitty-gritty-of-compile-and-link-functions-inside-angularjs-directives/)
+
+* [The nitty-gritty of compile and link functions inside AngularJS directives part 2: transclusion | jvandemo.com](http://www.jvandemo.com/the-nitty-gritty-of-compile-and-link-functions-inside-angularjs-directives-part-2-transclusion/)
 
 --
 
