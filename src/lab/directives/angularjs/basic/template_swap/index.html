@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- ng-app="app" -->
+<head>
+  <meta charset="UTF-8">
+  <title>Angular directives : templates swap</title>
+  <style>
+  [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+  }
+  </style>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <!-- === -->
+
+  <h1>Angular directives : templates swap</h1>
+  <hr/>
+
+  {{checkswap |json}}
+
+  <div checkswap="min-width: 48rem" class="ng-cloak">
+    {{checkswap |json}}
+    <div ng-if="checkswap_matches">
+      <h2>Desktop template</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in main.data track by $index">
+            <td>{{::item.id}}</td>
+            <td>{{::item.first_name}}</td>
+            <td>{{::item.last_name}}</td>
+            <td>{{::item.username}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div ng-if="!checkswap_matches">
+      <h2>Mobile template</h2>
+
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in main.data track by $index">
+
+          <p><b>id:</b> <span>{{::item.id}}<span></p>
+          <p><b>First Name:</b> <span>{{::item.first_name}}<span></p>
+          <p><b>Last Name:</b> <span>{{::item.last_name}}<span></p>
+          <p><b>Username:</b> <span>{{::item.username}}<span></p>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- === -->
+
+  <!-- AngularJS resources -->
+  <!-- http://code.angularjs.org/1.4.0/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+
+  <script src="ng-start.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+  <script src="app/checkswap/directive.js"></script>
+</body>
+</html>
+<!--
+  Responsive template swapping with Angular Directives | Chang Wang
+  http://cheapsteak.net/posts/responsive-template-swapping-with-angular
+
+  [GitHub] cheapsteak / ResponsiveTemplateSwapComparison
+  https://github.com/cheapsteak/ResponsiveTemplateSwapComparison
+
+  ==
+
+  cal rem:
+
+  target px / (root context font-size) px = rem
+
+  > root context font-size normally equals to 16px
+
+  ==
+
+  768px / 16px = 48rem
+-->
