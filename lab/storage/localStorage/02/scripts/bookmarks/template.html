@@ -1,0 +1,36 @@
+<div>
+
+  <h2>You have {{bookmarks.list.length}} bookmarks.</h2>
+
+  <ul>
+    <li ng-repeat="bookmark in bookmarks.list track by bookmark.id">
+      <button ng-click="bookmarks.remove(bookmark)">
+        delete
+      </button> - [
+        {{::bookmark.title}} :
+        <a href="{{::bookmark.link}}" target="_blank">{{::bookmark.link}}</a>
+      ]
+    </li>
+  </ul>
+
+  <form ng-submit="bookmarks.processForm()">
+    <label for="title">title: </label>
+    <input
+      name="title"
+      type="text"
+      ng-model="bookmarks.form.title"
+      size="30" />
+    <label for="link">link: </label>
+    <input
+      name="link"
+      type="text"
+      ng-model="bookmarks.form.link"
+      size="60" />
+    <input type="submit" value="Add"/>
+  </form>
+
+  <p>
+    <button ng-click="bookmarks.logout()">Log out</button> ( <em>will kill local storage</em> ).
+  </p>
+
+</div>
