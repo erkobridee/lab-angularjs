@@ -40,6 +40,11 @@
           };
           mql.addListener(mqlListener);
           mqlListener(mql);
+
+          scope.$on('$destroy', function() {
+            mql.removeListener(mqlListener);
+            mql = null;
+          });
         } else {
           scope.checkswap_matches = false;
         }
