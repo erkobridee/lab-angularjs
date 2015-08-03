@@ -23,7 +23,7 @@
 
   <div checkswap="min-width: 48rem" class="ng-cloak">
     {{checkswap |json}}
-    <div ng-if="checkswap_matches">
+    <div ng-if="swap.matches">
       <h2>Desktop template</h2>
 
       <table class="table">
@@ -47,7 +47,7 @@
 
     </div>
 
-    <div ng-if="!checkswap_matches">
+    <div ng-if="!swap.matches">
       <h2>Mobile template</h2>
 
       <ul class="list-group">
