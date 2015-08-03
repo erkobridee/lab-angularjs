@@ -23,12 +23,14 @@
       function postLink(scope, element, attrs) {
         console.log(scope, attrs);
 
-        scope.checkswap_matches = false;
+        scope.swap = {
+          matches: false
+        };
 
         if (window.matchMedia) {
           var mql = window.matchMedia( '(' + attrs.checkswap + ')' );
           var mqlListener = function mqlListener(mql) {
-            scope.checkswap_matches = mql.matches;
+            scope.swap.matches = mql.matches;
 
             console.log('matches ' + attrs.checkswap + ' : ' + mql.matches);
 
@@ -40,8 +42,13 @@
           };
           mql.addListener(mqlListener);
           mqlListener(mql);
+
+          scope.$on('$destroy', function() {
+            mql.removeListener(mqlListener);
+            mql = null;
+          });
         } else {
-          scope.checkswap_matches = false;
+          scope.swap.matches = false;
         }
       }
 

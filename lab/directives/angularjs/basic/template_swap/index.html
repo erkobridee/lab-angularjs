@@ -23,7 +23,7 @@
 
   <div checkswap="min-width: 48rem" class="ng-cloak">
     {{checkswap |json}}
-    <div ng-if="checkswap_matches">
+    <div ng-if="swap.matches">
       <h2>Desktop template</h2>
 
       <table class="table">
@@ -47,7 +47,7 @@
 
     </div>
 
-    <div ng-if="!checkswap_matches">
+    <div ng-if="!swap.matches">
       <h2>Mobile template</h2>
 
       <ul class="list-group">
@@ -96,4 +96,19 @@
   ==
 
   768px / 16px = 48rem
+
+  ======
+
+  Window.matchMedia() | MDN
+  https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia
+
+  Testing media queries | MDN
+  https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Testing_media_queries
+
+  Using window.matchMedia to do media queries in JavaScript | Mozilla Hacks
+  https://hacks.mozilla.org/2012/06/using-window-matchmedia-to-do-media-queries-in-javascript/
+
+  [GitHub] paulirish / matchMedia.js
+  https://github.com/paulirish/matchMedia.js/
+
 -->
