@@ -3,15 +3,15 @@
 
   angular
     .module('app')
-    .directive('checkswap', checkswap);
+    .directive('matchMedia', matchMedia);
 
     //---
 
     // https://docs.angularjs.org/guide/directive
     // https://docs.angularjs.org/api/ng/service/$compile
 
-    // checkswap.$inject = [];
-    function checkswap() {
+    // matchMedia.$inject = [];
+    function matchMedia() {
 
       var directive = {
         restrict: 'A',
@@ -21,18 +21,19 @@
       //---
 
       function postLink(scope, element, attrs) {
+        var mql = null,
+            mqlListener = null;
+
         console.log(scope, attrs);
 
-        scope.swap = {
-          matches: false
-        };
+        scope.matchMedia = false;
 
         if (window.matchMedia) {
-          var mql = window.matchMedia( '(' + attrs.checkswap + ')' );
-          var mqlListener = function mqlListener(mql) {
-            scope.swap.matches = mql.matches;
+          mql = window.matchMedia( '(' + attrs.matchMedia + ')' );
+          mqlListener = function mqlListener(mql) {
+            scope.matchMedia = mql.matches;
 
-            console.log('matches ' + attrs.checkswap + ' : ' + mql.matches);
+            console.log('matches ' + attrs.matchMedia + ' : ' + mql.matches);
 
             // prevents it from unnecessarily calling $scope.$apply when the page first runs
             if(!scope.$$phase) {
@@ -42,14 +43,17 @@
           };
           mql.addListener(mqlListener);
           mqlListener(mql);
-
-          scope.$on('$destroy', function() {
-            mql.removeListener(mqlListener);
-            mql = null;
-          });
         } else {
-          scope.swap.matches = false;
+          scope.matchMedia = false;
         }
+
+        scope.$on('$destroy', function() {
+          if(mql && mqlListener) {
+              mql.removeListener(mqlListener);
+          }
+          mqlListener = null;
+          mql = null;
+        });
       }
 
       //---
