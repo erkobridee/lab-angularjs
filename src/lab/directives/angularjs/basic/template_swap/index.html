@@ -21,8 +21,8 @@
 
   {{checkswap |json}}
 
-  <div checkswap="min-width: 48rem" class="ng-cloak">
-    <div ng-if="swap.matches">
+  <div match-media="min-width: 48rem" class="ng-cloak">
+    <div ng-if="matchMedia">
       <h2>Desktop template</h2>
 
       <table class="table">
@@ -46,7 +46,7 @@
 
     </div>
 
-    <div ng-if="!swap.matches">
+    <div ng-if="!matchMedia">
       <h2>Mobile template</h2>
 
       <ul class="list-group">
@@ -74,7 +74,7 @@
   <script src="app/main/module.js"></script>
   <script src="app/main/controller.js"></script>
 
-  <script src="app/checkswap/directive.js"></script>
+  <script src="app/matchmedia/directive.js"></script>
 </body>
 </html>
 <!--
