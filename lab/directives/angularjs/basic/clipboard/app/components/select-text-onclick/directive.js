@@ -13,21 +13,6 @@
 
     function postLink( scope, element ) {
 
-      function isMac() {
-        return ( $window.navigator.userAgent.indexOf( 'Mac OS' ) !== -1 );
-      }
-
-      function displayPrompt( textToCopy ) {
-        var helpText = '';
-        if( isMac() ) {
-          helpText += 'Command';
-        } else {
-          helpText += 'Control';
-        }
-        helpText += ' + C and ENTER to copy.';
-        $window.prompt( helpText, textToCopy );
-      }
-
       function onClick(){
         var range;
         var doc0 = $document[0];
@@ -41,9 +26,6 @@
           range.selectNode( el0 );
           $window.getSelection().addRange( range );
         }
-        if( scope.showPrompt ) {
-          displayPrompt( element.text().trim() );
-        }
       }
 
       element.on( 'click', onClick );
@@ -55,13 +37,8 @@
 
     //---
 
-    var scope = {
-      showPrompt: '=?selectTextShowprompt'
-    };
-
     var directive = {
       restrict : 'A',
-      scope: scope,
       link : postLink
     };
 
