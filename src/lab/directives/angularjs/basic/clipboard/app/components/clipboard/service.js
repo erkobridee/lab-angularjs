@@ -66,12 +66,41 @@
 
   //---
 
+  var browserInfo = (function(){
+    var navigator = $window.navigator,
+        ua = navigator.userAgent, tem,
+        M = ua.match( /(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i ) || [];
+    if( /trident/i.test( M[1] ) ) {
+      tem =  /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return 'IE ' + ( tem[1] || '' );
+    }
+    if( M[1] === 'Chrome' ){
+      tem = ua.match( /\bOPR\/(\d+)/ );
+      if( tem !== null ) {
+        return 'Opera ' + tem[1];
+      }
+    }
+    M = M[2] ? [M[1], M[2]] : [ navigator.appName, navigator.appVersion, '-?' ];
+    if( ( tem = ua.match( /version\/(\d+)/i ) ) !== null ) {
+      M.splice( 1, 1, tem[1] );
+    }
+    return {
+      name: M[0].toLowerCase(),
+      version: +M[1]
+    };
+  })();
+
+  console.log( browserInfo );
+
   var hasSupport = (function checkIfHasSupport(){
     if(
       doc0.getSelection &&
       doc0.createRange &&
       $window.ClipboardEvent
     ){
+      if( browserInfo.name === 'firefox' ) {
+        return ( browserInfo.version > 40 ? true : false );
+      }
       return true;
     }
     return false;
@@ -82,7 +111,8 @@
   // API
   return {
     directiveCopyText: copyText,
-    hasSupport: hasSupport
+    hasSupport: hasSupport,
+    browserInfo: browserInfo
   };
 
   }
