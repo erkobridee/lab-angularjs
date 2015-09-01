@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular directives : basic : copy to clipboard</title>
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <!-- === -->
+
+  <h1>Angular directives : basic : copy to clipboard</h1>
+  <hr/>
+
+  <h2>Browser support: Chrome 43+, Firefox 41+, Opera 29+ and IE10+</h2>
+  <h3>Fallback: when click over text use window.prompt</h3>
+
+  <div class="contentToCopy">
+    <div
+      class="text"
+      select-text-onclick
+      select-text-showprompt="!main.hasClipboardSupport">
+      {{::main.text}}
+    </div>
+    <div
+      class="button"
+      ng-if="main.hasClipboardSupport">
+      <button
+        type="button"
+        clipboard
+        clipboard-text="main.text"
+        clipboard-oncopied="main.success()"
+        clipboard-onfail="main.fail(error)">
+        Copy to Clipboard
+      </button>
+    </div>
+  </div>
+
+  <!-- === -->
+
+  <!-- AngularJS resources -->
+  <!-- http://code.angularjs.org/1.4.0/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+
+  <script src="ng-start.js"></script>
+
+  <script src="app/components/select-text-onclick/module.js"></script>
+  <script src="app/components/select-text-onclick/directive.js"></script>
+
+  <script src="app/components/clipboard/module.js"></script>
+  <script src="app/components/clipboard/service.js"></script>
+  <script src="app/components/clipboard/directive.js"></script>
+
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+</body>
+</html>
+<!--
+  AngularJS Dynamic Templates - Yes We Can! | One Hungry Mind
+  http://onehungrymind.com/angularjs-dynamic-templates/
+-->
