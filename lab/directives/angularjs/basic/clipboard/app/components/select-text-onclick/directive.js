@@ -42,7 +42,7 @@
           $window.getSelection().addRange( range );
         }
         if( scope.showPrompt ) {
-          displayPrompt( el0.innerText );
+          displayPrompt( element.text().trim() );
         }
       }
 

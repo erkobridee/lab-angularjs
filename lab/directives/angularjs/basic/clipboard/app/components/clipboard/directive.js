@@ -8,17 +8,19 @@
     Browser support: Chrome 43+, Firefox 41+, Opera 29+ and IE10+
   */
 
-  function Directive( $clipboard ) {
+  function Directive( $clipboard, console ) {
 
     function postLink( scope, element ) {
 
       function onClick() {
           try{
             $clipboard.directiveCopyText( scope.text );
+            console.log('copied to clipboard');
             if( scope.onCopied ) {
               scope.onCopied();
             }
           } catch( error ) {
+            console.log('clipboard copy failed');
             if( scope.onError ) {
               scope.onError( { error: error } );
             }
@@ -48,7 +50,7 @@
 
   }
 
-  Directive.$inject = [ '$clipboard' ];
+  Directive.$inject = [ '$clipboard', '$log' ];
 
   //---
 
