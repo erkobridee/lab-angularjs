@@ -1,11 +1,9 @@
 (function() {
   'use strict';
 
-  function Controller( $clipboard, $window ) {
+  function Controller( $window, console ) {
 
     var vm = this;
-
-    vm.hasClipboardSupport = $clipboard.hasSupport;
 
     vm.text = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -35,7 +33,7 @@
 
   }
 
-  Controller.$inject = [ '$clipboard', '$window', '$log' ];
+  Controller.$inject = [ '$window', '$log' ];
 
   //---
 
