@@ -4,12 +4,16 @@ define(function(require) {
   var angular = require('angular');
   var main = require('./main/package');
 
-  angular.element(document).ready(function() {
-
+  function startApp() {
     console.log('bootstrap : ' + main.name);
 
-    angular.bootstrap(document, [main.name]);
+    angular.bootstrap(document, [
+      main.name
+    ]);
+  }
 
-  });
+  angular
+    .element(document)
+    .ready(startApp);
 
 });
