@@ -3,30 +3,33 @@ define(
 [
   'angular',
 
-  '../moduleA/require.load',
-  '../home/require.load',
-  '../about/require.load',
-  '../github/require.load',
-  '../pageWithoutController/require.load'
+  '../moduleA/package',
+  '../home/package',
+  '../about/package',
+  '../github/package',
+  '../pageWithoutController/package'
 
 ],
 
 // require.js module scope
-function(ng) {
+function(
+  angular,
+  moduleA, home, about, github, pageWithoutController
+) {
   'use strict';
 
   // module definition
-  return ng.module(
+  return angular.module(
     // module name
     'main',
 
     // module dependencies
     [
-      'moduleA',
-      'home',
-      'about',
-      'github',
-      'pageWithoutController'
+      moduleA.name,
+      home.name,
+      about.name,
+      github.name,
+      pageWithoutController.name
     ]
 
   );

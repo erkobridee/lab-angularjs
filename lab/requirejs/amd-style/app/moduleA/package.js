@@ -2,8 +2,10 @@ define(
 // require.js dependency injection
 [
   './module',
-  './controllers/require.load'
+  './controllers/package'
 ],
 
 // require.js module scope
-function() {});
+function(module) {
+  return module;
+});

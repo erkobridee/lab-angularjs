@@ -7,12 +7,12 @@ define(
 ],
 
 // require.js module scope
-function(ng) {
+function(angular) {
   'use strict';
 
 
   // module definition
-  return ng.module(
+  return angular.module(
     // module name
     'github',
 

@@ -10,11 +10,11 @@ define(function(require) {
 
     // module dependencies
     [
-      require('../moduleA/require.load').name,
-      require('../home/require.load').name,
-      require('../about/require.load').name,
-      require('../github/require.load').name,
-      require('../pageWithoutController/require.load').name
+      require('../moduleA/package').name,
+      require('../home/package').name,
+      require('../about/package').name,
+      require('../github/package').name,
+      require('../pageWithoutController/package').name
     ]
 
   );

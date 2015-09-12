@@ -8,4 +8,6 @@ define(
 ],
 
 // require.js module scope
-function() {});
+function(module) {
+  return module;
+});
