@@ -1,8 +1,27 @@
 (function() {
   'use strict';
 
+  /**
+    * @ngdoc directive
+    * @name click-in-out
+    *
+    * @restrict A
+    *
+    * @description
+    * handler click in and out of a given element
+    *
+    * @param {expression} onClickIn - Expression to evaluate upon a click on the element (The Event object is available as `$event`)
+    * @param {expression} onClickOut - Expression to evaluate upon a click on the document (The Event object is available as `$event`)
+    *
+    * Usage:
+    *
+    * <any
+    *   click-in-out
+    *   on-click-in="onClickInHandler($event)"
+    *   on-click-out="onClickOutHandler($event)">
+    * </any>
+    */
   var DIRECTIVE_NAME = 'clickInOut';
-
   angular.module( 'app' ).directive(DIRECTIVE_NAME, clickInOut);
 
   //---
