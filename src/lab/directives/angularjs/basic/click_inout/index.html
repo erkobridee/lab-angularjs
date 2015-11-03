@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic angular directive : click in out</title>
+</head>
+<body ng-controller="MainCtrl as main">
+  <h1>Basic angular directive : click in out</h1>
+
+  <button type="button"
+    click-in-out
+    on-click-in="main.onClickInHandler($event)"
+    on-click-out="main.onClickOutHandler($event)">
+    <b>Click here</b>
+  </button>
+  <span ng-if="main.message"> :: {{main.message}}</span>
+
+  <hr>
+  <i>see browser console</i>
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="app/main/module.js"></script>
+  <script src="app/main/controller.js"></script>
+
+  <script src="app/clickInOut/directive.js"></script>
+  <!-- @end: app -->
+</body>
+</html>
