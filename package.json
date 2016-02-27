@@ -12,7 +12,7 @@
   "scripts": {
     "postinstall": "git submodule init && git submodule update --remote && gulp --init",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "submodule:update": "git submodule update --remote",
+    "update-submodule": "git submodule update --remote",
     "outdated": "npm outdated --depth=0"
   },
   "keywords": [
