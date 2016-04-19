@@ -3,7 +3,7 @@
 
   angular.module( 'app', [
       'components.clipboard',
-      'components.selectTextOnclick'
+      'components.selectText'
   ]);
 
 })();

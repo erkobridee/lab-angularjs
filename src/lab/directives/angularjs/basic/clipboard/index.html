@@ -15,17 +15,42 @@
   <h3>Fallback: when click over text use window.prompt</h3>
 
   <div class="contentToCopy">
+    <h5>select all text on click</h5>
     <div
       class="text"
-      select-text-onclick>
-      {{::main.text}}
+      select-text>
+      <!-- default mouse event: select-text-on-click -->
+      {{::main.text1}}
     </div>
     <div
       class="button">
       <button
         type="button"
         clipboard
-        clipboard-text="main.text"
+        clipboard-text="main.text1"
+        clipboard-oncopied="main.success()"
+        clipboard-onerror="main.fail(error)">
+        Copy to Clipboard
+      </button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="content2ToCopy">
+    <h5>select all text on double click</h5>
+    <div
+      class="text"
+      select-text
+      select-text-on-double-click>
+      {{::main.text2}}
+    </div>
+    <div
+      class="button">
+      <button
+        type="button"
+        clipboard
+        clipboard-text="main.text2"
         clipboard-oncopied="main.success()"
         clipboard-onerror="main.fail(error)">
         Copy to Clipboard
@@ -36,13 +61,13 @@
   <!-- === -->
 
   <!-- AngularJS resources -->
-  <!-- http://code.angularjs.org/1.4.0/ -->
-  <script src="/cdn/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+  <!-- http://code.angularjs.org/1.5.5/ -->
+  <script src="/cdn/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
 
   <script src="ng-start.js"></script>
 
-  <script src="app/components/select-text-onclick/module.js"></script>
-  <script src="app/components/select-text-onclick/directive.js"></script>
+  <script src="app/components/select-text/module.js"></script>
+  <script src="app/components/select-text/directive.js"></script>
 
   <script src="app/components/clipboard/module.js"></script>
   <script src="app/components/clipboard/service.js"></script>
@@ -53,7 +78,3 @@
 
 </body>
 </html>
-<!--
-  AngularJS Dynamic Templates - Yes We Can! | One Hungry Mind
-  http://onehungrymind.com/angularjs-dynamic-templates/
--->
