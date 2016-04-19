@@ -11,7 +11,15 @@
 
   function Directive( $window, $document ) {
 
-    function postLink( scope, element ) {
+    function postLink( scope, element, attrs ) {
+      console.log(attrs);
+
+      var mouseEvent = 'click';
+      if(angular.isDefined(attrs.selectTextOnDoubleClick)){
+        mouseEvent = 'dblclick';
+      } else if(angular.isDefined(attrs.selectTextOnClick)){
+        mouseEvent = 'click';
+      }
 
       function onClick(){
         var range;
@@ -28,10 +36,11 @@
         }
       }
 
-      element.on( 'click', onClick );
+      element.on( mouseEvent, onClick );
 
-      scope.$on( 'destroy', function() {
-        element.off( 'click', onClick );
+      scope.$on( '$destroy', function() {
+        element.off( mouseEvent, onClick );
+        mouseEvent = null;
       });
     }
 
@@ -51,7 +60,7 @@
   //---
 
   angular
-    .module('components.selectTextOnclick')
-    .directive('selectTextOnclick', Directive);
+    .module('components.selectText')
+    .directive('selectText', Directive);
 
 })();
