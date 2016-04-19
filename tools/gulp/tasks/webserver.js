@@ -15,7 +15,7 @@ module.exports = function(gulp, $) {
 
   gulp.task('webserver:preview', function() {
 
-    if( $.is.release ) {
+    if( $.is.preview ) {
       // https://www.npmjs.com/package/gulp-connect
       $.connect.server({
         port: $.config.webserver.port,

@@ -104,7 +104,9 @@ npm install \
 
 * `gulp` - development mode, prepare files, watch changes and start server on port 1337
 
-* `gulp --release --preview` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
+* `gulp --release` - generate deploy version on `dist` directory
+
+* `gulp --preview` - generate deploy version on `dist` directory and start server on port 1337 looking to this directory
 
 * `gulp --publish` - publish deploy version files on `gh-pages` branch
 
