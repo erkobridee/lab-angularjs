@@ -14,7 +14,7 @@ define(function(require) {
   function CepResource($resource) {
 
     return $resource(
-      'http://api.postmon.com.br/v1/cep/:cep'
+      'https://api.postmon.com.br/v1/cep/:cep'
     );
 
   }
