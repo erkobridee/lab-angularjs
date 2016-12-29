@@ -4,8 +4,8 @@ require({
   paths: {
 
     angular: [
-      //'http://code.angularjs.org/1.5.6/angular.min',
-      '/cdn/ajax/libs/angular.js/1.5.6/angular.min'
+      //'http://code.angularjs.org/1.6.1/angular.min',
+      '/cdn/ajax/libs/angular.js/1.6.1/angular.min'
     ]
 
   },
