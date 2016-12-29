@@ -7,17 +7,20 @@ require({
       '/cdn/ajax/libs/jquery/2.1.3/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.4.0/
+    // http://code.angularjs.org/1.5.10/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
+      '/cdn/ajax/libs/angular.js/1.5.10/angular.min'
+      // '/cdn/ajax/libs/angular.js/1.6.1/angular.min'
     ],
 
     angular_route: [
-      '/cdn/ajax/libs/angular.js/1.4.0/angular-route.min'
+      '/cdn/ajax/libs/angular.js/1.5.10/angular-route.min'
+      // '/cdn/ajax/libs/angular.js/1.6.1/angular-route.min'
     ],
 
     angular_resource: [
-      '/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.5.10/angular-resource.min'
+      // '/cdn/ajax/libs/angular.js/1.6.1/angular-resource.min'
     ]
 
   },
