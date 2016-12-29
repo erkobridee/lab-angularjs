@@ -13,15 +13,23 @@
       ],
 
       angular: [
-        '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
+        // '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
+        '/cdn/ajax/libs/angular.js/1.5.6/angular.min'
+        // '/cdn/ajax/libs/angular.js/1.6.1/angular.min'
       ],
 
+      /*
       angularRoute: [
-        '/cdn/ajax/libs/angular.js/1.4.0/angular-route.min'
+        // '/cdn/ajax/libs/angular.js/1.4.0/angular-route.min'
+        '/cdn/ajax/libs/angular.js/1.5.6/angular-route.min'
+        // '/cdn/ajax/libs/angular.js/1.6.1/angular-route.min'
       ],
+      */
 
       angularResource: [
-        '/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min'
+        // '/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min'
+        '/cdn/ajax/libs/angular.js/1.5.6/angular-resource.min'
+        // '/cdn/ajax/libs/angular.js/1.6.1/angular-resource.min'
       ],
 
       uiRouter: [
@@ -30,7 +38,9 @@
 
 
       angularMocks: [
-        '/cdn/ajax/libs/angular.js/1.4.0/angular-mocks'
+        // '/cdn/ajax/libs/angular.js/1.4.0/angular-mocks'
+        '/cdn/ajax/libs/angular.js/1.5.6/angular-mocks'
+        // '/cdn/ajax/libs/angular.js/1.6.1/angular-mocks'
       ]
 
     },
@@ -47,9 +57,11 @@
         deps: ['jquery']
       },
 
+      /*
       'angularRoute': {
         deps: ['angular']
       },
+      */
 
       'angularResource': {
         deps: ['angular']
