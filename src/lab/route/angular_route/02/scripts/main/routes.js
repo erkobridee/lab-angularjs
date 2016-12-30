@@ -1,9 +1,12 @@
 angular.module('app').config(
 
   // dependencies injection
-  ['$routeProvider',
+  ['$routeProvider', '$locationProvider',
 
-function($routeProvider) {
+function($routeProvider, $locationProvider) {
+
+    // remove the ! added by angular v1.6.1
+    $locationProvider.hashPrefix('');
 
     $routeProvider
       .when(
