@@ -68,7 +68,7 @@ describe('Unit: Testing dep1 depWidgetOutline Directive', function() {
 
     it('should have content text \'some widget content\'', function() {
       //console.log(element.html());
-      var el = element.find('span');
+      var el = element.find('div').eq(1);
       //console.log(el);
 
       expect(el.html()).toEqual('some widget content');
@@ -111,7 +111,7 @@ describe('Unit: Testing dep1 depWidgetOutline Directive', function() {
 
     it('should have content text \'some widget content\'', function() {
       //console.log(element.html());
-      var el = element.find('span');
+      var el = element.find('div').eq(1);
       //console.log(el);
 
       expect(el.html()).toEqual('some widget content');
