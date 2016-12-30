@@ -7,9 +7,12 @@ define(function(require) {
 
   //---
 
-  configure.$inject = ['$stateProvider', '$urlRouterProvider'];
+  configure.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-  function configure($stateProvider, $urlRouterProvider) {
+  function configure($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    // remove the ! added by angular v1.6.1
+    $locationProvider.hashPrefix('');
 
     $urlRouterProvider
       .when('', '/') // default
