@@ -7,11 +7,14 @@ define(function(require) {
 
   //---
 
-  // https://code.angularjs.org/1.3.3/docs/api/ngRoute
+  // https://code.angularjs.org/1.6.1/docs/api/ngRoute
 
-  configureRoutes.$inject = ['$routeProvider'];
+  configureRoutes.$inject = ['$routeProvider', '$locationProvider'];
 
-  function configureRoutes($routeProvider) {
+  function configureRoutes($routeProvider, $locationProvider) {
+
+    // remove the ! added by angular v1.6.1
+    $locationProvider.hashPrefix('');
 
     $routeProvider
       .when(
