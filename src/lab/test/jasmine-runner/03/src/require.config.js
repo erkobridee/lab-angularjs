@@ -11,23 +11,19 @@
       ],
 
       angular: [
-        '/cdn/ajax/libs/angular.js/1.5.10/angular.min'
-        // '/cdn/ajax/libs/angular.js/1.6.1/angular.min'
+        '/cdn/ajax/libs/angular.js/1.6.1/angular.min'
       ],
 
       angularRoute: [
-        '/cdn/ajax/libs/angular.js/1.5.10/angular-route.min'
-        // '/cdn/ajax/libs/angular.js/1.6.1/angular-route.min'
+        '/cdn/ajax/libs/angular.js/1.6.1/angular-route.min'
       ],
 
       angularResource: [
-        '/cdn/ajax/libs/angular.js/1.5.10/angular-resource.min'
-        // '/cdn/ajax/libs/angular.js/1.6.1/angular-resource.min'
+        '/cdn/ajax/libs/angular.js/1.6.1/angular-resource.min'
       ],
 
       angularMocks: [
-        '/cdn/ajax/libs/angular.js/1.5.10/angular-mocks'
-        // '/cdn/ajax/libs/angular.js/1.6.1/angular-mocks'
+        '/cdn/ajax/libs/angular.js/1.6.1/angular-mocks'
       ]
 
     },
