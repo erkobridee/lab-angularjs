@@ -1,10 +1,12 @@
 angular.module('app').config(
 
   // dependencies injection
-  ['$stateProvider', '$urlRouterProvider',
+  ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 
-function($stateProvider, $urlRouterProvider) {
+function($stateProvider, $urlRouterProvider, $locationProvider) {
 
+    // remove the ! added by angular v1.6.1
+    $locationProvider.hashPrefix('');
 
     $urlRouterProvider
       .when('', '/') // default

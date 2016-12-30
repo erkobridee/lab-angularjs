@@ -7,17 +7,17 @@ require({
       '/cdn/ajax/libs/jquery/2.1.3/jquery.min'
     ],
 
-    // http://code.angularjs.org/1.4.0/
+    // http://code.angularjs.org/1.6.1/
     angular: [
-      '/cdn/ajax/libs/angular.js/1.4.0/angular.min'
+      '/cdn/ajax/libs/angular.js/1.6.1/angular.min'
     ],
 
     angular_resource: [
-      '/cdn/ajax/libs/angular.js/1.4.0/angular-resource.min'
+      '/cdn/ajax/libs/angular.js/1.6.1/angular-resource.min'
     ],
 
     angular_ui_router: [
-      '/cdn/ajax/libs/angular-ui/ui-router/0.2.15/angular-ui-router.min'
+      '/cdn/ajax/libs/angular-ui/ui-router/0.3.2/angular-ui-router.min'
     ]
 
   },
