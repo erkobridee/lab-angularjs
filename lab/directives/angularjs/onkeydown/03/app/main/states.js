@@ -7,9 +7,12 @@
 
     //--- https://github.com/angular-ui/ui-router/wiki
 
-    configureStates.$inject = ['$stateProvider', '$urlRouterProvider'];
+    configureStates.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-    function configureStates($stateProvider, $urlRouterProvider) {
+    function configureStates($stateProvider, $urlRouterProvider, $locationProvider) {
+
+      // remove the ! added by angular v1.6.1
+      $locationProvider.hashPrefix('');
 
       $urlRouterProvider
         .when('', '/') // default
