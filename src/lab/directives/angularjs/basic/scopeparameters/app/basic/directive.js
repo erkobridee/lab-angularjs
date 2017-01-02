@@ -61,18 +61,30 @@
 
       //---
 
-      if(vm.sendMessage)
+      if(vm.sendMessage) {
         vm.sendMessage({message: 'basic directive controller started'});
+      }
 
-      console.log('CTRL: vm.text = ', vm.text );
-      console.log('CTRL: vm.twoWayBind = ', vm.twoWayBind );
-      console.log('CTRL: vm.oneWayBind = ', vm.oneWayBind() );
+      //---
+
+      function init(){
+        console.log('CTRL initialization flow');
+        console.log('CTRL: vm.text = ', vm.text );
+        console.log('CTRL: vm.twoWayBind = ', vm.twoWayBind );
+        console.log('CTRL: vm.oneWayBind = ', vm.oneWayBind() );
+      }
+      vm.init = init;
+
+      // available since angular.js version 1.5
+      // vm.$onInit = init;
 
     }
 
     //---
 
     function linkingFn(scope, el, attr, ctrl) {
+      var vm = scope.vm;
+
       /* undefined
       if(scope.text)
         console.log('LINK: scope.text = ', scope.text );
@@ -82,9 +94,11 @@
         console.log('LINK: scope.oneWayBind = ', scope.oneWayBind() );
       */
 
-      console.log('LINK: scope.vm.text = ', scope.vm.text );
-      console.log('LINK: scope.vm.twoWayBind = ', scope.vm.twoWayBind );
-      console.log('LINK: scope.vm.oneWayBind = ', scope.vm.oneWayBind() );
+      vm.init();
+
+      console.log('LINK: scope.vm.text = ', vm.text );
+      console.log('LINK: scope.vm.twoWayBind = ', vm.twoWayBind );
+      console.log('LINK: scope.vm.oneWayBind = ', vm.oneWayBind() );
 
       console.log('LINK CTRL: ctrl.text = ', ctrl.text );
       console.log('LINK CTRL: ctrl.twoWayBind = ', ctrl.twoWayBind );
