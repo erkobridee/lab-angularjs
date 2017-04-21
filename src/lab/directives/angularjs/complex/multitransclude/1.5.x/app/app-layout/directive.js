@@ -29,12 +29,6 @@
 
       //---
 
-      function linkingFn(scope, el, attr, ctrl, transcludeFn) {
-        multitransclude.transclude(el, transcludeFn);
-      }
-
-      //---
-
       function templateFn(tElement, tAttrs) {
         return [
           '<div id="site">',
