@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module( 'app' ).directive( 'selectOne', selectOne );
+  angular.module( 'app' ).directive( 'olderSelectOne', selectOne );
 
   //---
 
@@ -10,14 +10,14 @@
     var scope = {
       data: '=',
       selected: '=',
-      value: '@'
+      value : '@'
     };
 
     var directive = {
-      restrict: 'EA',
+      restrict: 'E',
       scope: scope,
       link: linkFunc,
-      templateUrl: 'app/selectone/template.html'
+      templateUrl: 'app/older-selectone/template.html'
     };
 
     return directive;
