@@ -6,28 +6,52 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
+  <div>Angular.js v1.4</div><br>
+
   <div>[ Select state ] Selecione o estado:
-    <select-one
+    <older-select-one
       value="nome"
       data="main.estados"
-      selected="main.estadoSelecionado"></select-one>
+      selected="main.estado1Selecionado"></older-select-one>
   </div>
   <hr/>
 
   <div>[ Select city ] Selecione a cidade:
-    <select-one
-      data="main.estadoSelecionado.cidades"
-      selected="main.cidadeSelecionada"></select-one>
+    <older-select-one
+      data="main.estado1Selecionado.cidades"
+      selected="main.cidade1Selecionada"></older-select-one>
   </div>
   <hr/>
 
-  <div>[ City selected ] Cidade selecionada: {{ main.cidadeSelecionada }} </div>
+  <div>[ City selected ] Cidade selecionada: {{ main.cidade1Selecionada }} </div>
+
+
+  <br><br><div>Angular.js v1.5+</div><br>
+
+  <div>[ Select state ] Selecione o estado:
+    <newer-select-one
+      value="nome"
+      data="main.estados"
+      selected="main.estado2Selecionado"></newer-select-one>
+  </div>
+  <hr/>
+
+  <div>[ Select city ] Selecione a cidade:
+    <newer-select-one
+      data="main.estado2Selecionado.cidades"
+      selected="main.cidade2Selecionada"></newer-select-one>
+  </div>
+  <hr/>
+
+  <div>[ City selected ] Cidade selecionada: {{ main.cidade2Selecionada }} </div>
+
 
   <script src="/cdn/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
 
   <script src="app/main/module.js"></script>
   <script src="app/main/controller.js"></script>
-  <script src="app/selectone/directive.js"></script>
+  <script src="app/older-selectone/directive.js"></script>
+  <script src="app/newer-selectone/component.js"></script>
 
 </body>
 </html>

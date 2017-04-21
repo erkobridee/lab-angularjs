@@ -24,8 +24,12 @@
     //---
 
     vm.estados = estados;
-    vm.estadoSelecionado = '';
-    vm.cidadeSelecionada = '';
+
+    vm.estado1Selecionado = '';
+    vm.cidade1Selecionada = '';
+
+    vm.estado2Selecionado = '';
+    vm.cidade2Selecionada = '';
 
   }
 
