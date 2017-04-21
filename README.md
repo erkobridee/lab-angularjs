@@ -26,7 +26,7 @@
 
 * Must have [Git](http://git-scm.com/) installed
 
-* Must have [node.js (at least v0.10.0)](http://nodejs.org/) installed with npm (Node Package Manager)
+* Must have [node.js (at least LTS)](http://nodejs.org/) installed with npm (Node Package Manager)
 
 * Must have [Gulp.js](http://gulpjs.com/) node package installed globally.  `[sudo] npm install -g gulp`
 
@@ -66,6 +66,12 @@ git submodule add -b gh-pages https://github.com/erkobridee/cdn.git gitsubmodule
 
 ```bash
 git submodule update --remote
+```
+
+  * check node/npm outdated dependencies
+
+```bash
+npm outdated
 ```
 
 --
