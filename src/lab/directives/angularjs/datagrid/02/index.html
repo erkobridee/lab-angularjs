@@ -8,70 +8,59 @@
 
   <datagrid titles="main.titles" data="main.data"></datagrid>
 
-  <script src="/cdn/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+  <script src="/cdn/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
 
   <script>
     (function() {
       'use strict';
 
+      var datagrid = {
+        bindings : {
+          titles : '<',
+          data : '<'
+        },
+        template: '<table border="1"> \
+                      <thead> \
+                        <tr> \
+                          <th ng-repeat="title in $ctrl.titles"> {{ title }} </th> \
+                        </tr> \
+                      </thead> \
+                      <tbody> \
+                        <tr ng-repeat="item in $ctrl.data"> \
+                          <td> {{ item.name }} </td> \
+                          <td> {{ item.age }} </td> \
+                        </tr> \
+                      </tbody> \
+                    </table>'
+      };
+
       angular
         .module( 'app', [ ] )
         .controller( 'MainCtrl', MainCtrl )
-        .directive( 'datagrid', datagrid );
+        .component( 'datagrid', datagrid );
 
-        //---
+      //---
 
-        function datagrid() {
+      function MainCtrl() {
+        var vm = this;
 
-          var scope = {
-            titles: '=',
-            data: '='
-          };
+        vm.titles = [ 'Name', 'Age' ];
+        vm.data   = [
+          {
+            'name': 'Eduardo Royer',
+            'age': 22
+          },
+          {
+            'name': 'Akira',
+            'age': 25
+          },
+          {
+            'name': 'Erko Bridee',
+            'age': 30
+          }
+        ];
 
-          var directive = {
-            restrict: 'EA',
-            scope: scope,
-            template: '<table border="1"> \
-                          <thead> \
-                            <tr> \
-                              <th ng-repeat="title in titles"> {{ title }} </th> \
-                            </tr> \
-                          </thead> \
-                          <tbody> \
-                            <tr ng-repeat="item in data"> \
-                              <td> {{ item.name }} </td> \
-                              <td> {{ item.age }} </td> \
-                            </tr> \
-                          </tbody> \
-                        </table>'
-          };
-
-          return directive;
-
-        }
-
-        //---
-
-        function MainCtrl() {
-          var vm = this;
-
-          vm.titles = [ 'Name', 'Age' ];
-          vm.data   = [
-            {
-              'name': 'Eduardo Royer',
-              'age': 22
-            },
-            {
-              'name': 'Akira',
-              'age': 25
-            },
-            {
-              'name': 'Erko Bridee',
-              'age': 30
-            }
-          ];
-
-        }
+      }
 
     })();
   </script>
