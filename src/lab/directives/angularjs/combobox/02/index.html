@@ -6,21 +6,31 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
+  <div>angular.js v1.4 directive</div>
   <div>Select one car:
-    <select-one
+    <older-select-one
       data="main.cars"
-      selected="main.carSelected"></select-one>
+      selected="main.car1Selected"></older-select-one>
   </div>
+  <div>Car selected: {{ main.car1Selected }} </div>
 
   </br>
 
-  <div>Car selected: {{ main.carSelected }} </div>
+  <div>angular.js v1.5+ component</div>
+  <div>Select one car:
+    <newer-select-one
+      data="main.cars"
+      selected="main.car2Selected"></newer-select-one>
+  </div>
+  <div>Car selected: {{ main.car2Selected }} </div>
 
-  <script src="/cdn/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+
+  <script src="/cdn/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
 
   <script src="app/main/module.js"></script>
   <script src="app/main/controller.js"></script>
-  <script src="app/selectone/directive.js"></script>
+  <script src="app/older-selectone/directive.js"></script>
+  <script src="app/newer-selectone/component.js"></script>
 
 </body>
 </html>

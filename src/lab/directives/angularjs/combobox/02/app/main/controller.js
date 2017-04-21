@@ -11,8 +11,9 @@
     var vm = this;
 
     vm.cars = [ 'Bmw M3', 'Ferrari Enzo', 'Fusca', 'Fiat 147' ];
-    vm.carSelected = '';
 
+    vm.car1Selected = '';
+    vm.car2Selected = '';
   }
 
 })();
