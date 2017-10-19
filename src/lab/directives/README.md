@@ -12,7 +12,7 @@
 > Quando é utilizado um escopo isolado para um componente, e o `controllerAs` é utilizado, a configuração `bindToController : true` irá possibilitar que o compoenente possua as propriedades associadas ao escopo. Quando o `controller` for instanciado, os valores iniciais do escopo estarão disponíveis.
 
 
-## Examples
+## Exemplos
 
 * [Angular.js](angularjs)
 
