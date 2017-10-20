@@ -1,0 +1,33 @@
+.tabs {
+  margin: 25px;
+  background: #fff;
+}
+
+.tabs__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.tabs__list li {
+  float: left;
+}
+
+.tabs__list li a {
+  color: #444;
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.tabs__list li a.active {
+  border-bottom: 2px solid rgb(0, 120, 230);
+}
+
+.tabs__content {
+  padding: 10px;
+}
+
+// .tabs__content__item {}

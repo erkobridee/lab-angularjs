@@ -1,0 +1,19 @@
+<div class="tabs">
+
+  <div class="tabs__header">
+
+    <ul class="tabs__list">
+      <li
+        ng-repeat="tab in $ctrl.tabs"
+        ng-init="$last && $ctrl.selectDefault()">
+        <a
+          href=""
+          ng-bind="tab.label"
+          ng-click="$ctrl.selectTab($index)"
+          ng-class="{ 'active': tab.selected }"></a>
+      </li>
+    </ul>
+  </div> <!-- @end: .tabs__header -->
+
+  <div class="tabs__content" ng-transclude></div>
+</div>
