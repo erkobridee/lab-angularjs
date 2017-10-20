@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular - Tabs components</title>
+
+  <link rel="stylesheet" href="app/app.css"/>
+  <link rel="stylesheet" href="app/tabs/tabs.css"/>
+
+  <!--
+    Doc Angular.js :: ng-clock
+    http://docs.angularjs.org/api/ng.directive:ngCloak
+  -->
+  <style type="text/css">
+  /* class defined here, becuse angular.js will be loaded later */
+  .ng-cloak {
+    display: none;
+  }
+  </style>
+
+</head>
+<body class="ng-cloak">
+
+  <div class="header">
+    <h1>Angular - Tabs components</h1>
+  </div>
+
+
+  <tabs>
+
+    <tab label="tab 1">tab content 1</tab>
+
+    <tab label="tab 2">tab content 2</tab>
+
+    <tab label="tab 3">tab content 3</tab>
+
+  </tabs>
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="ng-start.js"></script>
+  <script src="app/main/module.js"></script>
+  <script src="app/tabs/tabs-component.js"></script>
+  <script src="app/tabs/tab-component.js"></script>
+  <!-- @end: app -->
+
+</body>
+</html>

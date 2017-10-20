@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font: 300 14px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 25px;
+}
