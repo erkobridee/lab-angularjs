@@ -1,0 +1,26 @@
+.component {
+  width: 250px;
+  background-color: #F1F4F6;
+  border: 1px solid #092A35;
+}
+
+.component .component__header {
+  padding: 5px;
+  background-color: #5AC8D8;
+}
+
+.component .component__header__sub {
+  padding: 5px;
+  background-color: #597FCA;
+}
+
+.component .component__body {
+  padding: 5px;
+}
+
+.component .component__footer {
+  padding: 5px;
+  background-color: #2552AC;
+  color: #F1F4F6;
+}
+

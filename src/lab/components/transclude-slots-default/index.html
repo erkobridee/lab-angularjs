@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular.js - transclude to default area or slot area</title>
+
+  <link rel="stylesheet" href="app/app.css"/>
+  <link rel="stylesheet" href="app/component/component.css"/>
+
+  <!--
+    Doc Angular.js :: ng-clock
+    http://docs.angularjs.org/api/ng.directive:ngCloak
+  -->
+  <style type="text/css">
+  /* class defined here, becuse angular.js will be loaded later */
+  .ng-cloak {
+    display: none;
+  }
+  </style>
+
+</head>
+<body class="ng-cloak">
+  <h1>Angular.js - transclude to default area or slot area</h1>
+
+  <hr>
+
+  <h3>component usage 1: default values</h3>
+  <component></component>
+
+  <hr>
+
+  <h3>component usage 2</h3>
+  <component label="Second example">
+    And second example it's body
+  </component>
+
+  <hr>
+
+  <h3>component usage 3</h3>
+  <component label="Third example">
+    <header>Custom Header</header>
+    <sub-header>Custom Sub Header</sub-header>
+    And thrid example it's body
+  </component>
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="ng-start.js"></script>
+  <script src="app/main/module.js"></script>
+  <script src="app/component/component.js"></script>
+  <!-- @end: app -->
+</body>
+</html>

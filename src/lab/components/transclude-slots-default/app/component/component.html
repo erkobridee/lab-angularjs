@@ -1,0 +1,23 @@
+<div class="component">
+  <!-- controller alias: $ctrl -->
+
+  <div class="component__header" ng-transclude="headerSlot">
+    header label: <span ng-bind="$ctrl.label"></span>
+  </div>
+
+  <div class="component__header__sub" ng-transclude="subHeaderSlot">
+    sub header slot area
+  </div>
+
+  <!-- default transclusion area -->
+  <div class="component__body" ng-transclude>
+    body slot area
+  </div>
+
+  <div class="component__footer">
+    <ul> is slot area present?
+      <li>header: {{$ctrl.isHeaderPresent}}</li>
+      <li>sub header: {{$ctrl.isSubHeaderPresent}}</li>
+    </ul>
+  </div>
+</div>

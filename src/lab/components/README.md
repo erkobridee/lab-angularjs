@@ -9,6 +9,8 @@
 
 * [Tabs](tabs)
 
+* [Transclude to default area or a given slot](transclude-slots-default)
+
 
 ## Links
 
