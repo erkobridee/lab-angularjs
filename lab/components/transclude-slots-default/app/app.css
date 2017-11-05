@@ -1,0 +1,12 @@
+body {
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 13px;
+}
+
+.content {
+  margin: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
