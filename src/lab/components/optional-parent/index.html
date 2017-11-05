@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular.js - optional parent component</title>
+
+  <link rel="stylesheet" href="app/app.css"/>
+  <link rel="stylesheet" href="app/components/accordion/accordion-component.css"/>
+  <link rel="stylesheet" href="app/components/group/group-component.css"/>
+
+  <!--
+    Doc Angular.js :: ng-clock
+    http://docs.angularjs.org/api/ng.directive:ngCloak
+  -->
+  <style type="text/css">
+  /* class defined here, becuse angular.js will be loaded later */
+  .ng-cloak {
+    display: none;
+  }
+  </style>
+
+</head>
+<body class="ng-cloak">
+  <h1>Angular.js - optional parent component</h1>
+
+  <hr>
+
+  <div class="content">
+
+    <div class="example">
+      <h3>parent component present</h3>
+      <h4>accordion behavior like</h4>
+      <div class="scroll-area">
+        <accordion>
+          <group label="accordion group 1">
+            accordion group 1 content
+          </group>
+          <group label="accordion group 2">
+            accordion group 2 content
+          </group>
+          <group label="accordion group 3">
+            accordion group 3 content
+          </group>
+          <group label="accordion group 4">
+            accordion group 4 content
+          </group>
+          <group label="accordion group 5">
+            accordion group 5 content
+          </group>
+        </accordion>
+      </div>
+    </div>
+
+    <div class="example2">
+      <h3>parent component not present</h3>
+      <h4>list of components</h4>
+      <div class="scroll-area">
+        <group label="group 1">
+          group 1 content
+        </group>
+        <group label="group 2">
+          group 2 content
+        </group>
+        <group label="group 3">
+          group 3 content
+        </group>
+        <group label="group 4">
+          group 4 content
+        </group>
+        <group label="group 5">
+          group 5 content
+        </group>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p><a href="http://www.codelord.net/2016/11/30/advanced-angular-1-dot-x-component-communication-with-require/" target="_blank">Advanced Angular 1.x: Component Communication with Require | codelord.net</a> 2016/11/30</p>
+
+
+  <!-- @vendors -->
+  <script src="/cdn/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+
+  <!-- @begin: app -->
+  <script src="ng-start.js"></script>
+  <script src="app/main/module.js"></script>
+  <script src="app/components/accordion/accordion-component.js"></script>
+  <script src="app/components/group/group-component.js"></script>
+  <!-- @end: app -->
+</body>
+</html>

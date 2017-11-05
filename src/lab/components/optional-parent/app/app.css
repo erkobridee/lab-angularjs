@@ -1,0 +1,20 @@
+body {
+  font-family: Menlo, Consolas, Monaco, monospace;
+  font-size: 13px;
+}
+
+.content {
+  margin: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.scroll-area {
+    height: 200px;
+    overflow-y : auto;
+
+    background-color: #E3EFF3;
+    border: 1px solid #393939;
+}

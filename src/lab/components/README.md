@@ -7,6 +7,8 @@
 
 ## Exemplos
 
+* [Optional parent component](optional-parent)
+
 * [Tabs](tabs)
 
 * [Transclude to default area or a given slot](transclude-slots-default)
