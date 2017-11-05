@@ -1,0 +1,16 @@
+<div class="group_component">
+  <!-- controller alias: $ctrl -->
+
+  <div
+    class="group_component__label"
+    ng-bind="$ctrl.label"
+    ng-click="$ctrl.toggle()">
+  </div>
+
+  <div
+    class="group_component__content"
+    ng-if="$ctrl.displayContent"
+    ng-transclude>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+.group_component {
+  border: 1px solid #143A52;
+}
+
+.group_component .group_component__label {
+  background-color: #143A52;
+  color: #ffffff;
+  min-height: 20px;
+  padding: 5px;
+  border-bottom: 1px solid #CDE3EB;
+  cursor: pointer;
+}
+
+.group_component .group_component__content {
+  background-color: #ffffff;
+  min-height: 50px;
+  padding: 10px;
+}
